@@ -1,0 +1,7 @@
+{ ... }:
+
+{
+  launchd = {
+    enable = true;
+  };
+}
