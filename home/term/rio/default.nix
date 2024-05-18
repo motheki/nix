@@ -19,29 +19,10 @@
         mode = "Plain";
         use-current-path = true;
       };
-      colors = {
-        background = "#1a1a1a";
-        foreground = "#d4d4d4";
-        cursor = "#d4d4d4";
-        selection = "#4d4d4d";
-        black = "#1a1a1a";
-        red = "#d78787";
-        green = "#afd787";
-        yellow = "#d7d787";
-        blue = "#87afd7";
-        magenta = "#d7afd7";
-        cyan = "#87d7d7";
-        white = "#d4d4d4";
-        bright-black = "#4d4d4d";
-        bright-red = "#ffafaf";
-        bright-green = "#d7ffaf";
-        bright-yellow = "#ffffaf";
-        bright-blue = "#afd7ff";
-        bright-magenta = "#ffafff";
-        bright-cyan = "#afffff";
-        bright-white = "#ffffff";
+      adaptive-theme = {
+        light = "nord-light";
+        dark = "nord";
       };
-
       window = {
         decorations = "Buttonless";
         width = 1000;
@@ -74,12 +55,12 @@
         bold = {
           family = "CommitMonoMotheki";
           weight = 400;
-          style = "Medium";
+          style = "Bold";
         };
         bold-italic = {
           family = "CommitMonoMotheki";
           weight = 400;
-          style = "Medium Italic";
+          style = "Bold Italic";
         };
       };
       developer = {
