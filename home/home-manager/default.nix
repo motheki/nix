@@ -22,6 +22,7 @@
       nodePackages.webtorrent-cli
       pueue
       nmap
+      tree
       rustscan
       fastfetch
     ];
