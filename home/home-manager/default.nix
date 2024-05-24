@@ -25,6 +25,7 @@
       tree
       rustscan
       fastfetch
+      iina
     ];
   };
 }
