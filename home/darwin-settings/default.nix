@@ -8,14 +8,14 @@
         autohide = true; 
         autohide-delay = 0; 
         autohide-time-modifier = 0; 
-        launchanim = false;
-        magnification = false; 
+        launchanim = true;
+        magnification = true; 
         mineffect = "scale"; 
         minimize-to-application = false; 
         orientation = "bottom"; 
         windowtabbing = true;
         show-process-indicators = false;
-        show-recents = false;
+        show-recents = true;
         pinning = "start"; 
         showAppExposeGestureEnabled = true; 
         showDesktopGestureEnabled = true; 
