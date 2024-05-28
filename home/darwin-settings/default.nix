@@ -6,12 +6,10 @@
       };
       "com.apple.dock" = {
         autohide = true; 
-        autohide-delay = 0; 
-        autohide-time-modifier = 0; 
         launchanim = true;
         magnification = true; 
-        mineffect = "scale"; 
-        minimize-to-application = false; 
+        mineffect = "Genie"; 
+        minimize-to-application = true; 
         orientation = "bottom"; 
         windowtabbing = true;
         show-process-indicators = false;
