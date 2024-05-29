@@ -1,4 +1,4 @@
-{ pkgs, ... }: 
+{ ... }: 
 
 {
   programs.gh = {
@@ -14,19 +14,12 @@
   };
   programs.git = {
     enable = true;
-    package = pkgs.gitFull;
     delta = {
       enable = true;
     };
     lfs = {
       enable = true;
     };
-    signing = {
-      key = "/Users/motheki/.ssh/trevoropiyo.pub";
-      signByDefault = true;
-    };
-    userEmail = "trevoropiyo@trevoropiyo.com";   
-    userName = "Trevor Opiyo";
   };
   programs.git-cliff = {
     enable = true;
