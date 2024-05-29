@@ -13,7 +13,7 @@
         orientation = "bottom"; 
         windowtabbing = true;
         show-process-indicators = false;
-        show-recents = true;
+        show-recents = false;
         pinning = "start"; 
         showAppExposeGestureEnabled = true; 
         showDesktopGestureEnabled = true; 
