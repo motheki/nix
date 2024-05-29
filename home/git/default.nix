@@ -21,11 +21,12 @@
     lfs = {
       enable = true;
     };
-    attributes = [
-      "gpg.format ssh"
-      "gpg.sign true"
-      "user.signingkey ~/.ssh/trevoropiyo.pub"
-    ];
+    signing = {
+      key = "";
+      signByDefault = true;
+    };
+    userEmail = "trevoropiyo@trevoropiyo.com";   
+    userName = "Trevor Opiyo";
   };
   programs.git-cliff = {
     enable = true;
