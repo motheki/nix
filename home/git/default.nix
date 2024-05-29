@@ -1,4 +1,4 @@
-{ ... }: 
+{ pkgs, ... }: 
 
 {
   programs.gh = {
@@ -14,12 +14,18 @@
   };
   programs.git = {
     enable = true;
+    package = pkgs.gitFull;
     delta = {
       enable = true;
     };
     lfs = {
       enable = true;
     };
+    attributes = [
+      "gpg.format ssh"
+      "gpg.sign true"
+      "user.signingkey ~/.ssh/trevoropiyo.pub"
+    ];
   };
   programs.git-cliff = {
     enable = true;
