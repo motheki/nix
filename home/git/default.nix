@@ -22,7 +22,7 @@
       enable = true;
     };
     signing = {
-      key = "AAAAC3NzaC1lZDI1NTE5AAAAIM4J6BiOFWDuYEh12BfqKDJIyJM+NTGIosm93hxfq/MK trevoropiyo@trevoropiyo.com";
+      key = "/Users/motheki/.ssh/trevoropiyo.pub";
       signByDefault = true;
     };
     userEmail = "trevoropiyo@trevoropiyo.com";   
