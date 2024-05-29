@@ -21,6 +21,7 @@
       webtorrent_desktop
       nodePackages.webtorrent-cli
       pueue
+      glab
       nmap
       tree
       rustscan
