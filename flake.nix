@@ -2,14 +2,14 @@
   description = "Mothkeki's system flake";
   inputs = {
     nixpkgs = {
-      url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+      url = "github:NixOS/nixpkgs/master";
     };
     nix-darwin = {
-      url = "github:LnL7/nix-darwin";
+      url = "github:LnL7/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
