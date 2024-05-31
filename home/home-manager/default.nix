@@ -10,6 +10,9 @@
     };
     file = {
     };
+    sessionPath = [
+      "/opt/homebrew/bin/"
+    ];
     packages = with pkgs; [
       xcp
       rm-improved

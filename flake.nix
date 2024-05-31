@@ -19,7 +19,7 @@
         system = "aarch64-darwin";
         modules = [
           ./nix-darwin
-	  ./homebrew
+          ./homebrew
           home-manager.darwinModules.home-manager {
             home-manager = {
               useGlobalPkgs = true;

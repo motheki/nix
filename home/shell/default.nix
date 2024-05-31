@@ -94,6 +94,5 @@
     syntaxHighlighting = {
       enable = true;
     };
-    profileExtra = "eval '$(/opt/homebrew/bin/brew shellenv)'"
   };
 }
