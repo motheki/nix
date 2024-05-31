@@ -22,7 +22,6 @@
       "discord@canary"
       "raycast"
       "betterdisplay"
-      "betterdiscord-installer"
     ];
   };
 }
