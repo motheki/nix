@@ -1,5 +1,5 @@
 {
-  description = "Mothkeki's system flake";
+  description = "mothkeki's system flake";
   inputs = {
     nixpkgs = {
       url = "github:NixOS/nixpkgs/master";
@@ -15,10 +15,11 @@
   };
   outputs = { nix-darwin, home-manager, ... }: {
     darwinConfigurations = {
-      "Mothekis-MacBook-Pro" = nix-darwin.lib.darwinSystem {
+      "mothekis-macbook-pro" = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [
           ./nix-darwin
+	  ./homebrew
           home-manager.darwinModules.home-manager {
             home-manager = {
               useGlobalPkgs = true;

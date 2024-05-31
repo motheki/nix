@@ -27,7 +27,6 @@
       rustscan
       fastfetch
       iina
-      hvm
     ];
   };
 }
