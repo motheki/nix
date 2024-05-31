@@ -18,7 +18,7 @@
     ];
     casks = [
       "arc"
-      "vmware-fusion@preview"
+      "vmware-fusion"
       "discord@canary"
       "raycast"
       "betterdisplay"
