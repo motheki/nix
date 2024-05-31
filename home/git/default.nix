@@ -1,4 +1,4 @@
-{ ... }: 
+{ pkgs, ... }: 
 
 {
   programs.gh = {
@@ -14,12 +14,15 @@
   };
   programs.git = {
     enable = true;
+    package = pkgs.gitFull;
     delta = {
       enable = true;
     };
     lfs = {
       enable = true;
     };
+    userName = "motheki";
+    userEmail = "motheki@icloud.com";
   };
   programs.git-cliff = {
     enable = true;
