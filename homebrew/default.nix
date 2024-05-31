@@ -3,9 +3,14 @@
 {
   homebrew = {
     enable = true;
+    global = {
+      brewfile = true;
+    };
     onActivation = {
-      autoUpdate = false;
+      autoUpdate = true;
       cleanup = "zap";
+      extraFlags = ["--verbose"];
+      upgrade = true;
     };
     taps = [
     ];
