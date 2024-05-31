@@ -12,8 +12,8 @@
         minimize-to-application = true; 
         orientation = "bottom"; 
         windowtabbing = true;
-        show-process-indicators = false;
-        show-recents = false;
+        show-process-indicators = true;
+        show-recents = true;
         pinning = "start"; 
         showAppExposeGestureEnabled = true; 
         showDesktopGestureEnabled = true; 
