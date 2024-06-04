@@ -13,9 +13,13 @@
       upgrade = true;
     };
     taps = [
+    "homebrew/cask"
     ];
     brews = [
     "mas"
+    "cowsay"
+    ];
+    masApps = [
     ];
     casks = [
       "arc"
