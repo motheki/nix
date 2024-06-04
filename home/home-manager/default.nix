@@ -12,6 +12,7 @@
     };
     sessionPath = [
       "/opt/homebrew/bin"
+      "/opt/homebrew/Cellar/"
     ];
     packages = with pkgs; [
       xcp
