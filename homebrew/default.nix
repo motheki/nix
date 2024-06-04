@@ -13,7 +13,6 @@
       upgrade = true;
     };
     taps = [
-    "homebrew/cask"
     ];
     brews = [
     "mas"
