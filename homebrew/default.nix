@@ -19,8 +19,8 @@
     "mas"
     "cowsay"
     ];
-    masApps = [
-    ];
+    masApps = {
+    };
     casks = [
       "arc"
       "vmware-fusion"
