@@ -29,9 +29,9 @@
       "betterdisplay"
       "crossover"
     ];
-#    caskArgs = {
-#      appdir = "~/Applications";
-#      require_sha = true;
-#    };
+    caskArgs = {
+      appdir = "~/Applications";
+      require_sha = true;
+    };
   };
 }
