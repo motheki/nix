@@ -15,6 +15,7 @@
     taps = [
     ];
     brews = [
+    "mas"
     ];
     casks = [
       "arc"
