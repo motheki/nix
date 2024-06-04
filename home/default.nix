@@ -10,7 +10,6 @@
     ./term
     ./shell
     ./neovim
-    ./langs
     ./darwin-settings
   ];
 }
