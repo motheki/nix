@@ -11,7 +11,7 @@
     file = {
     };
     sessionPath = [
-      "/opt/homebrew"
+      "/opt/homebrew/bin"
     ];
     packages = with pkgs; [
       xcp
