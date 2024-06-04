@@ -21,9 +21,9 @@
     "Pages" = 409201541;
     "Numbers" = 409203825;
     "Keynote" = 409183694;
-    "Solid Planner" = -2090340559;
-    "Evo - The Everything App" = -2114531937;
-    "Solid Calendar" = -2141688785;
+    "Solid Planner" = 2090340559;
+    "Evo - The Everything App" = 2114531937;
+    "Solid Calendar" = 2141688785;
 
     };
     casks = [
