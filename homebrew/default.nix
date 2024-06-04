@@ -29,10 +29,10 @@
       "betterdisplay"
       "crossover"
     ];
-    homebrew.caskArgs
+    caskArgs
     {
       appdir = "~/Applications";
       require_sha = true;
-    }
+    };
   };
 }
