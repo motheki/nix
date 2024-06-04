@@ -22,6 +22,7 @@
       "discord@canary"
       "raycast"
       "betterdisplay"
+      "crossover"
     ];
   };
 }
