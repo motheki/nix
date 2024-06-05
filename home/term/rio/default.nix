@@ -28,8 +28,8 @@
         width = 1000;
         height = 600;
         mode = "Windowed";
-        foreground-opacity = 0.8;
-        background-opacity = 0.3;
+        foreground-opacity = 1;
+        background-opacity = 1;
         blur = true;
       };
 
