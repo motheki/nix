@@ -29,6 +29,7 @@
       tree
       rustscan
       fastfetch
+      hyperfine
       iina
     ];
   };
