@@ -54,7 +54,7 @@
   };
   programs.nushell = {
     enable = true;
-    package = pkgs.nushellFull;
+    package = pkgs.nushell;
   };
   programs.zoxide = {
     enable = true;
