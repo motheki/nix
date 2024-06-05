@@ -6,14 +6,14 @@
       };
       "com.apple.dock" = {
         autohide = true; 
-        launchanim = true;
-        magnification = true; 
-        mineffect = "Genie"; 
-        minimize-to-application = true; 
+        launchanim = false;
+        magnification = false; 
+        mineffect = "Scale"; 
+        minimize-to-application = false; 
         orientation = "bottom"; 
         windowtabbing = true;
-        show-process-indicators = true;
-        show-recents = true;
+        show-process-indicators = false;
+        show-recents = false;
         pinning = "start"; 
         showAppExposeGestureEnabled = true; 
         showDesktopGestureEnabled = true; 
