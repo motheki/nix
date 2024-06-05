@@ -53,6 +53,7 @@
       "raycast"
       "betterdisplay"
       "crossover"
+      "zoom"
     ];
     caskArgs = {
       appdir = "~/Applications";
