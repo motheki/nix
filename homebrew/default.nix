@@ -47,6 +47,7 @@
       "raycast"
       "betterdisplay"
       "crossover"
+      "cloudflare-warp"
     ];
     caskArgs = {
       appdir = "~/Applications";
