@@ -22,7 +22,6 @@
       glow
       fd
       uv
-      webtorrent_desktop
       nodePackages.webtorrent-cli
       glab
       nmap
