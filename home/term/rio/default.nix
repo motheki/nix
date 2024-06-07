@@ -12,7 +12,7 @@
       env-vars = [];
       option-as-alt = "Left";
       ignore-selection-foreground-color = false;
-      editor = "nvim";
+      editor = "hx";
       hide-cursor-when-typing = true;
       confirm-before-quit = false;
       navigation = {
