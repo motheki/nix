@@ -18,7 +18,7 @@
         true-color = true;
         bufferline = "multiple";
         insert-final-newline = false;
-        popup-border = "all"
+        popup-border = "all";
       };
     };
   };
