@@ -8,7 +8,7 @@
       pkgs.marksman
     ];
     settings = {
-      theme = "nord-light";
+      theme = "nord light";
       editor = {
         line-number = "relative";
         lsp.display-messages = true;
