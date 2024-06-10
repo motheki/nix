@@ -48,7 +48,6 @@
       "betterdisplay"
       "crossover"
       "cloudflare-warp"
-      "beeper"
     ];
     caskArgs = {
       appdir = "~/Applications";
