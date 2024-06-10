@@ -7,7 +7,7 @@
   nixpkgs.config = {
     allowBroken = true;
     allowUnfree = true;
-  }
+  };
   nix.package = pkgs.nix;
   programs.zsh.enable = true;
   nixpkgs.hostPlatform = "aarch64-darwin";
