@@ -23,7 +23,7 @@
       fd
       uv
       nodePackages.webtorrent-cli
-      webtorrent_desktop
+      #webtorrent_desktop
       #beeper
       glab
       nmap
