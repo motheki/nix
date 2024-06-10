@@ -24,7 +24,7 @@
       uv
       nodePackages.webtorrent-cli
       webtorrent_desktop
-      beepr
+      beeper
       glab
       nmap
       tree
