@@ -52,7 +52,6 @@
     ];
     caskArgs = {
       appdir = "~/Applications";
-      require_sha = true;
     };
   };
 }
