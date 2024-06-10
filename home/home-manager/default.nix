@@ -22,7 +22,7 @@
       glow
       fd
       uv
-      nodePackages.webtorrent-cli
+      #nodePackages.webtorrent-cli
       #webtorrent_desktop
       #beeper
       glab
