@@ -5,7 +5,7 @@
     enable = true;
     settings = {
       git_protocol = "ssh";
-      editor = "hx";
+      #editor = "hx";
       prompt = true;
     };
   };
