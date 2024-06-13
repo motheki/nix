@@ -17,14 +17,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { nix-darwin, home-manager, nixvim, ... }: {
+  outputs = { nix-darwin, home-manager, ... }: {
     darwinConfigurations = {
       "mothekis-macbook-pro" = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [
           ./nix-darwin
           ./homebrew
-          nixvim.homeManagerModules.nixvim
           home-manager.darwinModules.home-manager {
             home-manager = {
               useGlobalPkgs = true;
