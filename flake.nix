@@ -12,18 +12,19 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    motheki-neovim = {
-      url = "github:motheki/nixvim-config";
+    nixvim = {
+      url = "github:motheki/nixvim-config-neovim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { nix-darwin, home-manager, motheki-neovim, ... }: {
+  outputs = { nix-darwin, home-manager, ... }: {
     darwinConfigurations = {
       "mothekis-macbook-pro" = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [
           ./nix-darwin
           ./homebrew
+          nixvim.homeManagerModules.nixvim
           home-manager.darwinModules.home-manager {
             home-manager = {
               useGlobalPkgs = true;
