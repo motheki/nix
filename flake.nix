@@ -23,10 +23,6 @@
       url = "github:homebrew/homebrew-cask";
       flake = false;
     };
-    nixvim-config = {
-      url = "github:motheki/nixvim-config";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
   outputs = { nix-darwin, home-manager, nix-homebrew, ... }: {
     darwinConfigurations = {

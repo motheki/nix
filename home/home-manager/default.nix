@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   programs.home-manager = {
@@ -24,7 +24,6 @@
       uv
       #nodePackages.webtorrent-cli
       #webtorrent_desktop
-      #beeper
       glab
       nmap
       tree
