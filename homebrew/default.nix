@@ -7,15 +7,14 @@
       brewfile = true;
     };
     onActivation = {
-      autoUpdate = true;
+      autoUpdate = false;
       cleanup = "zap";
       extraFlags = ["--verbose"];
-      upgrade = true;
+      upgrade = false;
     };
     taps = [
     ];
     brews = [
-    "mas"
     ];
     masApps = {
     "Pages" = 409201541;
