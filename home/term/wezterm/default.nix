@@ -16,7 +16,7 @@
         if appearance:find("Dark", 1, true) then
           return "ayu"
         else
-          return "ayu-light"
+          return "ayu_light"
         end
       end
       function opacity_for_appearance(appearance)
