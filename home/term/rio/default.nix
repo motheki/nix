@@ -20,8 +20,8 @@
         use-current-path = true;
       };
       adaptive-theme = {
-        light = "nord-light";
-        dark = "nord";
+        light = "ayu_light";
+        dark = "ayu";
       };
       window = {
         decorations = "Buttonless";

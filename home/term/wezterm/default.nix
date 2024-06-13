@@ -14,9 +14,9 @@
       end
       function scheme_for_appearance(appearance)
         if appearance:find("Dark", 1, true) then
-          return "nord"
+          return "ayu"
         else
-          return "nord-light"
+          return "ayu-light"
         end
       end
       function opacity_for_appearance(appearance)
