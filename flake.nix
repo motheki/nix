@@ -12,18 +12,37 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-homebrew = {
+      url = "github:zhaofengli-wip/nix-homebrew";
+    };
+    homebrew-core = {
+      url = "github:homebrew/homebrew-core";
+      flake = false;
+    };
+    homebrew-cask = {
+      url = "github:homebrew/homebrew-cask";
+      flake = false;
+    };
     nixvim-config = {
       url = "github:motheki/nixvim-config";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { nix-darwin, home-manager, ... }: {
+  outputs = { nix-darwin, home-manager, nix-homebrew, ... }: {
     darwinConfigurations = {
       "mothekis-macbook-pro" = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [
           ./nix-darwin
           ./homebrew
+          nix-homebrew.darwinModules.nix-homebrew {
+            nix-homebrew = {
+              enable = true;
+              enableRosetta = true;
+              user = "motheki";
+              autoMigrate = true;
+            };
+          }
           home-manager.darwinModules.home-manager {
             home-manager = {
               useGlobalPkgs = true;
