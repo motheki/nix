@@ -6,16 +6,16 @@
       };
       "com.apple.dock" = {
         autohide = true; 
-        autohide-time-modifier = 0; 
-        autohide-delay = 0; 
-        expose-animation-duration = 0; 
-        springboard-show-duration = 0; 
-        springboard-hide-duration = 0; 
-        springboard-page-duration = 0; 
-        launchanim = false;
-        magnification = false; 
-        mineffect = "Scale"; 
-        minimize-to-application = false; 
+        #autohide-time-modifier = 0; 
+        #autohide-delay = 0; 
+        #expose-animation-duration = 0; 
+        #springboard-show-duration = 0; 
+        #springboard-hide-duration = 0; 
+        #springboard-page-duration = 0; 
+        launchanim = true;
+        magnification = true; 
+        mineffect = "Genie"; 
+        minimize-to-application = true; 
         orientation = "bottom"; 
         windowtabbing = true;
         show-process-indicators = false;
@@ -30,7 +30,7 @@
       };
       "com.apple.finder" = {
         AppleShowAllFiles = true; 
-	DisableAlAnimations = true;
+	      DisableAlAnimations = true;
         FXEnableExtensionChangeWarning = false; 
         FXEnableRemoveFromICloudDriveWarning = false; 
         ShowPathbar = true; 
