@@ -11,5 +11,6 @@
     ./term
     ./shell
     ./darwin-settings
+    ./nixvim
   ];
 }
