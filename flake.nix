@@ -13,11 +13,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixvim = {
-      url = "github:motheki/nixvim-config";
+      url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { nix-darwin, home-manager, ... }: {
+  outputs = { nix-darwin, home-manager, nixvim, ... }: {
     darwinConfigurations = {
       "mothekis-macbook-pro" = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
@@ -30,9 +30,7 @@
               useUserPackages = true;
               verbose = true;
               users.motheki = import ./home;
-              imports = [
-                inputs.nixvim.homeManagerModules.nixvim
-              ];
+
             };
           }
         ];
