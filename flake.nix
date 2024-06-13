@@ -13,7 +13,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixvim = {
-      url = "github:nix-community/nixvim";
+      url = "github:motheki/nixvim-config";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -30,7 +30,9 @@
               useUserPackages = true;
               verbose = true;
               users.motheki = import ./home;
-              programs.nixvim.enable
+              modules = [
+                nixvim.homeManagerModules.nixvim
+              ];
             };
           }
         ];
