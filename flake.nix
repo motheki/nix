@@ -17,7 +17,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { nix-darwin, home-manager, ... }: {
+  outputs = { nix-darwin, home-manager, nixvim, ... }: {
     darwinConfigurations = {
       "mothekis-macbook-pro" = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
