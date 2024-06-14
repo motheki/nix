@@ -2,7 +2,7 @@
   description = "mothkeki's system flake";
   inputs = {
     nixpkgs = {
-      url = "github:NixOS/nixpkgs/master";
+      url = "github:nixos/nixpkgs/master";
     };
     nix-darwin = {
       url = "github:LnL7/nix-darwin/master";
@@ -13,14 +13,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-homebrew = {
-      url = "github:zhaofengli-wip/nix-homebrew";
+      url = "github:zhaofengli-wip/nix-homebrew/main";
     };
     homebrew-core = {
-      url = "github:homebrew/homebrew-core";
+      url = "github:homebrew/homebrew-core/master";
       flake = false;
     };
     homebrew-cask = {
-      url = "github:homebrew/homebrew-cask";
+      url = "github:homebrew/homebrew-cask/master";
       flake = false;
     };
   };

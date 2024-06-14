@@ -3,11 +3,10 @@
 {
   services.nix-daemon.enable = true;
   security.pam.enableSudoTouchIdAuth = true;
-  system.nixpkgsRelease = "24.05"
   programs.zsh.enable = true;
   system.stateVersion = 4;
   nix = {
-    package = pkgs.nix;
+    package = pkgs.nixVersions.latest;
     settings = {
       experimental-features = "nix-command flakes";
     };
