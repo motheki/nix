@@ -3,6 +3,7 @@
 {
   security.pam.enableSudoTouchIdAuth = true;
   programs.zsh.enable = true;
+  nix.useDaemon = true;
   system.stateVersion = 4;
   nix = {
     package = pkgs.nixVersions.latest;
