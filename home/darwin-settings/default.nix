@@ -2,10 +2,10 @@
   targets.darwin  = {
     currentHostDefaults = {
       "com.apple.controlcenter" = {
-        BatteryShowPercentage = true; 
+        BatteryShowPercentage = false; 
       };
       "com.apple.dock" = {
-        autohide = true; 
+        autohide = false; 
         #autohide-time-modifier = 0; 
         #autohide-delay = 0; 
         #expose-animation-duration = 0; 

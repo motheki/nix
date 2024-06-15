@@ -12,7 +12,7 @@
       env-vars = [];
       option-as-alt = "Left";
       ignore-selection-foreground-color = false;
-      #editor = "hx";
+      editor = "hx";
       hide-cursor-when-typing = true;
       confirm-before-quit = false;
       navigation = {
@@ -29,7 +29,7 @@
         height = 600;
         mode = "Windowed";
         foreground-opacity = 1;
-        background-opacity = 0.6;
+        background-opacity = 1;
         blur = true;
       };
 
