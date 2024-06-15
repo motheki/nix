@@ -22,8 +22,6 @@
       glow
       fd
       uv
-      #nodePackages.webtorrent-cli
-      #webtorrent_desktop
       glab
       nmap
       tree

@@ -24,7 +24,8 @@
       flake = false;
     };
   };
-  outputs = { nix-darwin, home-manager, nix-homebrew, ... }: {
+  outputs = {nixpkgs, nix-darwin, home-manager, nix-homebrew, homebrew-core, homebrew-cask, ... }: 
+  {
     darwinConfigurations = {
       "mothekis-macbook-pro" = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
