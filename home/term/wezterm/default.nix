@@ -21,9 +21,9 @@
       end
       function opacity_for_appearance(appearance)
         if appearance:find("Dark") then
-          return 1.00
+          return 0.6
         else
-          return 1.00
+          return 0.75
         end
       end
       function macos_blur_for_appearance(appearance)

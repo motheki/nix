@@ -3,12 +3,12 @@
 {
   programs.helix = {
     enable = true;
-    #defaultEditor = true;
+    defaultEditor = true;
     extraPackages = [
       pkgs.marksman
     ];
     settings = {
-      theme = "ayu_dark";
+      theme = "ayu_light";
       editor = {
         line-number = "relative";
         lsp.display-messages = true;
