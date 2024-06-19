@@ -46,6 +46,7 @@
       "raycast"
       "betterdisplay"
       "crossover"
+      "obs"
       "cloudflare-warp"
     ];
     caskArgs = {

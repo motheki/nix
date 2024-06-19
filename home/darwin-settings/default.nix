@@ -5,7 +5,7 @@
         BatteryShowPercentage = false; 
       };
       "com.apple.dock" = {
-        autohide = true; 
+        autohide = false; 
         autohide-time-modifier = 0.5;
         autohide-delay = 0.2; 
         expose-animation-duration = 0.2; 
