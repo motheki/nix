@@ -5,7 +5,7 @@
     enable = true;
     settings = {
       git_protocol = "ssh";
-      #editor = "hx";
+      editor = "hx";
       prompt = true;
     };
   };
@@ -14,7 +14,7 @@
   };
   programs.git = {
     enable = true;
-    package = pkgs.gitFull;
+    package = pkgs.git;
     delta = {
       enable = true;
     };
