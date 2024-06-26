@@ -29,7 +29,7 @@
         height = 600;
         mode = "Windowed";
         foreground-opacity = 1;
-        background-opacity = 1;
+        background-opacity = 0.6;
         blur = true;
       };
 
