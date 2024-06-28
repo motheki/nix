@@ -21,7 +21,7 @@
       end
       function opacity_for_appearance(appearance)
         if appearance:find("Dark") then
-          return 0.75
+          return 0.5
         else
           return 0.8
         end

@@ -21,6 +21,8 @@
       duf 
       glow
       fd
+      openssh_hpn
+      curlFull
       uv
       glab
       nmap
