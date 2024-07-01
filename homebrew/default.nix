@@ -47,6 +47,7 @@
       "betterdisplay"
       "crossover"
       "obs"
+      "steam"
       "cloudflare-warp"
     ];
     caskArgs = {
