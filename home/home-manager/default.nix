@@ -31,7 +31,6 @@
       fastfetch
       hyperfine
       iina
-      openvpn
     ];
   };
 }

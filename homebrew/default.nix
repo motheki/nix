@@ -64,6 +64,7 @@
       "obs"
       "steam"
       "cloudflare-warp"
+      "openvpn-connect"
     ];
     caskArgs = {
       appdir = "~/Applications";
