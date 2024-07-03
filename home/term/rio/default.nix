@@ -24,7 +24,7 @@
         dark = "ayu";
       };
       window = {
-        decorations = "Buttonless";
+        decorations = "Disabled";
         width = 1000;
         height = 600;
         mode = "Windowed";
