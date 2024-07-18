@@ -24,6 +24,7 @@
       openssh_hpn
       curlFull
       uv
+      pueue
       glab
       nmap
       tree
