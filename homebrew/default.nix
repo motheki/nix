@@ -26,8 +26,6 @@
       "Play" = 1596506190;
       "Testflight" = 899247664;
       "Wipr" = 1320666476;
-      "Collections" = 1568395334;
-      "HacKit" = 1549557075;
       "Microsoft Remote Desktop" = 1295203466;
       "MusicMatch" = 1596146219;
       "DeArrow" = 6451469297;
@@ -58,7 +56,6 @@
     };
     casks = [
       "arc"
-      "vmware-fusion"
       "discord@canary"
       "raycast"
       "betterdisplay"
@@ -66,11 +63,9 @@
       "obs"
       "steam"
       "cloudflare-warp"
-      "tunnelblick@beta"
-      "openvpn-connect"
+      "tunnelblick"
     ];
     caskArgs = {
-      appdir = "~/Applications";
     };
   };
 }
