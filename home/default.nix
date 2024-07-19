@@ -8,7 +8,7 @@
     ./helix
     ./ssh
     ./git
-    ./term
+    ./term/wezterm
     ./shell
     ./darwin-settings
   ];

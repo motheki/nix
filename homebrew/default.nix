@@ -25,9 +25,12 @@
       "Noir" = 1592917505;
       "Play" = 1596506190;
       "Testflight" = 899247664;
+      "Wipr" = 1320666476;
+      "Collections" = 1568395334;
+      "HacKit" = 1549557075;
+      "Microsoft Remote Desktop" = 1295203466;
       "MusicMatch" = 1596146219;
       "DeArrow" = 6451469297;
-      "AdGaurd for Safari" = 1440147259;
       "Vinegar" = 1591303229;
       "Spring" = 1508706541;
       "Evo" = 6475402655;
@@ -43,7 +46,6 @@
       "Infuse" = 1136220934;
       "Sink It for Reddit" = 6449873635;
       "Baking Soda" = 1601151613;
-      "Lire" = 1482527526;
       "HacKit" = 1549557075;
       "Solid Notes" = 6448245914;
       "Pages" = 409201541;
@@ -65,6 +67,7 @@
       "steam"
       "cloudflare-warp"
       "tunnelblick@beta"
+      "openvpn-connect"
     ];
     caskArgs = {
       appdir = "~/Applications";
