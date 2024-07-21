@@ -1,5 +1,6 @@
 {
   description = "mothkeki's system flake";
+
   inputs = {
     nixpkgs = {
       url = "github:nixos/nixpkgs/master";
@@ -27,8 +28,20 @@
       url = "github:nix-community/nixvim/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts/main";
+      inputs.nixpkgs-lib.follows = "nixpkgs";
+    };
+    devshell = {
+      url = "github:numtide/devshell/main";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nur = {
+      url = "github:nix-community/NUR/master";
+    };
   };
-  outputs = {nixpkgs, nix-darwin, home-manager, nix-homebrew, homebrew-core, homebrew-cask, nixvim, ... }: 
+
+  outputs = {self, nixpkgs, nix-darwin, home-manager, nix-homebrew, homebrew-core, homebrew-cask, nixvim, ... }@inputs: 
   {
     darwinConfigurations = {
       "mothekis-macbook-pro" = nix-darwin.lib.darwinSystem {

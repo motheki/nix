@@ -21,7 +21,7 @@
       duf 
       glow
       fd
-      openssh_hpn
+      openssh
       curlFull
       uv
       pueue
