@@ -32,6 +32,7 @@
       fastfetch
       hyperfine
       iina
+      zoom-us
     ];
   };
 }

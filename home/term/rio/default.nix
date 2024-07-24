@@ -24,7 +24,7 @@
         dark = "ayu";
       };
       window = {
-        decorations = "Disabled";
+        decorations = "Transparent";
         width = 1000;
         height = 600;
         mode = "Windowed";
