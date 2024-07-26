@@ -21,7 +21,6 @@
       duf 
       glow
       fd
-      openssh
       curlFull
       uv
       pueue
