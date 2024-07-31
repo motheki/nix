@@ -20,7 +20,7 @@
         use-current-path = true;
       };
       adaptive-theme = {
-        light = "ayu_light";
+        light = "ayu";
         dark = "ayu";
       };
       window = {

@@ -6,16 +6,16 @@
       };
       "com.apple.dock" = {
         autohide = false; 
-        autohide-time-modifier = 0.5;
-        autohide-delay = 0.2; 
-        expose-animation-duration = 0.2; 
-        springboard-show-duration = 0.2; 
-        springboard-hide-duration = 0.2; 
-        springboard-page-duration = 0.5;
-        launchanim = true;
-        magnification = true; 
+        autohide-time-modifier = 0;
+        autohide-delay = 0; 
+        expose-animation-duration = 0; 
+        springboard-show-duration = 0; 
+        springboard-hide-duration = 0; 
+        springboard-page-duration = 0;
+        launchanim = false;
+        magnification = false; 
         mineffect = "suck"; 
-        minimize-to-application = true; 
+        minimize-to-application = false; 
         orientation = "bottom"; 
         windowtabbing = true;
         show-process-indicators = false;
