@@ -18,6 +18,7 @@
       xcp
       rm-improved
       dust
+      webtorrent_desktop
       duf 
       glow
       fd
