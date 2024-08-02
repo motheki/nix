@@ -39,6 +39,8 @@
         disable-renderer-when-unfocused = true;
       };
 
+      use-fork = true;
+
       fonts = {
         size = 14.0;
         extras = [];

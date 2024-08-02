@@ -48,7 +48,6 @@
         system = "aarch64-darwin";
         modules = [
           ./nix-darwin
-          ./homebrew
           nix-homebrew.darwinModules.nix-homebrew {
             nix-homebrew = {
               enable = true;
