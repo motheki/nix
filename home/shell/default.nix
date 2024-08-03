@@ -79,7 +79,7 @@
   programs.btop = {
     enable = true;
     settings = {
-      color_theme = "ayu";
+      color_theme = "ayu_light";
       theme_background = false;
     };
   };

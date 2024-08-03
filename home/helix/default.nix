@@ -8,7 +8,7 @@
       pkgs.marksman
     ];
     settings = {
-      theme = "ayu_dark";
+      theme = "ayu_light";
       editor = {
         line-number = "relative";
         lsp.display-messages = true;
