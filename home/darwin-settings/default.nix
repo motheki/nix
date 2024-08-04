@@ -7,7 +7,7 @@
       "com.apple.dock" = {
         autohide = true; 
         autohide-time-modifier = 0.2;
-        autohide-delay = 0.5; 
+        autohide-delay = 0.2; 
         expose-animation-duration = 0.2; 
         springboard-show-duration = 0.2; 
         springboard-hide-duration = 0.2; 
