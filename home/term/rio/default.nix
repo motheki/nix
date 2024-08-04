@@ -28,7 +28,7 @@
         width = 1000;
         height = 600;
         mode = "Windowed";
-        foreground-opacity = 1;
+        foreground-opacity = 0.5;
         background-opacity = 0.6;
         blur = true;
       };

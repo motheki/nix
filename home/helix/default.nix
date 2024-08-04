@@ -6,6 +6,10 @@
     defaultEditor = true;
     extraPackages = [
       pkgs.marksman
+      pkgs.nil
+      pkgs.ruff
+      pkgs.ruff-lsp
+      pkgs.nodePackages_latest.prettier
     ];
     settings = {
       theme = "ayu_light";
