@@ -12,7 +12,6 @@
       warn-dirty = false;
       substituters = [
         "https://cache.nixos.org"
-        "https://cuda-maintainers.cachix.org"
         "https://nix-community.cachix.org"
       ];
 
@@ -40,7 +39,7 @@
       autoUpdate = false;
       cleanup = "zap";
       extraFlags = ["--verbose"];
-      upgrade = false;
+      upgrade = true;
     };
     taps = [
     ];
@@ -93,4 +92,7 @@
     caskArgs = {
     };
   };
+  fonts.packages = [
+    pkgs.ibm-plex
+  ];
 }
