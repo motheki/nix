@@ -7,12 +7,16 @@
     extraPackages = [
       pkgs.marksman
       pkgs.nil
+      pkgs.nixpkgs-fmt
       pkgs.ruff
       pkgs.ruff-lsp
       pkgs.nodePackages_latest.prettier
+      pkgs.zls
+      pkgs.typescript-language-server
+      pkgs.nodePackages_latest.tailwindcss
     ];
     settings = {
-      theme = "ayu_light";
+      theme = "ayu_dark_clear";
       editor = {
         line-number = "relative";
         lsp.display-messages = true;
