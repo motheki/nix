@@ -24,24 +24,9 @@
       url = "github:homebrew/homebrew-cask/master";
       flake = false;
     };
-    nixvim = {
-      url = "github:nix-community/nixvim/main";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    flake-parts = {
-      url = "github:hercules-ci/flake-parts/main";
-      inputs.nixpkgs-lib.follows = "nixpkgs";
-    };
-    devshell = {
-      url = "github:numtide/devshell/main";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nur = {
-      url = "github:nix-community/NUR/master";
-    };
   };
 
-  outputs = {self, nixpkgs, nix-darwin, home-manager, nix-homebrew, homebrew-core, homebrew-cask, nixvim, ... }@inputs: 
+  outputs = {self, nixpkgs, nix-darwin, home-manager, nix-homebrew, homebrew-core, homebrew-cask, ... }@inputs: 
   {
     darwinConfigurations = {
       "mothekis-macbook-pro" = nix-darwin.lib.darwinSystem {
@@ -62,11 +47,6 @@
               useUserPackages = true;
               verbose = true;
               users.motheki = import ./home;
-            };
-          }
-          nixvim.nixDarwinModules.nixvim {
-            programs.nixvim = {
-              enable = true;
             };
           }
         ];
