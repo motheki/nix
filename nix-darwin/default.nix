@@ -54,7 +54,7 @@
       "Flighty" = 1358823008;
       "Play" = 1596506190;
       "Testflight" = 899247664;
-      "Wipr" = 1320666476;
+      "Adguard for Safari" = 6451469297;
       "Microsoft Remote Desktop" = 1295203466;
       "MusicMatch" = 1596146219;
       "DeArrow" = 6451469297;
