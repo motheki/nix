@@ -73,7 +73,6 @@
       "Pages" = 409201541;
       "Developer" = 640199958;
       "iMovie" = 408981434;
-      "Hush" = 1544743900;
       "Prime Video" = 545519333;
       "MusicHarbor" = 1440405750;
     };
@@ -83,10 +82,10 @@
       "raycast"
       "betterdisplay"
       "crossover"
-      "obs"
       "steam"
       "cloudflare-warp"
       "tunnelblick"
+      "obs"
     ];
     caskArgs = {
     };

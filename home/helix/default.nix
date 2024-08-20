@@ -15,9 +15,10 @@
       nodePackages_latest.typescript-language-server
       nodePackages_latest.tailwindcss
       helix-gpt
+      spectral-language-server
     ];
     settings = {
-      theme = "ayu_dark_clear";
+      theme = "ayu_light_clear";
       editor = {
         line-number = "relative";
         lsp.display-messages = true;

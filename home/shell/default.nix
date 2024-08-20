@@ -28,7 +28,7 @@
     enable = true;
     extraPackages = with pkgs.bat-extras; [ batman batgrep prettybat ];
     config = {
-      theme = "Nord";
+      theme = "Github";
     };
   };
   programs.direnv = {
@@ -55,6 +55,7 @@
   programs.nushell = {
     enable = true;
     package = pkgs.nushell;
+    extraConfig = "$env.config = {show_banner: false}";
   };
   programs.zoxide = {
     enable = true;
@@ -90,6 +91,7 @@
     autosuggestion = {
       enable = true;
     };
+    history.ignoreAllDups = true;
     defaultKeymap = "viins";
     syntaxHighlighting = {
       enable = true;

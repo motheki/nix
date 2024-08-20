@@ -16,6 +16,10 @@
     package = pkgs.git;
     delta = {
       enable = true;
+      options = {
+        line-numbers = true;
+        side-by-side = true;
+      };
     };
     lfs = {
       enable = true;
