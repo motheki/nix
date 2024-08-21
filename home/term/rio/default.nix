@@ -12,7 +12,10 @@
       env-vars = [];
       option-as-alt = "Left";
       ignore-selection-foreground-color = false;
-      editor = "hx";
+      editor = {
+        program = "hx";
+        args =[];
+      };
       hide-cursor-when-typing = true;
       confirm-before-quit = false;
       navigation = {
@@ -28,8 +31,8 @@
         width = 1000;
         height = 600;
         mode = "Windowed";
-        opacity = 0.4;
-        blur = true;
+        opacity = 1;
+        blur = false;
       };
 
       renderer = {

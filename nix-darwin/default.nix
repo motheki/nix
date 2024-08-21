@@ -69,7 +69,6 @@
       "Infuse" = 1136220934;
       "Sink It for Reddit" = 6449873635;
       "Baking Soda" = 1601151613;
-      "HacKit" = 1549557075;
       "Pages" = 409201541;
       "Developer" = 640199958;
       "iMovie" = 408981434;

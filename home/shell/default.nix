@@ -55,7 +55,8 @@
   programs.nushell = {
     enable = true;
     package = pkgs.nushell;
-    extraConfig = "$env.config = {show_banner: false}";
+    extraConfig = "$env.config = {show_banner: false, edit_mode: vi}";
+    extraEnv = "$env.EDITOR = hx";
   };
   programs.zoxide = {
     enable = true;
