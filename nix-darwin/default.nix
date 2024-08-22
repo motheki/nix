@@ -1,4 +1,4 @@
-{ pkgs, ... }: 
+{ pkgs, ... }:
 
 {
   security.pam.enableSudoTouchIdAuth = true;
@@ -10,10 +10,8 @@
     settings = {
       experimental-features = "nix-command flakes";
       warn-dirty = false;
-      substituters = [
-        "https://cache.nixos.org"
-        "https://nix-community.cachix.org"
-      ];
+      substituters =
+        [ "https://cache.nixos.org" "https://nix-community.cachix.org" ];
       trusted-public-keys = [
         "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
@@ -31,19 +29,15 @@
   };
   homebrew = {
     enable = true;
-    global = {
-      brewfile = true;
-    };
+    global = { brewfile = true; };
     onActivation = {
       autoUpdate = false;
       cleanup = "zap";
-      extraFlags = ["--verbose"];
+      extraFlags = [ "--verbose" ];
       upgrade = true;
     };
-    taps = [
-    ];
-    brews = [
-    ];
+    taps = [ ];
+    brews = [ ];
     masApps = {
       "Numbers" = 409203825;
       "Keynote" = 409183694;
@@ -86,10 +80,7 @@
       "tunnelblick"
       "obs"
     ];
-    caskArgs = {
-    };
+    caskArgs = { };
   };
-  fonts.packages = [
-    pkgs.ibm-plex
-  ];
+  fonts.packages = [ pkgs.ibm-plex ];
 }

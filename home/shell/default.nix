@@ -27,56 +27,32 @@
   programs.bat = {
     enable = true;
     extraPackages = with pkgs.bat-extras; [ batman batgrep prettybat ];
-    config = {
-      theme = "Github";
-    };
+    config = { theme = "Github"; };
   };
   programs.direnv = {
     enable = true;
-    nix-direnv = {
-      enable = true;
-    };
+    nix-direnv = { enable = true; };
   };
-  programs.skim = {
-    enable = true;
-  };
+  programs.skim = { enable = true; };
   programs.eza = {
     enable = true;
-    extraOptions = [
-      "--icons=always"
-      "--classify=always"
-      "--color=always"
-      "--all"
-    ];
+    extraOptions =
+      [ "--icons=always" "--classify=always" "--color=always" "--all" ];
   };
-  programs.ripgrep = {
-    enable = true;
-  };
+  programs.ripgrep = { enable = true; };
   programs.nushell = {
     enable = true;
     package = pkgs.nushell;
     extraConfig = "$env.config = {show_banner: false, edit_mode: vi}";
     extraEnv = "$env.EDITOR = 'hx'";
   };
-  programs.zoxide = {
-    enable = true;
-  };
-  programs.starship = {
-    enable = true;
-  };
-  programs.thefuck = {
-    enable = true;
-  };
-  programs.jq = {
-    enable = true;
-  };
+  programs.zoxide = { enable = true; };
+  programs.starship = { enable = true; };
+  programs.thefuck = { enable = true; };
+  programs.jq = { enable = true; };
   programs.tealdeer = {
     enable = true;
-    settings = {
-      updates = {
-        auto_update = true;
-      };
-    };
+    settings = { updates = { auto_update = true; }; };
   };
   programs.btop = {
     enable = true;
@@ -89,13 +65,9 @@
     enable = true;
     enableVteIntegration = true;
     autocd = true;
-    autosuggestion = {
-      enable = true;
-    };
+    autosuggestion = { enable = true; };
     history.ignoreAllDups = true;
     defaultKeymap = "viins";
-    syntaxHighlighting = {
-      enable = true;
-    };
+    syntaxHighlighting = { enable = true; };
   };
 }

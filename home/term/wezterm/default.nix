@@ -1,11 +1,9 @@
 { ... }:
 
-
 {
   programs.wezterm = {
     enable = true;
-    extraConfig = 
-    ''
+    extraConfig = ''
       function get_appearance()
         if wezterm.gui then
           return wezterm.gui.get_appearance()

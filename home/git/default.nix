@@ -1,4 +1,4 @@
-{ pkgs, ... }: 
+{ pkgs, ... }:
 
 {
   programs.gh = {
@@ -8,9 +8,7 @@
       prompt = true;
     };
   };
-  programs.gh-dash = {
-    enable = true;
-  };
+  programs.gh-dash = { enable = true; };
   programs.git = {
     enable = true;
     package = pkgs.git;
@@ -21,9 +19,7 @@
         side-by-side = true;
       };
     };
-    lfs = {
-      enable = true;
-    };
+    lfs = { enable = true; };
     userName = "motheki";
     userEmail = "motheki@icloud.com";
   };
@@ -34,7 +30,5 @@
       trim = true;
     };
   };
-  programs.gitui = {
-    enable = true;
-  };
+  programs.gitui = { enable = true; };
 }

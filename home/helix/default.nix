@@ -7,7 +7,7 @@
     extraPackages = with pkgs; [
       marksman
       nil
-      nixpkgs-fmt
+      nixfmt-rfc-style
       ruff
       nodePackages_latest.prettier
       zls
@@ -19,23 +19,23 @@
     languages = {
       language-server.ruff = with pkgs.ruff; {
         command = "ruff";
-        args = ["server"];
+        args = [ "server" ];
       };
       language = [
         {
           name = "zig";
           auto-format = true;
-          language-servers = ["zls"];
+          language-servers = [ "zls" ];
         }
         {
           name = "nix";
           auto-format = true;
-          language-servers = ["nil" "nixkpgs-fmt"];
+          language-servers = [ "nil" "nixfmt-rfc-style" ];
         }
         {
           name = "python";
           auto-format = true;
-          language-servers = ["ruff"];
+          language-servers = [ "ruff" ];
         }
       ];
     };

@@ -1,25 +1,18 @@
 { pkgs, ... }:
 
 {
-  programs.home-manager = {
-    enable = true;
-  };
+  programs.home-manager = { enable = true; };
   home = {
     stateVersion = "24.11";
-    sessionVariables = {
-    };
-    file = {
-    };
-    sessionPath = [
-      "/opt/homebrew/bin"
-      "/opt/homebrew/Cellar/"
-    ];
+    sessionVariables = { };
+    file = { };
+    sessionPath = [ "/opt/homebrew/bin" "/opt/homebrew/Cellar/" ];
     packages = with pkgs; [
       xcp
       rm-improved
       dust
       webtorrent_desktop
-      duf 
+      duf
       glow
       fd
       curlFull

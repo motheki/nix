@@ -1,4 +1,4 @@
-{ ... }: 
+{ ... }:
 
 {
   programs.rio = {
@@ -9,7 +9,7 @@
       padding-x = 10.0;
       cursor = "|";
       scroll-multiplier = 1.0;
-      env-vars = [];
+      env-vars = [ ];
       option-as-alt = "Left";
       ignore-selection-foreground-color = false;
       hide-cursor-when-typing = true;
@@ -41,7 +41,7 @@
 
       fonts = {
         size = 14.0;
-        extras = [];
+        extras = [ ];
         regular = {
           family = "CommitMonoMotheki";
           weight = 400;

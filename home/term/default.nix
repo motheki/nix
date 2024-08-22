@@ -1,6 +1,1 @@
-{
-  imports = [
-    ./wezterm
-    ./rio
-  ];
-}
+{ imports = [ ./wezterm ./rio ]; }
