@@ -21,14 +21,26 @@
         command = "ruff";
         args = ["server"];
       };
-      language = [{
-        name = "python";
-        auto-format = true;
-        language-servers = ["ruff"];
-      }];
+      language = [
+        {
+          name = "zig";
+          auto-format = true;
+          language-servers = ["zls"];
+        }
+        {
+          name = "nix";
+          auto-format = true;
+          language-servers = ["nil" "nixkpgs-fmt"];
+        }
+        {
+          name = "python";
+          auto-format = true;
+          language-servers = ["ruff"];
+        }
+      ];
     };
     settings = {
-      theme = "ayu_dark_clear";
+      theme = "ayu_light_clear";
       editor = {
         line-number = "relative";
         lsp.display-messages = true;
