@@ -11,10 +11,11 @@
       experimental-features = "nix-command flakes";
       warn-dirty = false;
       substituters =
-        [ "https://cache.nixos.org" "https://nix-community.cachix.org" ];
+        [ "https://cache.nixos.org" "https://nix-community.cachix.org" "https://nushell-nightly.cachix.org" ];
       trusted-public-keys = [
         "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+        "nushell-nightly.cachix.org-1:nLwXJzwwVmQ+fLKD6aH6rWDoTC73ry1ahMX9lU87nrc="
       ];
     };
   };
@@ -42,7 +43,9 @@
       "Numbers" = 409203825;
       "Keynote" = 409183694;
       "MusicSmart" = 1512195368;
+      "Evo" = 6475402655;
       "Mona" = 1659154653;
+      "imgpls" = 6639617400;
       "MusicBox" = 1614730313;
       "Noir" = 1592917505;
       "Flighty" = 1358823008;
