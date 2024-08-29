@@ -36,8 +36,9 @@
   programs.skim = { enable = true; };
   programs.eza = {
     enable = true;
+    icons = true;
     extraOptions =
-      [ "--icons=always" "--classify=always" "--color=always" "--all" ];
+      [ "--classify=always" "--color=always" "--all" ];
   };
   programs.ripgrep = { enable = true; };
   programs.nushell = {

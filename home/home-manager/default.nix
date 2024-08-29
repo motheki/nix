@@ -5,6 +5,8 @@
   home = {
     stateVersion = "24.11";
     sessionVariables = { };
+    shellAliases = {
+    };
     file = { };
     sessionPath = [ "/opt/homebrew/bin" "/opt/homebrew/Cellar/" ];
     packages = with pkgs; [
