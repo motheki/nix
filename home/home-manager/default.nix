@@ -13,12 +13,13 @@
       xcp
       rm-improved
       dust
+      jless
       webtorrent_desktop
+      vivid
       duf
       glow
       fd
       curlFull
-      uv
       pueue
       glab
       nmap

@@ -44,7 +44,7 @@
   programs.nushell = {
     enable = true;
     package = pkgs.nushell;
-    extraConfig = "$env.config = {show_banner: false, edit_mode: vi}";
+    extraConfig = "$env.config = {show_banner: false, edit_mode: vi}; $env.LS_COLORS = (vivid generate molokai | str trim); let config = {use_ls_colors: true}";
     extraEnv = "$env.EDITOR = 'hx'";
   };
   programs.zoxide = { enable = true; };
@@ -70,5 +70,6 @@
     history.ignoreAllDups = true;
     defaultKeymap = "viins";
     syntaxHighlighting = { enable = true; };
+    initExtra = "export LS_COLORS='$(vivid generate ayu)'";
   };
 }

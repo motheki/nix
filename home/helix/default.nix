@@ -9,6 +9,7 @@
       nil
       nixfmt-rfc-style
       ruff
+      pylyzer
       nodePackages_latest.prettier
       zls
       nodePackages_latest.typescript-language-server
@@ -17,9 +18,21 @@
       spectral-language-server
     ];
     languages = {
-      language-server.ruff = with pkgs.ruff; {
+      language-server.ruff =  {
         command = "ruff";
         args = [ "server" ];
+        config = {
+          settings = {
+            lineLength = 80;
+            lint = {
+              select = ["E4" "E7"];
+              preview = true;
+            };
+            format = {
+              preview = true;
+            };
+          };
+        };
       };
       language = [
         {
@@ -35,7 +48,7 @@
         {
           name = "python";
           auto-format = true;
-          language-servers = [ "ruff" ];
+          language-servers = [ "ruff" "pylyzer" ];
         }
       ];
     };
