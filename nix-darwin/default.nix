@@ -50,8 +50,6 @@
       "Flighty" = 1358823008;
       "Play" = 1596506190;
       "Testflight" = 899247664;
-      "Adguard for Safari" = 6451469297;
-      "Microsoft Remote Desktop" = 1295203466;
       "MusicMatch" = 1596146219;
       "DeArrow" = 6451469297;
       "Vinegar" = 1591303229;
@@ -60,11 +58,10 @@
       "Homecoming for Mastodon" = 1666139593;
       "Collections" = 1568395334;
       "WhatsApp" = 310633997;
-      "Revita" = 1633036568;
       "Userscripts-Mac-App" = 1463298887;
       "Infuse" = 1136220934;
       "Sink It for Reddit" = 6449873635;
-      "Baking Soda" = 1601151613;
+      "Reeder." = 6475002485;
       "Pages" = 409201541;
       "Developer" = 640199958;
       "iMovie" = 408981434;

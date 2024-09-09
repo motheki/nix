@@ -12,6 +12,7 @@
       pylyzer
       nodePackages_latest.prettier
       zls
+      gopls
       nodePackages_latest.typescript-language-server
       nodePackages_latest.tailwindcss
       helix-gpt
@@ -49,6 +50,11 @@
           name = "python";
           auto-format = true;
           language-servers = [ "ruff" "pylyzer" ];
+        }
+        {
+          name = "go";
+          auto-format = true;
+          language-servers = [ "gopls" ];
         }
       ];
     };
