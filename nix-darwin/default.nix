@@ -58,7 +58,6 @@
       "Homecoming for Mastodon" = 1666139593;
       "Collections" = 1568395334;
       "WhatsApp" = 310633997;
-      "Userscripts-Mac-App" = 1463298887;
       "Infuse" = 1136220934;
       "Sink It for Reddit" = 6449873635;
       "Reeder." = 6475002485;
@@ -73,9 +72,7 @@
       "discord@canary"
       "raycast"
       "betterdisplay"
-      "crossover"
       "steam"
-      "cloudflare-warp"
       "tunnelblick"
       "obs"
     ];
