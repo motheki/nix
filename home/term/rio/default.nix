@@ -18,19 +18,18 @@
         mode = "Plain";
         use-current-path = true;
       };
-      adaptive-theme = {
-        light = "ayu_light";
-        dark = "ayu";
-      };
       window = {
         decorations = "Buttonless";
         width = 1000;
         height = 600;
         mode = "Windowed";
-        opacity = 0.5;
+        opacity = 0.25;
         blur = true;
       };
-
+      adaptive-theme = {
+        light = "ayu_light";
+        dark = "ayu";
+      };
       renderer = {
         performance = "High";
         backend = "Metal";

@@ -59,7 +59,7 @@
       ];
     };
     settings = {
-      theme = "ayu_dark_clear";
+      theme = "ayu_light_clear";
       editor = {
         line-number = "relative";
         lsp.display-messages = true;
