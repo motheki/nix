@@ -64,6 +64,7 @@
       "Pages" = 409201541;
       "Developer" = 640199958;
       "iMovie" = 408981434;
+      "Adguard for Safari" =1440147259;
       "Prime Video" = 545519333;
       "MusicHarbor" = 1440405750;
     };
