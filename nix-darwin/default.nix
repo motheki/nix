@@ -9,9 +9,12 @@
     package = pkgs.nixVersions.latest;
     settings = {
       experimental-features = "nix-command flakes";
-      warn-dirty = false;
-      substituters =
-        [ "https://cache.nixos.org" "https://nix-community.cachix.org" "https://nushell-nightly.cachix.org" ];
+      warn-dirty = true;
+      substituters = [ 
+        "https://cache.nixos.org"
+        "https://nix-community.cachix.org"
+        "https://nushell-nightly.cachix.org"
+      ];
       trusted-public-keys = [
         "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
@@ -30,9 +33,11 @@
   };
   homebrew = {
     enable = true;
-    global = { brewfile = true; };
+    global = { 
+      brewfile = true;
+    };
     onActivation = {
-      autoUpdate = false;
+      autoUpdate = true;
       cleanup = "zap";
       extraFlags = [ "--verbose" ];
       upgrade = true;
@@ -63,8 +68,6 @@
       "Reeder." = 6475002485;
       "Pages" = 409201541;
       "Developer" = 640199958;
-      "iMovie" = 408981434;
-      "Adguard for Safari" =1440147259;
       "Prime Video" = 545519333;
       "MusicHarbor" = 1440405750;
     };
@@ -79,5 +82,7 @@
     ];
     caskArgs = { };
   };
-  fonts.packages = [ pkgs.ibm-plex ];
+  fonts.packages = with pkgs;[ 
+    ibm-plex
+  ];
 }
