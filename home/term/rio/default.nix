@@ -7,7 +7,10 @@
       blinking-cursor = true;
       line-height = 1.0;
       padding-x = 10.0;
-      cursor = "|";
+      cursor = {
+        shape = "beam";
+        blinking = true;
+      };
       scroll-multiplier = 1.0;
       env-vars = [ ];
       option-as-alt = "Left";
