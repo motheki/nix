@@ -78,6 +78,7 @@
       "betterdisplay"
       "steam"
       "tunnelblick"
+      "cloudflare-warp"
       "obs"
     ];
     caskArgs = { };

@@ -17,6 +17,7 @@
       webtorrent_desktop
       vivid
       duf
+      tarlz
       glow
       fd
       curlFull
