@@ -47,22 +47,22 @@
         regular = {
           family = "CommitMonoMotheki";
           weight = 400;
-          style = "Regular";
+          style = "Normal";
         };
         italic = {
           family = "CommitMonoMotheki";
           weight = 400;
-          style = "Regular Italic";
+          style = "Italic";
         };
         bold = {
           family = "CommitMonoMotheki";
           weight = 400;
-          style = "Bold";
+          style = "Normal";
         };
         bold-italic = {
           family = "CommitMonoMotheki";
           weight = 400;
-          style = "Bold Italic";
+          style = "Italic";
         };
       };
       developer = {
