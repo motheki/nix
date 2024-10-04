@@ -61,14 +61,52 @@
     settings = {
       theme = "ayu_dark_clear";
       editor = {
+        cursor-shape = {
+          insert = "bar";
+          normal = "block";
+          select = "underline";
+        };
+        auto-save = {
+          focus-lost = true;
+          after-delay ={
+            enable = true;
+          };
+        };
+        whitespace ={
+          render = "all";
+          characters = {
+            space = "·";
+            nbsp = "⍽";
+            nnbsp = "␣";
+            tab = "→";
+            newline = "⏎";
+            tabpad = "·";
+          };
+        };
+        indent-guides = {
+          render = true;
+          character = "▏"; # Some characters that work well: "▏", "┆", "┊", "⸽"
+          skip-levels = 1;
+        };
+        soft-wrap = {
+          enable = true;
+        };
+        scrolloff = 2;
+        cursorline = true;
+        cursorcolumn = true;
         line-number = "relative";
-        lsp.display-messages = true;
-        lsp.display-inlay-hints = true;
-        lsp.snippets = true;
-        cursor-shape.insert = "bar";
+        smart-tab = {
+          enable = true;
+        };
+        color-modes = true;
+        lsp = {
+          display-messages = true;
+          display-inlay-hints = true;
+          snippets = true;
+        };
         true-color = true;
         bufferline = "multiple";
-        insert-final-newline = false;
+        insert-final-newline = true;
         popup-border = "all";
       };
     };
