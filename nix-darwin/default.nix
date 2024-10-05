@@ -59,6 +59,7 @@
       "DeArrow" = 6451469297;
       "Vinegar" = 1591303229;
       "Spring" = 1508706541;
+      "Wipr" = 1320666476;
       "SponsorBlock" = 1573461917;
       "Homecoming for Mastodon" = 1666139593;
       "Collections" = 1568395334;

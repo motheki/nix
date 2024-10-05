@@ -26,7 +26,7 @@
         width = 1000;
         height = 600;
         mode = "Windowed";
-        opacity = 0.25;
+        opacity = 0.15;
         blur = true;
       };
       adaptive-theme = {
