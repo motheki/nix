@@ -7,15 +7,21 @@
     extraPackages = with pkgs; [
       marksman
       nil
+      nixd
       nixfmt-rfc-style
       ruff
-      pylyzer
+      astro-language-server
       nodePackages_latest.prettier
+      bash-language-server
       zls
+      pylyzer
       gopls
       nodePackages_latest.typescript-language-server
+      nodePackages_latest.vscode-json-languageserver
       nodePackages_latest.tailwindcss
       helix-gpt
+      yaml-language-server
+      rust-analyzer
       spectral-language-server
     ];
     languages = {
@@ -37,19 +43,49 @@
       };
       language = [
         {
+          name = "astro";
+          auto-format = true;
+          language-servers = [ "astro-language-server" ];
+        }
+        {
+          name = "json";
+          auto-format = true;
+          language-servers = [ "nodePackages_latest.vscode-json-languageserver" ];
+        }
+        {
+          name = "css";
+          auto-format = true;
+          language-servers = [ "nodePackages_latest.tailwindcss" ];
+        }
+        {
+          name = "rust";
+          auto-format = true;
+          language-servers = [ "rust-analyzer" ];
+        }
+        {
+          name = "yaml";
+          auto-format = true;
+          language-servers = [ "yaml-language-server" ];
+        }
+        {
           name = "zig";
           auto-format = true;
           language-servers = [ "zls" ];
         }
         {
+          name = "bash";
+          auto-format = true;
+          language-servers = [ "bash-language-server" ];
+        }
+        {
           name = "nix";
           auto-format = true;
-          language-servers = [ "nil" "nixfmt-rfc-style" ];
+          language-servers = [ "nil" "nixfmt-rfc-style" "nixd" ];
         }
         {
           name = "python";
           auto-format = true;
-          language-servers = [ "ruff" "pylyzer" ];
+          language-servers = [ "ruff" "pylyzer"];
         }
         {
           name = "go";

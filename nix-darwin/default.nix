@@ -43,7 +43,7 @@
       upgrade = true;
     };
     taps = [ ];
-    brews = [ ];
+    brews = [];
     masApps = {
       "Numbers" = 409203825;
       "Keynote" = 409183694;

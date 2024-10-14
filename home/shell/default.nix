@@ -9,6 +9,9 @@
       enter_accept = true;
     };
   };
+  programs.carapace = {
+    enable = true;
+  };
   programs.yt-dlp = {
     enable = true;
     settings = {
@@ -27,7 +30,7 @@
   programs.bat = {
     enable = true;
     extraPackages = with pkgs.bat-extras; [ batman batgrep prettybat ];
-    config = { theme = "Github"; };
+    config = { theme = "Dracula"; };
   };
   programs.direnv = {
     enable = true;
@@ -151,9 +154,15 @@
       $env.LS_COLORS = (vivid generate ayu | str trim);
       let config = {
         use_ls_colors: true
-      }
+      };
+      source ~/.cache/carapace/init.nu
     '';
-    extraEnv = "$env.EDITOR = 'hx'";
+    extraEnv = ''
+      $env.EDITOR = 'hx'
+      $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
+      mkdir ~/.cache/carapace
+      carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
+    '';
   };
   programs.zoxide = { enable = true; };
   programs.starship = { enable = true; };
@@ -178,6 +187,11 @@
     history.ignoreAllDups = true;
     defaultKeymap = "viins";
     syntaxHighlighting = { enable = true; };
-    initExtra = "export LS_COLORS='$(vivid generate ayu)'";
+    initExtra = ''
+      export LS_COLORS='$(vivid generate ayu)'
+      export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
+      zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+      source <(carapace _carapace)
+    '';
   };
 }

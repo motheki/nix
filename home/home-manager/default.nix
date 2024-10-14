@@ -20,6 +20,9 @@
       tarlz
       glow
       fd
+      treefmt2
+      nixpkgs-fmt
+      nodePackages_latest.prettier
       curlFull
       pueue
       glab

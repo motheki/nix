@@ -26,8 +26,8 @@
         width = 1000;
         height = 600;
         mode = "Windowed";
-        opacity = 0.15;
-        blur = true;
+        opacity = 1;
+        blur = false;
       };
       adaptive-theme = {
         light = "ayu_light";

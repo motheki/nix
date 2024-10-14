@@ -19,16 +19,16 @@
       end
       function opacity_for_appearance(appearance)
         if appearance:find("Dark") then
-          return 0.2
+          return 1
         else
-          return 0.1
+          return 1
         end
       end
       function macos_blur_for_appearance(appearance)
         if appearance:find("Dark") then
-          return 10
+          return 0
         else
-          return 10
+          return 0
         end
       end
       keybinds = {
