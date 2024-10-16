@@ -1,5 +1,3 @@
-{ ... }:
-
-{
-  launchd = { enable = true; };
+{...}: {
+  launchd = {enable = true;};
 }

@@ -1,15 +1,15 @@
 {
   targets.darwin = {
     currentHostDefaults = {
-      "com.apple.controlcenter" = { BatteryShowPercentage = false; };
+      "com.apple.controlcenter" = {BatteryShowPercentage = false;};
       "com.apple.dock" = {
         autohide = true;
         autohide-time-modifier = 0.4;
-       # autohide-delay = 0.2;
-       # expose-animation-duration = 0.2;
-       # springboard-show-duration = 0.1;
-       # springboard-hide-duration = 0.1;
-       # springboard-page-duration = 0.1;
+        # autohide-delay = 0.2;
+        # expose-animation-duration = 0.2;
+        # springboard-show-duration = 0.1;
+        # springboard-hide-duration = 0.1;
+        # springboard-page-duration = 0.1;
         launchanim = true;
         magnification = true;
         mineffect = "suck";
@@ -37,7 +37,7 @@
         _FXShowPosixPathInTitle = true;
         _FXSortFoldersFirst = true;
       };
-      "com.apple.mouse" = { linear = true; };
+      "com.apple.mouse" = {linear = true;};
     };
   };
 }

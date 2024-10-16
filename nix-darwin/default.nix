@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   security.pam.enableSudoTouchIdAuth = true;
   programs.zsh.enable = true;
   nix.useDaemon = true;
@@ -10,7 +8,7 @@
     settings = {
       experimental-features = "nix-command flakes";
       warn-dirty = true;
-      substituters = [ 
+      substituters = [
         "https://cache.nixos.org"
         "https://nix-community.cachix.org"
         "https://nushell-nightly.cachix.org"
@@ -33,16 +31,16 @@
   };
   homebrew = {
     enable = true;
-    global = { 
+    global = {
       brewfile = true;
     };
     onActivation = {
       autoUpdate = true;
       cleanup = "zap";
-      extraFlags = [ "--verbose" ];
+      extraFlags = ["--verbose"];
       upgrade = true;
     };
-    taps = [ ];
+    taps = [];
     brews = [];
     masApps = {
       "Numbers" = 409203825;
@@ -82,9 +80,9 @@
       "cloudflare-warp"
       "obs"
     ];
-    caskArgs = { };
+    caskArgs = {};
   };
-  fonts.packages = with pkgs;[ 
+  fonts.packages = with pkgs; [
     ibm-plex
   ];
 }

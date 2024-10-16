@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   programs.atuin = {
     enable = true;
     settings = {
@@ -29,21 +27,20 @@
   };
   programs.bat = {
     enable = true;
-    extraPackages = with pkgs.bat-extras; [ batman batgrep prettybat ];
-    config = { theme = "Dracula"; };
+    extraPackages = with pkgs.bat-extras; [batman batgrep prettybat];
+    config = {theme = "Dracula";};
   };
   programs.direnv = {
     enable = true;
-    nix-direnv = { enable = true; };
+    nix-direnv = {enable = true;};
   };
-  programs.skim = { enable = true; };
+  programs.skim = {enable = true;};
   programs.eza = {
     enable = true;
-    icons = true;
-    extraOptions =
-      [ "--classify=always" "--color=always" "--all" ];
+    icons = "auto";
+    extraOptions = ["--classify=always" "--color=always" "--all"];
   };
-  programs.ripgrep = { enable = true; };
+  programs.ripgrep = {enable = true;};
   programs.nushell = {
     enable = true;
     package = pkgs.nushell;
@@ -149,7 +146,7 @@
       $env.config = {
         show_banner: false,
         edit_mode: vi,
-        color_config: $ayu_light_theme  
+        color_config: $ayu_light_theme
       };
       $env.LS_COLORS = (vivid generate ayu | str trim);
       let config = {
@@ -164,13 +161,13 @@
       carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
     '';
   };
-  programs.zoxide = { enable = true; };
-  programs.starship = { enable = true; };
-  programs.thefuck = { enable = true; };
-  programs.jq = { enable = true; };
+  programs.zoxide = {enable = true;};
+  programs.starship = {enable = true;};
+  programs.thefuck = {enable = true;};
+  programs.jq = {enable = true;};
   programs.tealdeer = {
     enable = true;
-    settings = { updates = { auto_update = true; }; };
+    settings = {updates = {auto_update = true;};};
   };
   programs.btop = {
     enable = true;
@@ -183,10 +180,10 @@
     enable = true;
     enableVteIntegration = true;
     autocd = true;
-    autosuggestion = { enable = true; };
+    autosuggestion = {enable = true;};
     history.ignoreAllDups = true;
     defaultKeymap = "viins";
-    syntaxHighlighting = { enable = true; };
+    syntaxHighlighting = {enable = true;};
     initExtra = ''
       export LS_COLORS='$(vivid generate ayu)'
       export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional

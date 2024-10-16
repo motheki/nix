@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   programs.helix = {
     enable = true;
     defaultEditor = true;
@@ -25,9 +23,9 @@
       spectral-language-server
     ];
     languages = {
-      language-server.ruff =  {
+      language-server.ruff = {
         command = "ruff";
-        args = [ "server" ];
+        args = ["server"];
         config = {
           settings = {
             lineLength = 80;
@@ -45,52 +43,52 @@
         {
           name = "astro";
           auto-format = true;
-          language-servers = [ "astro-language-server" ];
+          language-servers = ["astro-language-server"];
         }
         {
           name = "json";
           auto-format = true;
-          language-servers = [ "nodePackages_latest.vscode-json-languageserver" ];
+          language-servers = ["nodePackages_latest.vscode-json-languageserver"];
         }
         {
           name = "css";
           auto-format = true;
-          language-servers = [ "nodePackages_latest.tailwindcss" ];
+          language-servers = ["nodePackages_latest.tailwindcss"];
         }
         {
           name = "rust";
           auto-format = true;
-          language-servers = [ "rust-analyzer" ];
+          language-servers = ["rust-analyzer"];
         }
         {
           name = "yaml";
           auto-format = true;
-          language-servers = [ "yaml-language-server" ];
+          language-servers = ["yaml-language-server"];
         }
         {
           name = "zig";
           auto-format = true;
-          language-servers = [ "zls" ];
+          language-servers = ["zls"];
         }
         {
           name = "bash";
           auto-format = true;
-          language-servers = [ "bash-language-server" ];
+          language-servers = ["bash-language-server"];
         }
         {
           name = "nix";
           auto-format = true;
-          language-servers = [ "nil" "nixfmt-rfc-style" "nixd" ];
+          language-servers = ["nil" "nixfmt-rfc-style" "nixd"];
         }
         {
           name = "python";
           auto-format = true;
-          language-servers = [ "ruff" "pylyzer"];
+          language-servers = ["ruff" "pylyzer"];
         }
         {
           name = "go";
           auto-format = true;
-          language-servers = [ "gopls" ];
+          language-servers = ["gopls"];
         }
       ];
     };
@@ -104,11 +102,11 @@
         };
         auto-save = {
           focus-lost = true;
-          after-delay ={
+          after-delay = {
             enable = true;
           };
         };
-        whitespace ={
+        whitespace = {
           render = "all";
           characters = {
             space = "·";

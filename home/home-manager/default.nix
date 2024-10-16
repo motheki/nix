@@ -1,14 +1,12 @@
-{ pkgs, ... }:
-
-{
-  programs.home-manager = { enable = true; };
+{pkgs, ...}: {
+  programs.home-manager = {enable = true;};
   home = {
     stateVersion = "24.11";
-    sessionVariables = { };
+    sessionVariables = {};
     shellAliases = {
     };
-    file = { };
-    sessionPath = [ "/opt/homebrew/bin" "/opt/homebrew/Cellar/" ];
+    file = {};
+    sessionPath = ["/opt/homebrew/bin" "/opt/homebrew/Cellar/"];
     packages = with pkgs; [
       xcp
       rm-improved
@@ -21,6 +19,7 @@
       glow
       fd
       treefmt2
+      alejandra
       nixpkgs-fmt
       nodePackages_latest.prettier
       curlFull
