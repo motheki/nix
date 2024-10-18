@@ -24,12 +24,12 @@
         width = 1000;
         height = 600;
         mode = "Windowed";
-        opacity = 1;
-        blur = false;
+        opacity = 0.6;
+        blur = true;
       };
       adaptive-theme = {
-        light = "ayu_light";
-        dark = "ayu";
+        light = "nord-light";
+        dark = "nord";
       };
       renderer = {
         performance = "High";
@@ -40,7 +40,7 @@
       use-fork = false;
 
       fonts = {
-        size = 14.0;
+        size = 12.0;
         extras = [];
         regular = {
           family = "CommitMonoMotheki";

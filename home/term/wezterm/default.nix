@@ -10,23 +10,23 @@
       end
       function scheme_for_appearance(appearance)
         if appearance:find("Dark", 1, true) then
-          return "ayu"
+          return "nord"
         else
-          return "ayu_light"
+          return "nord-light"
         end
       end
       function opacity_for_appearance(appearance)
         if appearance:find("Dark") then
-          return 1
+          return 0.6
         else
-          return 1
+          return 0.8
         end
       end
       function macos_blur_for_appearance(appearance)
         if appearance:find("Dark") then
-          return 0
+          return 25
         else
-          return 0
+          return 35
         end
       end
       keybinds = {
