@@ -28,7 +28,7 @@
   programs.bat = {
     enable = true;
     extraPackages = with pkgs.bat-extras; [batman batgrep prettybat];
-    config = {theme = "Dracula";};
+    config = {theme = "Nord";};
   };
   programs.direnv = {
     enable = true;
@@ -154,6 +154,7 @@
       source ~/.cache/carapace/init.nu
     '';
     extraEnv = ''
+      $env.PATH = ($env.PATH | split row (char esep) | prepend '~/.cargo/bin')
       $env.EDITOR = 'hx'
       $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
       mkdir ~/.cache/carapace
@@ -184,6 +185,7 @@
     defaultKeymap = "viins";
     syntaxHighlighting = {enable = true;};
     initExtra = ''
+      path+=('~/.cargo/bin')
       export LS_COLORS='$(vivid generate nord)'
       export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
       zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'

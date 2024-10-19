@@ -75,7 +75,6 @@
       "discord@canary"
       "raycast"
       "betterdisplay"
-      "steam"
       "tunnelblick"
       "cloudflare-warp"
       "obs"

@@ -6,6 +6,8 @@
       marksman
       nil
       nixd
+      lua-language-server
+      cmake-language-server
       nixfmt-rfc-style
       ruff
       astro-language-server
@@ -21,6 +23,7 @@
       yaml-language-server
       rust-analyzer
       spectral-language-server
+      taplo
     ];
     languages = {
       language-server.ruff = {
@@ -40,6 +43,21 @@
         };
       };
       language = [
+        {
+          name = "toml";
+          auto-format = true;
+          language-servers = ["taplo"];
+        }
+        {
+          name = "cmake";
+          auto-format = true;
+          language-servers = ["cmake-language-server"];
+        }
+        {
+          name = "lua";
+          auto-format = true;
+          language-servers = ["lua-language-server"];
+        }
         {
           name = "astro";
           auto-format = true;
@@ -93,7 +111,7 @@
       ];
     };
     settings = {
-      theme = "nord_clear";
+      theme = "nord_light_clear";
       editor = {
         cursor-shape = {
           insert = "bar";

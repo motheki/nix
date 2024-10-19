@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{inputs, pkgs, ...}: {
   programs.home-manager = {enable = true;};
   home = {
     stateVersion = "24.11";
@@ -19,8 +19,7 @@
       glow
       fd
       treefmt2
-      alejandra
-      nixpkgs-fmt
+      inputs.nixvim.packages.${pkgs.system}.default
       nodePackages_latest.prettier
       curlFull
       pueue
@@ -31,6 +30,8 @@
       fastfetch
       hyperfine
       iina
+      scc
+      cargo
       zoom-us
     ];
   };
