@@ -36,7 +36,7 @@
     homebrew-cask,
     nixvim,
     ...
-  } @ inputs: {
+  } @inputs: {
     formatter.aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin.alejandra;
     darwinConfigurations = {
       "mothekis-macbook-pro" = nix-darwin.lib.darwinSystem {
@@ -50,14 +50,6 @@
               enableRosetta = true;
               user = "motheki";
               autoMigrate = true;
-            };
-          }
-          nixvim.nixDarwinModules.nixvim
-          {
-            programs = {
-              nixvim = {
-                enable = true;
-              };
             };
           }
           home-manager.darwinModules.home-manager

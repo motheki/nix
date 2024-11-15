@@ -60,11 +60,9 @@
       "Wipr" = 1320666476;
       "SponsorBlock" = 1573461917;
       "Homecoming for Mastodon" = 1666139593;
-      "Collections" = 1568395334;
       "WhatsApp" = 310633997;
       "Infuse" = 1136220934;
       "Sink It for Reddit" = 6449873635;
-      "Reeder." = 6475002485;
       "Pages" = 409201541;
       "Developer" = 640199958;
       "Prime Video" = 545519333;
@@ -73,7 +71,6 @@
     casks = [
       "arc"
       "discord@canary"
-      "raycast"
       "betterdisplay"
       "tunnelblick"
       "cloudflare-warp"

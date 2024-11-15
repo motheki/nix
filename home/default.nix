@@ -6,7 +6,6 @@
     ./helix
     ./ssh
     ./git
-    ./term
     ./shell
     ./darwin-settings
   ];

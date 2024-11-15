@@ -13,8 +13,8 @@
       astro-language-server
       nodePackages_latest.prettier
       bash-language-server
-      zls
-      pylyzer
+      #zls
+      #pylyzer
       gopls
       nodePackages_latest.typescript-language-server
       nodePackages_latest.vscode-json-languageserver
@@ -83,11 +83,11 @@
           auto-format = true;
           language-servers = ["yaml-language-server"];
         }
-        {
-          name = "zig";
-          auto-format = true;
-          language-servers = ["zls"];
-        }
+        #{
+        #  name = "zig";
+        #  auto-format = true;
+        #  language-servers = ["zls"];
+        #}
         {
           name = "bash";
           auto-format = true;
@@ -101,7 +101,7 @@
         {
           name = "python";
           auto-format = true;
-          language-servers = ["ruff" "pylyzer"];
+          language-servers = ["ruff"];
         }
         {
           name = "go";
@@ -111,7 +111,7 @@
       ];
     };
     settings = {
-      theme = "nord_light_clear";
+      theme = "nord_dark_clear";
       editor = {
         cursor-shape = {
           insert = "bar";
