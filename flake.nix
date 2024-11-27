@@ -3,10 +3,6 @@
 
   inputs = {
     nixpkgs = {url = "github:nixos/nixpkgs/master";};
-    nixvim = {
-      url = "github:nix-community/nixvim/main";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     nix-darwin = {
       url = "github:LnL7/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -34,9 +30,8 @@
     nix-homebrew,
     homebrew-core,
     homebrew-cask,
-    nixvim,
     ...
-  } @inputs: {
+  } @ inputs: {
     formatter.aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin.alejandra;
     darwinConfigurations = {
       "mothekis-macbook-pro" = nix-darwin.lib.darwinSystem {

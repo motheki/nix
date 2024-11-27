@@ -5,6 +5,6 @@
   };
   programs.keychain = {
     enable = true;
-    keys = ["motheki" "systel" "trevoropiyo"];
+    keys = ["motheki" "trevoropiyo"];
   };
 }

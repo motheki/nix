@@ -57,12 +57,15 @@
       "DeArrow" = 6451469297;
       "Vinegar" = 1591303229;
       "Spring" = 1508706541;
-      "Wipr" = 1320666476;
+      "Wipr" = 1662217862;
+      "Xcode" = 497799835;
       "SponsorBlock" = 1573461917;
       "Homecoming for Mastodon" = 1666139593;
       "WhatsApp" = 310633997;
       "Infuse" = 1136220934;
       "Sink It for Reddit" = 6449873635;
+      "Userscripts-Mac-App" = 1463298887;
+      "TestFlight" = 899247664;
       "Pages" = 409201541;
       "Developer" = 640199958;
       "Prime Video" = 545519333;
@@ -73,8 +76,10 @@
       "discord@canary"
       "betterdisplay"
       "tunnelblick"
+      "raycast"
       "cloudflare-warp"
       "obs"
+      "steam"
     ];
     caskArgs = {};
   };
