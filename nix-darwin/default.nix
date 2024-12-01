@@ -78,6 +78,7 @@
       "tunnelblick"
       "raycast"
       "cloudflare-warp"
+      "linearmouse"
       "obs"
       "steam"
     ];

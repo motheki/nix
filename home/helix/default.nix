@@ -13,7 +13,7 @@
       astro-language-server
       nodePackages_latest.prettier
       bash-language-server
-      #zls
+      zls
       #pylyzer
       gopls
       nodePackages_latest.typescript-language-server

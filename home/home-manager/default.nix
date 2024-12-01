@@ -26,7 +26,7 @@
       nmap
       tree
       rustscan
-      #fastfetch
+      fastfetch
       hyperfine
       iina
       scc
