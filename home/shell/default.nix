@@ -61,7 +61,6 @@
       $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
       $env.HANDLER = 'copilot'
       mkdir ~/.cache/carapace
-      alias ld = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -ld_new
       carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
     '';
   };
