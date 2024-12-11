@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   programs.home-manager = {enable = true;};
   home = {
-    stateVersion = "24.11";
+    stateVersion = "25.05";
     sessionVariables = {};
     shellAliases = {
     };
@@ -30,8 +30,7 @@
       hyperfine
       iina
       scc
-      cargo
-      zoom-us
+      helix-gpt
     ];
   };
 }

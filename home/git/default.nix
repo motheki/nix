@@ -15,6 +15,7 @@
       options = {
         line-numbers = true;
         side-by-side = true;
+        theme = "Nord";
       };
     };
     lfs = {enable = true;};

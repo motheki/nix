@@ -4,7 +4,6 @@
   nix.useDaemon = true;
   system.stateVersion = 4;
   nix = {
-    package = pkgs.nixVersions.latest;
     settings = {
       experimental-features = "nix-command flakes";
       warn-dirty = true;

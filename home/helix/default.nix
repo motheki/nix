@@ -26,6 +26,9 @@
       taplo
     ];
     languages = {
+      language-server.helix-gpt = {
+        command = "helix-gpt";
+      };
       language-server.ruff = {
         command = "ruff";
         args = ["server"];
@@ -46,67 +49,67 @@
         {
           name = "toml";
           auto-format = true;
-          language-servers = ["taplo"];
+          language-servers = ["taplo" "helix-gpt"];
         }
         {
           name = "cmake";
           auto-format = true;
-          language-servers = ["cmake-language-server"];
+          language-servers = ["helix-gpt" "cmake-language-server"];
         }
         {
           name = "lua";
           auto-format = true;
-          language-servers = ["lua-language-server"];
+          language-servers = ["lua-language-server" "helix-gpt"];
         }
         {
           name = "astro";
           auto-format = true;
-          language-servers = ["astro-language-server"];
+          language-servers = ["astro-language-server" "helix-gpt"];
         }
         {
           name = "json";
           auto-format = true;
-          language-servers = ["nodePackages_latest.vscode-json-languageserver"];
+          language-servers = ["nodePackages_latest.vscode-json-languageserver" "helix-gpt"];
         }
         {
           name = "css";
           auto-format = true;
-          language-servers = ["nodePackages_latest.tailwindcss"];
+          language-servers = ["helix-gpt" "nodePackages_latest.tailwindcss"];
         }
         {
           name = "rust";
           auto-format = true;
-          language-servers = ["rust-analyzer"];
+          language-servers = ["rust-analyzer" "helix-gpt"];
         }
         {
           name = "yaml";
           auto-format = true;
-          language-servers = ["yaml-language-server"];
+          language-servers = ["yaml-language-server" "helix-gpt"];
         }
-        #{
-        #  name = "zig";
-        #  auto-format = true;
-        #  language-servers = ["zls"];
-        #}
+        {
+          name = "zig";
+          auto-format = true;
+          language-servers = ["zls" "helix-gpt"];
+        }
         {
           name = "bash";
           auto-format = true;
-          language-servers = ["bash-language-server"];
+          language-servers = ["bash-language-server" "helix-gpt"];
         }
         {
           name = "nix";
           auto-format = true;
-          language-servers = ["nil" "nixfmt-rfc-style" "nixd"];
+          language-servers = ["nil" "helix-gpt"];
         }
         {
           name = "python";
           auto-format = true;
-          language-servers = ["ruff"];
+          language-servers = ["ruff" "helix-gpt"];
         }
         {
           name = "go";
           auto-format = true;
-          language-servers = ["gopls"];
+          language-servers = ["gopls" "helix-gpt"];
         }
       ];
     };
