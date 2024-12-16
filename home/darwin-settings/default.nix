@@ -3,21 +3,21 @@
     currentHostDefaults = {
       "com.apple.controlcenter" = {BatteryShowPercentage = false;};
       "com.apple.dock" = {
-        autohide = true;
-        autohide-time-modifier = 0.4;
-        # autohide-delay = 0.2;
-        # expose-animation-duration = 0.2;
-        # springboard-show-duration = 0.1;
-        # springboard-hide-duration = 0.1;
-        # springboard-page-duration = 0.1;
-        launchanim = true;
-        magnification = true;
+        autohide = false;
+        autohide-time-modifier = 0;
+        autohide-delay = 0;
+        expose-animation-duration = 0;
+        springboard-show-duration = 0;
+        springboard-hide-duration = 0;
+        springboard-page-duration = 0;
+        launchanim = false;
+        magnification = false;
         mineffect = "suck";
-        minimize-to-application = true;
+        minimize-to-application = false;
         orientation = "bottom";
         windowtabbing = true;
-        show-process-indicators = true;
-        show-recents = true;
+        show-process-indicators = false;
+        show-recents = false;
         pinning = "start";
         showAppExposeGestureEnabled = true;
         showDesktopGestureEnabled = true;
@@ -28,7 +28,7 @@
       };
       "com.apple.finder" = {
         AppleShowAllFiles = true;
-        DisableAllAnimations = false;
+        DisableAllAnimations = true;
         FXPreferredViewStyle = "clmv";
         FXEnableExtensionChangeWarning = false;
         FXEnableRemoveFromICloudDriveWarning = false;

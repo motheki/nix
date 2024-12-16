@@ -19,8 +19,10 @@
       glow
       fd
       treefmt2
+      sd
+      zoom-us
       nodePackages_latest.prettier
-      curlFull
+      curlHTTP3
       pueue
       glab
       nmap

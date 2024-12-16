@@ -14,7 +14,7 @@
       nodePackages_latest.prettier
       bash-language-server
       zls
-      #pylyzer
+      pylyzer
       gopls
       nodePackages_latest.typescript-language-server
       nodePackages_latest.vscode-json-languageserver
@@ -104,7 +104,7 @@
         {
           name = "python";
           auto-format = true;
-          language-servers = ["ruff" "helix-gpt"];
+          language-servers = ["helix-gpt" "pylyzer" "ruff"];
         }
         {
           name = "go";
