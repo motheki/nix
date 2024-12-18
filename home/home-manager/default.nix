@@ -30,6 +30,7 @@
       rustscan
       fastfetch
       hyperfine
+      gitoxide
       iina
       scc
       helix-gpt
