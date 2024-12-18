@@ -16,6 +16,7 @@
       zls
       pylyzer
       gopls
+      alejandra
       nodePackages_latest.typescript-language-server
       nodePackages_latest.vscode-json-languageserver
       nodePackages_latest.tailwindcss
@@ -104,7 +105,7 @@
         {
           name = "python";
           auto-format = true;
-          language-servers = ["helix-gpt" "pylyzer" "ruff"];
+          language-servers = ["helix-gpt" "pylyzer"];
         }
         {
           name = "go";
