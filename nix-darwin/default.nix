@@ -78,6 +78,7 @@
       "linearmouse"
       "obs"
       "steam"
+      "CleanShot"
     ];
     caskArgs = {};
   };
