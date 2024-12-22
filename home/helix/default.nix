@@ -5,11 +5,9 @@
     extraPackages = with pkgs; [
       marksman
       nil
-      nixd
       lua-language-server
       cmake-language-server
       nixfmt-rfc-style
-      ruff
       astro-language-server
       nodePackages_latest.prettier
       bash-language-server
@@ -100,12 +98,18 @@
         {
           name = "nix";
           auto-format = true;
+          formatter = ["alejandra"];
           language-servers = ["nil" "helix-gpt"];
         }
         {
           name = "python";
           auto-format = true;
           language-servers = ["helix-gpt" "pylyzer"];
+        }
+        {
+          name = "swift";
+          auto-format = true;
+          language-servers = ["sourcekit-lsp" "swift-formatter"];
         }
         {
           name = "go";

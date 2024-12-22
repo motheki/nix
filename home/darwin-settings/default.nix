@@ -4,12 +4,12 @@
       "com.apple.controlcenter" = {BatteryShowPercentage = false;};
       "com.apple.dock" = {
         autohide = true;
-        #autohide-time-modifier = 0.5;
-        #autohide-delay = 0;
-        #expose-animation-duration = 0;
-        #springboard-show-duration = 0;
-        #springboard-hide-duration = 0;
-        #springboard-page-duration = 0;
+        autohide-time-modifier = 0.2;
+        autohide-delay = 0.2;
+        expose-animation-duration = 0.2;
+        springboard-show-duration = 0.2;
+        springboard-hide-duration = 0.2;
+        springboard-page-duration = 0.2;
         launchanim = true;
         magnification = true;
         mineffect = "suck";
