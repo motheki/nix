@@ -91,7 +91,6 @@
       path+=('~/.cargo/bin')
       export LS_COLORS='$(vivid generate nord)'
       export HANDLER='copilot'
-      alias ld='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -ld_new'
       export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
       zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
       source <(carapace _carapace)

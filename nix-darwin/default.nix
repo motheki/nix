@@ -61,7 +61,6 @@
     };
     casks = [
       "arc"
-      "discord@canary"
       "betterdisplay"
       "tunnelblick"
       "raycast"
@@ -70,6 +69,7 @@
       "obs"
       "steam"
       "CleanShot"
+      "ghostty"
     ];
     caskArgs = {};
   };

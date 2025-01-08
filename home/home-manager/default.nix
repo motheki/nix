@@ -33,6 +33,7 @@
       gitoxide
       iina
       scc
+      vesktop
       helix-gpt
     ];
   };

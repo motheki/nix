@@ -119,7 +119,7 @@
       ];
     };
     settings = {
-      theme = "nord_dark_clear";
+      theme = "nord_light_clear";
       editor = {
         cursor-shape = {
           insert = "bar";
