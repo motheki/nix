@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs = {url = "github:nixos/nixpkgs/master";};
     determinate = {url = "github:DeterminateSystems/determinate/main";};
+    nix-homebrew = {url = "github:zhaofengli-wip/nix-homebrew/main";};
     nix-darwin = {
       url = "github:LnL7/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -12,7 +13,6 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-homebrew = {url = "github:zhaofengli-wip/nix-homebrew/main";};
   };
 
   outputs = {
@@ -28,8 +28,8 @@
       "mothekis-macbook-pro" = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [
-          determinate.darwinModules.default
           ./nix-darwin
+          determinate.darwinModules.default
           nix-homebrew.darwinModules.nix-homebrew
           {
             nix-homebrew = {
@@ -52,16 +52,6 @@
         specialArgs = {
           inherit inputs;
         };
-      };
-    };
-    homeConfigurations = {
-      "motheki@mothekis-macbook-pro" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.aarch64-darwin;
-        extraSpecialArgs = {
-          inherit inputs;
-        };
-        modules = [
-        ];
       };
     };
   };

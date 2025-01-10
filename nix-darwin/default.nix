@@ -2,7 +2,7 @@
   security.pam.enableSudoTouchIdAuth = true;
   programs.zsh.enable = true;
   nix.useDaemon = true;
-  system.stateVersion = 4;
+  system.stateVersion = 5;
   nix = {
     settings = {
       experimental-features = "nix-command flakes";

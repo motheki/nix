@@ -1,12 +1,13 @@
 {...}: {
   imports = [
-    ./nix-settings
+    ./darwin-settings
     ./home-manager
+    ./nix-settings
     ./launch
-    ./helix
+    ./shell
     ./ssh
     ./git
-    ./shell
-    ./darwin-settings
+    #./ghostty
+    ./helix
   ];
 }

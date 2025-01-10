@@ -18,16 +18,12 @@
       nodePackages_latest.typescript-language-server
       nodePackages_latest.vscode-json-languageserver
       nodePackages_latest.tailwindcss
-      helix-gpt
       yaml-language-server
       rust-analyzer
       spectral-language-server
       taplo
     ];
     languages = {
-      language-server.helix-gpt = {
-        command = "helix-gpt";
-      };
       language-server.ruff = {
         command = "ruff";
         args = ["server"];
@@ -48,63 +44,63 @@
         {
           name = "toml";
           auto-format = true;
-          language-servers = ["taplo" "helix-gpt"];
+          language-servers = ["taplo"];
         }
         {
           name = "cmake";
           auto-format = true;
-          language-servers = ["helix-gpt" "cmake-language-server"];
+          language-servers = ["cmake-language-server"];
         }
         {
           name = "lua";
           auto-format = true;
-          language-servers = ["lua-language-server" "helix-gpt"];
+          language-servers = ["lua-language-server"];
         }
         {
           name = "astro";
           auto-format = true;
-          language-servers = ["astro-language-server" "helix-gpt"];
+          language-servers = ["astro-language-server"];
         }
         {
           name = "json";
           auto-format = true;
-          language-servers = ["nodePackages_latest.vscode-json-languageserver" "helix-gpt"];
+          language-servers = ["nodePackages_latest.vscode-json-languageserver"];
         }
         {
           name = "css";
           auto-format = true;
-          language-servers = ["helix-gpt" "nodePackages_latest.tailwindcss"];
+          language-servers = ["nodePackages_latest.tailwindcss"];
         }
         {
           name = "rust";
           auto-format = true;
-          language-servers = ["rust-analyzer" "helix-gpt"];
+          language-servers = ["rust-analyzer"];
         }
         {
           name = "yaml";
           auto-format = true;
-          language-servers = ["yaml-language-server" "helix-gpt"];
+          language-servers = ["yaml-language-server"];
         }
         {
           name = "zig";
           auto-format = true;
-          language-servers = ["zls" "helix-gpt"];
+          language-servers = ["zls"];
         }
         {
           name = "bash";
           auto-format = true;
-          language-servers = ["bash-language-server" "helix-gpt"];
+          language-servers = ["bash-language-server"];
         }
         {
           name = "nix";
           auto-format = true;
           formatter = ["alejandra"];
-          language-servers = ["nil" "helix-gpt"];
+          language-servers = ["nil"];
         }
         {
           name = "python";
           auto-format = true;
-          language-servers = ["helix-gpt" "pylyzer"];
+          language-servers = ["pylyzer"];
         }
         {
           name = "swift";
@@ -114,12 +110,12 @@
         {
           name = "go";
           auto-format = true;
-          language-servers = ["gopls" "helix-gpt"];
+          language-servers = ["gopls"];
         }
       ];
     };
     settings = {
-      theme = "nord_light_clear";
+      theme = "nord_dark_clear";
       editor = {
         cursor-shape = {
           insert = "bar";
