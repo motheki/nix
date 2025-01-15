@@ -22,7 +22,7 @@
       sd
       zoom-us
       nodePackages_latest.prettier
-      curlHTTP3
+      curlFull
       pueue
       glab
       nmap
@@ -35,6 +35,7 @@
       scc
       vesktop
       helix-gpt
+      ruffle
     ];
   };
 }

@@ -27,12 +27,18 @@
   };
   programs.bat = {
     enable = true;
-    extraPackages = with pkgs.bat-extras; [batman batgrep prettybat];
+    extraPackages = with pkgs.bat-extras; [
+      batman
+      prettybat
+      batwatch
+      #batgrep
+    ];
     config = {theme = "Nord";};
   };
   programs.direnv = {
     enable = true;
     nix-direnv = {enable = true;};
+    silent = true;
   };
   programs.skim = {enable = true;};
   programs.eza = {
@@ -44,6 +50,11 @@
   programs.nushell = {
     enable = true;
     package = pkgs.nushell;
+    shellAliases = {
+      #rg = "batgrep";
+      cat = "prettybat";
+      man = "batman";
+    };
     extraConfig = ''
       $env.config = {
         show_banner: false,
@@ -86,8 +97,13 @@
     autosuggestion = {enable = true;};
     history.ignoreAllDups = true;
     defaultKeymap = "viins";
+    shellAliases = {
+      #rg = "batgrep";
+      cat = "prettybat";
+      man = "batman";
+    };
     syntaxHighlighting = {enable = true;};
-    initExtra = ''
+    initExtraBeforeCompInit = ''
       path+=('~/.cargo/bin')
       export LS_COLORS='$(vivid generate nord)'
       export HANDLER='copilot'

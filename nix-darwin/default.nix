@@ -3,6 +3,10 @@
   programs.zsh.enable = true;
   nix.useDaemon = true;
   system.stateVersion = 5;
+  #services.ipfs = {
+  #  enable = true;
+  #  enableGarbageCollection = true;
+  #};
   nix = {
     settings = {
       experimental-features = "nix-command flakes";
@@ -67,7 +71,6 @@
       "cloudflare-warp"
       "linearmouse"
       "obs"
-      "steam"
       "CleanShot"
       "ghostty"
     ];
