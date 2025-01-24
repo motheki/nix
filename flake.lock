@@ -30,11 +30,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1736872069,
-        "narHash": "sha256-D6me9BmbJpMVm5t8qrVKlGRT4nWnLCXsP78kNNiQYbc=",
+        "lastModified": 1737479102,
+        "narHash": "sha256-KTANKYmX1/9Smm7SpBwSkUVHNZAopIB/pc9Dx/da98c=",
         "owner": "DeterminateSystems",
         "repo": "determinate",
-        "rev": "fe0c0c36eeff2d6c68cd8457bb10c6c276c0a2b3",
+        "rev": "352f03a1c13589195ba3f435a5cc6b093cdf4812",
         "type": "github"
       },
       "original": {
@@ -165,17 +165,68 @@
         ]
       },
       "locked": {
-        "lastModified": 1736785676,
-        "narHash": "sha256-TY0jUwR3EW0fnS0X5wXMAVy6h4Z7Y6a3m+Yq++C9AyE=",
+        "lastModified": 1737669579,
+        "narHash": "sha256-v9WQ3c4ctwPMfdBZMZxpdM9xXev4uChce4BxOpvsu0E=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "fc52a210b60f2f52c74eac41a8647c1573d2071d",
+        "rev": "7b9ece1bf3c8780cde9b975b28c2d9ccd7e9cdb9",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
         "ref": "master",
         "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "homebrew-bundle": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1737654895,
+        "narHash": "sha256-AYOOHfnRdit5B4r6eNfRxH09QtXAzjxTKmJmGgYDbYU=",
+        "owner": "homebrew",
+        "repo": "homebrew-bundle",
+        "rev": "c02775a6a0d9a8d5bdcfefd8f639e3d228609105",
+        "type": "github"
+      },
+      "original": {
+        "owner": "homebrew",
+        "ref": "master",
+        "repo": "homebrew-bundle",
+        "type": "github"
+      }
+    },
+    "homebrew-cask": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1737670440,
+        "narHash": "sha256-koT5ejh/flwS15tU4gwzBngFGMmpfwR2vRVkGezerbM=",
+        "owner": "homebrew",
+        "repo": "homebrew-cask",
+        "rev": "d0384fe89b324f37feccb0f26cfcd8463ffe29e9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "homebrew",
+        "ref": "master",
+        "repo": "homebrew-cask",
+        "type": "github"
+      }
+    },
+    "homebrew-core": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1737677114,
+        "narHash": "sha256-931iEwuBw7W0+qCT6bze7R8HGQEstH2ZmpGWVkjBUCE=",
+        "owner": "homebrew",
+        "repo": "homebrew-core",
+        "rev": "6d7de00bde861fc39b170b601a245a116b0c4b6a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "homebrew",
+        "ref": "master",
+        "repo": "homebrew-core",
         "type": "github"
       }
     },
@@ -221,11 +272,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1736819234,
-        "narHash": "sha256-deQVtIH4UJueELJqluAICUtX7OosD9paTP+5FgbiSwI=",
+        "lastModified": 1737504076,
+        "narHash": "sha256-/B4XJnzYU/6K1ZZOBIgsa3K4pqDJrnC2579c44c+4rI=",
         "owner": "LnL7",
         "repo": "nix-darwin",
-        "rev": "bd921223ba7cdac346477d7ea5204d6f4736fcc6",
+        "rev": "65cc1fa8e36ceff067daf6cfb142331f02f524d3",
         "type": "github"
       },
       "original": {
@@ -404,11 +455,11 @@
     },
     "nixpkgs_6": {
       "locked": {
-        "lastModified": 1736956546,
-        "narHash": "sha256-HVtGO5sFcXs7rIF8TZrtm2Dkqh5J5G+qsGyT6b1laDY=",
+        "lastModified": 1737676655,
+        "narHash": "sha256-P9gfexAOEd51nAgz3TtgGy1YEFgoQPk18QZQklrVlT0=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "df4f2989a8f89e14bb94d73d93d159756c7766fe",
+        "rev": "2d99c7f729083f488efb1228e2129443f6fa6ebc",
         "type": "github"
       },
       "original": {
@@ -422,6 +473,9 @@
       "inputs": {
         "determinate": "determinate",
         "home-manager": "home-manager",
+        "homebrew-bundle": "homebrew-bundle",
+        "homebrew-cask": "homebrew-cask",
+        "homebrew-core": "homebrew-core",
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
         "nixpkgs": "nixpkgs_6"

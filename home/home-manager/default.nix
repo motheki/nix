@@ -4,6 +4,9 @@
     stateVersion = "25.05";
     sessionVariables = {};
     shellAliases = {
+      rg = "batgrep";
+      cat = "prettybat";
+      man = "batman";
     };
     file = {};
     sessionPath = ["/opt/homebrew/bin" "/opt/homebrew/Cellar/"];
@@ -13,6 +16,7 @@
       dust
       jless
       webtorrent_desktop
+      #nodePackages_latest.webtorrent-cli
       vivid
       duf
       tarlz

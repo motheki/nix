@@ -3,16 +3,17 @@
   programs.zsh.enable = true;
   nix.useDaemon = true;
   system.stateVersion = 5;
-  #services.ipfs = {
-  #  enable = true;
-  #  enableGarbageCollection = true;
-  #};
+  services.ipfs = {
+    enable = true;
+    enableGarbageCollection = true;
+  };
   nix = {
     settings = {
       experimental-features = "nix-command flakes";
       warn-dirty = true;
       substituters = [
         "https://cache.nixos.org"
+        "https://cache.flakehub.com"
         "https://nix-community.cachix.org"
       ];
       trusted-public-keys = [

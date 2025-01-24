@@ -72,6 +72,11 @@
           language-servers = ["nodePackages_latest.tailwindcss"];
         }
         {
+          name = "typescript";
+          auto-format = true;
+          language-servers = ["nodePackages_latest.typescript-language-server"];
+        }
+        {
           name = "rust";
           auto-format = true;
           language-servers = ["rust-analyzer"];
