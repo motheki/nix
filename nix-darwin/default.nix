@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   security.pam.enableSudoTouchIdAuth = true;
   programs.zsh.enable = true;
-  nix.useDaemon = true;
   system.stateVersion = 5;
   services.ipfs = {
     enable = true;
@@ -47,13 +46,11 @@
     masApps = {
       "Numbers" = 409203825;
       "Keynote" = 409183694;
-      "Mona" = 1659154653;
       "MusicBox" = 1614730313;
       "Flighty" = 1358823008;
       "Play" = 1596506190;
       "Testflight" = 899247664;
       "MusicMatch" = 1596146219;
-      "Spring" = 1508706541;
       "Xcode" = 497799835;
       "SponsorBlock" = 1573461917;
       "WhatsApp" = 310633997;
@@ -65,7 +62,6 @@
       "MusicHarbor" = 1440405750;
     };
     casks = [
-      "arc"
       "betterdisplay"
       "tunnelblick"
       "raycast"
