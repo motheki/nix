@@ -17,6 +17,7 @@
       jless
       webtorrent_desktop
       #nodePackages_latest.webtorrent-cli
+      niv
       vivid
       duf
       tarlz
@@ -40,6 +41,7 @@
       vesktop
       helix-gpt
       ruffle
+      #ghostty
     ];
   };
 }
