@@ -38,6 +38,7 @@
       gitoxide
       iina
       scc
+      ffmpeg-full
       vesktop
       helix-gpt
       ruffle
