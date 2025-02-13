@@ -38,7 +38,7 @@
       "mothekis-macbook-pro" = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [
-          determinate.darwinModules.default
+          #determinate.darwinModules.default
           ./nix-darwin
           nix-homebrew.darwinModules.nix-homebrew
           {

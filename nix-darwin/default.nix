@@ -7,6 +7,7 @@
     enableGarbageCollection = true;
   };
   nix = {
+    enable = false;
     settings = {
       experimental-features = "nix-command flakes";
       warn-dirty = true;
