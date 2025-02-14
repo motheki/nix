@@ -2,25 +2,10 @@
   security.pam.enableSudoTouchIdAuth = true;
   programs.zsh.enable = true;
   system.stateVersion = 5;
+  nix.enable = false;
   services.ipfs = {
     enable = true;
     enableGarbageCollection = true;
-  };
-  nix = {
-    enable = false;
-    settings = {
-      experimental-features = "nix-command flakes";
-      warn-dirty = true;
-      substituters = [
-        "https://cache.nixos.org"
-        "https://cache.flakehub.com"
-        "https://nix-community.cachix.org"
-      ];
-      trusted-public-keys = [
-        "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-      ];
-    };
   };
   nixpkgs.config = {
     hostPlatform = "aarch64-darwin";
@@ -71,6 +56,8 @@
       "obs"
       "CleanShot"
       "ghostty"
+      "dolphin"
+      "windows-app"
     ];
     caskArgs = {};
   };

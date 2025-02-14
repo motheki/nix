@@ -42,6 +42,7 @@
       vesktop
       helix-gpt
       ruffle
+      #dolphin-emu
       #ghostty
     ];
   };

@@ -3,7 +3,7 @@
     ./darwin-settings
     ./home-manager
     ./nix-settings
-    ./launch
+    #./launch
     ./shell
     ./ssh
     ./git
