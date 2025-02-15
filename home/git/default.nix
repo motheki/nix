@@ -15,7 +15,7 @@
       options = {
         line-numbers = true;
         side-by-side = true;
-        theme = "Nord";
+        theme = "Monokai Extended";
       };
     };
     lfs = {enable = true;};

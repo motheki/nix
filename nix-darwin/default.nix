@@ -46,6 +46,7 @@
       "Developer" = 640199958;
       "Prime Video" = 545519333;
       "MusicHarbor" = 1440405750;
+      "Windows App" = 1295203466;
     };
     casks = [
       "betterdisplay"
@@ -57,7 +58,6 @@
       "CleanShot"
       "ghostty"
       "dolphin"
-      "windows-app"
     ];
     caskArgs = {};
   };
