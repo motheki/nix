@@ -32,6 +32,7 @@
       glab
       nmap
       tree
+      amp
       rustscan
       fastfetch
       hyperfine

@@ -10,6 +10,23 @@
   programs.git = {
     enable = true;
     package = pkgs.git;
+
+    #push.autoSetupRemote
+    ignores = [
+      "*~"
+      "*.swp"
+      "node_modules"
+      "dist"
+      ".astro/*"
+      ".wrangler/*"
+      ".envrc"
+      ".env"
+      ".npmrc"
+      ".direnv/*"
+    ];
+    signing = {
+      key = "~/.ssh/trevoropiyo";
+    };
     delta = {
       enable = true;
       options = {

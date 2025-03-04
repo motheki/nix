@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  security.pam.enableSudoTouchIdAuth = true;
+  security.pam.services.sudo_local.touchIdAuth = true;
   programs.zsh.enable = true;
   system.stateVersion = 5;
   nix.enable = false;
@@ -54,10 +54,12 @@
       "raycast"
       "cloudflare-warp"
       "linearmouse"
+      "Steam"
       "obs"
       "CleanShot"
       "ghostty"
       "dolphin"
+      "zen-browser"
     ];
     caskArgs = {};
   };
