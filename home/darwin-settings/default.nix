@@ -3,7 +3,7 @@
     currentHostDefaults = {
       "com.apple.controlcenter" = {BatteryShowPercentage = false;};
       "com.apple.dock" = {
-        autohide = false;
+        autohide = true;
         network_enable_l4s = true;
         autohide-time-modifier = 0.2;
         autohide-delay = 0.2;

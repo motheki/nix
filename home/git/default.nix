@@ -6,7 +6,7 @@
       prompt = true;
     };
   };
-  programs.gh-dash = {enable = true;};
+  #programs.gh-dash = {enable = true;};
   programs.git = {
     enable = true;
     package = pkgs.git;

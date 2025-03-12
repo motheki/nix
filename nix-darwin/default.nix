@@ -56,6 +56,7 @@
       "linearmouse"
       "Steam"
       "obs"
+      "brave-browser@nightly"
       "CleanShot"
       "ghostty"
       "dolphin"

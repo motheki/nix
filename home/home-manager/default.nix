@@ -39,8 +39,8 @@
       gitoxide
       iina
       scc
+      discord-canary
       ffmpeg-full
-      vesktop
       helix-gpt
       ruffle
       #dolphin-emu
