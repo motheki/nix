@@ -25,7 +25,7 @@
       ".direnv/*"
     ];
     signing = {
-      key = "~/.ssh/trevoropiyo";
+      key = "~/.ssh/motheki";
     };
     delta = {
       enable = true;
