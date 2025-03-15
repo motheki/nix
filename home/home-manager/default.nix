@@ -43,6 +43,7 @@
       ffmpeg-full
       helix-gpt
       ruffle
+      mold
       #dolphin-emu
       #ghostty
     ];
