@@ -3,10 +3,6 @@
   programs.zsh.enable = true;
   system.stateVersion = 5;
   nix.enable = false;
-  services.ipfs = {
-    enable = true;
-    enableGarbageCollection = true;
-  };
   nixpkgs.config = {
     hostPlatform = "aarch64-darwin";
     allowBroken = true;
@@ -46,25 +42,23 @@
       "Developer" = 640199958;
       "Prime Video" = 545519333;
       "MusicHarbor" = 1440405750;
-      "Windows App" = 1295203466;
     };
     casks = [
       "betterdisplay"
-      "tunnelblick"
+      #"tunnelblick"
       "raycast"
       "cloudflare-warp"
       "linearmouse"
       "Steam"
       "obs"
-      "brave-browser@nightly"
       "CleanShot"
+      "zen-browser"
+      "brave-browser@nightly"
       "ghostty"
       "dolphin"
-      "zen-browser"
     ];
     caskArgs = {};
   };
   fonts.packages = with pkgs; [
-    ibm-plex
   ];
 }

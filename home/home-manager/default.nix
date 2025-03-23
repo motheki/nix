@@ -16,8 +16,6 @@
       dust
       jless
       webtorrent_desktop
-      #nodePackages_latest.webtorrent-cli
-      niv
       vivid
       duf
       tarlz
@@ -25,14 +23,12 @@
       fd
       treefmt2
       sd
-      zoom-us
       nodePackages_latest.prettier
       curlFull
       pueue
       glab
       nmap
       tree
-      amp
       rustscan
       fastfetch
       hyperfine
