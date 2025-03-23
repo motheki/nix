@@ -44,7 +44,7 @@
           {
             nix-homebrew = {
               enable = true;
-              enableRosetta = true;
+              enableRosetta = false;
               user = "motheki";
               autoMigrate = true;
             };

@@ -34,7 +34,7 @@
       batgrep
       batdiff
     ];
-    config = {theme = "Monokai Extended";};
+    config = {theme = "rose-pine-dawn";};
   };
   programs.direnv = {
     enable = true;
@@ -60,7 +60,7 @@
         show_banner: false,
         edit_mode: vi,
       };
-      $env.LS_COLORS = (vivid generate ayu | str trim);
+      $env.LS_COLORS = (vivid generate rose-pine-dawn | str trim);
       let config = {
         use_ls_colors: true
       };
@@ -86,7 +86,7 @@
   programs.btop = {
     enable = true;
     settings = {
-      color_theme = "ayu";
+      color_theme = "TTY";
       theme_background = false;
     };
   };

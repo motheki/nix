@@ -120,7 +120,7 @@
       ];
     };
     settings = {
-      theme = "base16_default_clear";
+      theme = "rose_pine_dawn_clear";
       editor = {
         cursor-shape = {
           insert = "bar";
