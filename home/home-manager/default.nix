@@ -40,6 +40,7 @@
       helix-gpt
       ruffle
       mold
+      chafa
       #dolphin-emu
       #ghostty
     ];
