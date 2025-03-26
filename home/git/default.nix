@@ -6,12 +6,12 @@
       prompt = true;
     };
   };
-  #programs.gh-dash = {enable = true;};
+  programs.gh-dash = {enable = true;};
   programs.git = {
     enable = true;
     package = pkgs.git;
 
-    #push.autoSetupRemote
+    #push.autoSetupRemote = true;
     ignores = [
       "*~"
       "*.swp"
@@ -25,19 +25,20 @@
       ".direnv/*"
     ];
     signing = {
-      key = "~/.ssh/motheki";
+      key = "~/.ssh/trevoropiyo";
+      signByDefault = true;
     };
     delta = {
       enable = true;
       options = {
         line-numbers = true;
         side-by-side = true;
-        theme = "Monokai Extended";
+        theme = "base16";
       };
     };
     lfs = {enable = true;};
-    userName = "motheki";
-    userEmail = "motheki@icloud.com";
+    userName = "trevoropiyo";
+    userEmail = "trevoropiyo@trevoropiyo.com";
   };
   programs.git-cliff = {
     enable = true;
