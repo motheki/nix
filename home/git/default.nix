@@ -25,7 +25,7 @@
       ".direnv/*"
     ];
     signing = {
-      key = "~/.ssh/trevoropiyo";
+      key = "AAAAC3NzaC1lZDI1NTE5AAAAIM4J6BiOFWDuYEh12BfqKDJIyJM+NTGIosm93hxfq/MK";
       signByDefault = true;
     };
     delta = {
