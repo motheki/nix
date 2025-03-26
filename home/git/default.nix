@@ -21,12 +21,26 @@
       ".wrangler/*"
       ".envrc"
       ".env"
+      ".DS_Store"
       ".npmrc"
       ".direnv/*"
     ];
-    signing = {
-      key = "AAAAC3NzaC1lZDI1NTE5AAAAIM4J6BiOFWDuYEh12BfqKDJIyJM+NTGIosm93hxfq/MK";
-      signByDefault = true;
+    extraConfig = {
+      gpg = {
+        format = "ssh";
+      };
+      commit = {
+        gpgsign = true;
+      };
+      tag = {
+        gpgsign = true;
+      };
+      user = {
+        signingkey = "~/.ssh/trevoropiyo.pub";
+      };
+      format = {
+        signoff = true;
+      };
     };
     delta = {
       enable = true;
