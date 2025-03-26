@@ -21,6 +21,7 @@
       yaml-language-server
       rust-analyzer
       spectral-language-server
+      haskellPackages.lsp
       taplo
     ];
     languages = {
@@ -45,6 +46,11 @@
           name = "toml";
           auto-format = true;
           language-servers = ["taplo"];
+        }
+        {
+          name = "haskell";
+          auto-format = true;
+          language-servers = ["haskellPackages.lsp"];
         }
         {
           name = "cmake";
