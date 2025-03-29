@@ -21,6 +21,8 @@
       ".wrangler/*"
       ".envrc"
       ".env"
+      "bun.lock"
+      "bun.lockb"
       ".DS_Store"
       ".npmrc"
       ".direnv/*"

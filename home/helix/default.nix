@@ -126,7 +126,7 @@
       ];
     };
     settings = {
-      theme = "base16_terminal";
+      theme = "rose_pine_dawn_clear";
       editor = {
         cursor-shape = {
           insert = "bar";
