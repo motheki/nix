@@ -2,7 +2,7 @@
   description = "mothkeki's system flake";
 
   inputs = {
-    nixpkgs = {url = "github:nixos/nixpkgs/master";};
+    nixpkgs.url = "github:numtide/nixpkgs-unfree/main";
     determinate = {url = "github:DeterminateSystems/determinate/main";};
     nix-darwin = {
       url = "github:LnL7/nix-darwin/master";
@@ -11,58 +11,49 @@
       url = "github:nix-community/home-manager/master";
     };
     nix-homebrew = {url = "github:zhaofengli-wip/nix-homebrew/main";};
-    homebrew-core = {
-      url = "github:homebrew/homebrew-core/master";
-      flake = false;
-    };
-    homebrew-cask = {
-      url = "github:homebrew/homebrew-cask/master";
-      flake = false;
-    };
-    homebrew-bundle = {
-      url = "github:homebrew/homebrew-bundle/master";
+    treefmt-nix.url = "github:numtide/treefmt-nix/main";
+    devenv.url = "github:cachix/devenv/main";
+    ez-configs.url = "github:ehllie/ez-configs/main";
+    devenv-root = {
+      url = "file+file:///dev/null";
       flake = false;
     };
   };
 
-  outputs = {
-    nixpkgs,
-    nix-darwin,
-    home-manager,
-    nix-homebrew,
-    determinate,
+  outputs = inputs @ {
+    flake-parts,
+    devenv-root,
     ...
-  } @ inputs: {
-    formatter.aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin.alejandra;
-    darwinConfigurations = {
-      "mothekis-macbook-pro" = nix-darwin.lib.darwinSystem {
-        system = "aarch64-darwin";
-        modules = [
-          #determinate.darwinModules.default
-          ./nix-darwin
-          nix-homebrew.darwinModules.nix-homebrew
-          {
-            nix-homebrew = {
-              enable = true;
-              enableRosetta = false;
-              user = "motheki";
-              autoMigrate = true;
-            };
-          }
-          home-manager.darwinModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              verbose = true;
-              users.motheki = import ./home;
-            };
-          }
-        ];
-        specialArgs = {
-          inherit inputs;
+  }:
+    flake-parts.lib.mkFlake {inherit inputs;} {
+      imports = [
+        inputs.treefmt-nix.flakeModule
+        inputs.devenv.flakeModule
+        inputs.ez-configs.flakeModule
+      ];
+      systems = ["x86_64-linux" "aarch64-linux" "aarch64-darwin" "x86_64-darwin"];
+      ezConfigs.root = ./.;
+      perSystem = {
+        config,
+        self',
+        inputs',
+        pkgs,
+        system,
+        ...
+      }: {
+        treefmt = {
+          programs = {
+            alejandra.enable = true;
+          };
+        };
+        devenv.shells.default = {
+          devenv.root = let
+            devenvRootFileContent = builtins.readFile devenv-root.outPath;
+          in
+            pkgs.lib.mkIf (devenvRootFileContent != "") devenvRootFileContent;
+          name = "os-flake";
+          languages.nix.enable = true;
         };
       };
     };
-  };
 }

@@ -1,16 +1,13 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ezModules,
+  ...
+}: {
   security.pam.services.sudo_local.touchIdAuth = true;
   programs.zsh.enable = true;
-  system.stateVersion = 5;
-  nix.enable = false;
   nixpkgs.config = {
-    hostPlatform = "aarch64-darwin";
-    allowBroken = true;
     allowUnfree = true;
-  };
-  users.users.motheki = {
-    name = "motheki";
-    home = "/Users/motheki";
   };
   homebrew = {
     enable = true;
@@ -59,6 +56,4 @@
     ];
     caskArgs = {};
   };
-  fonts.packages = with pkgs; [
-  ];
 }
