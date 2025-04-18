@@ -33,7 +33,7 @@
       fastfetch
       hyperfine
       gitoxide
-      iina
+      #iina
       scc
       discord-canary
       ffmpeg-full
