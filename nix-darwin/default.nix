@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   security.pam.services.sudo_local.touchIdAuth = true;
   programs.zsh.enable = true;
-  system.stateVersion = 5;
+  system.stateVersion = 6;
   nix.enable = false;
   nixpkgs.config = {
     hostPlatform = "aarch64-darwin";
