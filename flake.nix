@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs = {
-      url = "github:nixos/nixpkgs/master";
+      url = "github:numtide/nixpkgs-unfree/main";
     };
     determinate = {
       url = "github:DeterminateSystems/determinate/main";
