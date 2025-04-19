@@ -15,6 +15,7 @@
       pylyzer
       gopls
       alejandra
+      helix-gpt
       nodePackages_latest.typescript-language-server
       nodePackages_latest.vscode-json-languageserver
       nodePackages_latest.tailwindcss
@@ -40,6 +41,14 @@
             };
           };
         };
+      };
+      language-server.gpt = {
+        command = "helix-gpt";
+      };
+      language-server.ts = {
+        command = "typescript-language-server";
+        args = ["--stdia"];
+        language-id = "javascript";
       };
       language = [
         {
@@ -80,7 +89,7 @@
         {
           name = "typescript";
           auto-format = true;
-          language-servers = ["nodePackages_latest.typescript-language-server"];
+          language-servers = ["ts" "gpt"];
         }
         {
           name = "rust";
@@ -111,7 +120,7 @@
         {
           name = "python";
           auto-format = true;
-          language-servers = ["pylyzer"];
+          language-servers = ["pylyzer" "pylsp"];
         }
         {
           name = "swift";

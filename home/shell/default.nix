@@ -43,7 +43,7 @@
   };
   programs.skim = {enable = true;};
   programs.eza = {
-    enable = true;
+    enable = false;
     icons = "auto";
     extraOptions = ["--classify=always" "--color=always" "--all"];
   };
