@@ -35,7 +35,7 @@
       gitoxide
       #iina
       scc
-      discord-canary
+      #discord-canary
       ffmpeg-full
       helix-gpt
       ruffle
