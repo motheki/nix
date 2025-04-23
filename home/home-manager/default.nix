@@ -21,9 +21,7 @@
       tarlz
       glow
       fd
-      treefmt2
       sd
-      nodePackages_latest.prettier
       curlFull
       pueue
       glab
@@ -32,13 +30,13 @@
       rustscan
       fastfetch
       hyperfine
-      gitoxide
-      #iina
+      #gitoxide
+      iina
       scc
       #discord-canary
       ffmpeg-full
       helix-gpt
-      ruffle
+      #ruffle
       mold
       chafa
       #dolphin-emu
