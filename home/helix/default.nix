@@ -8,11 +8,15 @@
       lua-language-server
       cmake-language-server
       nixfmt-rfc-style
+      swift-format
+      lldb
+      ruff
       astro-language-server
+      nimlangserver
       nodePackages_latest.prettier
+      zig
       bash-language-server
       zls
-      pylyzer
       gopls
       alejandra
       helix-gpt
@@ -21,7 +25,10 @@
       nodePackages_latest.tailwindcss
       yaml-language-server
       rust-analyzer
+      superhtml
       spectral-language-server
+      sass
+      rubyPackages.solargraph
       haskellPackages.lsp
       taplo
     ];
@@ -55,6 +62,21 @@
           name = "toml";
           auto-format = true;
           language-servers = ["taplo"];
+        }
+        {
+          name = "html";
+          auto-format = true;
+          language-servers = ["superhtml"];
+        }
+        {
+          name = "ruby";
+          auto-format = true;
+          language-servers = ["rubyPackages.solargraph"];
+        }
+        {
+          name = "nim";
+          auto-format = true;
+          language-servers = ["nimlangserver"];
         }
         {
           name = "haskell";
@@ -94,7 +116,7 @@
         {
           name = "rust";
           auto-format = true;
-          language-servers = ["rust-analyzer"];
+          language-servers = ["rust-analyzer" "lldb"];
         }
         {
           name = "yaml";
@@ -104,7 +126,11 @@
         {
           name = "zig";
           auto-format = true;
-          language-servers = ["zls"];
+          language-servers = ["zls" "lldb"];
+          formatter = {
+            command = "zig";
+            args = ["fmt" "--ast-check"];
+          };
         }
         {
           name = "bash";
@@ -120,12 +146,20 @@
         {
           name = "python";
           auto-format = true;
-          language-servers = ["pylyzer" "pylsp"];
+          language-servers = ["ruff" "gpt"];
+          formatter = {
+            command = "ruff";
+            args = ["format"];
+          };
         }
         {
           name = "swift";
           auto-format = true;
-          language-servers = ["sourcekit-lsp" "swift-formatter"];
+          language-servers = ["sourcekit-lsp" "swift-formatter" "lldb"];
+          formatter = {
+            command = "swift-format";
+            args = ["-p" "-r"];
+          };
         }
         {
           name = "go";
@@ -135,7 +169,7 @@
       ];
     };
     settings = {
-      theme = "rose_pine_moon_clear";
+      theme = "rose_pine_dawn_clear";
       editor = {
         cursor-shape = {
           insert = "bar";
