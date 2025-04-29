@@ -60,5 +60,12 @@
     caskArgs = {};
   };
   fonts.packages = with pkgs; [
+    anonymousPro
+    libre-bodoni
+    comfortaa
+    lexend
+    raleway
+    ibm-plex
+    jetbrains-mono
   ];
 }
