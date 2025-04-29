@@ -1,9 +1,12 @@
 {pkgs, ...}: {
   programs.atuin = {
+    daemon.enable = true;
     enable = true;
     settings = {
       search_mode = "skim";
       search_mode_shell_up_key_binding = "skim";
+      style = "full";
+      invert = true;
       enter_accept = true;
     };
   };
