@@ -45,8 +45,10 @@
   programs.eza = {
     enable = true;
     enableNushellIntegration = false;
-    icons = "auto";
-    extraOptions = ["--classify=always" "--color=always" "--all"];
+    icons = "always";
+    git = true;
+    colors = "always";
+    extraOptions = ["--classify=always" "--all"];
   };
   programs.ripgrep = {enable = true;};
   programs.nushell = {
