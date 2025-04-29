@@ -6,7 +6,7 @@
       search_mode = "skim";
       search_mode_shell_up_key_binding = "skim";
       style = "full";
-      invert = true;
+      invert = false;
       enter_accept = true;
     };
   };
