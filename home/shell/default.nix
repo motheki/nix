@@ -43,7 +43,8 @@
   };
   programs.skim = {enable = true;};
   programs.eza = {
-    enable = false;
+    enable = true;
+    enableNushellIntegration = false;
     icons = "auto";
     extraOptions = ["--classify=always" "--color=always" "--all"];
   };
