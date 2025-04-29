@@ -55,6 +55,7 @@
       "zen-browser"
       "brave-browser@nightly"
       "ghostty"
+      "legcord"
       "dolphin"
     ];
     caskArgs = {};
