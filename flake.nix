@@ -7,15 +7,19 @@
     };
     determinate = {
       url = "github:DeterminateSystems/determinate/main";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-darwin = {
       url = "github:LnL7/nix-darwin/master";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
       url = "github:nix-community/home-manager/master";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-homebrew = {
       url = "github:zhaofengli-wip/nix-homebrew/main";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -32,7 +36,6 @@
       "mothekis-macbook-pro" = nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [
-          #determinate.darwinModules.default
           ./nix-darwin
           nix-homebrew.darwinModules.nix-homebrew
           {
