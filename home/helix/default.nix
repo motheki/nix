@@ -146,11 +146,11 @@
         {
           name = "python";
           auto-format = true;
-          language-servers = ["ruff" "gpt"];
-          formatter = {
-            command = "ruff";
-            args = ["format"];
-          };
+          language-servers = ["ruff"];
+          #formatter = {
+          #  command = "ruff";
+          #  args = ["format"];
+          #};
         }
         {
           name = "swift";
@@ -169,7 +169,7 @@
       ];
     };
     settings = {
-      theme = "rose_pine_moon_clear";
+      theme = "rose_pine_dawn_clear";
       editor = {
         cursor-shape = {
           insert = "bar";

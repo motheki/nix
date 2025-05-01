@@ -17,6 +17,7 @@
       jless
       webtorrent_desktop
       vivid
+      onefetch
       duf
       tarlz
       glow
