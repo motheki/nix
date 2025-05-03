@@ -53,6 +53,7 @@
       "obs"
       "CleanShot"
       "zen-browser"
+      "adguard-vpn@nightly"
       "brave-browser@nightly"
       "ghostty"
       "legcord"

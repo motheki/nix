@@ -1,4 +1,7 @@
 {pkgs, ...}: {
+  #services.pueue = {
+  #  enable = true;
+  #};
   programs.atuin = {
     daemon.enable = true;
     enable = true;
