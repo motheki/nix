@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   #services.pueue = {
   #  enable = true;
   #};
@@ -116,7 +120,7 @@
     shellAliases = {
     };
     syntaxHighlighting = {enable = true;};
-    initExtraBeforeCompInit = ''
+    initContent = lib.mkOrder 550 ''
       path+=('~/.cargo/bin')
       export LS_COLORS='$(vivid generate rose-pine-moon)'
       export HANDLER='copilot'
