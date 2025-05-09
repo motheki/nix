@@ -38,7 +38,7 @@
       ffmpeg-full
       helix-gpt
       #ruffle
-      mold
+      #mold
       chafa
       #dolphin-emu
       #ghostty
