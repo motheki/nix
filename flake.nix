@@ -5,9 +5,6 @@
     nixpkgs = {
       url = "github:nixos/nixpkgs/master";
     };
-    determinate = {
-      url = "github:DeterminateSystems/determinate/main";
-    };
     nix-darwin = {
       url = "github:LnL7/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -27,7 +24,6 @@
     nix-darwin,
     home-manager,
     nix-homebrew,
-    determinate,
     ...
   } @ inputs: {
     formatter.aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin.alejandra;

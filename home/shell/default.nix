@@ -85,6 +85,7 @@
         use_ls_colors: true
       };
       source ~/.cache/carapace/init.nu
+      source ~/.local/share/atuin/init.nu
     '';
     extraEnv = ''
       $env.PATH = ($env.PATH | split row (char esep) | prepend '~/.cargo/bin')

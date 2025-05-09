@@ -2,7 +2,18 @@
   security.pam.services.sudo_local.touchIdAuth = true;
   programs.zsh.enable = true;
   system.stateVersion = 6;
-  nix.enable = false;
+  nix = {
+    enable = true;
+    optimise = {
+      automatic = true;
+    };
+    gc = {
+      automatic = true;
+    };
+    settings = {
+      experimental-features = "nix-command flakes";
+    };
+  };
   nixpkgs.config = {
     hostPlatform = "aarch64-darwin";
     allowBroken = true;
@@ -15,7 +26,7 @@
   homebrew = {
     enable = true;
     global = {
-      brewfile = true;
+      brewfile = false;
     };
     onActivation = {
       autoUpdate = true;
@@ -25,6 +36,9 @@
     };
     taps = [];
     brews = [];
+    caskArgs = {
+      appdir = "~/Applications";
+    };
     masApps = {
       "Numbers" = 409203825;
       "Keynote" = 409183694;
