@@ -49,7 +49,7 @@
       options = {
         line-numbers = true;
         side-by-side = true;
-        theme = "Nord";
+        theme = "base16";
       };
     };
     lfs = {enable = true;};
