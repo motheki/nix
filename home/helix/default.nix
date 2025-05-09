@@ -169,7 +169,7 @@
       ];
     };
     settings = {
-      theme = "rose_pine_moon_clear";
+      theme = "nord_clear";
       editor = {
         cursor-shape = {
           insert = "bar";

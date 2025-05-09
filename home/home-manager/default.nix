@@ -30,6 +30,7 @@
       tree
       rustscan
       fastfetch
+      onefetch
       hyperfine
       #gitoxide
       iina

@@ -52,7 +52,7 @@
       "Steam"
       "obs"
       "CleanShot"
-      "zen-browser"
+      "zen"
       "adguard-vpn@nightly"
       "brave-browser@nightly"
       "ghostty"
@@ -69,5 +69,6 @@
     raleway
     ibm-plex
     jetbrains-mono
+    nerd-fonts.commit-mono
   ];
 }
