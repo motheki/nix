@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   programs.helix = {
+    package = pkgs.evil-helix;
     enable = true;
     defaultEditor = true;
     extraPackages = with pkgs; [
@@ -13,11 +14,12 @@
       ruff
       astro-language-server
       nimlangserver
-      nodePackages_latest.prettier
+      biome
       zig
       bash-language-server
       zls
       gopls
+      biome
       alejandra
       helix-gpt
       nodePackages_latest.typescript-language-server
@@ -112,6 +114,10 @@
           name = "typescript";
           auto-format = true;
           language-servers = ["ts" "gpt"];
+          formatter = {
+            command = "biome";
+            args = ["check" "--write"];
+          };
         }
         {
           name = "rust";
