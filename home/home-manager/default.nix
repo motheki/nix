@@ -7,9 +7,10 @@
       rg = "batgrep";
       cat = "prettybat";
       man = "batman";
+      cp = "xcp";
     };
     file = {};
-    sessionPath = ["/opt/homebrew/bin" "/opt/homebrew/Cellar/"];
+    sessionPath = ["/opt/homebrew/bin" "/opt/homebrew/Cellar"];
     packages = with pkgs; [
       xcp
       rm-improved

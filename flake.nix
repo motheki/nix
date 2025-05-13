@@ -32,15 +32,6 @@
         system = "aarch64-darwin";
         modules = [
           ./nix-darwin
-          nix-homebrew.darwinModules.nix-homebrew
-          {
-            nix-homebrew = {
-              enable = true;
-              enableRosetta = false;
-              user = "motheki";
-              autoMigrate = true;
-            };
-          }
           home-manager.darwinModules.home-manager
           {
             home-manager = {

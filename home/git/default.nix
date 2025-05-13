@@ -9,9 +9,10 @@
   programs.gh-dash = {enable = true;};
   programs.git = {
     enable = true;
-    package = pkgs.git;
-
-    #push.autoSetupRemote = true;
+    package = pkgs.gitFull;
+    maintenance = {
+      enable = true;
+    };
     ignores = [
       "*~"
       "*.swp"
@@ -63,5 +64,7 @@
       trim = true;
     };
   };
-  programs.gitui = {enable = true;};
+  programs.gitui = {
+    enable = true;
+  };
 }

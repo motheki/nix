@@ -175,7 +175,7 @@
       ];
     };
     settings = {
-      theme = "base16_default_clear";
+      theme = "nord_clear";
       editor = {
         cursor-shape = {
           insert = "bar";
