@@ -1,7 +1,0 @@
-keys:
-  - &personal age1m58qttcu2y63zzpqwgnw68jgqy2xzynkqpe6543xlt7kucts69fsp2wfl3
-creation_rules:
-  - path_regex: secrets/[^/]+\.(yaml|json|env|ini|sops)$
-    key_groups:
-      - age:
-          - *personal
