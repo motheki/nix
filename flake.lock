@@ -33,7 +33,6 @@
       },
       "original": {
         "owner": "nix-community",
-        "ref": "master",
         "repo": "home-manager",
         "type": "github"
       }
@@ -54,7 +53,6 @@
       },
       "original": {
         "owner": "LnL7",
-        "ref": "master",
         "repo": "nix-darwin",
         "type": "github"
       }
@@ -95,7 +93,6 @@
       },
       "original": {
         "owner": "zhaofengli-wip",
-        "ref": "main",
         "repo": "nix-homebrew",
         "type": "github"
       }
@@ -115,16 +112,15 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1747606662,
-        "narHash": "sha256-V1luHzSLXEc9ybhsQ5crzNybbgqbeP3b1Y4FZIv57iw=",
+        "lastModified": 1747611016,
+        "narHash": "sha256-9Ga6WaVr7BtL/1qq+G/AYB4+Xt/lwLoykDSl9qmkNC4=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "5d3eb3a45b9618e352a2698c415c7108fae30af2",
+        "rev": "951fb7ac547d68db2b7bb393f01492e5d8708a79",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
-        "ref": "master",
         "repo": "nixpkgs",
         "type": "github"
       }
