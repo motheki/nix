@@ -2,6 +2,7 @@
   security.pam.services.sudo_local.touchIdAuth = true;
   programs.zsh.enable = true;
   system.stateVersion = 6;
+  system.primaryUser = "motheki";
   nix = {
     enable = true;
     optimise = {
