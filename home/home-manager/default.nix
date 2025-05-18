@@ -8,6 +8,7 @@
       cat = "prettybat";
       man = "batman";
       cp = "xcp";
+      nupdate = "nix --extra-experimental-features 'nix-command flakes' run 'nix-darwin/master'#darwin-rebuild -- switch --flake ~/Repos/nix  --fallback";
     };
     file = {};
     sessionPath = ["/opt/homebrew/bin" "/opt/homebrew/Cellar"];

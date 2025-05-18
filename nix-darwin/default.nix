@@ -61,6 +61,7 @@
       "betterdisplay"
       #"tunnelblick"
       "raycast"
+      "crossover"
       "cloudflare-warp"
       "linearmouse"
       "Steam"
