@@ -11,6 +11,7 @@
       nixfmt-rfc-style
       swift-format
       lldb
+      ty
       ruff
       astro-language-server
       nimlangserver
@@ -35,21 +36,15 @@
       taplo
     ];
     languages = {
+      language-server.ty = {
+        language-id = "python";
+        command = "ty";
+        args = ["server"];
+      };
       language-server.ruff = {
+        language-id = "python";
         command = "ruff";
         args = ["server"];
-        config = {
-          settings = {
-            lineLength = 80;
-            lint = {
-              select = ["E4" "E7"];
-              preview = true;
-            };
-            format = {
-              preview = true;
-            };
-          };
-        };
       };
       language-server.gpt = {
         command = "helix-gpt";
@@ -152,11 +147,11 @@
         {
           name = "python";
           auto-format = true;
-          language-servers = ["ruff"];
-          #formatter = {
-          #  command = "ruff";
-          #  args = ["format"];
-          #};
+          language-servers = ["ty" "ruff"];
+          formatter = {
+            command = "ruff";
+            args = ["format"];
+          };
         }
         {
           name = "swift";

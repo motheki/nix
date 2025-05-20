@@ -65,7 +65,7 @@
       "crossover"
       "cloudflare-warp"
       "linearmouse"
-      "Steam"
+      #"Steam"
       "obs"
       "CleanShot"
       "zen"
