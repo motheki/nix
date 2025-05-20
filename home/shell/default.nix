@@ -6,6 +6,9 @@
   #services.pueue = {
   #  enable = true;
   #};
+  #programs.nheko = {
+  #  enable = true;
+  #};
   programs.atuin = {
     daemon.enable = true;
     enable = true;
