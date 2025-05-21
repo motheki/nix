@@ -66,14 +66,14 @@
   programs.ripgrep = {enable = true;};
   programs.nushell = {
     enable = true;
-    #plugins = with pkgs; [
-    #  nushellPlugins.formats
-    #  nushellPlugins.skim
-    #  nushellPlugins.gstat
-    #  nushellPlugins.highlight
-    #  nushellPlugins.query
-    #  nushellPlugins.polars
-    #];
+    plugins = with pkgs; [
+      nushellPlugins.formats
+      nushellPlugins.skim
+      nushellPlugins.gstat
+      nushellPlugins.highlight
+      nushellPlugins.query
+      nushellPlugins.polars
+    ];
     package = pkgs.nushell;
     shellAliases = {
     };

@@ -209,6 +209,7 @@
         smart-tab = {
           enable = true;
         };
+        evil = false;
         color-modes = true;
         lsp = {
           display-messages = true;
