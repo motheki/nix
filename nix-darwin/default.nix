@@ -70,9 +70,8 @@
       "CleanShot"
       "zen"
       "adguard-vpn"
-      "brave-browser"
-      "ghostty"
       "legcord"
+      "ghostty"
       "dolphin"
     ];
     caskArgs = {};

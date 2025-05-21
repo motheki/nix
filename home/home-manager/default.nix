@@ -8,6 +8,10 @@
       cat = "prettybat";
       man = "batman";
       cp = "xcp";
+      rm = "rip";
+      fd = "find";
+      du = "dust";
+      sed = "sd";
       nupdate = "sudo nix --extra-experimental-features 'nix-command flakes' run 'nix-darwin/master'#darwin-rebuild -- switch --flake ~/Repos/nix  --fallback";
     };
     file = {};
@@ -29,22 +33,17 @@
       pueue
       glab
       nmap
+      brave
       tree
       rustscan
       fastfetch
       onefetch
       hyperfine
-      #gitoxide
       iina
       scc
-      #discord-canary
       ffmpeg-full
       helix-gpt
-      #ruffle
-      #mold
       chafa
-      #dolphin-emu
-      #ghostty
     ];
   };
 }

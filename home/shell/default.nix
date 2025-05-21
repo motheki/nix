@@ -63,7 +63,10 @@
     colors = "always";
     extraOptions = ["--classify=always" "--all"];
   };
-  programs.ripgrep = {enable = true;};
+  programs.ripgrep = {
+    package = pkgs.ripgrep-all;
+    enable = true;
+  };
   programs.nushell = {
     enable = true;
     plugins = with pkgs; [
