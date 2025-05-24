@@ -50,7 +50,7 @@
       options = {
         line-numbers = true;
         side-by-side = true;
-        theme = "base16";
+        theme = "Nord";
       };
     };
     lfs = {enable = true;};

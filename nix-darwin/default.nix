@@ -64,15 +64,15 @@
       "raycast"
       "crossover"
       "cloudflare-warp"
-      "linearmouse"
+      "linearmouse@beta"
       #"Steam"
-      "obs"
+      "obs@beta"
       "CleanShot"
       "zen"
-      "adguard-vpn"
+      "adguard-vpn@nightly"
       "legcord"
-      "ghostty"
-      "dolphin"
+      "ghostty@tip"
+      "dolphin@dev"
     ];
     caskArgs = {};
   };

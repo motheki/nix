@@ -47,7 +47,7 @@
       batgrep
       batdiff
     ];
-    config = {theme = "base16";};
+    config = {theme = "Nord";};
   };
   programs.direnv = {
     enable = true;
@@ -115,6 +115,23 @@
     settings = {
       color_theme = "nord";
       theme_background = false;
+    };
+  };
+  programs.bun = {
+    enable = true;
+    settings = {
+      smol = true;
+      telemetry = false;
+      test = {
+        coverage = true;
+        coverageThreshold = 0.9;
+      };
+    };
+  };
+  programs.uv = {
+    enable = true;
+    settings = {
+      preview = true;
     };
   };
   programs.zsh = {
