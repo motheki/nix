@@ -35,10 +35,12 @@
       extraFlags = ["--verbose"];
       upgrade = true;
     };
-    taps = [];
+    taps = [
+      "psharma04/dorion"
+    ];
     brews = [];
     caskArgs = {
-      appdir = "~/Applications";
+      appdir = "/Applications";
     };
     masApps = {
       "Numbers" = 409203825;
@@ -48,7 +50,6 @@
       "Play" = 1596506190;
       "Testflight" = 899247664;
       "MusicMatch" = 1596146219;
-      "Xcode" = 497799835;
       "SponsorBlock" = 1573461917;
       "WhatsApp" = 310633997;
       "Infuse" = 1136220934;
@@ -67,10 +68,11 @@
       "linearmouse@beta"
       #"Steam"
       "obs@beta"
+      "brave-browser@nightly"
       "CleanShot"
       "zen"
       "adguard-vpn@nightly"
-      "legcord"
+      "dorion"
       "ghostty@tip"
       "dolphin@dev"
     ];

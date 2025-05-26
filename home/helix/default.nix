@@ -23,6 +23,7 @@
       biome
       alejandra
       helix-gpt
+      rPackages.air
       nodePackages_latest.typescript-language-server
       nodePackages_latest.vscode-json-languageserver
       nodePackages_latest.tailwindcss
@@ -106,6 +107,11 @@
           language-servers = ["nodePackages_latest.tailwindcss"];
         }
         {
+          name = "r";
+          auto-format = true;
+          language-servers = ["rPackages.air"];
+        }
+        {
           name = "typescript";
           auto-format = true;
           language-servers = ["ts" "gpt"];
@@ -170,7 +176,7 @@
       ];
     };
     settings = {
-      theme = "nord_clear";
+      theme = "nord_light_clear";
       editor = {
         cursor-shape = {
           insert = "bar";

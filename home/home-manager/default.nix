@@ -33,7 +33,6 @@
       pueue
       glab
       nmap
-      brave
       tree
       rustscan
       fastfetch

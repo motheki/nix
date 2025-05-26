@@ -9,6 +9,12 @@
   #programs.nheko = {
   #  enable = true;
   #};
+  services.ollama = {
+    enable = true;
+  };
+  programs.mods = {
+    enable = true;
+  };
   programs.atuin = {
     daemon.enable = true;
     enable = true;
@@ -115,23 +121,6 @@
     settings = {
       color_theme = "nord";
       theme_background = false;
-    };
-  };
-  programs.bun = {
-    enable = true;
-    settings = {
-      smol = true;
-      telemetry = false;
-      test = {
-        coverage = true;
-        coverageThreshold = 0.9;
-      };
-    };
-  };
-  programs.uv = {
-    enable = true;
-    settings = {
-      preview = true;
     };
   };
   programs.zsh = {
