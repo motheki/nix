@@ -38,6 +38,7 @@
       fastfetch
       onefetch
       hyperfine
+      halp
       iina
       scc
       ffmpeg-full

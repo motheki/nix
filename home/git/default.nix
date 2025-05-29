@@ -27,6 +27,7 @@
       ".DS_Store"
       ".npmrc"
       ".direnv/*"
+      ".pre-commit-config.yaml"
     ];
     extraConfig = {
       gpg = {

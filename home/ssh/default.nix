@@ -5,6 +5,6 @@
   };
   programs.keychain = {
     enable = true;
-    keys = ["trevoropiyo"];
+    keys = ["trevoropiyo" "motheki"];
   };
 }

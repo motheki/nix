@@ -53,7 +53,6 @@
       batgrep
       batdiff
     ];
-    config = {theme = "Nord";};
   };
   programs.direnv = {
     enable = true;
@@ -92,7 +91,6 @@
         show_banner: false,
         edit_mode: vi,
       };
-      $env.LS_COLORS = (vivid generate nord | str trim);
       let config = {
         use_ls_colors: true
       };
@@ -119,7 +117,7 @@
   programs.btop = {
     enable = true;
     settings = {
-      color_theme = "nord";
+      color_theme = "ayu";
       theme_background = false;
     };
   };
@@ -135,7 +133,7 @@
     syntaxHighlighting = {enable = true;};
     initContent = lib.mkOrder 550 ''
       path+=('~/.cargo/bin')
-      export LS_COLORS='$(vivid generate nord)'
+      export LS_COLORS='$(vivid generate ayu)'
       export HANDLER='copilot'
       export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
       zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'

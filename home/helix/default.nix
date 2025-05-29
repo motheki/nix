@@ -20,6 +20,7 @@
       bash-language-server
       zls
       gopls
+      ocamlPackages.ocaml-lsp
       biome
       alejandra
       helix-gpt
@@ -75,6 +76,11 @@
           name = "nim";
           auto-format = true;
           language-servers = ["nimlangserver"];
+        }
+        {
+          name = "ocaml";
+          auto-format = true;
+          language-servers = ["ocamlPackages.ocaml-lsp"];
         }
         {
           name = "haskell";
@@ -153,11 +159,11 @@
         {
           name = "python";
           auto-format = true;
-          language-servers = ["ty" "ruff"];
-          formatter = {
-            command = "ruff";
-            args = ["format"];
-          };
+          language-servers = ["ruff" "ty"];
+          #formatter = {
+          #  command = "ruff";
+          #  args = ["format"];
+          #};
         }
         {
           name = "swift";
@@ -176,7 +182,7 @@
       ];
     };
     settings = {
-      theme = "nord_light_clear";
+      theme = "ayu_dark_clear";
       editor = {
         cursor-shape = {
           insert = "bar";

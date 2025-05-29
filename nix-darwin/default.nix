@@ -70,7 +70,6 @@
       "obs@beta"
       "brave-browser@nightly"
       "CleanShot"
-      "zen"
       "adguard-vpn@nightly"
       "dorion"
       "ghostty@tip"
