@@ -98,6 +98,7 @@
       source ~/.local/share/atuin/init.nu
     '';
     extraEnv = ''
+      $env.LS_COLORS = (vivid generate ayu)
       $env.PATH = ($env.PATH | split row (char esep) | prepend '~/.cargo/bin')
       $env.EDITOR = 'hx'
       $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
