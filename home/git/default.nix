@@ -53,7 +53,6 @@
         side-by-side = true;
         theme = "Nord";
         diff-so-fancy = true;
-        diff-highlight = true;
       };
     };
     lfs = {enable = true;};

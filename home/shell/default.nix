@@ -3,18 +3,16 @@
   lib,
   ...
 }: {
-  #services.pueue = {
-  #  enable = true;
-  #};
-  #programs.nheko = {
-  #  enable = true;
-  #};
   services.ollama = {
     enable = true;
   };
   programs.mods = {
     enable = true;
   };
+  #programs.ghostty = {
+  #  enable = true;
+  #  package = pkgs.ghostty-bin;
+  #};
   programs.atuin = {
     daemon.enable = true;
     enable = true;

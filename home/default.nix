@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   imports = [
     ./darwin-settings
     ./home-manager

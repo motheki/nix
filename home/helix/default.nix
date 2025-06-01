@@ -157,6 +157,12 @@
           language-servers = ["nil"];
         }
         {
+          name = "php";
+          auto-format = true;
+          formatter = ["phpactor"];
+          language-servers = ["phpactor"];
+        }
+        {
           name = "python";
           auto-format = true;
           language-servers = ["ruff" "ty"];

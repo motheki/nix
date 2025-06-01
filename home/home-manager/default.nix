@@ -44,6 +44,8 @@
       ffmpeg-full
       helix-gpt
       chafa
+      #lsr
+      #ghostty-bin
     ];
   };
 }
