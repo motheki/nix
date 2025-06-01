@@ -84,7 +84,6 @@
       "raycast"
       "linearmouse@beta"
       "obs@beta"
-      "brave-browser@nightly"
       "CleanShot"
       "adguard-vpn@nightly"
       "dorion"

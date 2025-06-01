@@ -43,6 +43,7 @@
       scc
       ffmpeg-full
       helix-gpt
+      yq-go
       chafa
       #lsr
       #ghostty-bin
