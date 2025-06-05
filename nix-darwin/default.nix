@@ -48,9 +48,6 @@
       extraFlags = ["--verbose"];
       upgrade = true;
     };
-    taps = [
-      "psharma04/dorion"
-    ];
     brews = [];
     caskArgs = {
       appdir = "/Applications";
@@ -86,10 +83,10 @@
       "obs@beta"
       "CleanShot"
       "adguard-vpn@nightly"
-      "dorion"
       "ghostty@tip"
       "openemu"
       "dolphin@dev"
+      "legcord"
     ];
     caskArgs = {};
   };

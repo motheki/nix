@@ -12,7 +12,8 @@
       find = "fd";
       du = "dust";
       sed = "sd";
-      nupdate = "sudo nix --extra-experimental-features 'nix-command flakes' run 'nix-darwin/master'#darwin-rebuild -- switch --flake ~/Repos/nix  --fallback";
+      nupdate = "nix flake update --inputs-from ~/Repos/nix";
+      rebuild = "sudo nix --extra-experimental-features 'nix-command flakes' run 'nix-darwin/master'#darwin-rebuild -- switch --flake ~/Repos/nix  --fallback";
     };
     file = {};
     sessionPath = ["/opt/homebrew/bin" "/opt/homebrew/Cellar"];
@@ -39,12 +40,14 @@
       onefetch
       hyperfine
       halp
-      iina
+      #iina
+      #legcord
       scc
       ffmpeg-full
       helix-gpt
       yq-go
       chafa
+      #uxn
       #lsr
       #ghostty-bin
     ];
