@@ -12,7 +12,7 @@
       find = "fd";
       du = "dust";
       sed = "sd";
-      nupdate = "nix flake update --inputs-from ~/Repos/nix";
+      nupdate = "nix --extra-experimental-features 'nix-command flakes' flake update";
       rebuild = "sudo nix --extra-experimental-features 'nix-command flakes' run 'nix-darwin/master'#darwin-rebuild -- switch --flake ~/Repos/nix  --fallback";
     };
     file = {};

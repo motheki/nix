@@ -87,6 +87,7 @@
       "openemu"
       "dolphin@dev"
       "legcord"
+      "steam"
     ];
     caskArgs = {};
   };
