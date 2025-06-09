@@ -9,10 +9,6 @@
   programs.mods = {
     enable = true;
   };
-  #programs.ghostty = {
-  #  enable = true;
-  #  package = pkgs.ghostty-bin;
-  #};
   programs.atuin = {
     daemon.enable = true;
     enable = true;

@@ -40,16 +40,11 @@
       onefetch
       hyperfine
       halp
-      #iina
-      #legcord
       scc
       ffmpeg-full
       helix-gpt
       yq-go
       chafa
-      #uxn
-      #lsr
-      #ghostty-bin
     ];
   };
 }
