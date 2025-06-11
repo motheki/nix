@@ -57,10 +57,8 @@
       "Keynote" = 409183694;
       "MusicBox" = 1614730313;
       "Flighty" = 1358823008;
-      "Play" = 1596506190;
       "Testflight" = 899247664;
       "MusicMatch" = 1596146219;
-      "AdGuard for Safari" = 1440147259;
       "Boom3D Netflix Extension" = 6445882848;
       "Lucky" = 6627338771;
       "Refined GitHub" = 1519867270;
@@ -77,14 +75,9 @@
       "MusicHarbor" = 1440405750;
     };
     casks = [
-      "betterdisplay"
       "raycast"
       "linearmouse@beta"
       "obs@beta"
-      "CleanShot"
-      "adguard-vpn@nightly"
-      "ghostty@tip"
-      "openemu"
       "dolphin@dev"
       "legcord"
       "steam"

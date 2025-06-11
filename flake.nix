@@ -13,12 +13,23 @@
       url = "github:nix-community/home-manager/master";
       #inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-homebrew.url = "github:zhaofengli/nix-homebrew";
+
+    homebrew-core = {
+      url = "github:homebrew/homebrew-core";
+      flake = false;
+    };
+    homebrew-cask = {
+      url = "github:homebrew/homebrew-cask";
+      flake = false;
+    };
   };
 
   outputs = {
     nixpkgs,
     nix-darwin,
     home-manager,
+    nix-homebrew,
     ...
   } @ inputs: {
     formatter.aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin.alejandra;
@@ -27,6 +38,15 @@
         system = "aarch64-darwin";
         modules = [
           ./nix-darwin
+          nix-homebrew.darwinModules.nix-homebrew
+          {
+            nix-homebrew = {
+              enable = true;
+              enableRosetta = true;
+              user = "motheki";
+              autoMigrate = true;
+            };
+          }
           home-manager.darwinModules.home-manager
           {
             home-manager = {

@@ -31,6 +31,7 @@
       fd
       sd
       curlFull
+      code-cursor
       pueue
       glab
       nmap
@@ -45,6 +46,7 @@
       helix-gpt
       yq-go
       chafa
+      zed-editor
     ];
   };
 }
