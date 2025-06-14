@@ -55,7 +55,6 @@
     masApps = {
       "Numbers" = 409203825;
       "Keynote" = 409183694;
-      "MusicBox" = 1614730313;
       "Flighty" = 1358823008;
       "Testflight" = 899247664;
       "MusicMatch" = 1596146219;
@@ -81,6 +80,7 @@
       "dolphin@dev"
       "legcord"
       "steam"
+      "tunnelblick@beta"
     ];
     caskArgs = {};
   };
