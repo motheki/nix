@@ -6,6 +6,10 @@
   services.ollama = {
     enable = true;
   };
+  #programs.ghostty = {
+  #  enable = true;
+  #  package = pkgs.ghostty;
+  #};
   programs.mods = {
     enable = true;
   };

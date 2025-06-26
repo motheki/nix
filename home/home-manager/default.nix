@@ -36,6 +36,7 @@
       glab
       nmap
       tree
+      opencode
       rustscan
       fastfetch
       onefetch

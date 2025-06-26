@@ -80,6 +80,7 @@
       "dolphin@dev"
       "legcord"
       "steam"
+      "ghostty"
       "tunnelblick@beta"
     ];
     caskArgs = {};
