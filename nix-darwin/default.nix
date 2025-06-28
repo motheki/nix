@@ -75,6 +75,7 @@
     };
     casks = [
       "raycast"
+      "thebrowsercompany-dia"
       "linearmouse@beta"
       "obs@beta"
       "dolphin@dev"
