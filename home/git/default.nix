@@ -51,8 +51,8 @@
       options = {
         line-numbers = true;
         side-by-side = true;
-        theme = "Nord";
-        diff-so-fancy = true;
+        theme = "Github";
+        diff-so-fancy = false;
       };
     };
     lfs = {enable = true;};

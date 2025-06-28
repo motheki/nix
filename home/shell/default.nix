@@ -91,7 +91,7 @@
     '';
     extraEnv = ''
       $env.EDITOR = 'hx'
-      $env.LS_COLORS = (vivid generate ayu)
+      $env.LS_COLORS = (vivid generate rose-pine-dawn)
     '';
   };
   programs.zoxide = {enable = true;};
@@ -105,7 +105,7 @@
   programs.btop = {
     enable = true;
     settings = {
-      color_theme = "ayu";
+      color_theme = "rose-pine-dawn";
       theme_background = false;
     };
   };
@@ -121,11 +121,8 @@
     syntaxHighlighting = {enable = true;};
     initContent = lib.mkOrder 550 ''
       path+=('~/.cargo/bin')
-      export LS_COLORS='$(vivid generate ayu)'
-      export HANDLER='copilot'
-      export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
+      export LS_COLORS='$(vivid generate rose-pine-dawn)'
       zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
-      source <(carapace _carapace)
     '';
   };
 }
