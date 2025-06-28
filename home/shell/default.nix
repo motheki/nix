@@ -6,10 +6,6 @@
   services.ollama = {
     enable = true;
   };
-  #programs.ghostty = {
-  #  enable = true;
-  #  package = pkgs.ghostty;
-  #};
   programs.mods = {
     enable = true;
   };
@@ -92,16 +88,10 @@
       let config = {
         use_ls_colors: true
       };
-      source ~/.cache/carapace/init.nu
-      source ~/.local/share/atuin/init.nu
     '';
     extraEnv = ''
-      $env.PATH = ($env.PATH | split row (char esep) | prepend '~/.cargo/bin')
       $env.EDITOR = 'hx'
-      $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
-      $env.HANDLER = 'copilot'
-      mkdir ~/.cache/carapace
-      carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
+      $env.LS_COLORS = (vivid generate ayu)
     '';
   };
   programs.zoxide = {enable = true;};
