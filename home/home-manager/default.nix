@@ -13,7 +13,7 @@
       du = "dust";
       sed = "sd";
       nupdate = "nix --extra-experimental-features 'nix-command flakes' flake update";
-      rebuild = "sudo nix --extra-experimental-features 'nix-command flakes' run 'nix-darwin/master'#darwin-rebuild -- switch --flake ~/Repos/nix  --fallback";
+      rebuild = "sudo nix --extra-experimental-features 'nix-command flakes' run 'nix-darwin/master'#darwin-rebuild -- switch --flake ~/Repos/nix";
     };
     file = {};
     sessionPath = ["/opt/homebrew/bin" "/opt/homebrew/Cellar"];
@@ -36,7 +36,6 @@
       glab
       nmap
       tree
-      opencode
       rustscan
       fastfetch
       onefetch

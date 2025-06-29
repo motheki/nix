@@ -4,29 +4,7 @@
   system.stateVersion = 6;
   system.primaryUser = "motheki";
   nix = {
-    enable = true;
-    package = pkgs.nixVersions.git;
-    linux-builder = {
-      enable = true;
-      ephemeral = true;
-      supportedFeatures = [
-        "big-parallel"
-      ];
-    };
-    optimise = {
-      automatic = true;
-    };
-    gc = {
-      automatic = true;
-    };
-    settings = {
-      extra-experimental-features = "nix-command flakes";
-      accept-flake-config = true;
-      allow-dirty = true;
-      always-allow-substitutes = true;
-      fallback = true;
-      max-jobs = "auto";
-    };
+    enable = false;
   };
   nixpkgs.config = {
     hostPlatform = "aarch64-darwin";
