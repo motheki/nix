@@ -52,7 +52,7 @@
         line-numbers = true;
         side-by-side = true;
         theme = "Github";
-        diff-so-fancy = false;
+        diff-so-fancy = true;
       };
     };
     lfs = {enable = true;};

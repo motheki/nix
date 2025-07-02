@@ -10,8 +10,10 @@
     enable = true;
   };
   programs.atuin = {
-    daemon.enable = true;
     enable = true;
+    daemon = {
+      enable = true;
+    };
     settings = {
       search_mode = "skim";
       search_mode_shell_up_key_binding = "skim";
