@@ -111,6 +111,9 @@
       theme_background = false;
     };
   };
+  programs.fish = {
+    enable = true;
+  };
   programs.zsh = {
     enable = true;
     enableVteIntegration = true;
