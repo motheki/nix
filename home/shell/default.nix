@@ -107,7 +107,7 @@
   programs.btop = {
     enable = true;
     settings = {
-      color_theme = "rose-pine-moon";
+      color_theme = "greyscale";
       theme_background = false;
     };
   };
