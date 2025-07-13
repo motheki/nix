@@ -54,13 +54,12 @@
     casks = [
       "raycast"
       "thebrowsercompany-dia"
-      "linearmouse@beta"
       "obs@beta"
       "dolphin@dev"
       "legcord"
       "steam"
+      "betterdisplay"
       "ghostty"
-      "tunnelblick@beta"
     ];
     caskArgs = {};
   };
