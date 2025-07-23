@@ -9,6 +9,9 @@
   programs.mods = {
     enable = true;
   };
+  programs.television = {
+    enable = true;
+  };
   programs.atuin = {
     enable = true;
     daemon = {
@@ -56,14 +59,6 @@
     silent = true;
   };
   programs.skim = {enable = true;};
-  programs.eza = {
-    enable = true;
-    enableNushellIntegration = false;
-    icons = "always";
-    git = true;
-    colors = "always";
-    extraOptions = ["--classify=always" "--all"];
-  };
   programs.ripgrep = {
     package = pkgs.ripgrep-all;
     enable = true;

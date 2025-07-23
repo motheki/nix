@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   programs.helix = {
-    package = pkgs.evil-helix;
     enable = true;
+    package = pkgs.helix;
     defaultEditor = true;
     extraPackages = with pkgs; [
       marksman
@@ -227,7 +227,6 @@
         smart-tab = {
           enable = true;
         };
-        evil = false;
         color-modes = true;
         lsp = {
           display-messages = true;

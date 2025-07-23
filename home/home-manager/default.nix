@@ -7,6 +7,7 @@
       rg = "batgrep";
       cat = "prettybat";
       man = "batman";
+      ls = "lla -G --icons  -T";
       cp = "xcp";
       rm = "rip";
       find = "fd";
@@ -29,6 +30,9 @@
       tarlz
       glow
       fd
+      lla
+      xan
+      ox
       sd
       curlFull
       pueue
@@ -42,7 +46,6 @@
       halp
       scc
       ffmpeg-full
-      helix-gpt
       yq-go
       chafa
     ];
