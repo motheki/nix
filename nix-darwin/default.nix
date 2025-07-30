@@ -35,9 +35,7 @@
       "Keynote" = 409183694;
       "Flighty" = 1358823008;
       "Testflight" = 899247664;
-      "MusicMatch" = 1596146219;
       "Boom3D Netflix Extension" = 6445882848;
-      "Lucky" = 6627338771;
       "Refined GitHub" = 1519867270;
       "Noir" = 1592917505;
       "Sink It" = 6449873635;
@@ -49,17 +47,12 @@
       "Pages" = 409201541;
       "Developer" = 640199958;
       "Prime Video" = 545519333;
-      "MusicHarbor" = 1440405750;
     };
     casks = [
-      "raycast"
       "thebrowsercompany-dia"
-      "obs@beta"
       "dolphin@dev"
-      "legcord"
+      "vesktop"
       "steam"
-      "betterdisplay"
-      "ghostty"
     ];
     caskArgs = {};
   };

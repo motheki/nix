@@ -6,8 +6,9 @@
     shellAliases = {
       rg = "batgrep";
       cat = "prettybat";
+      speedtest = "networkQuality -v";
       man = "batman";
-      ls = "lla -G --icons  -T";
+      ls = "lla -G -T";
       cp = "xcp";
       rm = "rip";
       find = "fd";
