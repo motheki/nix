@@ -4,7 +4,7 @@
   ...
 }: {
   services.ollama = {
-    enable = true;
+    enable = false;
   };
   programs.mods = {
     enable = true;
@@ -93,7 +93,6 @@
   };
   programs.zoxide = {enable = true;};
   programs.starship = {enable = true;};
-  programs.thefuck = {enable = true;};
   programs.jq = {enable = true;};
   programs.tealdeer = {
     enable = true;

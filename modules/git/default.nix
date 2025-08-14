@@ -9,10 +9,6 @@
   programs.gh-dash = {enable = true;};
   programs.git = {
     enable = true;
-    package = pkgs.gitFull;
-    maintenance = {
-      enable = true;
-    };
     ignores = [
       "*~"
       "*.swp"

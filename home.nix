@@ -1,7 +1,11 @@
-{pkgs, ...}: {
-  programs.home-manager = {enable = true;};
+# home.nix
+{ config, pkgs, ... }:
+
+{
   home = {
-    stateVersion = "25.05";
+    homeDirectory = "/Users/motheki";
+    username = "motheki";
+    stateVersion = "25.11";
     sessionVariables = {};
     shellAliases = {
       rg = "batgrep";
@@ -9,18 +13,12 @@
       speedtest = "networkQuality -v";
       man = "batman";
       ls = "lla -G -T";
-      cp = "xcp";
       rm = "rip";
       find = "fd";
       du = "dust";
       sed = "sd";
-      nupdate = "nix --extra-experimental-features 'nix-command flakes' flake update";
-      rebuild = "sudo nix --extra-experimental-features 'nix-command flakes' run 'nix-darwin/master'#darwin-rebuild -- switch --flake ~/Repos/nix";
     };
-    file = {};
-    sessionPath = ["/opt/homebrew/bin" "/opt/homebrew/Cellar"];
     packages = with pkgs; [
-      xcp
       rm-improved
       dust
       jless
@@ -51,4 +49,7 @@
       chafa
     ];
   };
+  imports = [
+    ./modules
+  ];
 }
