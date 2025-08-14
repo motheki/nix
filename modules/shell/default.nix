@@ -88,7 +88,7 @@
     '';
     extraEnv = ''
       $env.EDITOR = 'hx'
-      $env.LS_COLORS = (vivid generate rose-pine-moon)
+      $env.LS_COLORS = (vivid generate nord)
     '';
   };
   programs.zoxide = {enable = true;};
@@ -101,7 +101,7 @@
   programs.btop = {
     enable = true;
     settings = {
-      color_theme = "greyscale";
+      color_theme = "nord";
       theme_background = false;
     };
   };
@@ -120,7 +120,7 @@
     syntaxHighlighting = {enable = true;};
     initContent = lib.mkOrder 550 ''
       path+=('~/.cargo/bin')
-      export LS_COLORS='$(vivid generate rose-pine-moon)'
+      export LS_COLORS='$(vivid generate nord)'
       zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
     '';
   };

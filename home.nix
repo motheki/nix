@@ -1,7 +1,9 @@
 # home.nix
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   home = {
     homeDirectory = "/Users/motheki";
     username = "motheki";
@@ -17,6 +19,7 @@
       find = "fd";
       du = "dust";
       sed = "sd";
+      rebuild = "nix --extra-experimental-features 'nix-command flakes' run home-manager/master  -- switch  --flake ~/Repos/nix --show-trace";
     };
     packages = with pkgs; [
       rm-improved

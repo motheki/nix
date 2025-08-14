@@ -4,5 +4,6 @@
     ./ssh
     ./git
     ./helix
+    ./ghostty
   ];
 }
