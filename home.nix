@@ -1,9 +1,4 @@
-# home.nix
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   home = {
     homeDirectory = "/Users/motheki";
     username = "motheki";
@@ -11,17 +6,13 @@
     sessionVariables = {};
     shellAliases = {
       rg = "batgrep";
-      cat = "prettybat";
       speedtest = "networkQuality -v";
-      man = "batman";
       ls = "lla -G -T";
-      rm = "rip";
-      find = "fd";
-      du = "dust";
-      sed = "sd";
       rebuild = "nix --extra-experimental-features 'nix-command flakes' run home-manager/master  -- switch  --flake ~/Repos/nix --show-trace";
     };
     packages = with pkgs; [
+      brewCasks.thebrowsercompany-dia
+      brewCasks.ghostty
       rm-improved
       dust
       jless
@@ -31,18 +22,14 @@
       duf
       tarlz
       glow
-      fd
       lla
       xan
-      ox
       sd
       curlFull
       pueue
-      glab
       nmap
       tree
       rustscan
-      fastfetch
       onefetch
       hyperfine
       halp

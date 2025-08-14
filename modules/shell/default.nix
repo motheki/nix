@@ -4,9 +4,15 @@
   ...
 }: {
   services.ollama = {
-    enable = false;
+    enable = true;
   };
   programs.mods = {
+    enable = true;
+  };
+  programs.fd = {
+    enable = true;
+  };
+  programs.fastfetch = {
     enable = true;
   };
   programs.television = {
@@ -88,7 +94,7 @@
     '';
     extraEnv = ''
       $env.EDITOR = 'hx'
-      $env.LS_COLORS = (vivid generate nord)
+      $env.LS_COLORS = (vivid generate rose-pine-moon)
     '';
   };
   programs.zoxide = {enable = true;};
@@ -119,8 +125,7 @@
     };
     syntaxHighlighting = {enable = true;};
     initContent = lib.mkOrder 550 ''
-      path+=('~/.cargo/bin')
-      export LS_COLORS='$(vivid generate nord)'
+      export LS_COLORS='$(vivid generate rose-pine-moon)'
       zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
     '';
   };
