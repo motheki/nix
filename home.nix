@@ -12,6 +12,7 @@
     };
     packages = with pkgs; [
       brewCasks.thebrowsercompany-dia
+      brewCasks."discord@canary"
       brewCasks.ghostty
       rm-improved
       dust

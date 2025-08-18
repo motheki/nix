@@ -121,12 +121,7 @@
     autosuggestion = {enable = true;};
     history.ignoreAllDups = true;
     defaultKeymap = "viins";
-    shellAliases = {
-    };
+    #shellAliases = {};
     syntaxHighlighting = {enable = true;};
-    initContent = lib.mkOrder 550 ''
-      export LS_COLORS='$(vivid generate rose-pine-moon)'
-      zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
-    '';
   };
 }
