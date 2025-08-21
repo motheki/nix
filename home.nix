@@ -11,9 +11,8 @@
       rebuild = "nix --extra-experimental-features 'nix-command flakes' run home-manager/master  -- switch  --flake ~/Repos/nix --show-trace";
     };
     packages = with pkgs; [
-      brewCasks.thebrowsercompany-dia
       brewCasks."discord@canary"
-      brewCasks.ghostty
+      brewCasks."ghostty@tip"
       rm-improved
       dust
       jless

@@ -94,7 +94,6 @@
     '';
     extraEnv = ''
       $env.EDITOR = 'hx'
-      $env.LS_COLORS = (vivid generate rose-pine-moon)
     '';
   };
   programs.zoxide = {enable = true;};
@@ -107,7 +106,7 @@
   programs.btop = {
     enable = true;
     settings = {
-      color_theme = "nord";
+      color_theme = "rose-pine-moon";
       theme_background = false;
     };
   };
@@ -121,7 +120,6 @@
     autosuggestion = {enable = true;};
     history.ignoreAllDups = true;
     defaultKeymap = "viins";
-    #shellAliases = {};
     syntaxHighlighting = {enable = true;};
   };
 }
