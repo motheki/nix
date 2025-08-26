@@ -1,13 +1,11 @@
 {pkgs, ...}: {
   programs.helix = {
     enable = true;
-    package = pkgs.helix;
     defaultEditor = true;
     extraPackages = with pkgs; [
       marksman
       nil
       lua-language-server
-      cmake-language-server
       nixfmt-rfc-style
       swift-format
       lldb
@@ -23,7 +21,6 @@
       ocamlPackages.ocaml-lsp
       biome
       alejandra
-      helix-gpt
       rPackages.air
       nodePackages_latest.typescript-language-server
       nodePackages_latest.vscode-json-languageserver
@@ -38,18 +35,21 @@
       taplo
     ];
     languages = {
-      language-server.ty = {
-        language-id = "python";
-        command = "ty";
-        args = ["server"];
-      };
       language-server.ruff = {
         language-id = "python";
         command = "ruff";
         args = ["server"];
+        format = {
+          preview = true;
+        };
+        lint = {
+          preview = true;
+        };
       };
-      language-server.gpt = {
-        command = "helix-gpt";
+      language-server.ty = {
+        language-id = "python";
+        command = "ty";
+        args = ["server"];
       };
       language-server.ts = {
         command = "typescript-language-server";
@@ -88,11 +88,6 @@
           language-servers = ["haskellPackages.lsp"];
         }
         {
-          name = "cmake";
-          auto-format = true;
-          language-servers = ["cmake-language-server"];
-        }
-        {
           name = "lua";
           auto-format = true;
           language-servers = ["lua-language-server"];
@@ -120,7 +115,7 @@
         {
           name = "typescript";
           auto-format = true;
-          language-servers = ["ts" "gpt"];
+          language-servers = ["ts"];
           formatter = {
             command = "biome";
             args = ["check" "--write"];
@@ -164,12 +159,8 @@
         }
         {
           name = "python";
-          auto-format = true;
           language-servers = ["ruff" "ty"];
-          #formatter = {
-          #  command = "ruff";
-          #  args = ["format"];
-          #};
+          auto-format = true;
         }
         {
           name = "swift";
@@ -188,7 +179,7 @@
       ];
     };
     settings = {
-      theme = "rose_pine_moon_clear";
+      theme = "rose_pine_dawn_clear";
       editor = {
         cursor-shape = {
           insert = "bar";
