@@ -3,40 +3,24 @@
     homeDirectory = "/Users/motheki";
     username = "motheki";
     stateVersion = "25.11";
-    sessionVariables = {};
+    sessionVariables = {
+    };
     shellAliases = {
-      rg = "batgrep";
-      speedtest = "networkQuality -v";
-      ls = "lla -G -T";
       rebuild = "nix --extra-experimental-features 'nix-command flakes' run home-manager/master  -- switch  --flake ~/Repos/nix --show-trace";
     };
     packages = with pkgs; [
-      brewCasks."discord@canary"
+      brewCasks.vesktop
       brewCasks."ghostty@tip"
+      brewCasks."brave-browser@nightly"
       rm-improved
-      dust
-      jless
       webtorrent_desktop
-      vivid
-      onefetch
-      duf
-      tarlz
       glow
-      lla
-      xan
       sd
+      skim
       curlFull
-      pueue
-      nmap
-      tree
-      rustscan
-      onefetch
       hyperfine
-      halp
       scc
       ffmpeg-full
-      yq-go
-      chafa
     ];
   };
   imports = [

@@ -1,49 +1,16 @@
-{
-  pkgs,
-  lib,
-  ...
-}: {
+{pkgs, ...}: {
   services.ollama = {
     enable = true;
   };
   programs.mods = {
     enable = true;
   };
-  programs.clock-rs = {
-    enable = true;
-    settings = {
-      general = {
-        color = "magenta";
-      };
-      date = {
-        use_12h = true;
-      };
-    };
-  };
   programs.fd = {
-    enable = true;
-  };
-  programs.fastfetch = {
     enable = true;
   };
   programs.television = {
     enable = true;
-  };
-  programs.atuin = {
-    enable = true;
-    daemon = {
-      enable = true;
-    };
-    settings = {
-      search_mode = "skim";
-      search_mode_shell_up_key_binding = "skim";
-      style = "full";
-      invert = false;
-      enter_accept = true;
-    };
-  };
-  programs.carapace = {
-    enable = true;
+    enableZshIntegration = true;
   };
   programs.yt-dlp = {
     enable = true;
@@ -75,40 +42,13 @@
     nix-direnv = {enable = true;};
     silent = true;
   };
-  programs.skim = {enable = true;};
   programs.ripgrep = {
-    package = pkgs.ripgrep-all;
     enable = true;
-  };
-  programs.nushell = {
-    enable = true;
-    plugins = with pkgs; [
-      nushellPlugins.formats
-      nushellPlugins.skim
-      nushellPlugins.gstat
-      nushellPlugins.highlight
-      nushellPlugins.query
-      nushellPlugins.polars
-    ];
-    package = pkgs.nushell;
-    shellAliases = {
-    };
-    extraConfig = ''
-
-      $env.config = {
-        show_banner: false,
-        edit_mode: vi,
-      };
-      let config = {
-        use_ls_colors: true
-      };
-    '';
-    extraEnv = ''
-      $env.EDITOR = 'hx'
-    '';
   };
   programs.zoxide = {enable = true;};
-  programs.starship = {enable = true;};
+  programs.starship = {
+    enable = true;
+  };
   programs.jq = {enable = true;};
   programs.tealdeer = {
     enable = true;
@@ -117,20 +57,18 @@
   programs.btop = {
     enable = true;
     settings = {
-      color_theme = "rose-pine-moon";
+      color_theme = "rose-pine-dawn";
       theme_background = false;
     };
   };
-  programs.fish = {
-    enable = true;
-  };
   programs.zsh = {
     enable = true;
-    enableVteIntegration = true;
-    autocd = true;
-    autosuggestion = {enable = true;};
-    history.ignoreAllDups = true;
+    autosuggestion = {
+      enable = true;
+    };
     defaultKeymap = "viins";
-    syntaxHighlighting = {enable = true;};
+    syntaxHighlighting = {
+      enable = true;
+    };
   };
 }
