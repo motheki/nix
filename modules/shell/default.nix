@@ -57,7 +57,7 @@
   programs.btop = {
     enable = true;
     settings = {
-      color_theme = "rose-pine-dawn";
+      color_theme = "adapta";
       theme_background = false;
     };
   };

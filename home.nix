@@ -9,9 +9,12 @@
       rebuild = "nix --extra-experimental-features 'nix-command flakes' run home-manager/master  -- switch  --flake ~/Repos/nix --show-trace";
     };
     packages = with pkgs; [
-      brewCasks.vesktop
-      brewCasks."ghostty@tip"
-      brewCasks."brave-browser@nightly"
+      #brewCasks."vesktop"
+      #brewCasks."betterdisplay"
+      #brewCasks."losslessswitcher"
+      #brewCasks."linearmouse@beta"
+      #brewCasks."adguard-vpn@nightly"
+      #brewCasks."thebrowsercompany-dia"
       rm-improved
       webtorrent_desktop
       glow
