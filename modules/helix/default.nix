@@ -2,6 +2,20 @@
   programs.helix = {
     enable = true;
     defaultEditor = true;
+    themes = {
+      rose_pine_dawn_clear = {
+        inherits = "rose_pine_dawn";
+        "ui.background" = {
+          fg = "foreground";
+        };
+      };
+      rose_pine_moon_clear = {
+        inherits = "rose_pine_moon";
+        "ui.background" = {
+          fg = "foreground";
+        };
+      };
+    };
     extraPackages = with pkgs; [
       marksman
       nil
@@ -179,7 +193,7 @@
       ];
     };
     settings = {
-      theme = "base16_transparent";
+      theme = "rose_pine_dawn_clear";
       editor = {
         cursor-shape = {
           insert = "bar";

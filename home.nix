@@ -10,10 +10,10 @@
     };
     packages = with pkgs; [
       brewCasks."legcord"
+      brewCasks."thebrowsercompany-dia"
       rm-improved
       webtorrent_desktop
       glow
-      xcp
       sd
       skim
       curlFull

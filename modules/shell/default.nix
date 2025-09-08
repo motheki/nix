@@ -54,13 +54,6 @@
     enable = true;
     settings = {updates = {auto_update = true;};};
   };
-  programs.btop = {
-    enable = true;
-    settings = {
-      color_theme = "adapta";
-      theme_background = false;
-    };
-  };
   programs.zsh = {
     enable = true;
     autosuggestion = {
