@@ -8,5 +8,6 @@
     ./helix
     ./yt-dlp
     ./llms
+    ./bat
   ];
 }
