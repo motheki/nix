@@ -13,6 +13,7 @@
       rm-improved
       webtorrent_desktop
       glow
+      xcp
       sd
       skim
       curlFull

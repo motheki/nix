@@ -3,6 +3,7 @@
     ./shell
     ./ssh
     ./git
+    ./ghostty
     ./helix
   ];
 }
