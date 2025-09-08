@@ -1,10 +1,4 @@
 {pkgs, ...}: {
-  services.ollama = {
-    enable = true;
-  };
-  programs.mods = {
-    enable = true;
-  };
   programs.fd = {
     enable = true;
   };

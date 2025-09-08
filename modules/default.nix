@@ -7,5 +7,6 @@
     ./ghostty
     ./helix
     ./yt-dlp
+    ./llms
   ];
 }
