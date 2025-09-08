@@ -6,5 +6,6 @@
     ./git
     ./ghostty
     ./helix
+    ./yt-dlp
   ];
 }
