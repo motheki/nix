@@ -2,23 +2,6 @@
   programs.fd = {
     enable = true;
   };
-  programs.television = {
-    enable = true;
-    enableZshIntegration = true;
-  };
-  programs.bat = {
-    enable = true;
-    config = {
-      theme = "base16";
-    };
-    extraPackages = with pkgs.bat-extras; [
-      batman
-      prettybat
-      batwatch
-      batgrep
-      batdiff
-    ];
-  };
   programs.direnv = {
     enable = true;
     nix-direnv = {enable = true;};

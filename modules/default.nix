@@ -2,6 +2,7 @@
   imports = [
     ./shell
     ./ssh
+    ./television
     ./btop
     ./git
     ./ghostty
