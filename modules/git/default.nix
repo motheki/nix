@@ -42,15 +42,6 @@
         signoff = true;
       };
     };
-    delta = {
-      enable = true;
-      options = {
-        line-numbers = true;
-        side-by-side = true;
-        theme = "Github";
-        diff-so-fancy = true;
-      };
-    };
     lfs = {enable = true;};
     userName = "trevoropiyo";
     userEmail = "trevoropiyo@trevoropiyo.com";

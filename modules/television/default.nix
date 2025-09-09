@@ -5,6 +5,6 @@
   };
   programs.nix-search-tv = {
     enable = true;
-    enableTelevisionInegration = true;
+    enableTelevisionIntegration = true;
   };
 }

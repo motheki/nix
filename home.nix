@@ -15,6 +15,7 @@
       webtorrent_desktop
       glow
       sd
+      iina
       skim
       curlFull
       hyperfine
