@@ -193,7 +193,7 @@
       ];
     };
     settings = {
-      theme = "rose_pine_dawn_clear";
+      theme = "rose_pine_moon_clear";
       editor = {
         cursor-shape = {
           insert = "bar";
@@ -219,7 +219,7 @@
         };
         indent-guides = {
           render = true;
-          character = "▏"; # Some characters that work well: "▏", "┆", "┊", "⸽"
+          character = "┆"; # Some characters that work well: "▏", "┆", "┊", "⸽"
           skip-levels = 1;
         };
         soft-wrap = {

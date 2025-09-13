@@ -10,5 +10,6 @@
     ./yt-dlp
     ./llms
     ./bat
+    ./nushell
   ];
 }
