@@ -1,5 +1,8 @@
-{pkgs, ...}: {
+{...}: {
   programs.fd = {
+    enable = true;
+  };
+  programs.fastfetch = {
     enable = true;
   };
   programs.direnv = {
