@@ -11,11 +11,14 @@
     packages = with pkgs; [
       brewCasks."legcord"
       brewCasks."thebrowsercompany-dia"
+      brewCasks."betterdisplay"
       rm-improved
+      iina
+      duf
+      dust
       webtorrent_desktop
       glow
       sd
-      iina
       skim
       curlFull
       hyperfine

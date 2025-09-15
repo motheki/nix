@@ -11,5 +11,6 @@
     ./llms
     ./bat
     ./nushell
+    ./nh
   ];
 }
