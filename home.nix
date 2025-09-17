@@ -12,6 +12,7 @@
       brewCasks."legcord"
       brewCasks."thebrowsercompany-dia"
       brewCasks."betterdisplay"
+      brewCasks."cleanshot"
       rm-improved
       iina
       duf

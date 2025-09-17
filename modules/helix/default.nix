@@ -79,7 +79,7 @@
         {
           name = "html";
           auto-format = true;
-          language-servers = ["superhtml"];
+          language-servers = ["superhtml-lsp"];
         }
         {
           name = "ruby";
@@ -160,6 +160,15 @@
           language-servers = ["bash-language-server"];
         }
         {
+          name = "html";
+          auto-format = true;
+          language-servers = ["superhtml-lsp"];
+          formatter = {
+            command = "superhtml";
+            args = ["lsp"];
+          };
+        }
+        {
           name = "nix";
           auto-format = true;
           formatter = ["alejandra"];
@@ -193,7 +202,7 @@
       ];
     };
     settings = {
-      theme = "rose_pine_moon_clear";
+      theme = "rose_pine_dawn_clear";
       editor = {
         cursor-shape = {
           insert = "bar";

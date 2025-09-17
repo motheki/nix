@@ -17,12 +17,16 @@
       ".astro/*"
       ".wrangler/*"
       ".envrc"
+      "wrangler.jsonc"
       ".env"
       "bun.lock"
+      ".devenv"
+      ".devenv/*"
       "bun.lockb"
       ".DS_Store"
       ".npmrc"
       ".direnv/*"
+      ".direnv/"
       ".pre-commit-config.yaml"
     ];
     extraConfig = {
