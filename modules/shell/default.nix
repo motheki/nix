@@ -5,6 +5,10 @@
   programs.fastfetch = {
     enable = true;
   };
+  programs.vivid = {
+    enable = true;
+    activeTheme = "rose-pine-dawn";
+  };
   programs.direnv = {
     enable = true;
     nix-direnv = {enable = true;};
