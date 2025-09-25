@@ -7,7 +7,7 @@
   };
   programs.vivid = {
     enable = true;
-    activeTheme = "rose-pine-dawn";
+    activeTheme = "rose-pine";
   };
   programs.direnv = {
     enable = true;

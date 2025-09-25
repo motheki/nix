@@ -6,24 +6,14 @@
     sessionVariables = {
     };
     shellAliases = {
-      rebuild = "nix --extra-experimental-features 'nix-command flakes' run home-manager/master  -- switch  --flake ~/Repos/nix --show-trace";
+      rebuild = "nix --extra-experimental-features 'nix-command flakes' run 'github:nix-community/nh/master' -- home switch -u -v -t --fallback --refresh --impure --accept-flake-config -I ~/Repos/nix  ~/Repos/nix";
+      clean = "nix --extra-experimental-features 'nix-command flakes' run 'github:nix-community/nh/master' -- clean all";
     };
     packages = with pkgs; [
       brewCasks."legcord"
-      brewCasks."thebrowsercompany-dia"
-      brewCasks."betterdisplay"
-      brewCasks."cleanshot"
       rm-improved
       iina
-      duf
-      dust
       webtorrent_desktop
-      glow
-      sd
-      skim
-      curlFull
-      hyperfine
-      scc
       ffmpeg-full
     ];
   };

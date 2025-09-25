@@ -109,7 +109,7 @@
         {
           name = "astro";
           auto-format = true;
-          language-servers = ["astro-language-server"];
+          language-servers = ["astro-language-server" "ts"];
         }
         {
           name = "json";
@@ -202,7 +202,7 @@
       ];
     };
     settings = {
-      theme = "rose_pine_dawn_clear";
+      theme = "rose_pine_moon_clear";
       editor = {
         cursor-shape = {
           insert = "bar";
