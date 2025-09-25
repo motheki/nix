@@ -15,6 +15,7 @@
       iina
       webtorrent_desktop
       ffmpeg-full
+      lla
     ];
   };
   imports = [
