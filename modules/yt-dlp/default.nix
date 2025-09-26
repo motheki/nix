@@ -8,8 +8,9 @@
       sponsorblock-remove = "selfpromo,interaction,sponsor";
       progress = true;
       quiet = true;
+      check-all-formats = true;
       output = "%(title)s.%(ext)s";
-      extractor-args = "youtube:player-client=web,android,ios";
+      format = "bv+ba/bv*+ba/b";
       video-multistreams = true;
       audio-multistreams = true;
     };
