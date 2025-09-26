@@ -49,27 +49,30 @@
       taplo
     ];
     languages = {
-      language-server.ruff = {
-        language-id = "python";
-        command = "ruff";
-        args = ["server"];
-        format = {
-          preview = true;
+      language-server = {
+        ruff = {
+          language-id = "python";
+          command = "ruff";
+          args = ["server"];
+          format = {
+            preview = true;
+          };
+          lint = {
+            preview = true;
+          };
         };
-        lint = {
-          preview = true;
+        ty = {
+          language-id = "python";
+          command = "ty";
+          args = ["server"];
+        };
+        ts = {
+          language-id = "javascript";
+          command = "typescript-language-server";
+          args = ["--stdia"];
         };
       };
-      language-server.ty = {
-        language-id = "python";
-        command = "ty";
-        args = ["server"];
-      };
-      language-server.ts = {
-        command = "typescript-language-server";
-        args = ["--stdia"];
-        language-id = "javascript";
-      };
+
       language = [
         {
           name = "toml";

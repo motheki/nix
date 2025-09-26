@@ -6,7 +6,7 @@
     sessionVariables = {
     };
     shellAliases = {
-      rebuild = "nix --extra-experimental-features 'nix-command flakes' run 'github:nix-community/nh/master' -- home switch -u -v -t --fallback --refresh --impure --accept-flake-config -I ~/Repos/nix  ~/Repos/nix";
+      rebuild = "nix --extra-experimental-features 'nix-command flakes' run 'github:nix-community/nh/master' -- home switch -u -v -t --fallback --refresh --impure --accept-flake-config ~/Repos/nix";
       clean = "nix --extra-experimental-features 'nix-command flakes' run 'github:nix-community/nh/master' -- clean all";
     };
     packages = with pkgs; [
@@ -14,8 +14,7 @@
       rm-improved
       iina
       webtorrent_desktop
-      ffmpeg-full
-      lla
+      ffmpeg_8-full
     ];
   };
   imports = [

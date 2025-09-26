@@ -12,5 +12,6 @@
     ./bat
     ./nushell
     ./nh
+    ./tiny
   ];
 }
