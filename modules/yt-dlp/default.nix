@@ -10,9 +10,6 @@
       quiet = true;
       check-all-formats = true;
       output = "%(title)s.%(ext)s";
-      format = "bv+ba/bv*+ba/b";
-      video-multistreams = true;
-      audio-multistreams = true;
     };
   };
 }
