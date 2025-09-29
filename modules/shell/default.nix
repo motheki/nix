@@ -37,5 +37,9 @@
         enable = true;
       };
     };
+    fish = {
+      enable = true;
+      generateCompletions = true;
+    };
   };
 }

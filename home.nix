@@ -12,6 +12,7 @@
     };
     packages = with pkgs; [
       brewCasks."legcord"
+      brewCasks."linearmouse"
       rm-improved
       iina
       webtorrent_desktop
