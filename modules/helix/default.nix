@@ -17,7 +17,6 @@
       };
     };
     extraPackages = with pkgs; [
-      marksman
       nil
       lua-language-server
       nixfmt-rfc-style
@@ -29,6 +28,7 @@
       nimlangserver
       biome
       zig
+      markdown-oxide
       bash-language-server
       zls
       gopls
@@ -36,6 +36,7 @@
       biome
       alejandra
       rPackages.air
+      rubyPackages_3_4.ruby-lsp
       nodePackages_latest.typescript-language-server
       nodePackages_latest.vscode-json-languageserver
       nodePackages_latest.tailwindcss
@@ -44,7 +45,6 @@
       superhtml
       spectral-language-server
       sass
-      rubyPackages.solargraph
       haskellPackages.lsp
       taplo
     ];
@@ -66,6 +66,16 @@
           command = "ty";
           args = ["server"];
         };
+        md = {
+          language-id = "markdown";
+          command = "markdown-oxide";
+          format = {
+            preview = true;
+          };
+          lint = {
+            preview = true;
+          };
+        };
         ts = {
           language-id = "javascript";
           command = "typescript-language-server";
@@ -83,11 +93,6 @@
           name = "html";
           auto-format = true;
           language-servers = ["superhtml-lsp"];
-        }
-        {
-          name = "ruby";
-          auto-format = true;
-          language-servers = ["rubyPackages.solargraph"];
         }
         {
           name = "nim";
@@ -201,6 +206,16 @@
           name = "go";
           auto-format = true;
           language-servers = ["gopls"];
+        }
+        {
+          name = "markdown";
+          auto-format = true;
+          language-servers = ["md"];
+        }
+        {
+          name = "ruby";
+          auto-format = true;
+          language-servers = ["rubyPackages_3_4.ruby-lsp"];
         }
       ];
     };

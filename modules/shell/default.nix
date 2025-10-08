@@ -3,9 +3,6 @@
     fd = {
       enable = true;
     };
-    fastfetch = {
-      enable = true;
-    };
     vivid = {
       enable = true;
       activeTheme = "rose-pine";

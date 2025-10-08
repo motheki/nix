@@ -12,6 +12,8 @@
     };
     packages = with pkgs; [
       brewCasks."legcord"
+      brewCasks."betterdisplay"
+      brewCasks."cleanshot"
       brewCasks."linearmouse"
       rm-improved
       iina
