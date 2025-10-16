@@ -6,19 +6,16 @@
     sessionVariables = {
     };
     shellAliases = {
-      rebuild = "nix --extra-experimental-features 'nix-command flakes' run 'github:nix-community/nh/master' -- home switch -u -v -t --fallback --refresh --impure --accept-flake-config ~/Repos/nix";
-      clean = "nix --extra-experimental-features 'nix-command flakes' run 'github:nix-community/nh/master' -- clean all";
+      rebuild = "nix --extra-experimental-features 'nix-command flakes' run 'github:nix-community/nh/master' -- home switch -u -q --fallback --refresh --impure --accept-flake-config ~/Repos/nix";
+      clean = "nix --extra-experimental-features 'nix-command flakes' run 'github:nix-community/nh/master' -- clean all -q";
       manage = "nix --extra-experimental-features 'nix-command flakes' run 'home-manager/master'  -- switch  --flake ~/Repos/nix --show-trace";
     };
     packages = with pkgs; [
-      brewCasks."legcord"
-      brewCasks."betterdisplay"
-      brewCasks."cleanshot"
-      brewCasks."linearmouse"
       rm-improved
       iina
       webtorrent_desktop
       ffmpeg_8-full
+      discord-canary
     ];
   };
   imports = [

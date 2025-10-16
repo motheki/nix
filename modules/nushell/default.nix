@@ -5,7 +5,7 @@
       pkgs.nushellPlugins.query
       pkgs.nushellPlugins.skim
       pkgs.nushellPlugins.polars
-      pkgs.nushellPlugins.highlight
+      #pkgs.nushellPlugins.highlight
     ];
     settings = {
       show_banner = false;

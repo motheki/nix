@@ -3,10 +3,6 @@
     fd = {
       enable = true;
     };
-    vivid = {
-      enable = true;
-      activeTheme = "rose-pine";
-    };
     direnv = {
       enable = true;
       nix-direnv = {enable = true;};
@@ -33,10 +29,6 @@
       syntaxHighlighting = {
         enable = true;
       };
-    };
-    fish = {
-      enable = true;
-      generateCompletions = true;
     };
   };
 }

@@ -16,17 +16,9 @@
         "node_modules"
         "dist"
         ".astro/*"
-        ".envrc"
         ".env"
-        "bun.lock"
-        ".devenv"
-        ".devenv/*"
-        "bun.lockb"
         ".DS_Store"
         ".npmrc"
-        ".direnv/*"
-        ".direnv/"
-        ".pre-commit-config.yaml"
       ];
       extraConfig = {
         gpg = {
