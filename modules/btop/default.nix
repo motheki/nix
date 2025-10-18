@@ -307,7 +307,7 @@
       '';
     };
     settings = {
-      color_theme = "Default";
+      color_theme = "rose-pine-dawn";
       theme_background = false;
     };
   };

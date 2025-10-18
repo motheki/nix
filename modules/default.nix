@@ -5,13 +5,13 @@
     ./television
     ./btop
     ./git
-    #./ghostty
+    ./ghostty
     ./helix
     ./yt-dlp
     ./llms
     ./bat
     ./nushell
     ./nh
-    #./tiny
+    ./opencode
   ];
 }

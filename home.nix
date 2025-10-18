@@ -13,9 +13,22 @@
     packages = with pkgs; [
       rm-improved
       iina
+      xcp
       webtorrent_desktop
+      vhs
+      wishlist
+      glow
+      lla
+      duf
+      dust
+      crush
       ffmpeg_8-full
-      discord-canary
+      brewCasks."betterdisplay"
+      brewCasks."linearmouse"
+      brewCasks."legcord"
+      brewCasks."helium-browser"
+      brewCasks."cleanshot"
+      brewCasks."raycast"
     ];
   };
   imports = [

@@ -15,6 +15,48 @@
           fg = "foreground";
         };
       };
+      ayu_light_clear = {
+        inherits = "ayu_light";
+        "ui.background" = {
+          fg = "foreground";
+        };
+      };
+      ayu_mirage_clear = {
+        inherits = "ayu_mirage";
+        "ui.background" = {
+          fg = "foreground";
+        };
+      };
+      base16_default_light_clear = {
+        inherits = "base16_default_light";
+        "ui.background" = {
+          fg = "foreground";
+        };
+      };
+      catppuccin_latte_clear = {
+        inherits = "catppuccin_latte";
+        "ui.background" = {
+          fg = "foreground";
+        };
+      };
+      everforest_light_clear = {
+        inherits = "everforest_light";
+        "ui.background" = {
+          fg = "foreground";
+        };
+      };
+      nord_light_clear = {
+        inherits = "nord_light";
+        "ui.background" = {
+          fg = "foreground";
+        };
+      };
+      nord_clear = {
+        inherits = "nord";
+        "ui.background" = {
+          fg = "foreground";
+        };
+      };
     };
     extraPackages = with pkgs; [
       nil
@@ -220,7 +262,7 @@
       ];
     };
     settings = {
-      theme = "base16_transparent";
+      theme = "rose_pine_dawn_clear";
       editor = {
         cursor-shape = {
           insert = "bar";

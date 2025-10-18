@@ -11,6 +11,10 @@
     ripgrep = {
       enable = true;
     };
+    vivid = {
+      enable = true;
+      activeTheme = "rose-pine-dawn";
+    };
     zoxide = {enable = true;};
     starship = {
       enable = true;
