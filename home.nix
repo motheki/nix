@@ -21,7 +21,9 @@
       lla
       duf
       dust
-      crush
+      scc
+      fastfetch
+      pueue
       ffmpeg_8-full
       brewCasks."betterdisplay"
       brewCasks."linearmouse"

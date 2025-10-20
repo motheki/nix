@@ -20,7 +20,7 @@
         ".DS_Store"
         ".npmrc"
       ];
-      extraConfig = {
+      settings = {
         gpg = {
           format = "ssh";
         };
@@ -36,10 +36,12 @@
         format = {
           signoff = true;
         };
+        user = {
+          userName = "trevoropiyo";
+          userEmail = "trevoropiyo@trevoropiyo.com";
+        };
       };
       lfs = {enable = true;};
-      userName = "trevoropiyo";
-      userEmail = "trevoropiyo@trevoropiyo.com";
     };
     git-cliff = {
       enable = true;

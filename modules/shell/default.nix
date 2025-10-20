@@ -1,4 +1,9 @@
 {...}: {
+  services = {
+    pueue = {
+      enable = true;
+    };
+  };
   programs = {
     fd = {
       enable = true;

@@ -9,9 +9,8 @@
     ./helix
     ./yt-dlp
     ./llms
-    ./bat
     ./nushell
     ./nh
-    ./opencode
+    ./bat
   ];
 }
