@@ -37,8 +37,8 @@
           signoff = true;
         };
         user = {
-          userName = "trevoropiyo";
-          userEmail = "trevoropiyo@trevoropiyo.com";
+          name = "trevoropiyo";
+          email = "trevoropiyo@trevoropiyo.com";
         };
       };
       lfs = {enable = true;};
