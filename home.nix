@@ -7,7 +7,7 @@
     };
     shellAliases = {
       rebuild = "nix --extra-experimental-features 'nix-command flakes' run 'github:nix-community/nh/master' -- home switch -u -q --fallback --refresh --impure --accept-flake-config ~/Repos/nix";
-      clean = "nix --extra-experimental-features 'nix-command flakes' run 'github:nix-community/nh/master' -- clean all -q";
+      clean = "nix --extra-experimental-features 'nix-command flakes' run 'github:nix-community/nh/master' -- clean user -q";
       manage = "nix --extra-experimental-features 'nix-command flakes' run 'home-manager/master'  -- switch  --flake ~/Repos/nix --show-trace";
     };
     packages = with pkgs; [
@@ -25,12 +25,13 @@
       fastfetch
       pueue
       ffmpeg_8-full
-      brewCasks."betterdisplay"
-      brewCasks."linearmouse"
-      brewCasks."legcord"
-      brewCasks."helium-browser"
-      brewCasks."cleanshot"
-      brewCasks."raycast"
+      jujutsu
+      #brewCasks."betterdisplay"
+      #brewCasks."linearmouse"
+      #brewCasks."legcord"
+      #brewCasks."helium-browser"
+      #brewCasks."cleanshot"
+      #brewCasks."raycast"
     ];
   };
   imports = [
