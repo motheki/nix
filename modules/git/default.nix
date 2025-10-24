@@ -8,6 +8,7 @@
       };
     };
     gh-dash = {enable = true;};
+    #gitui = {enable = true;};
     git = {
       enable = true;
       ignores = [

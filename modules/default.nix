@@ -5,7 +5,7 @@
     ./television
     ./btop
     ./git
-    #./ghostty
+    ./ghostty
     ./helix
     ./yt-dlp
     ./llms
@@ -13,5 +13,6 @@
     ./nh
     ./bat
     ./jj
+    ./zed
   ];
 }

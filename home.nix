@@ -28,8 +28,8 @@
       jujutsu
       #brewCasks."betterdisplay"
       #brewCasks."linearmouse"
-      #brewCasks."legcord"
-      #brewCasks."helium-browser"
+      brewCasks."discord"
+      brewCasks."helium-browser"
       #brewCasks."cleanshot"
       #brewCasks."raycast"
     ];
