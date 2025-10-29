@@ -12,7 +12,7 @@
     ./nushell
     ./nh
     ./bat
-    ./jj
+    #./jj
     ./zed
   ];
 }

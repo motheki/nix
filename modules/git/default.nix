@@ -1,5 +1,8 @@
 {...}: {
   programs = {
+    delta = {
+      enableGitIntegration = true;
+    };
     gh = {
       enable = true;
       settings = {

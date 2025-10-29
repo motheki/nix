@@ -60,6 +60,7 @@
     };
     extraPackages = with pkgs; [
       nil
+      nixd
       lua-language-server
       nixfmt-rfc-style
       swift-format
@@ -85,6 +86,7 @@
       yaml-language-server
       rust-analyzer
       superhtml
+      phpactor
       spectral-language-server
       sass
       haskellPackages.lsp
@@ -96,6 +98,17 @@
           language-id = "python";
           command = "ruff";
           args = ["server"];
+          format = {
+            preview = true;
+          };
+          lint = {
+            preview = true;
+          };
+        };
+        phpactor = {
+          language-id = "php";
+          command = "phpactor";
+          args = ["language-server"];
           format = {
             preview = true;
           };
@@ -121,7 +134,7 @@
         ts = {
           language-id = "javascript";
           command = "typescript-language-server";
-          args = ["--stdia"];
+          args = ["--stdio"];
         };
       };
 
@@ -222,7 +235,7 @@
           name = "nix";
           auto-format = true;
           formatter = ["alejandra"];
-          language-servers = ["nil"];
+          language-servers = ["nil" "nixd"];
         }
         {
           name = "php";

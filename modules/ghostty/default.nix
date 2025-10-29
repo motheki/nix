@@ -13,10 +13,10 @@
       window-width = 140;
       window-inherit-working-directory = false;
       macos-icon = "paper";
-      macos-icon-frame = "beige";
-      macos-titlebar-style = "transparent";
+      #macos-icon-frame = "beige";
+      #macos-titlebar-style = "transparent";
       auto-update = "download";
-      auto-update-channel = "tip";
+      #auto-update-channel = "tip";
     };
   };
 }

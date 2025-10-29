@@ -25,11 +25,12 @@
       fastfetch
       pueue
       ffmpeg_8-full
-      jujutsu
-      #brewCasks."betterdisplay"
-      #brewCasks."linearmouse"
+      hyperfine
+      #jujutsu
       brewCasks."discord"
       brewCasks."helium-browser"
+      #brewCasks."betterdisplay"
+      #brewCasks."linearmouse"
       #brewCasks."cleanshot"
       #brewCasks."raycast"
     ];
