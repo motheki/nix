@@ -27,8 +27,8 @@
       ffmpeg_8-full
       hyperfine
       #jujutsu
-      #brewCasks."discord"
-      #brewCasks."helium-browser"
+      brewCasks."discord"
+      brewCasks."helium-browser"
       #brewCasks."betterdisplay"
       #brewCasks."linearmouse"
       #brewCasks."cleanshot"

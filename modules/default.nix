@@ -12,7 +12,6 @@
     ./nushell
     ./nh
     ./bat
-    #./jj
-    ./zed
+    ./jj
   ];
 }
