@@ -80,9 +80,9 @@
       alejandra
       rPackages.air
       rubyPackages_3_4.ruby-lsp
-      nodePackages_latest.typescript-language-server
-      nodePackages_latest.vscode-json-languageserver
-      nodePackages_latest.tailwindcss
+      typescript-language-server
+      vscode-json-languageserver
+      vscode-css-languageserver
       yaml-language-server
       rust-analyzer
       superhtml
@@ -94,7 +94,7 @@
     ];
     languages = {
       language-server = {
-        ruff = {
+        ruff-lsp = {
           language-id = "python";
           command = "ruff";
           args = ["server"];
@@ -105,7 +105,7 @@
             preview = true;
           };
         };
-        phpactor = {
+        phpactor-lsp = {
           language-id = "php";
           command = "phpactor";
           args = ["language-server"];
@@ -116,10 +116,16 @@
             preview = true;
           };
         };
-        ty = {
+        ty-lsp = {
           language-id = "python";
           command = "ty";
           args = ["server"];
+          format = {
+            preview = true;
+          };
+          lint = {
+            preview = true;
+          };
         };
         md = {
           language-id = "markdown";
@@ -135,6 +141,88 @@
           language-id = "javascript";
           command = "typescript-language-server";
           args = ["--stdio"];
+          format = {
+            preview = true;
+          };
+          lint = {
+            preview = true;
+          };
+        };
+        astro-lsp = {
+          language-id = "astro";
+          command = "astro-ls";
+          args = ["--stdio"];
+          format = {
+            preview = true;
+          };
+          lint = {
+            preview = true;
+          };
+        };
+        nixd-lsp = {
+          language-id = "nix";
+          command = "nixd";
+          format = {
+            preview = true;
+          };
+          lint = {
+            preview = true;
+          };
+        };
+        nil-lsp = {
+          language-id = "nix";
+          command = "nil";
+          args = ["--stdio"];
+          format = {
+            preview = true;
+          };
+          lint = {
+            preview = true;
+          };
+        };
+        json-lsp = {
+          language-id = "json";
+          command = "vscode-json-languageserver";
+          args = ["--stdio"];
+          format = {
+            preview = true;
+          };
+          lint = {
+            preview = true;
+          };
+        };
+        css-lsp = {
+          language-id = "css";
+          command = "vscode-css-languageserver";
+          args = ["--stdio"];
+          format = {
+            preview = true;
+          };
+          lint = {
+            preview = true;
+          };
+        };
+        taplo-lsp = {
+          language-id = "toml";
+          command = "taplo";
+          args = ["lsp" "stdio"];
+          format = {
+            preview = true;
+          };
+          lint = {
+            preview = true;
+          };
+        };
+        superhtml-lsp = {
+          language-id = "html";
+          command = "superhtml";
+          args = ["lsp"];
+          format = {
+            preview = true;
+          };
+          lint = {
+            preview = true;
+          };
         };
       };
 
@@ -142,12 +230,20 @@
         {
           name = "toml";
           auto-format = true;
-          language-servers = ["taplo"];
+          language-servers = ["taplo-ls"];
+          formatter = {
+            command = "taplo";
+            args = ["fmt"];
+          };
         }
         {
           name = "html";
           auto-format = true;
           language-servers = ["superhtml-lsp"];
+          formatter = {
+            command = "superhtml";
+            args = ["fmt"];
+          };
         }
         {
           name = "nim";
@@ -172,17 +268,27 @@
         {
           name = "astro";
           auto-format = true;
-          language-servers = ["astro-language-server" "ts"];
+          language-servers = ["astro-lsp" "ts"];
         }
         {
           name = "json";
           auto-format = true;
-          language-servers = ["nodePackages_latest.vscode-json-languageserver"];
+          language-servers = ["json-lsp"];
+        }
+        {
+          name = "jsonc";
+          auto-format = true;
+          language-servers = ["json-lsp"];
+        }
+        {
+          name = "json-ld";
+          auto-format = true;
+          language-servers = ["json-lsp"];
         }
         {
           name = "css";
           auto-format = true;
-          language-servers = ["nodePackages_latest.tailwindcss"];
+          language-servers = ["css-lsp"];
         }
         {
           name = "r";
@@ -234,18 +340,20 @@
         {
           name = "nix";
           auto-format = true;
-          formatter = ["alejandra"];
-          language-servers = ["nil" "nixd"];
+          language-servers = ["nil-lsp" "nixd-lsp"];
+          formatter = {
+            command = "alejandra";
+          };
         }
         {
           name = "php";
           auto-format = true;
           formatter = ["phpactor"];
-          language-servers = ["phpactor"];
+          language-servers = ["phpactor-lsp"];
         }
         {
           name = "python";
-          language-servers = ["ruff" "ty"];
+          language-servers = ["ruff-lsp" "ty-lsp"];
           auto-format = true;
         }
         {
@@ -275,7 +383,7 @@
       ];
     };
     settings = {
-      theme = "rose_pine_moon_clear";
+      theme = "rose_pine_dawn_clear";
       editor = {
         cursor-shape = {
           insert = "bar";
