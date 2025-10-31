@@ -191,6 +191,17 @@
             preview = true;
           };
         };
+        yaml-lsp = {
+          language-id = "yaml";
+          command = "yaml-language-server";
+          args = ["--stdio"];
+          format = {
+            preview = true;
+          };
+          lint = {
+            preview = true;
+          };
+        };
         css-lsp = {
           language-id = "css";
           command = "vscode-css-languageserver";
@@ -312,7 +323,7 @@
         {
           name = "yaml";
           auto-format = true;
-          language-servers = ["yaml-language-server"];
+          language-servers = ["yaml-lsp"];
         }
         {
           name = "zig";
@@ -383,7 +394,7 @@
       ];
     };
     settings = {
-      theme = "rose_pine_dawn_clear";
+      theme = "rose_pine_moon_clear";
       editor = {
         cursor-shape = {
           insert = "bar";

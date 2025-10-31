@@ -21,12 +21,12 @@
       lla
       duf
       dust
+      halp
       scc
       fastfetch
       pueue
       ffmpeg_8-full
       hyperfine
-      #jujutsu
       brewCasks."discord"
       brewCasks."helium-browser"
       #brewCasks."betterdisplay"
