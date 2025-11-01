@@ -23,6 +23,8 @@
       };
       git = {
         sign-on-push = true;
+        fetch = ["upstream" "origin"];
+        push = "origin";
       };
     };
   };

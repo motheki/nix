@@ -45,6 +45,12 @@
           name = "trevoropiyo";
           email = "trevoropiyo@trevoropiyo.com";
         };
+        push = {
+          autoSetupRemote = true;
+        };
+        init = {
+          defaultBranch = "main";
+        };
       };
       lfs = {enable = true;};
     };
