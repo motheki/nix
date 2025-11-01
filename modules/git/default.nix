@@ -3,6 +3,10 @@
     delta = {
       enable = true;
       enableGitIntegration = true;
+      options = {
+        side-by-side = true;
+        line-numbers = true;
+      };
     };
     gh = {
       enable = true;
@@ -22,6 +26,9 @@
         "dist"
         ".astro/*"
         ".env"
+        ".envrc"
+        ".direnv"
+        ".devenv"
         ".DS_Store"
         ".npmrc"
       ];
@@ -50,6 +57,9 @@
         };
         init = {
           defaultBranch = "main";
+        };
+        merge = {
+          conflictStyle = "zdiff3";
         };
       };
       lfs = {enable = true;};
