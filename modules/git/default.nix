@@ -16,7 +16,7 @@
       };
     };
     gh-dash = {enable = true;};
-    #gitui = {enable = true;};
+    lazygit = {enable = true;};
     git = {
       enable = true;
       ignores = [
@@ -54,6 +54,9 @@
         };
         push = {
           autoSetupRemote = true;
+        };
+        pull = {
+          rebase = true;
         };
         init = {
           defaultBranch = "main";

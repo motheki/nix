@@ -137,7 +137,12 @@
             preview = true;
           };
         };
-        ts = {
+        ts-lsp = {
+          language-id = "typescript";
+          command = "typescript-language-server";
+          args = ["--stdio"];
+        };
+        js-lsp = {
           language-id = "javascript";
           command = "typescript-language-server";
           args = ["--stdio"];
@@ -279,7 +284,7 @@
         {
           name = "astro";
           auto-format = true;
-          language-servers = ["astro-lsp" "ts"];
+          language-servers = ["astro-lsp" "ts-lsp"];
         }
         {
           name = "json";
@@ -309,7 +314,12 @@
         {
           name = "typescript";
           auto-format = true;
-          language-servers = ["ts"];
+          language-servers = ["ts-lsp"];
+        }
+        {
+          name = "javascript";
+          auto-format = true;
+          language-servers = ["js-lsp"];
           formatter = {
             command = "biome";
             args = ["check" "--write"];
