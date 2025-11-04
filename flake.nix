@@ -2,16 +2,16 @@
   description = "Motheki's Home Manager Nix Flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs";
-    home-manager.url = "github:nix-community/home-manager";
-    mac-app-util.url = "github:hraban/mac-app-util";
-    nur.url = "github:nix-community/NUR";
+    nixpkgs.url = "github:nixos/nixpkgs/master";
+    home-manager.url = "github:nix-community/home-manager/master";
+    mac-app-util.url = "github:hraban/mac-app-util/master";
+    nur.url = "github:nix-community/NUR/main";
     brew-nix = {
-      url = "github:BatteredBunny/brew-nix";
+      url = "github:BatteredBunny/brew-nix/main";
       inputs.brew-api.follows = "brew-api";
     };
     brew-api = {
-      url = "github:BatteredBunny/brew-api";
+      url = "github:BatteredBunny/brew-api/main";
       flake = false;
     };
   };

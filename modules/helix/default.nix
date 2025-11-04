@@ -59,24 +59,21 @@
       };
     };
     extraPackages = with pkgs; [
-      nil
       nixd
+      nil
       lua-language-server
-      nixfmt-rfc-style
       swift-format
       lldb
       ty
       ruff
       astro-language-server
       nimlangserver
-      biome
       zig
       markdown-oxide
       bash-language-server
       zls
       gopls
       ocamlPackages.ocaml-lsp
-      biome
       alejandra
       rPackages.air
       rubyPackages_3_4.ruby-lsp
@@ -320,10 +317,6 @@
           name = "javascript";
           auto-format = true;
           language-servers = ["js-lsp"];
-          formatter = {
-            command = "biome";
-            args = ["check" "--write"];
-          };
         }
         {
           name = "rust";
@@ -361,7 +354,7 @@
         {
           name = "nix";
           auto-format = true;
-          language-servers = ["nil-lsp" "nixd-lsp"];
+          language-servers = ["nixd-lsp" "nil-lsp"];
           formatter = {
             command = "alejandra";
           };
@@ -404,7 +397,7 @@
       ];
     };
     settings = {
-      theme = "rose_pine_moon_clear";
+      theme = "rose_pine_dawn_clear";
       editor = {
         cursor-shape = {
           insert = "bar";

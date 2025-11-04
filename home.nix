@@ -6,9 +6,9 @@
     sessionVariables = {
     };
     shellAliases = {
-      rebuild = "nix --extra-experimental-features 'nix-command flakes' run 'github:nix-community/nh' -- home switch -u -q --fallback --refresh --impure --accept-flake-config ~/Repos/nix";
-      clean = "nix --extra-experimental-features 'nix-command flakes' run 'github:nix-community/nh' -- clean user -q";
-      manage = "nix --extra-experimental-features 'nix-command flakes' run 'home-manager'  -- switch  --flake ~/Repos/nix --show-trace";
+      rebuild = "nix --extra-experimental-features 'nix-command flakes' run 'github:nix-community/nh/master' -- home switch -u -q --impure --accept-flake-config ~/Repos/nix";
+      clean = "nix --extra-experimental-features 'nix-command flakes' run 'github:nix-community/nh/master' -- clean user -q";
+      manage = "nix --extra-experimental-features 'nix-command flakes' run 'home-manager/master'  -- switch  --flake ~/Repos/nix --show-trace";
     };
     packages = with pkgs; [
       rm-improved
@@ -18,21 +18,25 @@
       vhs
       wishlist
       glow
+      rainfrog
+      dua
+      jless
       lla
       duf
       dust
-      halp
+      yq-go
       scc
       fastfetch
       pueue
       ffmpeg_8-full
       hyperfine
-      brewCasks."discord"
+      brewCasks."legcord"
       brewCasks."helium-browser"
-      #brewCasks."betterdisplay"
-      #brewCasks."linearmouse"
-      #brewCasks."cleanshot"
-      #brewCasks."raycast"
+      brewCasks."dbngin"
+      brewCasks."betterdisplay"
+      brewCasks."linearmouse"
+      brewCasks."cleanshot"
+      brewCasks."raycast"
     ];
   };
   imports = [

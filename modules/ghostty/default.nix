@@ -16,7 +16,7 @@
       #macos-icon-frame = "beige";
       macos-titlebar-style = "transparent";
       auto-update = "download";
-      #auto-update-channel = "tip";
+      auto-update-channel = "tip";
     };
   };
 }

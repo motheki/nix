@@ -15,6 +15,9 @@
         prompt = true;
       };
     };
+    glab = {
+      enable = true;
+    };
     gh-dash = {enable = true;};
     lazygit = {enable = true;};
     git = {
