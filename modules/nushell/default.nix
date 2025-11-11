@@ -1,12 +1,12 @@
 {pkgs, ...}: {
   programs.nushell = {
     enable = true;
-    plugins = [
-      pkgs.nushellPlugins.query
-      pkgs.nushellPlugins.skim
-      pkgs.nushellPlugins.polars
-      pkgs.nushellPlugins.gstat
-      #pkgs.nushellPlugins.highlight
+    plugins = with pkgs; [
+      nushellPlugins.query
+      nushellPlugins.skim
+      nushellPlugins.polars
+      nushellPlugins.gstat
+      nushellPlugins.highlight
     ];
     settings = {
       show_banner = false;

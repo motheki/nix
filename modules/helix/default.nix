@@ -447,6 +447,13 @@
         insert-final-newline = true;
         popup-border = "all";
       };
+      keys = {
+        normal = {
+          space = {
+            B = ":echo %sh{git blame -L %{cursor_line},+1 %{buffer_name}}";
+          };
+        };
+      };
     };
   };
 }

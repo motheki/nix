@@ -14,5 +14,6 @@
     ./bat
     ./jj
     ./zed
+    ./opencode
   ];
 }
