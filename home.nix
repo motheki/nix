@@ -23,6 +23,13 @@
       pkgs.jless
       pkgs.lla
       pkgs.duf
+      pkgs.nix-output-monitor
+      pkgs.nix-fast-build
+      pkgs.nix-btm
+      pkgs.nix-melt
+      pkgs.nix-tree
+      pkgs.nix-diff
+      pkgs.nix-janitor
       pkgs.dust
       pkgs.yq-go
       pkgs.dogedns

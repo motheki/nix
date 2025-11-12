@@ -15,6 +15,7 @@
     ./jj
     ./zed
     ./opencode
-    ./nix-your-shell
+    ./nix-init
+    ./nix-index
   ];
 }
