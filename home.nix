@@ -22,6 +22,8 @@
       pkgs.dua
       pkgs.jless
       pkgs.lla
+      pkgs.fh
+      pkgs.nix-direnv
       pkgs.duf
       pkgs.nix-output-monitor
       pkgs.nix-fast-build
@@ -29,9 +31,9 @@
       pkgs.nix-melt
       pkgs.nix-tree
       pkgs.nix-diff
-      pkgs.nix-janitor
       pkgs.dust
       pkgs.yq-go
+      pkgs.nixpkgs-reviewFull
       pkgs.dogedns
       pkgs.scc
       pkgs.cursor-cli
@@ -40,12 +42,12 @@
       pkgs.nix-update
       pkgs.pueue
       pkgs.php
-      pkgs.ffmpeg_8-full
+      pkgs.ffmpeg_8
       pkgs.hyperfine
-      pkgs.betterdisplay
-      pkgs.tableplus
-      pkgs.raycast
       pkgs.nur.repos.AusCyber.zen-browser
+      pkgs.brewCasks."betterdisplay"
+      pkgs.brewCasks."tableplus"
+      pkgs.brewCasks."raycast"
       pkgs.brewCasks."legcord"
       pkgs.brewCasks."dbngin"
       pkgs.brewCasks."helium-browser"

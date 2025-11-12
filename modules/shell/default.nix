@@ -8,17 +8,18 @@
     fd = {
       enable = true;
     };
-    direnv = {
-      enable = true;
-      nix-direnv = {enable = true;};
-      silent = true;
-    };
+    #direnv = {
+    #  enable = true;
+    #  nix-direnv = {enable = true;};
+    #  enableFishIntegration = false;
+    #  silent = true;
+    #};
     ripgrep = {
       enable = true;
     };
     vivid = {
       enable = true;
-      activeTheme = "rose-pine-moon";
+      activeTheme = "rose-pine-dawn";
     };
     zoxide = {enable = true;};
     starship = {
@@ -38,10 +39,6 @@
       syntaxHighlighting = {
         enable = true;
       };
-    };
-    bash = {
-      enable = true;
-      enableCompletion = true;
     };
   };
 }
