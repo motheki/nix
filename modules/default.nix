@@ -15,5 +15,6 @@
     ./jj
     ./zed
     ./opencode
+    ./nix-your-shell
   ];
 }

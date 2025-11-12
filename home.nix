@@ -30,7 +30,9 @@
       pkgs.cursor-cli
       pkgs.code-cursor
       pkgs.fastfetch
+      pkgs.nix-update
       pkgs.pueue
+      pkgs.php
       pkgs.ffmpeg_8-full
       pkgs.hyperfine
       pkgs.betterdisplay

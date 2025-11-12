@@ -24,9 +24,7 @@
     nur,
     ...
   }: let
-    system = "aarch64-darwin";
     pkgs = import nixpkgs {
-      inherit system;
       config.allowUnfree = true;
       overlays = [brew-nix.overlays.default nur.overlays.default];
     };
