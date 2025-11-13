@@ -26,7 +26,10 @@
   }: let
     pkgs = import nixpkgs {
       config.allowUnfree = true;
-      overlays = [brew-nix.overlays.default nur.overlays.default];
+      overlays = [
+        brew-nix.overlays.default
+        nur.overlays.default
+      ];
     };
   in {
     homeConfigurations = {

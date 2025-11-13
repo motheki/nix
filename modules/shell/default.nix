@@ -21,7 +21,9 @@
       enable = true;
       activeTheme = "rose-pine-dawn";
     };
-    zoxide = {enable = true;};
+    zoxide = {
+      enable = true;
+    };
     starship = {
       enable = true;
     };

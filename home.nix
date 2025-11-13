@@ -33,19 +33,16 @@
       pkgs.nix-diff
       pkgs.dust
       pkgs.yq-go
-      pkgs.nixpkgs-reviewFull
       pkgs.dogedns
       pkgs.scc
       pkgs.cursor-cli
-      pkgs.code-cursor
       pkgs.fastfetch
-      pkgs.nix-update
-      pkgs.pueue
       pkgs.php
       pkgs.ffmpeg_8
       pkgs.hyperfine
-      pkgs.nur.repos.AusCyber.zen-browser
       pkgs.brewCasks."betterdisplay"
+      pkgs.brewCasks."zen"
+      pkgs.brewCasks."cursor"
       pkgs.brewCasks."tableplus"
       pkgs.brewCasks."raycast"
       pkgs.brewCasks."legcord"

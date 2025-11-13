@@ -15,7 +15,5 @@
     ./jj
     ./zed
     ./opencode
-    ./nix-init
-    ./nix-index
   ];
 }
