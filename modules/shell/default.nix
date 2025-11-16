@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   services = {
     pueue = {
       enable = true;
@@ -11,7 +11,6 @@
     #direnv = {
     #  enable = true;
     #  nix-direnv = {enable = true;};
-    #  enableFishIntegration = false;
     #  silent = true;
     #};
     ripgrep = {
@@ -39,6 +38,19 @@
       };
       defaultKeymap = "viins";
       syntaxHighlighting = {
+        enable = true;
+      };
+    };
+    carapace = {
+      enable = true;
+    };
+    #fish = {
+    #  enable = true;
+    #  generateCompletions = true;
+    #};
+    nix-your-shell = {
+      enable = true;
+      nix-output-monitor = {
         enable = true;
       };
     };

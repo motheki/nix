@@ -6,6 +6,7 @@
     home-manager.url = "github:nix-community/home-manager/master";
     mac-app-util.url = "github:hraban/mac-app-util/master";
     nur.url = "github:nix-community/NUR/main";
+    nixvim.url = "github:nix-community/nixvim/main";
     brew-nix = {
       url = "github:BatteredBunny/brew-nix/main";
       inputs.brew-api.follows = "brew-api";
@@ -22,6 +23,7 @@
     brew-nix,
     mac-app-util,
     nur,
+    nixvim,
     ...
   }: let
     system = "aarch64-darwin";
@@ -38,6 +40,7 @@
       motheki = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
+          nixvim.homeModules.nixvim
           mac-app-util.homeManagerModules.default
           ./home.nix
         ];

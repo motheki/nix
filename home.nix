@@ -11,37 +11,48 @@
       manage = "nix --extra-experimental-features 'nix-command flakes' run 'home-manager/master'  -- switch  --flake ~/Repos/nix --show-trace";
     };
     packages = [
-      pkgs.rm-improved
+      #Apps
       pkgs.iina
-      pkgs.xcp
       pkgs.webtorrent_desktop
-      pkgs.vhs
-      pkgs.wishlist
-      pkgs.glow
-      pkgs.rainfrog
-      pkgs.dua
-      pkgs.jless
-      pkgs.lla
+
+      #Dev
       pkgs.fh
       pkgs.nix-direnv
-      pkgs.duf
-      pkgs.nix-output-monitor
+      #pkgs.direnv
       pkgs.nix-fast-build
       pkgs.nix-btm
       pkgs.nix-melt
       pkgs.nix-tree
+      pkgs.httpie
+      pkgs.wishlist
       pkgs.nix-diff
+      pkgs.scc
+      pkgs.rainfrog
+      pkgs.cursor-cli
+      pkgs.hyperfine
+      pkgs.php
+
+      #Utilities
+      pkgs.rm-improved
       pkgs.dust
+      pkgs.duf
+      pkgs.vhs
+      pkgs.glow
+      pkgs.dua
+      pkgs.jless
+      pkgs.xcp
+      pkgs.lla
+      pkgs.rustscan
       pkgs.grip-grab
       pkgs.yq-go
       pkgs.dogedns
-      pkgs.scc
-      pkgs.cursor-cli
       pkgs.fastfetch
-      pkgs.php
       pkgs.ffmpeg_8
-      pkgs.hyperfine
+
+      # Nur Packages
       pkgs.nur.repos.AusCyber.zen-browser-twilight
+
+      # Homebrew Casks
       pkgs.brewCasks."betterdisplay"
       pkgs.brewCasks."cursor"
       pkgs.brewCasks."tableplus"
