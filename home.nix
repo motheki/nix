@@ -32,6 +32,7 @@
       pkgs.nix-tree
       pkgs.nix-diff
       pkgs.dust
+      pkgs.grip-grab
       pkgs.yq-go
       pkgs.dogedns
       pkgs.scc
@@ -40,8 +41,8 @@
       pkgs.php
       pkgs.ffmpeg_8
       pkgs.hyperfine
+      pkgs.nur.repos.AusCyber.zen-browser-twilight
       pkgs.brewCasks."betterdisplay"
-      pkgs.brewCasks."zen"
       pkgs.brewCasks."cursor"
       pkgs.brewCasks."tableplus"
       pkgs.brewCasks."raycast"

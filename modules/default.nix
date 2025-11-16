@@ -13,7 +13,7 @@
     ./nh
     ./bat
     ./jj
-    ./zed
+    #./zed
     ./opencode
   ];
 }
