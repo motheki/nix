@@ -6,7 +6,7 @@
     ./btop
     ./git
     ./ghostty
-    ./helix
+    #./helix
     ./yt-dlp
     ./llms
     ./nushell

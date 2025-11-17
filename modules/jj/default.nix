@@ -9,7 +9,7 @@
       ui = {
         pager = "delta";
         diff-formatter = ":git";
-        editor = "hx";
+        editor = "nvim";
       };
       signing = {
         behavior = "own";
