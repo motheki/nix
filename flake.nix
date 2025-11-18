@@ -15,6 +15,10 @@
       url = "github:BatteredBunny/brew-api/main";
       flake = false;
     };
+		stylix = {
+			url = "github:nix-community/stylix/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -24,6 +28,7 @@
     mac-app-util,
     nur,
     nixvim,
+		stylix,
     ...
   }: let
     system = "aarch64-darwin";
@@ -40,6 +45,7 @@
       motheki = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
+					stylix.homeModules.stylix
           nixvim.homeModules.nixvim
           mac-app-util.homeManagerModules.default
           ./home.nix

@@ -8,11 +8,11 @@
     fd = {
       enable = true;
     };
-    #direnv = {
-    #  enable = true;
-    #  nix-direnv = {enable = true;};
-    #  silent = true;
-    #};
+    direnv = {
+      enable = true;
+      nix-direnv = {enable = true;};
+      silent = true;
+    };
     ripgrep = {
       enable = true;
     };

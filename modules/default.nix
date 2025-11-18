@@ -1,4 +1,5 @@
-{...}: {
+{ ... }:
+{
   imports = [
     ./shell
     ./ssh
@@ -16,5 +17,7 @@
     ./zed
     ./opencode
     ./nixvim
+    #./stylix
+    ./radicle
   ];
 }

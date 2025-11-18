@@ -1,9 +1,17 @@
-{...}: {
+{ ...}: {
   programs.nixvim = {
     enable = true;
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
+		dependencies = {
+			ripgrep = {
+				enable = true;
+			};
+			fd = {
+				enable = true;
+			};
+		};
     performance = {
       byteCompileLua = {
         enable = true;
@@ -124,6 +132,9 @@
       smarttab = true;
     };
     plugins = {
+			blame = {
+				enable = true;
+			};
       lspconfig = {
         enable = true;
       };
@@ -167,6 +178,9 @@
       mini-cursorword = {
         enable = true;
       };
+      mini-completion = {
+        enable = true;
+      };
       mini-diff = {
         enable = true;
       };
@@ -197,6 +211,9 @@
       mini-splitjoin = {
         enable = true;
       };
+      mini-pairs = {
+        enable = true;
+      };
       mini-statusline = {
         enable = true;
       };
@@ -206,11 +223,11 @@
       mini-tabline = {
         enable = true;
       };
-      mini-trailspace = {
+      mini-snippets = {
         enable = true;
       };
-      nix = {
-      	enable = true;
+      mini-trailspace = {
+        enable = true;
       };
       glow = {
         enable = true;
@@ -218,10 +235,16 @@
       lspkind = {
         enable = true;
       };
-      neo-tree = {
+      lsp-format = {
+        enable = true;
+      };
+      lsp-lines = {
         enable = true;
       };
       telescope = {
+        enable = true;
+      };
+      visual-whitespace	 = {
         enable = true;
       };
     };
@@ -230,6 +253,9 @@
         enable = true;
         settings = {
           extend_background_behind_borders = false;
+					styles = {
+							transparency = true;
+						};
         };
       };
     };

@@ -17,7 +17,7 @@
 
       #Dev
       pkgs.fh
-      pkgs.nix-direnv
+      #pkgs.nix-direnv
       #pkgs.direnv
       pkgs.nix-fast-build
       pkgs.nix-btm
