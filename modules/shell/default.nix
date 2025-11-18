@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   services = {
     pueue = {
       enable = true;
@@ -10,7 +11,9 @@
     };
     direnv = {
       enable = true;
-      nix-direnv = {enable = true;};
+      nix-direnv = {
+        enable = true;
+      };
       silent = true;
     };
     ripgrep = {
@@ -26,10 +29,16 @@
     starship = {
       enable = true;
     };
-    jq = {enable = true;};
+    jq = {
+      enable = true;
+    };
     tealdeer = {
       enable = true;
-      settings = {updates = {auto_update = true;};};
+      settings = {
+        updates = {
+          auto_update = true;
+        };
+      };
     };
     zsh = {
       enable = true;
@@ -44,10 +53,10 @@
     carapace = {
       enable = true;
     };
-    #fish = {
-    #  enable = true;
-    #  generateCompletions = true;
-    #};
+    fish = {
+      enable = true;
+      generateCompletions = true;
+    };
     nix-your-shell = {
       enable = true;
       nix-output-monitor = {

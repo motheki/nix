@@ -10,58 +10,57 @@
       clean = "nix --extra-experimental-features 'nix-command flakes' run 'github:nix-community/nh/master' -- clean all -q";
       manage = "nix --extra-experimental-features 'nix-command flakes' run 'home-manager/master'  -- switch  --flake ~/Repos/nix --show-trace";
     };
-    packages = [
+    packages = with pkgs; [
       #Apps
-      pkgs.iina
-      pkgs.webtorrent_desktop
+      iina
+      webtorrent_desktop
 
       #Dev
-      pkgs.fh
-      #pkgs.nix-direnv
-      #pkgs.direnv
-      pkgs.nix-fast-build
-      pkgs.nix-btm
-      pkgs.nix-melt
-      pkgs.nix-tree
-      pkgs.httpie
-      pkgs.wishlist
-      pkgs.nix-diff
-      pkgs.scc
-      pkgs.rainfrog
-      pkgs.cursor-cli
-      pkgs.hyperfine
-      pkgs.php
+      fh
+      nix-fast-build
+      nix-btm
+      nix-melt
+      nix-tree
+      httpie
+      wishlist
+      nix-diff
+      scc
+      rainfrog
+      cursor-cli
+      hyperfine
+      php
+			radicle-tui
 
       #Utilities
-      pkgs.rm-improved
-      pkgs.dust
-      pkgs.duf
-      pkgs.vhs
-      pkgs.glow
-      pkgs.dua
-      pkgs.jless
-      pkgs.xcp
-      pkgs.lla
-      pkgs.rustscan
-      pkgs.grip-grab
-      pkgs.yq-go
-      pkgs.dogedns
-      pkgs.fastfetch
-      pkgs.ffmpeg_8
+      rm-improved
+      dust
+      duf
+      vhs
+      glow
+      dua
+      jless
+      xcp
+      lla
+      rustscan
+      grip-grab
+      yq-go
+      dogedns
+      fastfetch
+      ffmpeg_8
 
       # Nur Packages
-      pkgs.nur.repos.AusCyber.zen-browser-twilight
+      nur.repos.AusCyber.zen-browser-twilight
 
       # Homebrew Casks
-      pkgs.brewCasks."betterdisplay"
-      pkgs.brewCasks."cursor"
-      pkgs.brewCasks."tableplus"
-      pkgs.brewCasks."raycast"
-      pkgs.brewCasks."legcord"
-      pkgs.brewCasks."dbngin"
-      pkgs.brewCasks."helium-browser"
-      pkgs.brewCasks."linearmouse@beta"
-      pkgs.brewCasks."cleanshot"
+      brewCasks."betterdisplay"
+      brewCasks."cursor"
+      brewCasks."tableplus"
+      brewCasks."raycast"
+      brewCasks."legcord"
+      brewCasks."dbngin"
+      brewCasks."helium-browser"
+      brewCasks."linearmouse@beta"
+      brewCasks."cleanshot"
     ];
   };
   imports = [
