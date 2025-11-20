@@ -1,17 +1,18 @@
-{ ...}: {
+{ ... }:
+{
   programs.nixvim = {
     enable = true;
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
-		dependencies = {
-			ripgrep = {
-				enable = true;
-			};
-			fd = {
-				enable = true;
-			};
-		};
+    dependencies = {
+      ripgrep = {
+        enable = true;
+      };
+      fd = {
+        enable = true;
+      };
+    };
     performance = {
       byteCompileLua = {
         enable = true;
@@ -51,10 +52,10 @@
         };
         nil_ls = {
           enable = true;
-					packageFallback = true;
-					config = {
-						autoArchive = true;
-					};
+          packageFallback = true;
+          config = {
+            autoArchive = true;
+          };
         };
         nixd = {
           enable = true;
@@ -136,9 +137,9 @@
       smarttab = true;
     };
     plugins = {
-			blame = {
-				enable = true;
-			};
+      blame = {
+        enable = true;
+      };
       lspconfig = {
         enable = true;
       };
@@ -148,23 +149,29 @@
         modules = {
           icons = {
             style = "glyph";
-            default = {};
-            directory = {};
-            extension = {};
-            file = {};
-            filetype = {};
-            lsp = {};
-            os = {};
+            default = { };
+            directory = { };
+            extension = { };
+            file = { };
+            filetype = { };
+            lsp = { };
+            os = { };
           };
         };
       };
-      smear-cursor = {
-        enable = true;
-      };
-      neoscroll = {
-        enable = true;
-      };
       mini-basics = {
+        enable = true;
+      };
+      mini-align = {
+        enable = true;
+      };
+      mini-icons = {
+        enable = true;
+      };
+      mini-sessions = {
+        enable = true;
+      };
+      mini-visits = {
         enable = true;
       };
       mini-bracketed = {
@@ -177,6 +184,9 @@
         enable = true;
       };
       mini-colors = {
+        enable = true;
+      };
+      mini-hipatterns = {
         enable = true;
       };
       mini-cursorword = {
@@ -220,17 +230,17 @@
       };
       mini-starter = {
         enable = true;
-				settings = {
-					header = ''
+        settings = {
+          header = ''
 
-						░░░    ░░ ░░ ░░   ░░ ░░    ░░ ░░ ░░░    ░░░
-						▒▒▒▒   ▒▒ ▒▒  ▒▒ ▒▒  ▒▒    ▒▒ ▒▒ ▒▒▒▒  ▒▒▒▒
-						▒▒ ▒▒  ▒▒ ▒▒   ▒▒▒   ▒▒    ▒▒ ▒▒ ▒▒ ▒▒▒▒ ▒▒
-						▓▓  ▓▓ ▓▓ ▓▓  ▓▓ ▓▓   ▓▓  ▓▓  ▓▓ ▓▓  ▓▓  ▓▓
-						██   ████ ██ ██   ██   ████   ██ ██      ██
+            						░░░    ░░ ░░ ░░   ░░ ░░    ░░ ░░ ░░░    ░░░
+            						▒▒▒▒   ▒▒ ▒▒  ▒▒ ▒▒  ▒▒    ▒▒ ▒▒ ▒▒▒▒  ▒▒▒▒
+            						▒▒ ▒▒  ▒▒ ▒▒   ▒▒▒   ▒▒    ▒▒ ▒▒ ▒▒ ▒▒▒▒ ▒▒
+            						▓▓  ▓▓ ▓▓ ▓▓  ▓▓ ▓▓   ▓▓  ▓▓  ▓▓ ▓▓  ▓▓  ▓▓
+            						██   ████ ██ ██   ██   ████   ██ ██      ██
 
-					'';
-				};
+            					'';
+        };
       };
       mini-pairs = {
         enable = true;
@@ -250,22 +260,16 @@
       mini-trailspace = {
         enable = true;
       };
-      glow = {
-        enable = true;
-      };
       lspkind = {
-        enable = true;
-      };
-      lsp-format = {
-        enable = true;
-      };
-      lsp-lines = {
         enable = true;
       };
       telescope = {
         enable = true;
       };
-      visual-whitespace	 = {
+      smear-cursor = {
+        enable = true;
+      };
+      neoscroll = {
         enable = true;
       };
     };
@@ -274,9 +278,9 @@
         enable = true;
         settings = {
           extend_background_behind_borders = false;
-					styles = {
-							transparency = true;
-						};
+          styles = {
+            transparency = true;
+          };
         };
       };
     };
