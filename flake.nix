@@ -15,42 +15,42 @@
       url = "github:BatteredBunny/brew-api/main";
       flake = false;
     };
-		stylix = {
-			url = "github:nix-community/stylix/master";
-      inputs.nixpkgs.follows = "nixpkgs";
+    stylix = {
+      url = "github:nix-community/stylix/master";
     };
   };
 
-  outputs = {
-    nixpkgs,
-    home-manager,
-    brew-nix,
-    mac-app-util,
-    nur,
-    nixvim,
-		stylix,
-    ...
-  }: let
-    system = "aarch64-darwin";
-    pkgs = import nixpkgs {
-      inherit system;
-      config.allowUnfree = true;
-      overlays = [
-        brew-nix.overlays.default
-        nur.overlays.default
-      ];
-    };
-  in {
-    homeConfigurations = {
-      motheki = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [
-					stylix.homeModules.stylix
-          nixvim.homeModules.nixvim
-          mac-app-util.homeManagerModules.default
-          ./home.nix
+  outputs =
+    {
+      nixpkgs,
+      home-manager,
+      brew-nix,
+      mac-app-util,
+      nur,
+      nixvim,
+      stylix,
+      ...
+    }:
+    let
+      pkgs = import nixpkgs {
+        config.allowUnfree = true;
+        overlays = [
+          brew-nix.overlays.default
+          nur.overlays.default
         ];
       };
+    in
+    {
+      homeConfigurations = {
+        motheki = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [
+            stylix.homeModules.stylix
+            nixvim.homeModules.nixvim
+            mac-app-util.homeManagerModules.default
+            ./home.nix
+          ];
+        };
+      };
     };
-  };
 }

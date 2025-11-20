@@ -51,6 +51,10 @@
         };
         nil_ls = {
           enable = true;
+					packageFallback = true;
+					config = {
+						autoArchive = true;
+					};
         };
         nixd = {
           enable = true;
@@ -199,6 +203,9 @@
       mini-files = {
         enable = true;
       };
+      mini-indentscope = {
+        enable = true;
+      };
       mini-jump2d = {
         enable = true;
       };
@@ -210,6 +217,20 @@
       };
       mini-splitjoin = {
         enable = true;
+      };
+      mini-starter = {
+        enable = true;
+				settings = {
+					header = ''
+
+						░░░    ░░ ░░ ░░   ░░ ░░    ░░ ░░ ░░░    ░░░
+						▒▒▒▒   ▒▒ ▒▒  ▒▒ ▒▒  ▒▒    ▒▒ ▒▒ ▒▒▒▒  ▒▒▒▒
+						▒▒ ▒▒  ▒▒ ▒▒   ▒▒▒   ▒▒    ▒▒ ▒▒ ▒▒ ▒▒▒▒ ▒▒
+						▓▓  ▓▓ ▓▓ ▓▓  ▓▓ ▓▓   ▓▓  ▓▓  ▓▓ ▓▓  ▓▓  ▓▓
+						██   ████ ██ ██   ██   ████   ██ ██      ██
+
+					'';
+				};
       };
       mini-pairs = {
         enable = true;
