@@ -72,6 +72,9 @@
         postgres_lsp = {
           enable = true;
         };
+        pyrefly = {
+          enable = true;
+        };
         ruby_lsp = {
           enable = true;
         };
@@ -88,9 +91,6 @@
           enable = true;
         };
         statix = {
-          enable = true;
-        };
-        stylint_lsp = {
           enable = true;
         };
         stylua = {
@@ -232,14 +232,12 @@
         enable = true;
         settings = {
           header = ''
-
-            						░░░    ░░ ░░ ░░   ░░ ░░    ░░ ░░ ░░░    ░░░
-            						▒▒▒▒   ▒▒ ▒▒  ▒▒ ▒▒  ▒▒    ▒▒ ▒▒ ▒▒▒▒  ▒▒▒▒
-            						▒▒ ▒▒  ▒▒ ▒▒   ▒▒▒   ▒▒    ▒▒ ▒▒ ▒▒ ▒▒▒▒ ▒▒
-            						▓▓  ▓▓ ▓▓ ▓▓  ▓▓ ▓▓   ▓▓  ▓▓  ▓▓ ▓▓  ▓▓  ▓▓
-            						██   ████ ██ ██   ██   ████   ██ ██      ██
-
-            					'';
+						░░░    ░░ ░░ ░░   ░░ ░░    ░░ ░░ ░░░    ░░░
+						▒▒▒▒   ▒▒ ▒▒  ▒▒ ▒▒  ▒▒    ▒▒ ▒▒ ▒▒▒▒  ▒▒▒▒
+						▒▒ ▒▒  ▒▒ ▒▒   ▒▒▒   ▒▒    ▒▒ ▒▒ ▒▒ ▒▒▒▒ ▒▒
+						▓▓  ▓▓ ▓▓ ▓▓  ▓▓ ▓▓   ▓▓  ▓▓  ▓▓ ▓▓  ▓▓  ▓▓
+						██   ████ ██ ██   ██   ████   ██ ██      ██
+					'';
         };
       };
       mini-pairs = {
@@ -277,7 +275,6 @@
       rose-pine = {
         enable = true;
         settings = {
-          extend_background_behind_borders = false;
           styles = {
             transparency = true;
           };

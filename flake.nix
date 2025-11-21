@@ -3,10 +3,22 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/master";
-    home-manager.url = "github:nix-community/home-manager/master";
-    mac-app-util.url = "github:hraban/mac-app-util/master";
-    nur.url = "github:nix-community/NUR/main";
-    nixvim.url = "github:nix-community/nixvim/main";
+    home-manager = {
+			url = "github:nix-community/home-manager/master";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
+    mac-app-util= {
+			url = "github:hraban/mac-app-util/master";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
+    nur = {
+			url = "github:nix-community/NUR/main";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
+    nixvim = {
+			url = "github:nix-community/nixvim/main";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
     brew-nix = {
       url = "github:BatteredBunny/brew-nix/main";
       inputs.brew-api.follows = "brew-api";
