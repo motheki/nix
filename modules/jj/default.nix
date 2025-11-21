@@ -18,6 +18,7 @@
         backends = {
           ssh = {
             allowed-signers = "~/.ssh/allowed_signers";
+            program = "/usr/bin/ssh-keygen";
           };
         };
       };

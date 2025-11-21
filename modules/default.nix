@@ -16,7 +16,7 @@
 		./bat
 		./jj
 		#./zed
-		#./opencode
+		./opencode
 		./nixvim
 		#./stylix
 		./radicle
