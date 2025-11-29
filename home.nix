@@ -53,7 +53,7 @@
       nur.repos.AusCyber.zen-browser-twilight
 
       # Homebrew Casks
-      brewCasks."helium-browser"
+      #brewCasks."helium-browser"
       brewCasks."cursor"
       brewCasks."tableplus"
       brewCasks."legcord"
@@ -61,6 +61,9 @@
       brewCasks."orion"
       brewCasks."linearmouse@beta"
       brewCasks."cleanshot"
+
+			#Fonts
+			nerd-fonts.commit-mono
     ];
   };
   imports = [

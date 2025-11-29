@@ -20,5 +20,6 @@
 		./nixvim
 		#./stylix
 		./radicle
+		./fonts
   ];
 }

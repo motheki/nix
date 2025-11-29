@@ -21,7 +21,7 @@
     };
     vivid = {
       enable = true;
-      activeTheme = "rose-pine-dawn";
+      activeTheme = "rose-pine-moon";
     };
     zoxide = {
       enable = true;
@@ -47,6 +47,7 @@
       };
       defaultKeymap = "viins";
       syntaxHighlighting = {
+				#package = pkgs.zsh-fast-syntax-highlighting;
         enable = true;
       };
     };
@@ -56,6 +57,7 @@
     fish = {
       enable = true;
       generateCompletions = true;
+			interactiveShellInit = "set -U fish_greeting";
     };
     nix-your-shell = {
       enable = true;

@@ -1,7 +1,8 @@
-{ ... }:
+{pkgs, ... }:
 {
   programs.nixvim = {
     enable = true;
+		nixpkgs.pkgs = pkgs;
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
@@ -13,6 +14,9 @@
         enable = true;
       };
     };
+		luaLoader = {
+			enable = true;
+		};
     performance = {
       byteCompileLua = {
         enable = true;
@@ -29,6 +33,21 @@
         enable = true;
       };
       servers = {
+				"*" = {
+					config = {
+						packageFallback = true;
+						capabilities = {
+							textDocument = {
+								semanticTokens = {
+									multilineTokenSupport = true;
+								};
+							};
+						};
+						root_markers = [
+							".git"
+						];
+					};
+				};
         astro = {
           enable = true;
         };
@@ -52,7 +71,6 @@
         };
         nil_ls = {
           enable = true;
-          packageFallback = true;
           config = {
             autoArchive = true;
           };
@@ -141,7 +159,13 @@
       blame = {
         enable = true;
       };
-      lspconfig = {
+			lsp = {
+				enable = true;
+			};
+			lsp-format = {
+				enable = true;
+			};
+      lspkind = {
         enable = true;
       };
       mini = {
@@ -158,117 +182,57 @@
             lsp = { };
             os = { };
           };
+					align ={};
+					sessions ={};
+					visits = {};
+					bracketed = {};
+					bufremove = {};
+					clue = {};
+					colors = {};
+					hipatterns = {};
+					cursorword = {};
+					completion = {};
+					diff = {};
+					doc = {};
+					extra = {};
+					git = {};
+					fuzzy = {};
+					files = {};
+					indentscope = {};
+					jump2d = {};
+					map = {};
+					move = {};
+					splitjoin = {};
+					starter = {
+						header = ''
+	░░░    ░░ ░░ ░░   ░░ ░░    ░░ ░░ ░░░    ░░░
+	▒▒▒▒   ▒▒ ▒▒  ▒▒ ▒▒  ▒▒    ▒▒ ▒▒ ▒▒▒▒  ▒▒▒▒
+	▒▒ ▒▒  ▒▒ ▒▒   ▒▒▒   ▒▒    ▒▒ ▒▒ ▒▒ ▒▒▒▒ ▒▒
+	▓▓  ▓▓ ▓▓ ▓▓  ▓▓ ▓▓   ▓▓  ▓▓  ▓▓ ▓▓  ▓▓  ▓▓
+	██   ████ ██ ██   ██   ████   ██ ██      ██
+						'';
+					};
+					pairs = {};
+					statusline = {};
+					surround = {};
+					tabline = {};
+					snippets = {};
+					trailspace = {};
         };
       };
-      mini-basics = {
+      neoscroll = {
         enable = true;
       };
-      mini-align = {
-        enable = true;
-      };
-      mini-icons = {
-        enable = true;
-      };
-      mini-sessions = {
-        enable = true;
-      };
-      mini-visits = {
-        enable = true;
-      };
-      mini-bracketed = {
-        enable = true;
-      };
-      mini-bufremove = {
-        enable = true;
-      };
-      mini-clue = {
-        enable = true;
-      };
-      mini-colors = {
-        enable = true;
-      };
-      mini-hipatterns = {
-        enable = true;
-      };
-      mini-cursorword = {
-        enable = true;
-      };
-      mini-completion = {
-        enable = true;
-      };
-      mini-diff = {
-        enable = true;
-      };
-      mini-doc = {
-        enable = true;
-      };
-      mini-extra = {
-        enable = true;
-      };
-      mini-git = {
-        enable = true;
-      };
-      mini-fuzzy = {
-        enable = true;
-      };
-      mini-files = {
-        enable = true;
-      };
-      mini-indentscope = {
-        enable = true;
-      };
-      mini-jump2d = {
-        enable = true;
-      };
-      mini-map = {
-        enable = true;
-      };
-      mini-move = {
-        enable = true;
-      };
-      mini-splitjoin = {
-        enable = true;
-      };
-      mini-starter = {
-        enable = true;
-        settings = {
-          header = ''
-░░░    ░░ ░░ ░░   ░░ ░░    ░░ ░░ ░░░    ░░░
-▒▒▒▒   ▒▒ ▒▒  ▒▒ ▒▒  ▒▒    ▒▒ ▒▒ ▒▒▒▒  ▒▒▒▒
-▒▒ ▒▒  ▒▒ ▒▒   ▒▒▒   ▒▒    ▒▒ ▒▒ ▒▒ ▒▒▒▒ ▒▒
-▓▓  ▓▓ ▓▓ ▓▓  ▓▓ ▓▓   ▓▓  ▓▓  ▓▓ ▓▓  ▓▓  ▓▓
-██   ████ ██ ██   ██   ████   ██ ██      ██
-					'';
-        };
-      };
-      mini-pairs = {
-        enable = true;
-      };
-      mini-statusline = {
-        enable = true;
-      };
-      mini-surround = {
-        enable = true;
-      };
-      mini-tabline = {
-        enable = true;
-      };
-      mini-snippets = {
-        enable = true;
-      };
-      mini-trailspace = {
-        enable = true;
-      };
-      lspkind = {
-        enable = true;
-      };
+			none-ls = {
+				enable = true;
+			};
       telescope = {
         enable = true;
       };
+			trouble = {
+				enable = true;
+			};
       smear-cursor = {
-        enable = true;
-      };
-      neoscroll = {
         enable = true;
       };
     };
