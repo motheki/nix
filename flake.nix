@@ -3,22 +3,27 @@
 
   inputs = {
     nixpkgs = {
-			url = "github:nixos/nixpkgs/master";
-		};
+      url = "github:nixos/nixpkgs/master";
+    };
     home-manager = {
-			url = "github:nix-community/home-manager/master";
-		};
-    mac-app-util= {
-			url = "github:hraban/mac-app-util/master";
-		};
+      url = "github:nix-community/home-manager/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    mac-app-util = {
+      url = "github:hraban/mac-app-util/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nur = {
-			url = "github:nix-community/NUR/main";
-		};
+      url = "github:nix-community/NUR/main";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixvim = {
-			url = "github:nix-community/nixvim/main";
-		};
+      url = "github:nix-community/nixvim/main";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     brew-nix = {
       url = "github:BatteredBunny/brew-nix/main";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     brew-api = {
       url = "github:BatteredBunny/brew-api/main";
@@ -26,6 +31,7 @@
     };
     stylix = {
       url = "github:nix-community/stylix/master";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 

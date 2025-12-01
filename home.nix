@@ -50,7 +50,7 @@
 			raycast
 
       # Nur Packages
-      nur.repos.AusCyber.zen-browser-twilight
+      nur.repos.AusCyber.zen-browser
 
       # Homebrew Casks
       #brewCasks."helium-browser"
@@ -59,11 +59,11 @@
       brewCasks."legcord"
       brewCasks."dbngin"
       brewCasks."orion"
-      brewCasks."linearmouse@beta"
+      #brewCasks."linearmouse@beta"
       brewCasks."cleanshot"
 
 			#Fonts
-			nerd-fonts.commit-mono
+			#nerd-fonts.commit-mono
     ];
   };
   imports = [

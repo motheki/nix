@@ -1,8 +1,11 @@
-{pkgs, ... }:
+{ pkgs, ... }:
 {
   programs.nixvim = {
+    package = pkgs.neovim-unwrapped;
     enable = true;
-		nixpkgs.pkgs = pkgs;
+    nixpkgs = {
+      useGlobalPackages = true;
+    };
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
@@ -13,10 +16,16 @@
       fd = {
         enable = true;
       };
+      tree-sitter = {
+        enable = true;
+      };
+      nodejs = {
+        enable = true;
+      };
     };
-		luaLoader = {
-			enable = true;
-		};
+    luaLoader = {
+      enable = true;
+    };
     performance = {
       byteCompileLua = {
         enable = true;
@@ -33,21 +42,21 @@
         enable = true;
       };
       servers = {
-				"*" = {
-					config = {
-						packageFallback = true;
-						capabilities = {
-							textDocument = {
-								semanticTokens = {
-									multilineTokenSupport = true;
-								};
-							};
-						};
-						root_markers = [
-							".git"
-						];
-					};
-				};
+        "*" = {
+          config = {
+            packageFallback = true;
+            capabilities = {
+              textDocument = {
+                semanticTokens = {
+                  multilineTokenSupport = true;
+                };
+              };
+            };
+            root_markers = [
+              ".git"
+            ];
+          };
+        };
         astro = {
           enable = true;
         };
@@ -146,7 +155,7 @@
           enable = true;
         };
       };
-			register = "unnamedplus";
+      register = "unnamedplus";
     };
     opts = {
       number = true;
@@ -154,17 +163,39 @@
       tabstop = 2;
       shiftwidth = 2;
       smarttab = true;
+      smartindent = true;
+      autowriteall = true;
+      expandtab = true;
+      undofile = true;
     };
     plugins = {
-      blame = {
+      colorizer = {
         enable = true;
       };
-			lsp = {
-				enable = true;
-			};
-			lsp-format = {
-				enable = true;
-			};
+      colorful-menu = {
+        enable = true;
+      };
+      conform-nvim = {
+        enable = true;
+      };
+      direnv = {
+        enable = true;
+      };
+      faster = {
+        enable = true;
+      };
+      gitblame = {
+        enable = true;
+      };
+      glow = {
+        enable = true;
+      };
+      lsp = {
+        enable = true;
+      };
+      lsp-format = {
+        enable = true;
+      };
       lspkind = {
         enable = true;
       };
@@ -172,66 +203,83 @@
         enable = true;
         mockDevIcons = true;
         modules = {
-          icons = {
-            style = "glyph";
-            default = { };
-            directory = { };
-            extension = { };
-            file = { };
-            filetype = { };
-            lsp = { };
-            os = { };
+          icons = { };
+          align = { };
+          sessions = { };
+          visits = { };
+          bracketed = { };
+          bufremove = { };
+          clue = { };
+          colors = { };
+          hipatterns = { };
+          cursorword = { };
+          completion = { };
+          pick = { };
+          diff = { };
+          doc = { };
+          extra = { };
+          git = { };
+          fuzzy = { };
+          files = { };
+          indentscope = { };
+          jump2d = { };
+          map = { };
+          move = { };
+          splitjoin = { };
+          starter = {
+            header = ''
+              ░░░    ░░ ░░ ░░   ░░ ░░    ░░ ░░ ░░░    ░░░
+              ▒▒▒▒   ▒▒ ▒▒  ▒▒ ▒▒  ▒▒    ▒▒ ▒▒ ▒▒▒▒  ▒▒▒▒
+              ▒▒ ▒▒  ▒▒ ▒▒   ▒▒▒   ▒▒    ▒▒ ▒▒ ▒▒ ▒▒▒▒ ▒▒
+              ▓▓  ▓▓ ▓▓ ▓▓  ▓▓ ▓▓   ▓▓  ▓▓  ▓▓ ▓▓  ▓▓  ▓▓
+              ██   ████ ██ ██   ██   ████   ██ ██      ██
+              						'';
           };
-					align ={};
-					sessions ={};
-					visits = {};
-					bracketed = {};
-					bufremove = {};
-					clue = {};
-					colors = {};
-					hipatterns = {};
-					cursorword = {};
-					completion = {};
-					diff = {};
-					doc = {};
-					extra = {};
-					git = {};
-					fuzzy = {};
-					files = {};
-					indentscope = {};
-					jump2d = {};
-					map = {};
-					move = {};
-					splitjoin = {};
-					starter = {
-						header = ''
-	░░░    ░░ ░░ ░░   ░░ ░░    ░░ ░░ ░░░    ░░░
-	▒▒▒▒   ▒▒ ▒▒  ▒▒ ▒▒  ▒▒    ▒▒ ▒▒ ▒▒▒▒  ▒▒▒▒
-	▒▒ ▒▒  ▒▒ ▒▒   ▒▒▒   ▒▒    ▒▒ ▒▒ ▒▒ ▒▒▒▒ ▒▒
-	▓▓  ▓▓ ▓▓ ▓▓  ▓▓ ▓▓   ▓▓  ▓▓  ▓▓ ▓▓  ▓▓  ▓▓
-	██   ████ ██ ██   ██   ████   ██ ██      ██
-						'';
-					};
-					pairs = {};
-					statusline = {};
-					surround = {};
-					tabline = {};
-					snippets = {};
-					trailspace = {};
+          pairs = { };
+          statusline = { };
+          surround = { };
+          tabline = { };
+          snippets = { };
+          trailspace = { };
         };
       };
       neoscroll = {
         enable = true;
       };
-			none-ls = {
-				enable = true;
-			};
+      nix-develop = {
+        enable = true;
+      };
+      noice = {
+        enable = true;
+      };
+      none-ls = {
+        enable = true;
+      };
+      notify = {
+        enable = true;
+        settings = {
+          background_colour = "#000000";
+        };
+      };
+      nui = {
+        enable = true;
+      };
       telescope = {
         enable = true;
       };
-			trouble = {
-				enable = true;
-			};
+      treesitter = {
+        enable = true;
+        folding = false;
+        settings = {
+          autoInstall = true;
+          highlight = {
+            enable = true;
+          };
+        };
+      };
+      trouble = {
+        enable = true;
+      };
       smear-cursor = {
         enable = true;
       };
