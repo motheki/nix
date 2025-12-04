@@ -3,7 +3,7 @@
     enable = true;
 		settings = {
 			theme = "system";
-			autoUpdate = true;
+			autoupdate = true;
 			autoshare = false;
 		};
   };

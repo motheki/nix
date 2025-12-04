@@ -59,18 +59,77 @@
         };
         astro = {
           enable = true;
+          config = {
+            cmd = [
+              "astro-ls"
+              "--stdio"
+            ];
+            filetypes = [
+              "astro"
+            ];
+            root_markers = [
+              "package.json"
+              "tsconfig.json"
+              "jsconfig.json"
+            ];
+          };
         };
         bashls = {
           enable = true;
+          config = {
+            cmd = [
+              "bash-language-server"
+              "start"
+            ];
+            filetypes = [
+              "bash"
+              "sh"
+            ];
+          };
         };
         biome = {
           enable = true;
         };
         gopls = {
           enable = true;
+          config = {
+            cmd = [
+              "gopls"
+            ];
+            filetypes = [
+              "go"
+              "gomod"
+              "gowork"
+              "gotmpl"
+            ];
+          };
         };
         html = {
           enable = true;
+          config = {
+            cmd = [
+              "vscode-html-language-server"
+              "--stdio"
+            ];
+            filetypes = [
+              "html"
+            ];
+            root_markers = [
+              "package.json"
+            ];
+            init_options = {
+              configurationSection = [
+                "html"
+                "css"
+                "javascript"
+              ];
+              embeddedLanguages = {
+                css = true;
+                javascript = true;
+              };
+              provideFormatter = true;
+            };
+          };
         };
         jsonls = {
           enable = true;

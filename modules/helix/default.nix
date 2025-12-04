@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   programs.helix = {
     enable = true;
     defaultEditor = true;
@@ -94,7 +95,7 @@
         ruff-lsp = {
           language-id = "python";
           command = "ruff";
-          args = ["server"];
+          args = [ "server" ];
           format = {
             preview = true;
           };
@@ -105,7 +106,7 @@
         phpactor-lsp = {
           language-id = "php";
           command = "phpactor";
-          args = ["language-server"];
+          args = [ "language-server" ];
           format = {
             preview = true;
           };
@@ -116,7 +117,7 @@
         ty-lsp = {
           language-id = "python";
           command = "ty";
-          args = ["server"];
+          args = [ "server" ];
           format = {
             preview = true;
           };
@@ -137,12 +138,12 @@
         ts-lsp = {
           language-id = "typescript";
           command = "typescript-language-server";
-          args = ["--stdio"];
+          args = [ "--stdio" ];
         };
         js-lsp = {
           language-id = "javascript";
           command = "typescript-language-server";
-          args = ["--stdio"];
+          args = [ "--stdio" ];
           format = {
             preview = true;
           };
@@ -153,7 +154,7 @@
         astro-lsp = {
           language-id = "astro";
           command = "astro-ls";
-          args = ["--stdio"];
+          args = [ "--stdio" ];
           format = {
             preview = true;
           };
@@ -174,7 +175,7 @@
         nil-lsp = {
           language-id = "nix";
           command = "nil";
-          args = ["--stdio"];
+          args = [ "--stdio" ];
           format = {
             preview = true;
           };
@@ -185,7 +186,7 @@
         json-lsp = {
           language-id = "json";
           command = "vscode-json-languageserver";
-          args = ["--stdio"];
+          args = [ "--stdio" ];
           format = {
             preview = true;
           };
@@ -196,7 +197,7 @@
         yaml-lsp = {
           language-id = "yaml";
           command = "yaml-language-server";
-          args = ["--stdio"];
+          args = [ "--stdio" ];
           format = {
             preview = true;
           };
@@ -207,7 +208,7 @@
         css-lsp = {
           language-id = "css";
           command = "vscode-css-languageserver";
-          args = ["--stdio"];
+          args = [ "--stdio" ];
           format = {
             preview = true;
           };
@@ -218,7 +219,10 @@
         taplo-lsp = {
           language-id = "toml";
           command = "taplo";
-          args = ["lsp" "stdio"];
+          args = [
+            "lsp"
+            "stdio"
+          ];
           format = {
             preview = true;
           };
@@ -229,7 +233,7 @@
         superhtml-lsp = {
           language-id = "html";
           command = "superhtml";
-          args = ["lsp"];
+          args = [ "lsp" ];
           format = {
             preview = true;
           };
@@ -243,118 +247,133 @@
         {
           name = "toml";
           auto-format = true;
-          language-servers = ["taplo-ls"];
+          language-servers = [ "taplo-ls" ];
           formatter = {
             command = "taplo";
-            args = ["fmt"];
+            args = [ "fmt" ];
           };
         }
         {
           name = "html";
           auto-format = true;
-          language-servers = ["superhtml-lsp"];
+          language-servers = [ "superhtml-lsp" ];
           formatter = {
             command = "superhtml";
-            args = ["fmt"];
+            args = [ "fmt" ];
           };
         }
         {
           name = "nim";
           auto-format = true;
-          language-servers = ["nimlangserver"];
+          language-servers = [ "nimlangserver" ];
         }
         {
           name = "ocaml";
           auto-format = true;
-          language-servers = ["ocamlPackages.ocaml-lsp"];
+          language-servers = [ "ocamlPackages.ocaml-lsp" ];
         }
         {
           name = "haskell";
           auto-format = true;
-          language-servers = ["haskellPackages.lsp"];
+          language-servers = [ "haskellPackages.lsp" ];
         }
         {
           name = "lua";
           auto-format = true;
-          language-servers = ["lua-language-server"];
+          language-servers = [ "lua-language-server" ];
         }
         {
           name = "astro";
           auto-format = true;
-          language-servers = ["astro-lsp" "ts-lsp"];
+          language-servers = [
+            "astro-lsp"
+            "ts-lsp"
+          ];
         }
         {
           name = "json";
           auto-format = true;
-          language-servers = ["json-lsp"];
+          language-servers = [ "json-lsp" ];
         }
         {
           name = "jsonc";
           auto-format = true;
-          language-servers = ["json-lsp"];
+          language-servers = [ "json-lsp" ];
         }
         {
           name = "json-ld";
           auto-format = true;
-          language-servers = ["json-lsp"];
+          language-servers = [ "json-lsp" ];
         }
         {
           name = "css";
           auto-format = true;
-          language-servers = ["css-lsp"];
+          language-servers = [ "css-lsp" ];
         }
         {
           name = "r";
           auto-format = true;
-          language-servers = ["rPackages.air"];
+          language-servers = [ "rPackages.air" ];
         }
         {
           name = "typescript";
           auto-format = true;
-          language-servers = ["ts-lsp"];
+          language-servers = [ "ts-lsp" ];
         }
         {
           name = "javascript";
           auto-format = true;
-          language-servers = ["js-lsp"];
+          language-servers = [ "js-lsp" ];
         }
         {
           name = "rust";
           auto-format = true;
-          language-servers = ["rust-analyzer" "lldb"];
+          language-servers = [
+            "rust-analyzer"
+            "lldb"
+          ];
         }
         {
           name = "yaml";
           auto-format = true;
-          language-servers = ["yaml-lsp"];
+          language-servers = [ "yaml-lsp" ];
         }
         {
           name = "zig";
           auto-format = true;
-          language-servers = ["zls" "lldb"];
+          language-servers = [
+            "zls"
+            "lldb"
+          ];
           formatter = {
             command = "zig";
-            args = ["fmt" "--ast-check"];
+            args = [
+              "fmt"
+              "--ast-check"
+            ];
           };
         }
         {
           name = "bash";
           auto-format = true;
-          language-servers = ["bash-language-server"];
+          language-servers = [ "bash-language-server" ];
         }
         {
           name = "html";
           auto-format = true;
-          language-servers = ["superhtml-lsp"];
+          language-servers = [ "superhtml-lsp" ];
           formatter = {
             command = "superhtml";
-            args = ["lsp"];
+            args = [ "lsp" ];
           };
         }
         {
           name = "nix";
           auto-format = true;
-          language-servers = ["nixd-lsp" "nil-lsp"];
+          language-servers = [
+            "nixd-lsp"
+            "nil-lsp"
+          ];
           formatter = {
             command = "alejandra";
           };
@@ -362,37 +381,47 @@
         {
           name = "php";
           auto-format = true;
-          formatter = ["phpactor"];
-          language-servers = ["phpactor-lsp"];
+          formatter = [ "phpactor" ];
+          language-servers = [ "phpactor-lsp" ];
         }
         {
           name = "python";
-          language-servers = ["ruff-lsp" "ty-lsp"];
+          language-servers = [
+            "ruff-lsp"
+            "ty-lsp"
+          ];
           auto-format = true;
         }
         {
           name = "swift";
           auto-format = true;
-          language-servers = ["sourcekit-lsp" "swift-formatter" "lldb"];
+          language-servers = [
+            "sourcekit-lsp"
+            "swift-formatter"
+            "lldb"
+          ];
           formatter = {
             command = "swift-format";
-            args = ["-p" "-r"];
+            args = [
+              "-p"
+              "-r"
+            ];
           };
         }
         {
           name = "go";
           auto-format = true;
-          language-servers = ["gopls"];
+          language-servers = [ "gopls" ];
         }
         {
           name = "markdown";
           auto-format = true;
-          language-servers = ["md"];
+          language-servers = [ "md" ];
         }
         {
           name = "ruby";
           auto-format = true;
-          language-servers = ["rubyPackages_3_4.ruby-lsp"];
+          language-servers = [ "rubyPackages_3_4.ruby-lsp" ];
         }
       ];
     };

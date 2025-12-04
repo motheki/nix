@@ -26,6 +26,9 @@
     zoxide = {
       enable = true;
     };
+    nix-index = {
+      enable = true;
+    };
     starship = {
       enable = true;
     };
@@ -44,7 +47,9 @@
       enable = true;
       autosuggestion = {
         enable = true;
+        strategy = ["completion"];
       };
+      autocd = true;
       defaultKeymap = "viins";
       syntaxHighlighting = {
 				#package = pkgs.zsh-fast-syntax-highlighting;
@@ -52,6 +57,9 @@
       };
     };
     carapace = {
+      enable = true;
+    };
+    skim = {
       enable = true;
     };
     fish = {

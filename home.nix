@@ -3,14 +3,19 @@
     homeDirectory = "/Users/motheki";
     username = "motheki";
     stateVersion = "25.11";
-    sessionVariables = {
-    };
     shellAliases = {
       rebuild = "nix --extra-experimental-features 'nix-command flakes' run 'github:nix-community/nh/master' -- home switch -u -q --impure --accept-flake-config ~/Repos/nix";
-      clean = "nix --extra-experimental-features 'nix-command flakes' run 'github:nix-community/nh/master' -- clean all -q";
-      manage = "nix --extra-experimental-features 'nix-command flakes' run 'home-manager/master'  -- switch  --flake ~/Repos/nix --show-trace";
       rebuild-local = "nh home switch -u -q --impure --accept-flake-config ~/Repos/nix";
+      manage = "nix --extra-experimental-features 'nix-command flakes' run 'home-manager/master'  -- switch  --flake ~/Repos/nix --show-trace";
+      clean = "nix --extra-experimental-features 'nix-command flakes' run 'github:nix-community/nh/master' -- clean all -q";
     };
+    sessionVariables = {
+      ANDROID_HOME="$HOME/Library/Android/sdk";
+    };
+    sessionPath = [
+      "$ANDROID_HOME/emulator"
+      "$ANDROID_HOME/platform-tools"
+    ];
     packages = with pkgs; [
       #Apps
       iina
@@ -30,6 +35,7 @@
       cursor-cli
       hyperfine
 			radicle-tui
+      comma
 
       #Utilities
       rm-improved
@@ -48,22 +54,40 @@
       ffmpeg_8
 			betterdisplay
 			raycast
+      imagemagickBig
 
       # Nur Packages
       nur.repos.AusCyber.zen-browser
 
+      # Depenencies for Agon
+      nodePackages_latest.nodejs
+      bun
+      cocoapods-beta
+      android-studio-tools
+      android-tools
+      watchman
+      fastlane
+      zulu17
+      brewCasks."android-studio-preview@canary"
+      brewCasks."expo-orbit"
+
       # Homebrew Casks
-      #brewCasks."helium-browser"
       brewCasks."cursor"
-      brewCasks."tableplus"
       brewCasks."legcord"
+      brewCasks."discord@canary"
       brewCasks."dbngin"
       brewCasks."orion"
-      #brewCasks."linearmouse@beta"
       brewCasks."cleanshot"
+      #brewCasks."nook"
+      #brewCasks."helium-browser"
+      #brewCasks."tableplus"
+      #brewCasks."linearmouse@beta"
 
 			#Fonts
-			#nerd-fonts.commit-mono
+			nerd-fonts.commit-mono
+			nerd-fonts.monaspace
+			nerd-fonts.agave
+			nerd-fonts.jetbrains-mono
     ];
   };
   imports = [

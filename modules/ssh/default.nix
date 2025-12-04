@@ -1,9 +1,10 @@
-{...}: {
+{pkgs, ...}: {
 	services.ssh-agent = {
 		enable = true;
 	};
   programs.ssh = {
     enable = true;
+    package = pkgs.openssh_hpn;
     enableDefaultConfig = false;
     matchBlocks."*" = {
       forwardAgent = true;
@@ -11,13 +12,14 @@
       compression = true;
       hashKnownHosts = true;
       userKnownHostsFile = "~/.ssh/known_hosts";
-      controlMaster = "no";
+      controlMaster = "yes";
       controlPath = "~/.ssh/master-%r@%n:%p";
-      controlPersist = "no";
+      controlPersist = "yes";
     };
+    #extraConfig = "UseKeychain yes";
   };
   programs.keychain = {
     enable = true;
-    keys = ["trevoropiyo" "motheki"];
+    keys = ["trevoropiyo"];
   };
 }

@@ -10,7 +10,7 @@
 		./ghostty
 		#./helix
 		./yt-dlp
-		#./llms
+		./llms
 		./nushell
 		./nh
 		./bat

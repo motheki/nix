@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   programs = {
     delta = {
       enable = true;
@@ -22,6 +22,10 @@
     lazygit = {enable = true;};
     git = {
       enable = true;
+      package = pkgs.gitFull;
+      maintenance = {
+          enable = true;
+      };
       ignores = [
         "*~"
         "*.swp"
