@@ -21,5 +21,6 @@
 		#./stylix
 		./radicle
 		./fonts
+    ./streamlink
   ];
 }

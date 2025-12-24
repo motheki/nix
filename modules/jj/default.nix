@@ -22,9 +22,14 @@
           };
         };
       };
+      remotes = {
+        origin = {
+          auto-track-bookmarks = "*";
+        };
+      };
       git = {
         sign-on-push = true;
-        fetch = ["upstream" "origin"];
+        fetch = ["origin"];
         push = "origin";
       };
     };

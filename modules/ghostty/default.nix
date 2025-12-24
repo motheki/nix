@@ -7,13 +7,13 @@
       font-size = 12;
       font-family = "CommitMonoMotheki";
       cursor-style = "bar";
-      background-opacity = 0.75;
-      background-blur = true;
+      background-opacity = 1;
+      background-blur = false;
       window-height = 55;
       window-width = 140;
       window-inherit-working-directory = false;
-      #macos-icon = "paper";
-      #macos-icon-frame = "beige";
+      macos-icon = "paper";
+      macos-icon-frame = "beige";
       macos-titlebar-style = "transparent";
       auto-update = "download";
       auto-update-channel = "tip";

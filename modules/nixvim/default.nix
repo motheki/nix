@@ -87,9 +87,6 @@
             ];
           };
         };
-        biome = {
-          enable = true;
-        };
         gopls = {
           enable = true;
           config = {
@@ -302,9 +299,6 @@
           trailspace = { };
         };
       };
-      neoscroll = {
-        enable = true;
-      };
       nix-develop = {
         enable = true;
       };
@@ -320,15 +314,17 @@
           background_colour = "#000000";
         };
       };
-      nui = {
-        enable = true;
-      };
       telescope = {
         enable = true;
       };
+      fff = {
+        enable = false;
+      };
       treesitter = {
         enable = true;
-        folding = false;
+        folding = {
+        enable = true;
+        };
         settings = {
           autoInstall = true;
           highlight = {

@@ -4,9 +4,9 @@
     username = "motheki";
     stateVersion = "25.11";
     shellAliases = {
-      rebuild = "nix --extra-experimental-features 'nix-command flakes' run 'github:nix-community/nh/master' -- home switch -u -q --impure --accept-flake-config ~/Repos/nix";
-      rebuild-local = "nh home switch -u -q --impure --accept-flake-config ~/Repos/nix";
-      manage = "nix --extra-experimental-features 'nix-command flakes' run 'home-manager/master'  -- switch  --flake ~/Repos/nix --show-trace";
+      rebuild = "nix --extra-experimental-features 'nix-command flakes' run 'github:nix-community/nh/master' -- home switch -u -q --impure --accept-flake-config ~/Repos/personal/nix";
+      rebuild-local = "nh home switch -u -q --impure --accept-flake-config ~/Repos/personal/nix";
+      manage = "nix --extra-experimental-features 'nix-command flakes' run 'home-manager/master'  -- switch  --flake ~/Repos/personal/nix --show-trace";
       clean = "nix --extra-experimental-features 'nix-command flakes' run 'github:nix-community/nh/master' -- clean all -q";
     };
     sessionVariables = {
@@ -20,6 +20,7 @@
       #Apps
       iina
       webtorrent_desktop
+      slack
 
       #Dev
       fh
@@ -44,6 +45,7 @@
       vhs
       glow
       dua
+      lla
       jless
       xcp
       rustscan
@@ -52,8 +54,6 @@
       dogedns
       fastfetch
       ffmpeg_8
-			betterdisplay
-			raycast
       imagemagickBig
 
       # Nur Packages
@@ -68,20 +68,25 @@
       watchman
       fastlane
       zulu17
-      brewCasks."android-studio-preview@canary"
-      brewCasks."expo-orbit"
+      php
+      php84Packages.composer
 
       # Homebrew Casks
+      brewCasks."android-studio-preview@canary"
+      brewCasks."expo-orbit"
+      brewCasks."raycast"
+      brewCasks."betterdisplay"
       brewCasks."cursor"
       brewCasks."legcord"
       brewCasks."discord@canary"
       brewCasks."dbngin"
       brewCasks."orion"
       brewCasks."cleanshot"
+      brewCasks."linearmouse@beta"
+      brewCasks."osaurus"
       #brewCasks."nook"
       #brewCasks."helium-browser"
       #brewCasks."tableplus"
-      #brewCasks."linearmouse@beta"
 
 			#Fonts
 			nerd-fonts.commit-mono

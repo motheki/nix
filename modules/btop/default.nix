@@ -307,7 +307,7 @@
       '';
     };
     settings = {
-      color_theme = "rose-pine-moo";
+      color_theme = "rose-pine";
       theme_background = false;
     };
   };
