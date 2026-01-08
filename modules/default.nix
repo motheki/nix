@@ -9,7 +9,7 @@
 		./git
 		./ghostty
 		#./helix
-		./yt-dlp
+		#./yt-dlp
 		./llms
 		./nushell
 		./nh

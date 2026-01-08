@@ -144,7 +144,7 @@
           enable = true;
         };
         nushell = {
-          enable = true;
+          enable = false;
         };
         oxlint = {
           enable = true;
@@ -156,7 +156,7 @@
           enable = true;
         };
         pyrefly = {
-          enable = true;
+          enable = false;
         };
         ruby_lsp = {
           enable = true;

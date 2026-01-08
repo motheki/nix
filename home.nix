@@ -58,7 +58,6 @@
 
       # Nur Packages
       nur.repos.AusCyber.zen-browser
-
       # Depenencies for Agon
       nodePackages_latest.nodejs
       bun
