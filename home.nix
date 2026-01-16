@@ -4,10 +4,11 @@
     username = "motheki";
     stateVersion = "25.11";
     shellAliases = {
-      rebuild = "nix --extra-experimental-features 'nix-command flakes' run 'github:nix-community/nh/master' -- home switch -u -q --impure --accept-flake-config ~/Repos/personal/nix";
+      rebuild = "nix --extra-experimental-features 'nix-command flakes' run  'github:nix-community/nh/master' -- home switch -u -q --impure --accept-flake-config ~/Repos/personal/nix";
       rebuild-local = "nh home switch -u -q --impure --accept-flake-config ~/Repos/personal/nix";
       manage = "nix --extra-experimental-features 'nix-command flakes' run 'home-manager/master'  -- switch  --flake ~/Repos/personal/nix --show-trace";
-      clean = "nix --extra-experimental-features 'nix-command flakes' run 'github:nix-community/nh/master' -- clean all -q";
+      clean = "nix --extra-experimental-features 'nix-command flakes' run 'github:nix-community/nh/master' -- clean user -q";
+      clean-local = "nh clean user -q";
     };
     sessionVariables = {
       ANDROID_HOME="$HOME/Library/Android/sdk";
@@ -23,14 +24,13 @@
       slack
 
       #Dev
-      fh
       nix-fast-build
       nix-btm
       nix-melt
       nix-tree
-      httpie
-      wishlist
       nix-diff
+      httpie
+      fh
       scc
       rainfrog
       cursor-cli
@@ -42,8 +42,6 @@
       rm-improved
       dust
       duf
-      vhs
-      glow
       dua
       lla
       jless
@@ -51,24 +49,27 @@
       rustscan
       grip-grab
       yq-go
+      skim
       dogedns
-      fastfetch
       ffmpeg_8
       imagemagickBig
 
       # Nur Packages
       nur.repos.AusCyber.zen-browser
-      # Depenencies for Agon
+      nur.repos.forkprince.helium-nightly
+      nur.repos.charmbracelet.wishlist
+      nur.repos.charmbracelet.glow
+      nur.repos.charmbracelet.vhs
+
+      # Depenencies for Athletiq
       nodePackages_latest.nodejs
-      bun
+      eas-cli
       cocoapods-beta
       android-studio-tools
       android-tools
       watchman
       fastlane
       zulu17
-      php
-      php84Packages.composer
 
       # Homebrew Casks
       brewCasks."android-studio-preview@canary"
@@ -84,7 +85,6 @@
       brewCasks."linearmouse@beta"
       brewCasks."osaurus"
       #brewCasks."nook"
-      #brewCasks."helium-browser"
       #brewCasks."tableplus"
 
 			#Fonts

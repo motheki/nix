@@ -35,6 +35,9 @@
     jq = {
       enable = true;
     };
+    fastfetch = {
+      enable = true;
+    };
     tealdeer = {
       enable = true;
       settings = {
@@ -59,9 +62,9 @@
     carapace = {
       enable = true;
     };
-    skim = {
-      enable = true;
-    };
+    #skim = {
+    #  enable = true;
+    #};
     fish = {
       enable = true;
       generateCompletions = true;

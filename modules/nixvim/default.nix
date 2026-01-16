@@ -59,74 +59,15 @@
         };
         astro = {
           enable = true;
-          config = {
-            cmd = [
-              "astro-ls"
-              "--stdio"
-            ];
-            filetypes = [
-              "astro"
-            ];
-            root_markers = [
-              "package.json"
-              "tsconfig.json"
-              "jsconfig.json"
-            ];
-          };
         };
         bashls = {
           enable = true;
-          config = {
-            cmd = [
-              "bash-language-server"
-              "start"
-            ];
-            filetypes = [
-              "bash"
-              "sh"
-            ];
-          };
         };
         gopls = {
           enable = true;
-          config = {
-            cmd = [
-              "gopls"
-            ];
-            filetypes = [
-              "go"
-              "gomod"
-              "gowork"
-              "gotmpl"
-            ];
-          };
         };
         html = {
           enable = true;
-          config = {
-            cmd = [
-              "vscode-html-language-server"
-              "--stdio"
-            ];
-            filetypes = [
-              "html"
-            ];
-            root_markers = [
-              "package.json"
-            ];
-            init_options = {
-              configurationSection = [
-                "html"
-                "css"
-                "javascript"
-              ];
-              embeddedLanguages = {
-                css = true;
-                javascript = true;
-              };
-              provideFormatter = true;
-            };
-          };
         };
         jsonls = {
           enable = true;
@@ -136,27 +77,35 @@
         };
         nil_ls = {
           enable = true;
-          config = {
-            autoArchive = true;
-          };
         };
         nixd = {
           enable = true;
         };
         nushell = {
-          enable = false;
+          enable = true;
         };
         oxlint = {
           enable = true;
+          config = {
+            cmd = [
+              "oxlint"
+              "--lsp"
+            ];
+            filetypes = [
+              "ts"
+              "tsx"
+              "jsx"
+              "js"
+              "cjs"
+              "mjs"
+            ];
+          };
         };
         phan = {
           enable = true;
         };
         postgres_lsp = {
           enable = true;
-        };
-        pyrefly = {
-          enable = false;
         };
         ruby_lsp = {
           enable = true;
@@ -249,6 +198,9 @@
       lsp = {
         enable = true;
       };
+      opencode = {
+        enable = true;
+      };
       lsp-format = {
         enable = true;
       };
@@ -323,7 +275,7 @@
       treesitter = {
         enable = true;
         folding = {
-        enable = true;
+        enable = false;
         };
         settings = {
           autoInstall = true;

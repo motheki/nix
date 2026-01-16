@@ -2,9 +2,9 @@
   programs.nushell = {
     enable = true;
     plugins = with pkgs; [
-      nushellPlugins.query
       #nushellPlugins.skim
       #nushellPlugins.highlight
+      nushellPlugins.query
       nushellPlugins.polars
       nushellPlugins.gstat
     ];
