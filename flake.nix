@@ -62,7 +62,7 @@
           modules = [
             stylix.homeModules.stylix
             nixvim.homeModules.nixvim
-            mac-app-util.homeManagerModules.default
+            #mac-app-util.homeManagerModules.default
             ./home.nix
           ];
         };

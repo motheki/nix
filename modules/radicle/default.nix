@@ -1,7 +1,7 @@
 { ... }:
 {
   programs.radicle = {
-    #enable = true;
+    enable = true;
     #uri = {
     #  web-rad = {
     #    enable = true;

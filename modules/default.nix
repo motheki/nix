@@ -16,9 +16,7 @@
 		./bat
 		./jj
 		#./zed
-		./opencode
 		./nixvim
-		#./stylix
 		./radicle
 		./fonts
     ./streamlink

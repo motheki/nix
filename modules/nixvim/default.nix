@@ -66,13 +66,7 @@
         gopls = {
           enable = true;
         };
-        html = {
-          enable = true;
-        };
         jsonls = {
-          enable = true;
-        };
-        lua_ls = {
           enable = true;
         };
         nil_ls = {
@@ -88,16 +82,8 @@
           enable = true;
           config = {
             cmd = [
-              "oxlint"
-              "--lsp"
-            ];
-            filetypes = [
-              "ts"
-              "tsx"
-              "jsx"
-              "js"
-              "cjs"
-              "mjs"
+             "oxlint"
+             "--lsp"
             ];
           };
         };
@@ -110,13 +96,7 @@
         ruby_lsp = {
           enable = true;
         };
-        ruff = {
-          enable = true;
-        };
         rust_analyzer = {
-          enable = true;
-        };
-        sourcekit = {
           enable = true;
         };
         sqls = {
@@ -251,6 +231,9 @@
           trailspace = { };
         };
       };
+      nix = {
+        enable = true;
+      };
       nix-develop = {
         enable = true;
       };
@@ -272,6 +255,9 @@
       fff = {
         enable = false;
       };
+      tv = {
+        enable = true;
+      };
       treesitter = {
         enable = true;
         folding = {
@@ -288,6 +274,9 @@
         enable = true;
       };
       smear-cursor = {
+        enable = true;
+      };
+      which-key = {
         enable = true;
       };
     };

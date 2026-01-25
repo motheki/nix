@@ -48,6 +48,7 @@
       xcp
       rustscan
       grip-grab
+      seanime
       yq-go
       skim
       dogedns
@@ -62,6 +63,7 @@
       nur.repos.charmbracelet.vhs
 
       # Depenencies for Athletiq
+      bun
       nodePackages_latest.nodejs
       eas-cli
       cocoapods-beta
@@ -69,7 +71,6 @@
       android-tools
       watchman
       fastlane
-      zulu17
 
       # Homebrew Casks
       brewCasks."android-studio-preview@canary"
@@ -79,13 +80,10 @@
       brewCasks."cursor"
       brewCasks."legcord"
       brewCasks."discord@canary"
-      brewCasks."dbngin"
-      brewCasks."orion"
       brewCasks."cleanshot"
+      brewCasks."orion"
       brewCasks."linearmouse@beta"
       brewCasks."osaurus"
-      #brewCasks."nook"
-      #brewCasks."tableplus"
 
 			#Fonts
 			nerd-fonts.commit-mono
