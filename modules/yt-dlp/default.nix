@@ -2,7 +2,7 @@
   programs.yt-dlp = {
     enable = true;
     settings = {
-      paths = "/Volumes/mothekis_drive/Videos/Youtube/";
+      paths = "/Volumes/mothekis_drive/videos/youtube/";
       embed-thumbnail = true;
       embed-metadata = true;
       sponsorblock-remove = "selfpromo,interaction,sponsor";

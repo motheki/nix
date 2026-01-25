@@ -63,6 +63,9 @@
         bashls = {
           enable = true;
         };
+        markdown_oxide = {
+          enable = true;
+        };
         gopls = {
           enable = true;
         };
@@ -284,7 +287,13 @@
       rose-pine = {
         enable = true;
         settings = {
+          dark_variant = "moon";
+          dim_inactive_windows = true;
+          variant = "auto";
+          extend_background_behind_borders = true;
           styles = {
+            bold = true;
+            italic = true;
             transparency = true;
           };
         };

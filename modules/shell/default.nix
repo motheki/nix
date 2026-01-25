@@ -21,7 +21,7 @@
     };
     vivid = {
       enable = true;
-      activeTheme = "rose-pine-dawn";
+      activeTheme = "rose-pine-moon";
     };
     zoxide = {
       enable = true;
@@ -55,16 +55,12 @@
       autocd = true;
       defaultKeymap = "viins";
       syntaxHighlighting = {
-				#package = pkgs.zsh-fast-syntax-highlighting;
         enable = true;
       };
     };
     carapace = {
       enable = true;
     };
-    #skim = {
-    #  enable = true;
-    #};
     fish = {
       enable = true;
       generateCompletions = true;

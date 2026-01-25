@@ -9,10 +9,6 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    mac-app-util = {
-      url = "github:hraban/mac-app-util/master";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     nur = {
       url = "github:nix-community/NUR/main";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -29,10 +25,6 @@
       url = "github:BatteredBunny/brew-api/main";
       flake = false;
     };
-    stylix = {
-      url = "github:nix-community/stylix/master";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
@@ -40,10 +32,8 @@
       nixpkgs,
       home-manager,
       brew-nix,
-      mac-app-util,
       nur,
       nixvim,
-      stylix,
       ...
     }:
     let
@@ -60,9 +50,7 @@
         motheki = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [
-            stylix.homeModules.stylix
             nixvim.homeModules.nixvim
-            #mac-app-util.homeManagerModules.default
             ./home.nix
           ];
         };

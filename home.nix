@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   home = {
     homeDirectory = "/Users/motheki";
     username = "motheki";
@@ -11,7 +12,7 @@
       clean-local = "nh clean user -q";
     };
     sessionVariables = {
-      ANDROID_HOME="$HOME/Library/Android/sdk";
+      ANDROID_HOME = "$HOME/Library/Android/sdk";
     };
     sessionPath = [
       "$ANDROID_HOME/emulator"
@@ -26,6 +27,7 @@
       #Dev
       nix-fast-build
       nix-btm
+      nix-init
       nix-melt
       nix-tree
       nix-diff
@@ -35,22 +37,23 @@
       rainfrog
       cursor-cli
       hyperfine
-			radicle-tui
       comma
 
       #Utilities
       rm-improved
       dust
+      nixpkgs-reviewFull
       duf
+      flow-control
       dua
       lla
       jless
       xcp
       rustscan
       grip-grab
-      seanime
       yq-go
       skim
+      eas-cli
       dogedns
       ffmpeg_8
       imagemagickBig
@@ -63,9 +66,6 @@
       nur.repos.charmbracelet.vhs
 
       # Depenencies for Athletiq
-      bun
-      nodePackages_latest.nodejs
-      eas-cli
       cocoapods-beta
       android-studio-tools
       android-tools
@@ -78,18 +78,17 @@
       brewCasks."raycast"
       brewCasks."betterdisplay"
       brewCasks."cursor"
-      brewCasks."legcord"
       brewCasks."discord@canary"
       brewCasks."cleanshot"
-      brewCasks."orion"
       brewCasks."linearmouse@beta"
+      brewCasks."orion"
       brewCasks."osaurus"
 
-			#Fonts
-			nerd-fonts.commit-mono
-			nerd-fonts.monaspace
-			nerd-fonts.agave
-			nerd-fonts.jetbrains-mono
+      #Fonts
+      nerd-fonts.commit-mono
+      nerd-fonts.monaspace
+      nerd-fonts.agave
+      nerd-fonts.jetbrains-mono
     ];
   };
   imports = [

@@ -8,17 +8,17 @@
 		./btop
 		./git
 		./ghostty
-		#./helix
 		./yt-dlp
 		./llms
 		./nushell
 		./nh
 		./bat
 		./jj
-		#./zed
 		./nixvim
 		./radicle
 		./fonts
+    ./devtools
+    ./obs
     ./streamlink
   ];
 }

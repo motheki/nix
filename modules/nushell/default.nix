@@ -2,8 +2,8 @@
   programs.nushell = {
     enable = true;
     plugins = with pkgs; [
-      #nushellPlugins.skim
-      #nushellPlugins.highlight
+      nushellPlugins.skim
+      nushellPlugins.highlight
       nushellPlugins.query
       nushellPlugins.polars
       nushellPlugins.gstat
