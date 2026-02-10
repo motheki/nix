@@ -18,7 +18,7 @@
 		./radicle
 		./fonts
     ./devtools
-    ./obs
+    ./obs-studio
     ./streamlink
   ];
 }
