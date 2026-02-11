@@ -77,12 +77,9 @@
       brewCasks."expo-orbit"
       brewCasks."raycast"
       brewCasks."betterdisplay"
-      brewCasks."cursor"
-      brewCasks."discord@canary"
       brewCasks."cleanshot"
       brewCasks."linearmouse@beta"
-      brewCasks."orion"
-      brewCasks."osaurus"
+      brewCasks."obs@beta"
 
       #Fonts
       nerd-fonts.commit-mono
