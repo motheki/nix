@@ -187,6 +187,9 @@
       lsp-format = {
         enable = true;
       };
+      transparent = {
+        enable = true;
+      };
       lspkind = {
         enable = true;
       };
@@ -254,6 +257,23 @@
       };
       telescope = {
         enable = true;
+        extensions = {
+          zoxide = {
+            enable = true;
+          };
+          frecency = {
+            enable = true;
+          };
+          manix = {
+            enable = true;
+          };
+          media-files = {
+            enable = true;
+          };
+          undo = {
+            enable = true;
+          };
+        };
       };
       fff = {
         enable = false;
@@ -287,10 +307,8 @@
       rose-pine = {
         enable = true;
         settings = {
-          dark_variant = "moon";
           dim_inactive_windows = true;
           variant = "auto";
-          extend_background_behind_borders = true;
           styles = {
             bold = true;
             italic = true;

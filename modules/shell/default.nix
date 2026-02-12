@@ -16,6 +16,9 @@
       };
       silent = true;
     };
+    tirith = {
+      enable = true;
+    };
     ripgrep = {
       enable = true;
     };
@@ -27,7 +30,7 @@
       enable = true;
     };
     nix-index = {
-      enable = true;
+      enable = false;
     };
     starship = {
       enable = true;

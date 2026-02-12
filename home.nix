@@ -35,7 +35,6 @@
       fh
       scc
       rainfrog
-      cursor-cli
       hyperfine
       comma
 
@@ -44,6 +43,9 @@
       dust
       nixpkgs-reviewFull
       duf
+      utm
+      zoom-us
+      vulnix
       flow-control
       dua
       lla
@@ -54,13 +56,14 @@
       yq-go
       skim
       eas-cli
+      chafa
       dogedns
       ffmpeg_8
       imagemagickBig
 
       # Nur Packages
-      nur.repos.AusCyber.zen-browser
-      nur.repos.forkprince.helium-nightly
+      #nur.repos.AusCyber.zen-browser
+      #nur.repos.forkprince.helium-nightly
       nur.repos.charmbracelet.wishlist
       nur.repos.charmbracelet.glow
       nur.repos.charmbracelet.vhs

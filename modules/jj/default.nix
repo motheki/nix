@@ -12,7 +12,7 @@
         editor = "nvim";
       };
       signing = {
-        behavior = "own";
+        behavior = "drop";
         backend = "ssh";
         key = "~/.ssh/trevoropiyo.pub";
         backends = {
@@ -26,6 +26,15 @@
         origin = {
           auto-track-bookmarks = "*";
         };
+      };
+      fsmonitor = {
+        backend = "watchman";
+        watchman = {
+          register-snapshot-trigger = true;
+        };
+      };
+      snapshot = {
+        auto-update-stale = true;
       };
       git = {
         sign-on-push = true;
