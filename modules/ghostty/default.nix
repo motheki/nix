@@ -10,7 +10,7 @@
       background-opacity = 0.85;
       background-blur = true;
       window-height = 45;
-      window-width = 135;
+      window-width = 120;
       window-inherit-working-directory = false;
       #macos-icon = "paper";
       #macos-icon-frame = "beige";

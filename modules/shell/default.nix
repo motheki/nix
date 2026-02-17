@@ -26,11 +26,14 @@
       enable = true;
       activeTheme = "rose-pine-dawn";
     };
+    pay-respects = {
+      enable = true;
+    };
     zoxide = {
       enable = true;
     };
     nix-index = {
-      enable = false;
+      enable = true;
     };
     starship = {
       enable = true;
@@ -53,7 +56,7 @@
       enable = true;
       autosuggestion = {
         enable = true;
-        strategy = ["completion"];
+        strategy = [ "completion" ];
       };
       autocd = true;
       defaultKeymap = "viins";
@@ -67,7 +70,7 @@
     fish = {
       enable = true;
       generateCompletions = true;
-			interactiveShellInit = "set -U fish_greeting";
+      interactiveShellInit = "set -U fish_greeting";
     };
     nix-your-shell = {
       enable = true;

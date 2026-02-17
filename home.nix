@@ -62,8 +62,6 @@
       imagemagickBig
 
       # Nur Packages
-      #nur.repos.AusCyber.zen-browser
-      #nur.repos.forkprince.helium-nightly
       nur.repos.charmbracelet.wishlist
       nur.repos.charmbracelet.glow
       nur.repos.charmbracelet.vhs
@@ -78,10 +76,6 @@
       # Homebrew Casks
       brewCasks."android-studio-preview@canary"
       brewCasks."expo-orbit"
-      brewCasks."raycast"
-      brewCasks."betterdisplay"
-      brewCasks."cleanshot"
-      brewCasks."linearmouse@beta"
       brewCasks."obs@beta"
 
       #Fonts
