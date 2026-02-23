@@ -8,6 +8,6 @@
   };
   programs.npm = {
     package = pkgs.nodejs_latest;
-    enable = true;
+    enable = false;
   };
 }

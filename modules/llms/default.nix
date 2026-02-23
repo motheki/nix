@@ -1,10 +1,12 @@
 {pkgs, ...}: {
   services.ollama = {
-    enable = true;
+    enable = false;
   };
   programs.claude-code = {
     enable = true;
-    package = pkgs.claude-code-bin;
+  };
+  programs.codex = {
+    enable = false;
   };
   programs.opencode = {
     enable = true;

@@ -9,6 +9,10 @@
     fd = {
       enable = true;
     };
+    man = {
+      enable = true;
+      package = pkgs.man;
+    };
     direnv = {
       enable = true;
       nix-direnv = {
@@ -24,7 +28,7 @@
     };
     vivid = {
       enable = true;
-      activeTheme = "rose-pine-dawn";
+      activeTheme = "rose-pine-moon";
     };
     pay-respects = {
       enable = true;

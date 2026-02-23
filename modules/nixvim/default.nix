@@ -85,8 +85,8 @@
           enable = true;
           config = {
             cmd = [
-             "oxlint"
-             "--lsp"
+              "oxlint"
+              "--lsp"
             ];
           };
         };
@@ -163,6 +163,9 @@
       colorful-menu = {
         enable = true;
       };
+      transparency = {
+        enable = true;
+      };
       conform-nvim = {
         enable = true;
       };
@@ -185,9 +188,6 @@
         enable = true;
       };
       lsp-format = {
-        enable = true;
-      };
-      transparent = {
         enable = true;
       };
       lspkind = {
@@ -284,7 +284,7 @@
       treesitter = {
         enable = true;
         folding = {
-        enable = false;
+          enable = false;
         };
         settings = {
           autoInstall = true;

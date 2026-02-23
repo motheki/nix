@@ -3,7 +3,7 @@
   home = {
     homeDirectory = "/Users/motheki";
     username = "motheki";
-    stateVersion = "25.11";
+    stateVersion = "26.05";
     shellAliases = {
       rebuild = "nix --extra-experimental-features 'nix-command flakes' run  'github:nix-community/nh/master' -- home switch -u -q --impure --accept-flake-config ~/Repos/personal/nix";
       rebuild-local = "nh home switch -u -q --impure --accept-flake-config ~/Repos/personal/nix";
@@ -22,7 +22,6 @@
       #Apps
       iina
       webtorrent_desktop
-      slack
 
       #Dev
       nix-fast-build
@@ -34,6 +33,7 @@
       httpie
       fh
       scc
+      claude-monitor
       rainfrog
       hyperfine
       comma
@@ -46,7 +46,6 @@
       utm
       zoom-us
       vulnix
-      flow-control
       dua
       lla
       jless
@@ -66,7 +65,7 @@
       nur.repos.charmbracelet.glow
       nur.repos.charmbracelet.vhs
 
-      # Depenencies for Athletiq
+      # Depenencies for AthletIQ
       cocoapods-beta
       android-studio-tools
       android-tools
@@ -76,6 +75,10 @@
       # Homebrew Casks
       brewCasks."android-studio-preview@canary"
       brewCasks."expo-orbit"
+      brewCasks."cleanshot"
+      brewCasks."raycast"
+      brewCasks."betterdisplay"
+      brewCasks."linearmouse@beta"
       brewCasks."obs@beta"
 
       #Fonts
