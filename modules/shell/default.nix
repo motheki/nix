@@ -28,7 +28,7 @@
     };
     vivid = {
       enable = true;
-      activeTheme = "rose-pine-moon";
+      activeTheme = "nord";
     };
     pay-respects = {
       enable = true;

@@ -304,16 +304,11 @@
       };
     };
     colorschemes = {
-      rose-pine = {
+      nord = {
         enable = true;
         settings = {
-          dim_inactive_windows = true;
-          variant = "auto";
-          styles = {
-            bold = true;
-            italic = true;
-            transparency = true;
-          };
+          borders = true;
+          disable_background = true;
         };
       };
     };

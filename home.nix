@@ -75,11 +75,7 @@
       # Homebrew Casks
       brewCasks."android-studio-preview@canary"
       brewCasks."expo-orbit"
-      brewCasks."cleanshot"
       brewCasks."raycast"
-      brewCasks."betterdisplay"
-      brewCasks."linearmouse@beta"
-      brewCasks."obs@beta"
 
       #Fonts
       nerd-fonts.commit-mono
