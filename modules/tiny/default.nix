@@ -1,0 +1,6 @@
+{ ... }:
+{
+  programs.tiny = {
+    enable = true;
+  };
+}

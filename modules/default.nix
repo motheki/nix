@@ -17,6 +17,7 @@
     ./jj
     ./nixvim
     ./radicle
+    ./tiny
     ./fonts
     ./devtools
     ./streamlink

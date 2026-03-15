@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   services.ollama = {
-    enable = false;
+    enable = true;
   };
   programs.claude-code = {
     enable = true;

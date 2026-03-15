@@ -304,11 +304,16 @@
       };
     };
     colorschemes = {
-      nord = {
+      rose-pine = {
         enable = true;
         settings = {
-          borders = true;
-          disable_background = true;
+          highlight_groups = {
+            Normal = { bg = "none"; };
+            NormalFloat = { bg = "none"; };
+          };
+          styles = {
+            transparency = true;
+          };
         };
       };
     };

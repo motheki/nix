@@ -2,7 +2,7 @@
   programs.btop = {
     enable = true;
     settings = {
-      color_theme = "nord";
+      color_theme = "rose-pine-moon";
       theme_background = false;
     };
   };
