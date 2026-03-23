@@ -1,6 +1,6 @@
-{pkgs}: {
+{pkgs, ...}: {
   programs.discord = {
-    enable = true;
+    enable = false;
     package = pkgs.discord-canary;
   };
 }

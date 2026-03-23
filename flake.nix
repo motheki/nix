@@ -9,6 +9,12 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts/main";
+    };
+    import-tree = {
+      url = "github:vic/import-tree/main";
+    };
     nur = {
       url = "github:nix-community/NUR/main";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -25,35 +31,17 @@
       url = "github:BatteredBunny/brew-api/main";
       flake = false;
     };
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix/main";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    git-hooks-nix = {
+      url = "github:cachix/git-hooks.nix/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
-    {
-      nixpkgs,
-      home-manager,
-      brew-nix,
-      nur,
-      nixvim,
-      ...
-    }:
-    let
-      pkgs = import nixpkgs {
-        config.allowUnfree = true;
-        overlays = [
-          brew-nix.overlays.default
-          nur.overlays.default
-        ];
-      };
-    in
-    {
-      homeConfigurations = {
-        motheki = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules = [
-            nixvim.homeModules.nixvim
-            ./home.nix
-          ];
-        };
-      };
-    };
+    inputs:
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./parts);
 }

@@ -13,6 +13,12 @@
       enable = true;
       package = pkgs.man;
     };
+    docker-cli = {
+      enable = true;
+    };
+    lazydocker = {
+      enable = true;
+    };
     direnv = {
       enable = true;
       nix-direnv = {
@@ -28,7 +34,7 @@
     };
     vivid = {
       enable = true;
-      activeTheme = "rose-pine-moon";
+      activeTheme = "rose-pine-dawn";
     };
     pay-respects = {
       enable = true;

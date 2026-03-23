@@ -19,9 +19,10 @@
       "$ANDROID_HOME/platform-tools"
     ];
     packages = with pkgs; [
+
       #Apps
       iina
-      webtorrent_desktop
+      #webtorrent_desktop
 
       #Dev
       nix-fast-build
@@ -37,6 +38,12 @@
       rainfrog
       hyperfine
       comma
+
+      #Docker
+      docker
+      docker-client
+      docker-gc
+      docker-compose
 
       #Utilities
       rm-improved
@@ -88,7 +95,4 @@
       nerd-fonts.jetbrains-mono
     ];
   };
-  imports = [
-    ./modules
-  ];
 }
