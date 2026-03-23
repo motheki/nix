@@ -31,17 +31,10 @@
       url = "github:BatteredBunny/brew-api/main";
       flake = false;
     };
-    treefmt-nix = {
-      url = "github:numtide/treefmt-nix/main";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    git-hooks-nix = {
-      url = "github:cachix/git-hooks.nix/master";
-      inputs.nixpkgs.follows = "nixpkgs";
+    devenv = {
+      url = "github:cachix/devenv";
     };
   };
 
-  outputs =
-    inputs:
-    inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./parts);
+  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./parts);
 }

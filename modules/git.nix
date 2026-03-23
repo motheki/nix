@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   programs = {
     delta = {
       enable = true;
@@ -18,13 +19,17 @@
     #glab = {
     #  enable = true;
     #};
-    gh-dash = {enable = true;};
-    lazygit = {enable = true;};
+    gh-dash = {
+      enable = true;
+    };
+    lazygit = {
+      enable = true;
+    };
     git = {
       enable = true;
       package = pkgs.gitFull;
       maintenance = {
-          enable = true;
+        enable = true;
       };
       ignores = [
         "*~"
@@ -72,7 +77,9 @@
           conflictStyle = "zdiff3";
         };
       };
-      lfs = {enable = true;};
+      lfs = {
+        enable = true;
+      };
     };
     git-cliff = {
       enable = true;

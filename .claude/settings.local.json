@@ -2,7 +2,10 @@
   "permissions": {
     "allow": [
       "Bash(curl:*)",
-      "Bash(nix:*)"
+      "Bash(nix:*)",
+      "WebFetch(domain:flake.parts)",
+      "WebFetch(domain:devenv.sh)",
+      "Bash(git add:*)"
     ]
   }
 }

@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+_:
+{
   programs.streamlink = {
     enable = true;
     settings = {

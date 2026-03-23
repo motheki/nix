@@ -1,7 +1,8 @@
-{pkgs, ...}: {
-	services.ssh-agent = {
-		enable = true;
-	};
+{ pkgs, ... }:
+{
+  services.ssh-agent = {
+    enable = true;
+  };
   programs.ssh = {
     enable = true;
     package = pkgs.openssh_hpn;
@@ -20,6 +21,6 @@
   };
   programs.keychain = {
     enable = true;
-    keys = ["trevoropiyo"];
+    keys = [ "trevoropiyo" ];
   };
 }

@@ -170,7 +170,7 @@
         enable = true;
       };
       direnv = {
-        enable = true;
+        enable = false;
       };
       faster = {
         enable = true;
@@ -308,8 +308,12 @@
         enable = true;
         settings = {
           highlight_groups = {
-            Normal = { bg = "none"; };
-            NormalFloat = { bg = "none"; };
+            Normal = {
+              bg = "none";
+            };
+            NormalFloat = {
+              bg = "none";
+            };
           };
           styles = {
             transparency = true;

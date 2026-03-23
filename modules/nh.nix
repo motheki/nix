@@ -1,4 +1,5 @@
-{...}: {
+_:
+{
   programs.nh = {
     enable = true;
     #homeFlake = "~/Repos/nix";
