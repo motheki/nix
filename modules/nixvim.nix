@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   programs.nixvim = {
     package = pkgs.neovim-unwrapped;
     enable = true;
@@ -197,29 +196,29 @@
         enable = true;
         mockDevIcons = true;
         modules = {
-          icons = { };
-          align = { };
-          sessions = { };
-          visits = { };
-          bracketed = { };
-          bufremove = { };
-          clue = { };
-          colors = { };
-          hipatterns = { };
-          cursorword = { };
-          completion = { };
-          pick = { };
-          diff = { };
-          doc = { };
-          extra = { };
-          git = { };
-          fuzzy = { };
-          files = { };
-          indentscope = { };
-          jump2d = { };
-          map = { };
-          move = { };
-          splitjoin = { };
+          icons = {};
+          align = {};
+          sessions = {};
+          visits = {};
+          bracketed = {};
+          bufremove = {};
+          clue = {};
+          colors = {};
+          hipatterns = {};
+          cursorword = {};
+          completion = {};
+          pick = {};
+          diff = {};
+          doc = {};
+          extra = {};
+          git = {};
+          fuzzy = {};
+          files = {};
+          indentscope = {};
+          jump2d = {};
+          map = {};
+          move = {};
+          splitjoin = {};
           starter = {
             header = ''
               ░░░    ░░ ░░ ░░   ░░ ░░    ░░ ░░ ░░░    ░░░
@@ -227,14 +226,14 @@
               ▒▒ ▒▒  ▒▒ ▒▒   ▒▒▒   ▒▒    ▒▒ ▒▒ ▒▒ ▒▒▒▒ ▒▒
               ▓▓  ▓▓ ▓▓ ▓▓  ▓▓ ▓▓   ▓▓  ▓▓  ▓▓ ▓▓  ▓▓  ▓▓
               ██   ████ ██ ██   ██   ████   ██ ██      ██
-              						'';
+            '';
           };
-          pairs = { };
-          statusline = { };
-          surround = { };
-          tabline = { };
-          snippets = { };
-          trailspace = { };
+          pairs = {};
+          statusline = {};
+          surround = {};
+          tabline = {};
+          snippets = {};
+          trailspace = {};
         };
       };
       nix = {

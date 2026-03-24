@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   services = {
     pueue = {
       enable = true;
@@ -34,7 +33,7 @@
     };
     vivid = {
       enable = true;
-      activeTheme = "rose-pine-dawn";
+      activeTheme = "rose-pine-moon";
     };
     pay-respects = {
       enable = true;
@@ -66,7 +65,7 @@
       enable = true;
       autosuggestion = {
         enable = true;
-        strategy = [ "completion" ];
+        strategy = ["completion"];
       };
       autocd = true;
       defaultKeymap = "viins";

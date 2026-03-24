@@ -1,5 +1,4 @@
-{ inputs, ... }:
-{
+{inputs, ...}: {
   flake = {
     homeConfigurations = {
       motheki = inputs.home-manager.lib.homeManagerConfiguration {

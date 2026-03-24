@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   home = {
     homeDirectory = "/Users/motheki";
     username = "motheki";
@@ -19,7 +18,6 @@
       "$ANDROID_HOME/platform-tools"
     ];
     packages = with pkgs; [
-
       #Apps
       iina
       #webtorrent_desktop

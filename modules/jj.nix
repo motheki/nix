@@ -1,5 +1,4 @@
-_:
-{
+_: {
   programs.jujutsu = {
     enable = true;
     settings = {
@@ -39,7 +38,7 @@ _:
       };
       git = {
         sign-on-push = true;
-        fetch = [ "origin" ];
+        fetch = ["origin"];
         push = "origin";
       };
     };

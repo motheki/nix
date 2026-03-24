@@ -19,6 +19,10 @@
       url = "github:nix-community/NUR/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nixvim = {
       url = "github:nix-community/nixvim/main";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -33,8 +37,9 @@
     };
     devenv = {
       url = "github:cachix/devenv";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./parts);
+  outputs = inputs: inputs.flake-parts.lib.mkFlake {inherit inputs;} (inputs.import-tree ./parts);
 }

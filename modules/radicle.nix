@@ -1,5 +1,4 @@
-_:
-{
+_: {
   services.radicle = {
     node = {
       enable = true;

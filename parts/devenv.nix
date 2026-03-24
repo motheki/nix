@@ -1,16 +1,15 @@
-{ inputs, ... }:
-{
+{inputs, ...}: {
   imports = [
     inputs.devenv.flakeModule
   ];
 
   perSystem = _: {
     devenv.shells.default = {
+      name = "home-manager-flake";
       treefmt = {
         enable = true;
         config.programs = {
-          nixfmt.enable = true;
-          deadnix.enable = true;
+          alejandra.enable = true;
           statix.enable = true;
         };
       };

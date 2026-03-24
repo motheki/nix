@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   services.ssh-agent = {
     enable = true;
   };
@@ -21,6 +20,6 @@
   };
   programs.keychain = {
     enable = true;
-    keys = [ "trevoropiyo" ];
+    keys = ["trevoropiyo"];
   };
 }

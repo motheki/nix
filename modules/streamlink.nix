@@ -1,5 +1,4 @@
-_:
-{
+_: {
   programs.streamlink = {
     enable = true;
     settings = {
