@@ -37,12 +37,6 @@
       hyperfine
       comma
 
-      #Docker
-      docker
-      docker-client
-      docker-gc
-      docker-compose
-
       #Utilities
       rm-improved
       dust

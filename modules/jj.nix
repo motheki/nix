@@ -10,6 +10,7 @@ _: {
         pager = "delta";
         diff-formatter = ":git";
         editor = "nvim";
+        default-command = "log";
       };
       signing = {
         behavior = "drop";
