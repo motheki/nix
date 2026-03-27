@@ -9,7 +9,7 @@ _: {
     enable = false;
   };
   programs.opencode = {
-    enable = true;
+    enable = false;
     settings = {
       theme = "system";
       autoupdate = true;

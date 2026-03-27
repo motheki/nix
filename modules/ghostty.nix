@@ -3,7 +3,7 @@
     enable = true;
     package = pkgs.ghostty-bin;
     settings = {
-      theme = "light: Rose Pine Dawn,dark: Rose Pine Moon";
+      theme = "light: Nord Light,dark: Nord";
       font-size = 16;
       font-family = "CommitMonoMotheki";
       cursor-style = "bar";

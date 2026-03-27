@@ -16,6 +16,7 @@
     sessionPath = [
       "$ANDROID_HOME/emulator"
       "$ANDROID_HOME/platform-tools"
+      "/Users/motheki/.bun/bin"
     ];
     packages = with pkgs; [
       #Apps
@@ -53,7 +54,6 @@
       grip-grab
       yq-go
       skim
-      eas-cli
       chafa
       dogedns
       ffmpeg_8
@@ -66,6 +66,7 @@
 
       # Depenencies for AthletIQ
       cocoapods-beta
+      gradle_9-unwrapped
       android-studio-tools
       android-tools
       watchman

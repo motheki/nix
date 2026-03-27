@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   programs.nixvim = {
     package = pkgs.neovim-unwrapped;
     enable = true;
@@ -71,13 +72,10 @@
         jsonls = {
           enable = true;
         };
-        nil_ls = {
-          enable = true;
-        };
-        nixd = {
-          enable = true;
-        };
         nushell = {
+          enable = true;
+        };
+        oxfmt = {
           enable = true;
         };
         oxlint = {
@@ -107,6 +105,12 @@
         statix = {
           enable = true;
         };
+        nil_ls = {
+          enable = true;
+        };
+        nixd = {
+          enable = true;
+        };
         stylua = {
           enable = true;
         };
@@ -120,9 +124,6 @@
           enable = true;
         };
         taplo = {
-          enable = true;
-        };
-        tsgo = {
           enable = true;
         };
         ty = {
@@ -180,14 +181,8 @@
       glow = {
         enable = true;
       };
-      lsp = {
-        enable = true;
-      };
       opencode = {
-        enable = true;
-      };
-      lsp-format = {
-        enable = true;
+        enable = false;
       };
       lspkind = {
         enable = true;
@@ -196,29 +191,29 @@
         enable = true;
         mockDevIcons = true;
         modules = {
-          icons = {};
-          align = {};
-          sessions = {};
-          visits = {};
-          bracketed = {};
-          bufremove = {};
-          clue = {};
-          colors = {};
-          hipatterns = {};
-          cursorword = {};
-          completion = {};
-          pick = {};
-          diff = {};
-          doc = {};
-          extra = {};
-          git = {};
-          fuzzy = {};
-          files = {};
-          indentscope = {};
-          jump2d = {};
-          map = {};
-          move = {};
-          splitjoin = {};
+          icons = { };
+          align = { };
+          sessions = { };
+          visits = { };
+          bracketed = { };
+          bufremove = { };
+          clue = { };
+          colors = { };
+          hipatterns = { };
+          cursorword = { };
+          completion = { };
+          pick = { };
+          diff = { };
+          doc = { };
+          extra = { };
+          git = { };
+          fuzzy = { };
+          files = { };
+          indentscope = { };
+          jump2d = { };
+          map = { };
+          move = { };
+          splitjoin = { };
           starter = {
             header = ''
               ░░░    ░░ ░░ ░░   ░░ ░░    ░░ ░░ ░░░    ░░░
@@ -228,12 +223,12 @@
               ██   ████ ██ ██   ██   ████   ██ ██      ██
             '';
           };
-          pairs = {};
-          statusline = {};
-          surround = {};
-          tabline = {};
-          snippets = {};
-          trailspace = {};
+          pairs = { };
+          statusline = { };
+          surround = { };
+          tabline = { };
+          snippets = { };
+          trailspace = { };
         };
       };
       nix = {
@@ -295,6 +290,12 @@
       trouble = {
         enable = true;
       };
+      lsp-format = {
+        enable = true;
+      };
+      lspconfig = {
+        enable = true;
+      };
       smear-cursor = {
         enable = true;
       };
@@ -303,20 +304,32 @@
       };
     };
     colorschemes = {
-      rose-pine = {
+      #rose-pine = {
+      #  enable = true;
+      #  settings = {
+      #    highlight_groups = {
+      #      Normal = {
+      #        bg = "none";
+      #      };
+      #      NormalFloat = {
+      #        bg = "none";
+      #      };
+      #    };
+      #    styles = {
+      #      transparency = true;
+      #    };
+      #  };
+      #};
+      nord = {
         enable = true;
+        lazyload = {
+          enable = true;
+        };
         settings = {
-          highlight_groups = {
-            Normal = {
-              bg = "none";
-            };
-            NormalFloat = {
-              bg = "none";
-            };
-          };
-          styles = {
-            transparency = true;
-          };
+          borders = true;
+          disable_background = true;
+          cursorline_transparent = true;
+          uniform_diff_background = true;
         };
       };
     };

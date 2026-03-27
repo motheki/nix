@@ -1,10 +1,14 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   services.ssh-agent = {
     enable = true;
   };
+  programs.keychain = {
+    enable = true;
+    keys = [ "trevoropiyo" ];
+  };
   programs.ssh = {
     enable = true;
-    package = pkgs.openssh_hpn;
     enableDefaultConfig = false;
     matchBlocks."*" = {
       forwardAgent = true;
@@ -16,10 +20,6 @@
       controlPath = "~/.ssh/master-%r@%n:%p";
       controlPersist = "yes";
     };
-    #extraConfig = "UseKeychain yes";
-  };
-  programs.keychain = {
-    enable = true;
-    keys = ["trevoropiyo"];
+    extraConfig = "IgnoreUnknown UseKeychain\nUseKeychain yes";
   };
 }

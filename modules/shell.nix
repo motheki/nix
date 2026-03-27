@@ -8,6 +8,11 @@
     fd = {
       enable = true;
     };
+    eza = {
+      enable = true;
+      git = true;
+      icons = true;
+    };
     man = {
       enable = true;
       package = pkgs.man;
@@ -33,7 +38,7 @@
     };
     vivid = {
       enable = true;
-      activeTheme = "rose-pine-dawn";
+      activeTheme = "nord";
     };
     pay-respects = {
       enable = true;
@@ -78,7 +83,7 @@
     };
     fish = {
       enable = true;
-      generateCompletions = true;
+      generateCompletions = false;
       interactiveShellInit = "set -U fish_greeting";
     };
     nix-your-shell = {

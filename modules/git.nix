@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   programs = {
     delta = {
       enable = true;
@@ -6,6 +7,7 @@
       options = {
         side-by-side = true;
         line-numbers = true;
+        theme = "Nord";
       };
     };
     gh = {
@@ -15,9 +17,6 @@
         prompt = true;
       };
     };
-    #glab = {
-    #  enable = true;
-    #};
     gh-dash = {
       enable = true;
     };
@@ -31,17 +30,16 @@
         enable = true;
       };
       ignores = [
-        "*~"
         "*.swp"
-        "node_modules"
-        "dist"
-        ".astro/*"
+        "node_modules/"
+        "dist/"
+        ".astro/"
         ".env"
-        ".envrc"
-        ".direnv"
-        ".devenv"
+        ".direnv/"
+        ".devenv/"
         ".DS_Store"
         ".npmrc"
+        ".venv/"
       ];
       settings = {
         gpg = {
