@@ -6,12 +6,14 @@ _: {
     enable = true;
   };
   programs.codex = {
-    enable = false;
+    enable = true;
   };
   programs.opencode = {
-    enable = false;
-    settings = {
+    enable = true;
+    tui = {
       theme = "system";
+    };
+    settings = {
       autoupdate = true;
       autoshare = false;
     };

@@ -1,6 +1,8 @@
-_: {
+{pkgs, ...}:
+{
   programs.yt-dlp = {
     enable = true;
+    package = pkgs.yt-dlp-light;
     settings = {
       paths = "/Volumes/mothekis_drive/videos/youtube/";
       embed-thumbnail = true;

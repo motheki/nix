@@ -11,9 +11,9 @@
       background-blur = true;
       window-height = 45;
       window-width = 120;
-      window-inherit-working-directory = false;
-      tab-inherit-working-directory = false;
-      split-inherit-working-directory = false;
+      window-inherit-working-directory = true;
+      tab-inherit-working-directory = true;
+      split-inherit-working-directory = true;
       #macos-icon = "paper";
       #macos-icon-frame = "beige";
       macos-titlebar-style = "transparent";

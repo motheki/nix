@@ -1,6 +1,6 @@
 _: {
   programs.streamlink = {
-    enable = true;
+    enable = false;
     settings = {
       player = "~/.nix-profile/bin/iina";
       #player-continuous-http = true;

@@ -12,6 +12,7 @@
         };
         modules = [
           inputs.nixvim.homeModules.nixvim
+          inputs.nix-index-database.homeModules.default
           (inputs.import-tree ../modules)
           ../home.nix
         ];

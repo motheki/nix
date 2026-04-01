@@ -29,6 +29,7 @@
     performance = {
       byteCompileLua = {
         enable = true;
+        configs = true;
         luaLib = true;
         nvimRuntime = true;
         plugins = true;
@@ -102,6 +103,12 @@
         sqls = {
           enable = true;
         };
+        tsgo = {
+          enable = false;
+        };
+        ts_ls = {
+          enable = true;
+        };
         statix = {
           enable = true;
         };
@@ -163,14 +170,14 @@
       colorful-menu = {
         enable = true;
       };
-      transparency = {
+      transparent = {
         enable = true;
       };
       conform-nvim = {
         enable = true;
       };
       direnv = {
-        enable = false;
+        enable = true;
       };
       faster = {
         enable = true;
@@ -182,7 +189,7 @@
         enable = true;
       };
       opencode = {
-        enable = false;
+        enable = true;
       };
       lspkind = {
         enable = true;
@@ -234,6 +241,9 @@
       nix = {
         enable = true;
       };
+      lsp = {
+        enable = true;
+      };
       nix-develop = {
         enable = true;
       };
@@ -270,7 +280,7 @@
         };
       };
       fff = {
-        enable = false;
+        enable = true;
       };
       tv = {
         enable = true;
@@ -288,12 +298,6 @@
         };
       };
       trouble = {
-        enable = true;
-      };
-      lsp-format = {
-        enable = true;
-      };
-      lspconfig = {
         enable = true;
       };
       smear-cursor = {
@@ -323,7 +327,7 @@
       nord = {
         enable = true;
         lazyload = {
-          enable = true;
+          enable = false;
         };
         settings = {
           borders = true;

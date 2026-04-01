@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   services = {
     pueue = {
       enable = true;
@@ -8,10 +9,16 @@
     fd = {
       enable = true;
     };
+    gradle = {
+      enable = true;
+      settings = {
+        "org.gradle.caching" = true;
+        "org.gradle.parallel" = true;
+        "org.gradle.home" = pkgs.jdk25;
+      };
+    };
     eza = {
       enable = true;
-      git = true;
-      icons = true;
     };
     man = {
       enable = true;
@@ -36,6 +43,9 @@
     ripgrep = {
       enable = true;
     };
+    ripgrep-all = {
+      enable = true;
+    };
     vivid = {
       enable = true;
       activeTheme = "nord";
@@ -47,6 +57,7 @@
       enable = true;
     };
     nix-index = {
+      package = pkgs.nix-index;
       enable = true;
     };
     starship = {
@@ -66,14 +77,17 @@
         };
       };
     };
+    bash = {
+      enable = true;
+      enableVteIntegration = true;
+    };
     zsh = {
       enable = true;
+      defaultKeymap = "viins";
+      enableCompletion = true;
       autosuggestion = {
         enable = true;
-        strategy = ["completion"];
       };
-      autocd = true;
-      defaultKeymap = "viins";
       syntaxHighlighting = {
         enable = true;
       };

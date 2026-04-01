@@ -19,10 +19,6 @@
       url = "github:nix-community/NUR/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    treefmt-nix = {
-      url = "github:numtide/treefmt-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     nixvim = {
       url = "github:nix-community/nixvim/main";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -32,11 +28,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     brew-api = {
-      url = "github:BatteredBunny/brew-api/main";
+      url = "github:motheki/brew-api/main";
       flake = false;
     };
     devenv = {
       url = "github:cachix/devenv";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
