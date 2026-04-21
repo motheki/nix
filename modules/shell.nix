@@ -4,8 +4,14 @@
     pueue = {
       enable = true;
     };
+    colima = {
+      enable = true;
+    };
   };
   programs = {
+    aria2 = {
+      enable = true;
+    };
     fd = {
       enable = true;
     };
@@ -25,6 +31,9 @@
       package = pkgs.man;
     };
     docker-cli = {
+      enable = true;
+    };
+    uv = {
       enable = true;
     };
     lazydocker = {

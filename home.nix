@@ -29,6 +29,8 @@
       raycast
       daisydisk
       webtorrent_desktop
+      betterdisplay
+      brewCasks."cleanshot"
 
       #Dev
 
@@ -38,6 +40,7 @@
       nix-init
       nix-melt
       nix-tree
+      act3
       nix-diff
       httpie
       scc
@@ -67,24 +70,26 @@
       imagemagickBig
       mdfried
       openapi-tui
+      youtube-tui
 
       # Nur Packages
 
       nur.repos.charmbracelet.wishlist
+      nur.repos.charmbracelet.glow
       nur.repos.charmbracelet.vhs
 
       # Depenencies for Mobile Development
 
-      #brewCasks."android-studio-preview@canary"
+      brewCasks."android-studio"
       cocoapods-beta
       gradle_9-unwrapped
-      #watchman
-      fastlane
-
-      #Docker
+      folly
+      pkg-config-unwrapped
       docker
-      docker-compose
+      docker-client
       docker-gc
+      watchman
+      fastlane
 
       #Fonts
 
