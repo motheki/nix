@@ -12,7 +12,6 @@
         };
         modules = [
           inputs.nixvim.homeModules.nixvim
-          inputs.nix-index-database.homeModules.default
           (inputs.import-tree ../modules)
           (
             { pkgs, ... }:
@@ -48,12 +47,12 @@
                   webtorrent_desktop
                   betterdisplay
                   brewCasks."cleanshot"
+                  mos
 
                   #Dev
 
                   nix-fast-build
                   brewCasks."t3-code"
-                  nix-btm
                   nix-init
                   nix-melt
                   nix-tree
@@ -102,9 +101,6 @@
                   gradle_9-unwrapped
                   folly
                   pkg-config-unwrapped
-                  docker
-                  docker-client
-                  docker-gc
                   watchman
                   fastlane
 

@@ -65,10 +65,6 @@
     zoxide = {
       enable = true;
     };
-    nix-index = {
-      package = pkgs.nix-index;
-      enable = true;
-    };
     starship = {
       enable = true;
     };
@@ -108,6 +104,9 @@
       enable = true;
       generateCompletions = false;
       interactiveShellInit = "set -U fish_greeting";
+    };
+    nix-index = {
+      enable = true;
     };
     nix-your-shell = {
       enable = true;

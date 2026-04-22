@@ -1,7 +1,7 @@
 _: {
   fonts = {
     fontconfig = {
-      enable = true;
+      enable = false;
     };
   };
 }

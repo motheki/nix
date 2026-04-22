@@ -15,6 +15,7 @@
       settings = {
         git_protocol = "ssh";
         prompt = true;
+        telemetry = "disabled";
       };
     };
     gh-dash = {

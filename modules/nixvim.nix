@@ -1,8 +1,11 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  ...
+}:
 {
   programs.nixvim = {
-    package = pkgs.neovim-unwrapped;
     enable = true;
+    package = pkgs.neovim-unwrapped;
     nixpkgs = {
       useGlobalPackages = true;
     };
@@ -217,9 +220,7 @@
           fuzzy = { };
           files = { };
           indentscope = { };
-          jump2d = { };
           map = { };
-          move = { };
           splitjoin = { };
           starter = {
             header = ''
@@ -230,18 +231,12 @@
               ██   ████ ██ ██   ██   ████   ██ ██      ██
             '';
           };
-          pairs = { };
           statusline = { };
-          surround = { };
-          tabline = { };
           snippets = { };
           trailspace = { };
         };
       };
       nix = {
-        enable = true;
-      };
-      lsp = {
         enable = true;
       };
       nix-develop = {
@@ -308,22 +303,6 @@
       };
     };
     colorschemes = {
-      #rose-pine = {
-      #  enable = true;
-      #  settings = {
-      #    highlight_groups = {
-      #      Normal = {
-      #        bg = "none";
-      #      };
-      #      NormalFloat = {
-      #        bg = "none";
-      #      };
-      #    };
-      #    styles = {
-      #      transparency = true;
-      #    };
-      #  };
-      #};
       nord = {
         enable = true;
         lazyload = {
