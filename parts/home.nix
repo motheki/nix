@@ -24,8 +24,8 @@
                   rebuild-full = "nix --extra-experimental-features 'nix-command flakes' run  'github:nix-community/nh/master' -- home switch -u -q --impure --accept-flake-config ~/Repos/personal/nix";
                   rebuild = "nh home switch -u -q --impure --accept-flake-config ~/Repos/personal/nix";
                   manage = "nix --extra-experimental-features 'nix-command flakes' run 'home-manager/master'  -- switch  --flake ~/Repos/personal/nix --show-trace";
-                  clean-full = "nix --extra-experimental-features 'nix-command flakes' run 'github:nix-community/nh/master' -- clean user -q";
-                  clean = "nh clean user -q";
+                  clean-full = "nix --extra-experimental-features 'nix-command flakes' run 'github:nix-community/nh/master' -- clean all -q";
+                  clean = "nh clean all -q";
                 };
                 sessionVariables = {
                   ANDROID_HOME = "$HOME/Library/Android/sdk";

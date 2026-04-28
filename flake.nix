@@ -16,7 +16,6 @@
     };
     nur = {
       url = "github:nix-community/NUR/main";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     nixvim = {
       url = "github:nix-community/nixvim/main";
