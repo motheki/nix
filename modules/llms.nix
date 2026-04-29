@@ -2,20 +2,34 @@ _: {
   services.ollama = {
     enable = true;
   };
-  programs.claude-code = {
-    enable = true;
-  };
-  programs.codex = {
-    enable = true;
-  };
-  programs.opencode = {
-    enable = true;
-    tui = {
-      theme = "system";
+  programs = {
+    claude-code = {
+      enable = false;
     };
-    settings = {
-      autoupdate = true;
-      autoshare = false;
+    codex = {
+      enable = true;
+    };
+    mcp = {
+      enable = true;
+      servers = {
+        jujutsu = {
+          command = "npx";
+          args = [
+            "-y"
+            "jj-mcp-server"
+          ];
+        };
+      };
+    };
+    opencode = {
+      enable = true;
+      tui = {
+        theme = "system";
+      };
+      settings = {
+        autoupdate = true;
+        autoshare = false;
+      };
     };
   };
 }

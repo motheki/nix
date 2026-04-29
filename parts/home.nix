@@ -52,10 +52,10 @@
                   #Dev
 
                   nix-fast-build
-                  brewCasks."t3-code"
                   nix-init
                   nix-melt
                   nix-tree
+                  radicle-tui
                   act3
                   nix-diff
                   httpie

@@ -203,10 +203,12 @@
         modules = {
           icons = { };
           align = { };
+          surround = { };
           sessions = { };
           visits = { };
           bracketed = { };
           bufremove = { };
+          comment = { };
           clue = { };
           colors = { };
           hipatterns = { };
@@ -242,39 +244,13 @@
       nix-develop = {
         enable = true;
       };
+      smear-cursor = {
+        enable = true;
+      };
       noice = {
         enable = true;
       };
       none-ls = {
-        enable = true;
-      };
-      notify = {
-        enable = true;
-        settings = {
-          background_colour = "#000000";
-        };
-      };
-      telescope = {
-        enable = true;
-        extensions = {
-          zoxide = {
-            enable = true;
-          };
-          frecency = {
-            enable = true;
-          };
-          manix = {
-            enable = true;
-          };
-          media-files = {
-            enable = true;
-          };
-          undo = {
-            enable = true;
-          };
-        };
-      };
-      fff = {
         enable = true;
       };
       tv = {
@@ -293,9 +269,6 @@
         };
       };
       trouble = {
-        enable = true;
-      };
-      smear-cursor = {
         enable = true;
       };
       which-key = {
