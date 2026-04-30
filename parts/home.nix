@@ -53,6 +53,7 @@
 
                   nix-fast-build
                   nix-init
+                  cachix
                   nix-melt
                   nix-tree
                   radicle-tui

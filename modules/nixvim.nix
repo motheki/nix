@@ -210,6 +210,7 @@
           bufremove = { };
           comment = { };
           clue = { };
+          pairs = { };
           colors = { };
           hipatterns = { };
           cursorword = { };
@@ -234,6 +235,7 @@
             '';
           };
           statusline = { };
+          tabline = { };
           snippets = { };
           trailspace = { };
         };
