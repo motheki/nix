@@ -167,6 +167,27 @@
       undofile = true;
     };
     plugins = {
+      blink-cmp = {
+        enable = true;
+      };
+      blink-compat = {
+        enable = true;
+      };
+      blink-indent = {
+        enable = true;
+      };
+      blink-pairs = {
+        enable = true;
+      };
+      bufferline = {
+        enable = true;
+      };
+      lsp = {
+        enable = true;
+      };
+      lsp-format = {
+        enable = true;
+      };
       colorizer = {
         enable = true;
       };
@@ -174,9 +195,6 @@
         enable = true;
       };
       transparent = {
-        enable = true;
-      };
-      conform-nvim = {
         enable = true;
       };
       direnv = {
@@ -191,54 +209,14 @@
       glow = {
         enable = true;
       };
+      web-devicons = {
+        enable = true;
+      };
       opencode = {
         enable = true;
       };
       lspkind = {
         enable = true;
-      };
-      mini = {
-        enable = true;
-        mockDevIcons = true;
-        modules = {
-          icons = { };
-          align = { };
-          surround = { };
-          sessions = { };
-          visits = { };
-          bracketed = { };
-          bufremove = { };
-          comment = { };
-          clue = { };
-          pairs = { };
-          colors = { };
-          hipatterns = { };
-          cursorword = { };
-          completion = { };
-          pick = { };
-          diff = { };
-          doc = { };
-          extra = { };
-          git = { };
-          fuzzy = { };
-          files = { };
-          indentscope = { };
-          map = { };
-          splitjoin = { };
-          starter = {
-            header = ''
-              ░░░    ░░ ░░ ░░   ░░ ░░    ░░ ░░ ░░░    ░░░
-              ▒▒▒▒   ▒▒ ▒▒  ▒▒ ▒▒  ▒▒    ▒▒ ▒▒ ▒▒▒▒  ▒▒▒▒
-              ▒▒ ▒▒  ▒▒ ▒▒   ▒▒▒   ▒▒    ▒▒ ▒▒ ▒▒ ▒▒▒▒ ▒▒
-              ▓▓  ▓▓ ▓▓ ▓▓  ▓▓ ▓▓   ▓▓  ▓▓  ▓▓ ▓▓  ▓▓  ▓▓
-              ██   ████ ██ ██   ██   ████   ██ ██      ██
-            '';
-          };
-          statusline = { };
-          tabline = { };
-          snippets = { };
-          trailspace = { };
-        };
       };
       nix = {
         enable = true;
@@ -248,6 +226,12 @@
       };
       smear-cursor = {
         enable = true;
+      };
+      notify = {
+        enable = true;
+        settings = {
+          background_colour = "#000000";
+        };
       };
       noice = {
         enable = true;

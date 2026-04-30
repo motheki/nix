@@ -11,8 +11,11 @@
     flake-parts = {
       url = "github:hercules-ci/flake-parts/main";
     };
+    den = {
+      url = "github:denful/den/main";
+    };
     import-tree = {
-      url = "github:vic/import-tree/main";
+      url = "github:denful/import-tree/main";
     };
     nur = {
       url = "github:nix-community/NUR/main";

@@ -1,4 +1,5 @@
-{inputs, ...}: {
+{ inputs, ... }:
+{
   flake = {
     homeConfigurations = {
       motheki = inputs.home-manager.lib.homeManagerConfiguration {
@@ -61,7 +62,6 @@
                   nix-diff
                   httpie
                   scc
-                  claude-monitor
                   rainfrog
                   hyperfine
                   jless
@@ -94,6 +94,7 @@
                   nur.repos.charmbracelet.wishlist
                   nur.repos.charmbracelet.glow
                   nur.repos.charmbracelet.vhs
+                  nur.nur.repos.lonerOrz.helium
 
                   # Depenencies for Mobile Development
 
