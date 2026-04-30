@@ -11,19 +11,19 @@
       };
     };
   };
-  programs = {
-    radicle = {
-      enable = true;
-      cli = {
-        package = pkgs.radicle-node
-      };
-      #uri = {
-      #  rad = {
-      #    browser = {
-      #      enable = true;
-      #    };
-      #  };
-      #};
-    };
-  };
+  #programs = {
+  #  radicle = {
+  #    enable = true;
+  #    cli = {
+  #      package = pkgs.radicle-node
+  #    };
+  #    uri = {
+  #      rad = {
+  #        browser = {
+  #          enable = true;
+  #        };
+  #      };
+  #    };
+  #  };
+  #};
 }
