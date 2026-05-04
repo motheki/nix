@@ -1,34 +1,27 @@
-_: {
-  services.ollama = {
-    enable = true;
-  };
-  programs = {
-    claude-code = {
-      enable = false;
-    };
-    codex = {
+{ den, ... }:
+{
+  den.aspects.motheki.homeManager = {
+    services.ollama = {
       enable = true;
     };
-    mcp = {
-      enable = true;
-      servers = {
-        jujutsu = {
-          command = "npx";
-          args = [
-            "-y"
-            "jj-mcp-server"
-          ];
+    programs = {
+      claude-code = {
+        enable = false;
+      };
+      codex = {
+        enable = true;
+      };
+      opencode = {
+        enableMcpIntegration = true;
+        enable = true;
+        tui = {
+          theme = "system";
         };
-      };
-    };
-    opencode = {
-      enable = true;
-      tui = {
-        theme = "system";
-      };
-      settings = {
-        autoupdate = true;
-        autoshare = false;
+        settings = {
+          autoupdate = true;
+          autoshare = false;
+          lsp = true;
+        };
       };
     };
   };

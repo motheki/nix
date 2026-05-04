@@ -1,5 +1,6 @@
-{ pkgs, ... }:
+{ den, ... }:
 {
+  den.aspects.motheki.homeManager = {
   services.ssh-agent = {
     enable = true;
   };
@@ -21,5 +22,6 @@
       controlPersist = "yes";
     };
     extraConfig = "IgnoreUnknown UseKeychain\nUseKeychain yes";
+  };
   };
 }

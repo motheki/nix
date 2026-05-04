@@ -1,5 +1,8 @@
-_: {
-  programs.awscli = {
-    enable = true;
+{ den, ... }:
+{
+  den.aspects.motheki.homeManager = {
+    programs.awscli = {
+      enable = true;
+    };
   };
 }

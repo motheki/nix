@@ -1,4 +1,6 @@
-_: {
+{ den, ... }:
+{
+  den.aspects.motheki.homeManager = {
   programs.jujutsu = {
     enable = true;
     settings = {
@@ -7,7 +9,7 @@ _: {
         name = "Trevor Opiyo";
       };
       ui = {
-        pager = "delta";
+        pager = ":git";
         diff-formatter = "delta";
         editor = "nvim";
         default-command = "log";
@@ -38,12 +40,13 @@ _: {
       };
       git = {
         sign-on-push = true;
-        fetch = ["origin" "rad" "tangled"];
-        push = ["origin" "rad" "tangled"];
+        fetch = ["origin"];
+        push = ["origin"];
       };
     };
   };
   programs.jjui = {
     enable = true;
+  };
   };
 }

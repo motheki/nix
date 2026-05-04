@@ -1,6 +1,8 @@
-{pkgs, ...}: {
-  programs.discord = {
-    enable = false;
-    package = pkgs.discord-canary;
+{ den, ... }:
+{
+  den.aspects.motheki.homeManager = {
+    programs.discord = {
+      enable = false;
+    };
   };
 }

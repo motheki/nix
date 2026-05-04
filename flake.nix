@@ -7,6 +7,11 @@
     };
     home-manager = {
       url = "github:nix-community/home-manager/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    darwin = {
+      url = "github:nix-darwin/nix-darwin/master";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     flake-parts = {
       url = "github:hercules-ci/flake-parts/main";
@@ -23,12 +28,19 @@
     nixvim = {
       url = "github:nix-community/nixvim/main";
     };
-    brew-nix = {
-      url = "github:BatteredBunny/brew-nix/main";
+    nix-homebrew = {
+      url = "github:zhaofengli/nix-homebrew";
     };
-    brew-api = {
-      url = "github:motheki/brew-api/main";
+    homebrew-core = {
+      url = "github:homebrew/homebrew-core";
       flake = false;
+    };
+    homebrew-cask = {
+      url = "github:homebrew/homebrew-cask";
+      flake = false;
+    };
+    mac-app-util = {
+      url = "github:hraban/mac-app-util/master";
     };
   };
 

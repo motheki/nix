@@ -1,5 +1,8 @@
-_: {
-  programs.tiny = {
-    enable = true;
+{ den, ... }:
+{
+  den.aspects.motheki.homeManager = {
+    programs.tiny = {
+      enable = true;
+    };
   };
 }

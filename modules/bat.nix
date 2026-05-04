@@ -1,15 +1,20 @@
-{pkgs, ...}: {
-  programs.bat = {
-    enable = true;
-    config = {
-      theme = "Nord";
+{ den, ... }:
+{
+  den.aspects.motheki.homeManager =
+    { pkgs, ... }:
+    {
+      programs.bat = {
+        enable = true;
+        config = {
+          theme = "base16";
+        };
+        extraPackages = with pkgs.bat-extras; [
+          batdiff
+          batman
+          batgrep
+          batwatch
+          prettybat
+        ];
+      };
     };
-    extraPackages = with pkgs.bat-extras; [
-      batdiff
-      batman
-      batgrep
-      batwatch
-      prettybat
-    ];
-  };
 }
