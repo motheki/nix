@@ -49,6 +49,7 @@
                   betterdisplay
                   brewCasks."cleanshot"
                   mos
+                  brewCasks."helium-browser"
 
                   #Dev
 
@@ -94,7 +95,7 @@
                   nur.repos.charmbracelet.wishlist
                   nur.repos.charmbracelet.glow
                   nur.repos.charmbracelet.vhs
-                  nur.nur.repos.lonerOrz.helium
+                  nur.repos.AusCyber.zen-browser
 
                   # Depenencies for Mobile Development
 

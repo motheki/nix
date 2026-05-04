@@ -8,7 +8,7 @@ _: {
       };
       ui = {
         pager = "delta";
-        diff-formatter = ":git";
+        diff-formatter = "delta";
         editor = "nvim";
         default-command = "log";
       };
@@ -38,8 +38,8 @@ _: {
       };
       git = {
         sign-on-push = true;
-        fetch = ["origin"];
-        push = "origin";
+        fetch = ["origin" "rad" "tangled"];
+        push = ["origin" "rad" "tangled"];
       };
     };
   };
