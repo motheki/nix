@@ -8,10 +8,18 @@
       {
       imports = [ inputs.nix-homebrew.darwinModules.nix-homebrew ];
 
-      nix.settings.experimental-features = [
-        "nix-command"
-        "flakes"
-      ];
+      nix.settings = {
+        experimental-features = [
+          "nix-command"
+          "flakes"
+        ];
+
+        extra-trusted-users = [ "motheki" ];
+
+        extra-substituters = [ "https://motheki.cachix.org" ];
+
+        always-allow-substitutes = true;
+      };
 
       nixpkgs = {
         config.allowUnfree = true;
@@ -30,7 +38,7 @@
         enableRosetta = true;
         user = "motheki";
         autoMigrate = true;
-        mutableTaps = true;
+        mutableTaps = false;
         taps = {
           "homebrew/homebrew-core" = inputs.homebrew-core;
           "homebrew/homebrew-cask" = inputs.homebrew-cask;

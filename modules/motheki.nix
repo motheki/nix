@@ -79,6 +79,8 @@
             openapi-tui
 
             # Dependencies for mobile development
+            watchman
+            fastlane
 
             # Fonts
             nerd-fonts.commit-mono
