@@ -5,9 +5,9 @@
     {
       programs.yt-dlp = {
         enable = true;
-        package = pkgs.yt-dlp-light;
+        package = pkgs.yt-dlp;
         settings = {
-          paths = "/Volumes/mothekis_drive/videos/youtube/";
+          paths = "~/Downloads";
           embed-thumbnail = true;
           embed-metadata = true;
           sponsorblock-remove = "selfpromo,interaction,sponsor";

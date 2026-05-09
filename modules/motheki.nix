@@ -39,12 +39,7 @@
             webtorrent_desktop
             betterdisplay
             raycast
-            iina
-            pi-coding-agent
-
-            # Dev
-            nix-fast-build
-            nix-init
+            iina pi-coding-agent # Dev nix-fast-build nix-init
             nix-melt
             nix-tree
             radicle-tui
@@ -81,6 +76,7 @@
             # Dependencies for mobile development
             watchman
             fastlane
+            cocoapods-beta
 
             # Fonts
             nerd-fonts.commit-mono

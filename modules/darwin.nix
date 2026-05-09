@@ -15,9 +15,7 @@
         ];
 
         extra-trusted-users = [ "motheki" ];
-
         extra-substituters = [ "https://motheki.cachix.org" ];
-
         always-allow-substitutes = true;
       };
 
@@ -52,11 +50,17 @@
           "android-studio"
           "cleanshot"
           "codex-app"
+          "expo-orbit"
+          "chatgpt-atlas"
+          "chatgpt"
+          "notion"
+          "notion-calendar"
+          "notion-mail"
           "thebrowsercompany-dia"
         ];
         onActivation = {
           autoUpdate = true;
-          cleanup = "none";
+          cleanup = "zap";
           upgrade = true;
         };
       };

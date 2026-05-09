@@ -60,7 +60,7 @@
         };
         vivid = {
           enable = true;
-          activeTheme = "rose-pine-dawn";
+          activeTheme = "nord";
         };
         pay-respects = {
           enable = true;
@@ -70,6 +70,7 @@
         };
         starship = {
           enable = true;
+          enableTransience = true;
         };
         jq = {
           enable = true;
