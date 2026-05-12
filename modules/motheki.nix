@@ -24,8 +24,6 @@
           };
           sessionVariables = {
             ANDROID_HOME = "$HOME/Library/Android/sdk";
-            CLAUDE_CODE_NO_FLICKER = 1;
-            CLAUDE_CODE_DISABLE_MOUSE = 1;
           };
           sessionPath = [
             "$ANDROID_HOME/emulator"
@@ -38,7 +36,6 @@
             daisydisk
             webtorrent_desktop
             betterdisplay
-            raycast
             iina pi-coding-agent # Dev nix-fast-build nix-init
             nix-melt
             nix-tree

@@ -49,13 +49,10 @@
         casks = [
           "android-studio"
           "cleanshot"
+          "linear"
           "codex-app"
           "expo-orbit"
-          "chatgpt-atlas"
           "chatgpt"
-          "notion"
-          "notion-calendar"
-          "notion-mail"
           "thebrowsercompany-dia"
         ];
         onActivation = {
