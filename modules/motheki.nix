@@ -36,7 +36,8 @@
             daisydisk
             webtorrent_desktop
             betterdisplay
-            iina pi-coding-agent # Dev nix-fast-build nix-init
+            iina
+            pi-coding-agent # Dev nix-fast-build nix-init
             nix-melt
             nix-tree
             radicle-tui
