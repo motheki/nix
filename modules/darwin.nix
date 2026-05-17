@@ -50,7 +50,7 @@
           "android-studio"
           "cleanshot"
           "linear"
-          "notion-enhanced"
+          "notion"
           "adguard-vpn@nightly"
           "notion-mail"
           "notion-calendar"
