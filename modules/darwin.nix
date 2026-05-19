@@ -47,13 +47,14 @@
         enable = true;
         taps = builtins.attrNames config.nix-homebrew.taps;
         casks = [
-          "android-studio"
+          "android-studio-preview@canary"
           "cleanshot"
           "linear"
           "notion"
           "adguard-vpn@nightly"
           "notion-mail"
           "notion-calendar"
+          "notion-cli"
           "codex-app"
           "expo-orbit"
           "chatgpt"
