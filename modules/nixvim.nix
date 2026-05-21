@@ -8,6 +8,7 @@
     {
       programs.nixvim = {
         enable = true;
+        version.enableNixpkgsReleaseCheck = false;
         package = pkgs.neovim-unwrapped;
         nixpkgs = {
           useGlobalPackages = true;
@@ -211,6 +212,9 @@
           colorizer = {
             enable = true;
           };
+          telescope = {
+            enable = true;
+          };
           colorful-menu = {
             enable = true;
           };
@@ -287,6 +291,9 @@
               italic = true;
             };
           };
+          #ayu = {
+          #  enable = true;
+          #};
           #rose-pine = {
           #  enable = true;
           #  settings = {

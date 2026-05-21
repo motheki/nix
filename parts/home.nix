@@ -1,6 +1,6 @@
 { inputs, ... }:
 let
-  denInputs = builtins.removeAttrs inputs [ "flake-parts" ];
+  denInputs = removeAttrs inputs [ "flake-parts" ];
   denConfig =
     (inputs.nixpkgs.lib.evalModules {
       modules = [

@@ -17,7 +17,7 @@
         };
       };
       codex = {
-        enable = true;
+        enable = false;
       };
     };
   };

@@ -8,7 +8,7 @@
           enable = true;
         };
         colima = {
-          enable = true;
+          enable = false;
         };
       };
       programs = {
@@ -34,13 +34,13 @@
           package = pkgs.man;
         };
         docker-cli = {
-          enable = true;
+          enable = false;
         };
         uv = {
           enable = true;
         };
         lazydocker = {
-          enable = true;
+          enable = false;
         };
         direnv = {
           enable = true;
@@ -50,7 +50,7 @@
           silent = true;
         };
         tirith = {
-          enable = true;
+          enable = false;
         };
         ripgrep = {
           enable = true;

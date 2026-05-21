@@ -48,17 +48,16 @@
         taps = builtins.attrNames config.nix-homebrew.taps;
         casks = [
           "android-studio-preview@canary"
-          "cleanshot"
-          "linear"
-          "notion"
           "adguard-vpn@nightly"
-          "notion-mail"
-          "notion-calendar"
-          "notion-cli"
           "codex-app"
-          "expo-orbit"
-          "chatgpt"
           "thebrowsercompany-dia"
+          "cleanshot"
+          #"watchman"
+          "codex"
+          "notion"
+          "notion-mail"
+          "notion-cli"
+          "notion-calendar"
         ];
         onActivation = {
           autoUpdate = true;

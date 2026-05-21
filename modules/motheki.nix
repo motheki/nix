@@ -32,19 +32,22 @@
             "/Users/motheki/.cargo/bin"
           ];
           packages = with pkgs; [
+
             # Apps
             daisydisk
             webtorrent_desktop
-            betterdisplay
             iina
-            pi-coding-agent # Dev nix-fast-build nix-init
             nix-melt
             nix-tree
             radicle-tui
+            raycast-beta
+            betterdisplay
+            mos
             act3
             nix-diff
             httpie
             scc
+            linear
             rainfrog
             hyperfine
             jless
@@ -72,7 +75,7 @@
             openapi-tui
 
             # Dependencies for mobile development
-            watchman
+            #watchman
             fastlane
             cocoapods-beta
 
