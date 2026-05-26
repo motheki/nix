@@ -4,11 +4,11 @@ _:{
     enable = true;
     package = pkgs.ghostty-bin;
     settings = {
-      theme = "light: Nord Light,dark: Nord";
+      theme = "light: Nord Light, dark: Nord";
       font-size = 14;
       font-family = "CommitMonoMotheki";
       cursor-style = "bar";
-      background-opacity = 0.70;
+      background-opacity = 0.85;
       background-blur = true;
       window-height = 53;
       window-width = 160;
