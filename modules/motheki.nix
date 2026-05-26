@@ -63,6 +63,7 @@
             mos
             dua
             xcp
+            pi-coding-agent
             rustscan
             grip-grab
             yq-go

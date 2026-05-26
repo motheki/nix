@@ -20,10 +20,11 @@
         };
         gradle = {
           enable = true;
+          package = pkgs.gradle_9-unwrapped;
           settings = {
             "org.gradle.caching" = true;
             "org.gradle.parallel" = true;
-            "org.gradle.home" = pkgs.jdk25;
+            "org.gradle.home" = pkgs.jdk17;
           };
         };
         eza = {

@@ -54,6 +54,7 @@
           "cleanshot"
           #"watchman"
           "codex"
+          "obs"
           "notion"
           "notion-mail"
           "notion-cli"

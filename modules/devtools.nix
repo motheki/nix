@@ -10,7 +10,7 @@
         enable = true;
       };
       programs.java = {
-        package = pkgs.jdk25;
+        package = pkgs.jdk17;
         enable = true;
       };
       programs.npm = {
