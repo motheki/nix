@@ -36,20 +36,17 @@
             # Apps
             daisydisk
             webtorrent_desktop
-            iina
             nix-melt
             nix-tree
             radicle-tui
             raycast-beta
-            betterdisplay
-            mos
             act3
             nix-diff
             httpie
             scc
-            linear
             rainfrog
             hyperfine
+            iina
             jless
             comma
 
@@ -57,13 +54,9 @@
             rm-improved
             nixpkgs-reviewFull
             duf
-            utm
-            zoom-us
             vulnix
-            mos
             dua
             xcp
-            pi-coding-agent
             rustscan
             grip-grab
             yq-go

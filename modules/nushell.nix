@@ -6,7 +6,7 @@
       programs.nushell = {
         enable = true;
         plugins = with pkgs; [
-          nushellPlugins.skim
+          #nushellPlugins.skim
           #nushellPlugins.highlight
           nushellPlugins.query
           #nushellPlugins.net

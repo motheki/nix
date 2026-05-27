@@ -35,7 +35,7 @@
         enable = true;
         enableRosetta = true;
         user = "motheki";
-        autoMigrate = true;
+        autoMigrate = false;
         mutableTaps = false;
         taps = {
           "homebrew/homebrew-core" = inputs.homebrew-core;
@@ -46,24 +46,42 @@
       homebrew = {
         enable = true;
         taps = builtins.attrNames config.nix-homebrew.taps;
+        enableZshIntegration = true;
+        brews = [
+          "watchman"
+          "pi-coding-agent"
+        ];
+        greedyCasks = true;
+        caskArgs = {
+          appdir = "~/Applications";
+          require_sha = false;
+        };
         casks = [
           "android-studio-preview@canary"
           "adguard-vpn@nightly"
           "codex-app"
           "thebrowsercompany-dia"
+          "microsoft-teams"
+          "zoom"
+          "utm"
           "cleanshot"
-          #"watchman"
           "codex"
           "obs"
           "notion"
+          "mos@beta"
+          "betterdisplay"
           "notion-mail"
           "notion-cli"
           "notion-calendar"
         ];
         onActivation = {
-          autoUpdate = true;
-          cleanup = "zap";
-          upgrade = true;
+          autoUpdate = false;
+          cleanup = "check";
+          upgrade = false;
+          extraEnv = {
+            HOMEBREW_NO_ANALYTICS = "1";
+            HOMEBREW_NO_ENV_HINTS = "1";
+          };
         };
       };
 
