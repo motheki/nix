@@ -9,8 +9,8 @@
         name = "Trevor Opiyo";
       };
       ui = {
-        pager = ":git";
-        diff-formatter = "delta";
+        pager = "delta";
+        diff-formatter = ":git";
         editor = "nvim";
         default-command = "log";
       };
@@ -39,7 +39,10 @@
         auto-update-stale = true;
       };
       git = {
+        colocate = true;
         sign-on-push = true;
+        track-default-bookmark-on-clone = true;
+        abandon-unreachable-commits = true;
         fetch = ["origin"];
         push = ["origin"];
       };

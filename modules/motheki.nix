@@ -39,7 +39,6 @@
             nix-melt
             nix-tree
             radicle-tui
-            raycast-beta
             act3
             nix-diff
             httpie
