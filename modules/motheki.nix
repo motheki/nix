@@ -69,6 +69,7 @@
 
             # Dependencies for mobile development
             #watchman
+            pdf-cli
             fastlane
             cocoapods-beta
 

@@ -68,9 +68,9 @@
           "obs"
         ];
         onActivation = {
-          autoUpdate = false;
+          autoUpdate = true;
           cleanup = "zap";
-          upgrade = false;
+          upgrade = true;
           extraEnv = {
             HOMEBREW_NO_ANALYTICS = "1";
             HOMEBREW_NO_ENV_HINTS = "1";

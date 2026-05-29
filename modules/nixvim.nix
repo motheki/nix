@@ -1,10 +1,5 @@
-{
-  den,
-  ...
-}:
-{
-  den.aspects.motheki.homeManager =
-    { pkgs, ... }:
+_:{
+  den.aspects.motheki.homeManager = { pkgs, ... }:
     {
       programs.nixvim = {
         enable = true;
@@ -219,7 +214,7 @@
             enable = true;
           };
           transparent = {
-            enable = false;
+            enable = true;
           };
           direnv = {
             enable = true;
