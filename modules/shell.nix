@@ -1,6 +1,5 @@
-_:{
-  den.aspects.motheki.homeManager = { pkgs, ... }:
-  {
+_: {
+  den.aspects.motheki.homeManager = {pkgs, ...}: {
     services = {
       pueue = {
         enable = true;
@@ -27,6 +26,11 @@ _:{
       };
       eza = {
         enable = true;
+        extraOptions = [
+          "--icons"
+          "-a"
+          "-l"
+        ];
       };
       man = {
         enable = true;
@@ -59,7 +63,8 @@ _:{
       };
       vivid = {
         enable = true;
-        activeTheme = "rose-pine-moon";
+        #activeTheme = "rose-pine-moon";
+        activeTheme = "nord";
       };
       pay-respects = {
         enable = true;

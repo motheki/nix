@@ -1,12 +1,17 @@
-{ inputs, den, ... }:
 {
+  inputs,
+  den,
+  ...
+}: {
   den.aspects."mothekis-macbook-pro" = {
-    includes = [ den.provides.hostname ];
+    includes = [den.provides.hostname];
 
-    darwin =
-      { config, pkgs, ... }:
-      {
-      imports = [ inputs.nix-homebrew.darwinModules.nix-homebrew ];
+    darwin = {
+      config,
+      pkgs,
+      ...
+    }: {
+      imports = [inputs.nix-homebrew.darwinModules.nix-homebrew];
 
       nix.settings = {
         experimental-features = [
@@ -14,20 +19,20 @@
           "flakes"
         ];
 
-        extra-trusted-users = [ "motheki" ];
-        extra-substituters = [ "https://motheki.cachix.org" ];
+        extra-trusted-users = ["motheki"];
+        extra-substituters = ["https://motheki.cachix.org"];
         always-allow-substitutes = true;
       };
 
       nixpkgs = {
         config.allowUnfree = true;
-        overlays = [ inputs.nur.overlays.default ];
+        overlays = [inputs.nur.overlays.default];
       };
 
       system.stateVersion = 6;
 
       environment = {
-        systemPackages = [ pkgs.nh ];
+        systemPackages = [pkgs.nh];
         variables.NH_DARWIN_FLAKE = "/Users/motheki/Repos/personal/nix";
       };
 
@@ -48,11 +53,13 @@
         taps = builtins.attrNames config.nix-homebrew.taps;
         enableZshIntegration = true;
         brews = [
-          #"watchman"
           "pi-coding-agent"
           "watchman"
         ];
-        greedyCasks = false;
+        greedyCasks = true;
+        global = {
+          brewfile = true;
+        };
         caskArgs = {
           appdir = "~/Applications";
           require_sha = false;
@@ -61,7 +68,10 @@
           "android-studio-preview@canary"
           "adguard-vpn@nightly"
           "codex-app"
+          "legcord"
           "microsoft-teams"
+          "thebrowsercompany-dia"
+          "betterdisplay"
           "zoom"
           "utm"
           "codex"
@@ -82,6 +92,6 @@
         useGlobalPkgs = true;
         useUserPackages = true;
       };
-      };
+    };
   };
 }

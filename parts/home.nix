@@ -1,15 +1,13 @@
-{ inputs, ... }:
-let
-  denInputs = removeAttrs inputs [ "flake-parts" ];
+{inputs, ...}: let
+  denInputs = removeAttrs inputs ["flake-parts"];
   denConfig =
     (inputs.nixpkgs.lib.evalModules {
       modules = [
         (inputs.import-tree ../modules)
       ];
-      specialArgs = { inputs = denInputs; };
+      specialArgs = {inputs = denInputs;};
     }).config;
-in
-{
+in {
   flake = {
     inherit (denConfig.flake) darwinConfigurations;
   };

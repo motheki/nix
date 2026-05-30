@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs = {
-      url = "github:nixos/nixpkgs/nixpkgs-unstable";
+      url = "github:nixos/nixpkgs/master";
     };
     home-manager = {
       url = "github:nix-community/home-manager/master";
@@ -24,9 +24,11 @@
     };
     nur = {
       url = "github:nix-community/NUR/main";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     nixvim = {
       url = "github:nix-community/nixvim/main";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-homebrew = {
       url = "github:zhaofengli/nix-homebrew/main";
@@ -43,6 +45,5 @@
       url = "github:hraban/mac-app-util/master";
     };
   };
-
-  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./parts);
+  outputs = inputs: inputs.flake-parts.lib.mkFlake {inherit inputs;} (inputs.import-tree ./parts);
 }

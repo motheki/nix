@@ -1,10 +1,9 @@
-{ den, ... }:
-{
+{den, ...}: {
   den.aspects.motheki.homeManager = {
-  fonts = {
-    fontconfig = {
-      enable = true;
+    fonts = {
+      fontconfig = {
+        enable = true;
+      };
     };
-  };
   };
 }

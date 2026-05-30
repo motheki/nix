@@ -3,8 +3,10 @@ _: {
     programs.btop = {
       enable = true;
       settings = {
-        color_theme = "rose-pine-moon";
+        #color_theme = "rose-pine-moon";
+        color_theme = "nord";
         theme_background = false;
+        vim_keys = true;
       };
       themes = {
         nord = ''

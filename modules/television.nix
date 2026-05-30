@@ -1,5 +1,4 @@
-{ den, ... }:
-{
+_: {
   den.aspects.motheki.homeManager = {
     programs.television = {
       enable = true;

@@ -1,6 +1,4 @@
-{ den, ... }:
-
-{
+{den, ...}: {
   den.aspects.motheki.homeManager = {
     services = {
       radicle = {

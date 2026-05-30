@@ -1,5 +1,4 @@
-{ den, ... }:
-{
+{den, ...}: {
   den.aspects.motheki.homeManager = {
     services.ollama = {
       enable = true;
