@@ -1,10 +1,13 @@
-{den, ...}: {
+_: {
   den.aspects.motheki.homeManager = {pkgs, ...}: {
     programs.bun = {
       enable = true;
     };
     programs.cargo = {
       enable = true;
+    };
+    programs.vscode = {
+      enable = false;
     };
     programs.java = {
       package = pkgs.jdk17;

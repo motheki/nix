@@ -36,7 +36,6 @@
           # Apps
           daisydisk
           webtorrent_desktop
-          iina
 
           # Utilities
           rm-improved
@@ -49,10 +48,13 @@
           radicle-tui
           act3
           nix-diff
+          gftp
           httpie
           scc
           nixpkgs-reviewFull
           duf
+          mosh
+          inetutils
           vulnix
           dua
           xcp
@@ -64,14 +66,14 @@
           chafa
           dogedns
           ffmpeg_8
-          pdf-cli
           imagemagickBig
           mdfried
           openapi-tui
 
           # Dependencies for mobile development
-          #watchman
           fastlane
+          watchman
+          pdf-cli
           cocoapods-beta
 
           # Fonts

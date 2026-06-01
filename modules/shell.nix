@@ -5,7 +5,7 @@ _: {
         enable = true;
       };
       colima = {
-        enable = false;
+        enable = true;
       };
     };
     programs = {
@@ -37,13 +37,13 @@ _: {
         package = pkgs.man;
       };
       docker-cli = {
-        enable = false;
+        enable = true;
       };
       uv = {
         enable = true;
       };
       lazydocker = {
-        enable = false;
+        enable = true;
       };
       direnv = {
         enable = true;
@@ -63,8 +63,9 @@ _: {
       };
       vivid = {
         enable = true;
+        activeTheme = "rose-pine-dawn";
         #activeTheme = "rose-pine-moon";
-        activeTheme = "nord";
+        #activeTheme = "nord";
       };
       pay-respects = {
         enable = true;

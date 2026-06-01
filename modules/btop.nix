@@ -4,7 +4,7 @@ _: {
       enable = true;
       settings = {
         #color_theme = "rose-pine-moon";
-        color_theme = "nord";
+        color_theme = "rose-pine-dawn";
         theme_background = false;
         vim_keys = true;
       };

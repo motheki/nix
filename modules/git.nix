@@ -7,7 +7,7 @@
         options = {
           side-by-side = true;
           line-numbers = true;
-          theme = "Nord";
+          theme = "ansi";
         };
       };
       gh = {

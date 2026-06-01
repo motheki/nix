@@ -1,4 +1,4 @@
-{den, ...}: {
+_: {
   den.aspects.motheki.homeManager = _: {
     programs.yt-dlp = {
       enable = true;

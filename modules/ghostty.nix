@@ -4,8 +4,8 @@ _: {
       enable = true;
       package = pkgs.ghostty-bin;
       settings = {
-        #theme = "light: Rose Pine Dawn, dark: Rose Pine Moon";
-        theme = "light: Nord Light, dark: Nord";
+        theme = "light: Rose Pine Dawn, dark: Rose Pine Moon";
+        #theme = "light: Nord Light, dark: Nord";
         font-size = 16;
         font-family = "CommitMonoMotheki";
         cursor-style = "bar";
@@ -21,8 +21,8 @@ _: {
         macos-titlebar-style = "transparent";
         auto-update = "download";
         auto-update-channel = "tip";
-        macos-icon = "paper";
-        macos-icon-frame = "beige";
+        #macos-icon = "paper";
+        #macos-icon-frame = "beige";
       };
     };
   };

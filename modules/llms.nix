@@ -1,7 +1,7 @@
-{den, ...}: {
+_: {
   den.aspects.motheki.homeManager = {
     services.ollama = {
-      enable = true;
+      enable = false;
     };
     programs = {
       opencode = {

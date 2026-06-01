@@ -36,6 +36,8 @@
         variables.NH_DARWIN_FLAKE = "/Users/motheki/Repos/personal/nix";
       };
 
+      security.pam.services.sudo_local.touchIdAuth = true;
+
       nix-homebrew = {
         enable = true;
         enableRosetta = true;
@@ -58,7 +60,7 @@
         ];
         greedyCasks = true;
         global = {
-          brewfile = true;
+          brewfile = false;
         };
         caskArgs = {
           appdir = "~/Applications";
@@ -68,12 +70,20 @@
           "android-studio-preview@canary"
           "adguard-vpn@nightly"
           "codex-app"
-          "legcord"
-          "microsoft-teams"
           "thebrowsercompany-dia"
-          "betterdisplay"
-          "zoom"
+          "legcord"
+          "linear"
           "utm"
+          "zoom"
+          "notion-cli"
+          "betterdisplay"
+          "cleanshot"
+          "mos"
+          "zed"
+          "iina"
+          "notion"
+          "notion-mail"
+          "notion-calendar"
           "codex"
           "obs"
         ];
@@ -84,6 +94,8 @@
           extraEnv = {
             HOMEBREW_NO_ANALYTICS = "1";
             HOMEBREW_NO_ENV_HINTS = "1";
+            HOMEBREW_DEVELOPER = "1";
+            HOMEBREW_NO_ASK = "1";
           };
         };
       };
