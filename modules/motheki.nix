@@ -16,6 +16,8 @@
         inputs.mac-app-util.homeManagerModules.default
       ];
 
+      targets.darwin.mac-app-util.enable = false;
+
       home = {
         shellAliases = {
           rebuild-full = "nix --extra-experimental-features 'nix-command flakes' run 'github:nix-community/nh/master' -- darwin switch ~/Repos/personal/nix -H mothekis-macbook-pro";

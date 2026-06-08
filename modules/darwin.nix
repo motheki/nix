@@ -75,15 +75,11 @@
           "linear"
           "utm"
           "zoom"
-          "notion-cli"
           "betterdisplay"
           "cleanshot"
           "mos"
           "zed"
           "iina"
-          "notion"
-          "notion-mail"
-          "notion-calendar"
           "codex"
           "obs"
         ];
@@ -96,6 +92,8 @@
             HOMEBREW_NO_ENV_HINTS = "1";
             HOMEBREW_DEVELOPER = "1";
             HOMEBREW_NO_ASK = "1";
+            # Remove once Homebrew recognizes macOS 27.
+            HOMEBREW_FAKE_MACOS = "26";
           };
         };
       };

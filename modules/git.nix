@@ -1,4 +1,4 @@
-{den, ...}: {
+_: {
   den.aspects.motheki.homeManager = {pkgs, ...}: {
     programs = {
       delta = {
