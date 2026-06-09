@@ -13,15 +13,18 @@
     }: {
       imports = [inputs.nix-homebrew.darwinModules.nix-homebrew];
 
-      nix.settings = {
-        experimental-features = [
-          "nix-command"
-          "flakes"
-        ];
+      nix = {
+        package = pkgs.nixVersions.latest;
+        settings = {
+          experimental-features = [
+            "nix-command"
+            "flakes"
+          ];
 
-        extra-trusted-users = ["motheki"];
-        extra-substituters = ["https://motheki.cachix.org"];
-        always-allow-substitutes = true;
+          extra-trusted-users = ["motheki"];
+          extra-substituters = ["https://motheki.cachix.org"];
+          always-allow-substitutes = true;
+        };
       };
 
       nixpkgs = {
@@ -56,7 +59,6 @@
         enableZshIntegration = true;
         brews = [
           "pi-coding-agent"
-          "watchman"
         ];
         greedyCasks = true;
         global = {
@@ -85,7 +87,6 @@
         ];
         onActivation = {
           autoUpdate = true;
-          cleanup = "zap";
           upgrade = true;
           extraEnv = {
             HOMEBREW_NO_ANALYTICS = "1";
@@ -101,6 +102,18 @@
       home-manager = {
         useGlobalPkgs = true;
         useUserPackages = true;
+      };
+    };
+  };
+
+  den.aspects.motheki.homeManager = {
+    programs.nh = {
+      enable = true;
+      flake = "/Users/motheki/Repos/personal/nix";
+      darwinFlake = "/Users/motheki/Repos/personal/nix";
+      clean = {
+        enable = true;
+        extraArgs = "--keep-since 4d --keep 3";
       };
     };
   };

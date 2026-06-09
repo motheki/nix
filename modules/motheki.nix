@@ -10,7 +10,58 @@
       (den.provides.user-shell "zsh")
     ];
 
-    homeManager = {pkgs, ...}: {
+    homeManager = {pkgs, ...}: let
+      appPackages = with pkgs; [
+        daisydisk
+        webtorrent_desktop
+      ];
+      utilityPackages = with pkgs; [
+        rm-improved
+        hyperfine
+        rainfrog
+        jless
+        comma
+        nix-melt
+        nix-tree
+        radicle-tui
+        act3
+        nix-diff
+        gftp
+        httpie
+        scc
+        nixpkgs-reviewFull
+        duf
+        mosh
+        inetutils
+        vulnix
+        dua
+        xcp
+        rustscan
+        grip-grab
+        sd
+        yq-go
+        skim
+        chafa
+        dogedns
+        ffmpeg_8
+        imagemagickBig
+        mdfried
+        bottom
+        openapi-tui
+      ];
+      mobilePackages = with pkgs; [
+        fastlane
+        watchman
+        pdf-cli
+        cocoapods-beta
+      ];
+      fontPackages = with pkgs; [
+        nerd-fonts.commit-mono
+        nerd-fonts.monaspace
+        nerd-fonts.agave
+        nerd-fonts.jetbrains-mono
+      ];
+    in {
       imports = [
         inputs.nixvim.homeModules.nixvim
         inputs.mac-app-util.homeManagerModules.default
@@ -20,9 +71,9 @@
 
       home = {
         shellAliases = {
-          rebuild-full = "nix --extra-experimental-features 'nix-command flakes' run 'github:nix-community/nh/master' -- darwin switch ~/Repos/personal/nix -H mothekis-macbook-pro";
+          rebuild-full = "nix --extra-experimental-features 'nix-command flakes' run ~/Repos/personal/nix#darwin-switch -- -H mothekis-macbook-pro";
           rebuild = "nh darwin switch -H mothekis-macbook-pro";
-          clean-full = "nix --extra-experimental-features 'nix-command flakes' run 'github:nix-community/nh/master' -- clean all -q";
+          clean-full = "nix --extra-experimental-features 'nix-command flakes' run ~/Repos/personal/nix#clean";
           clean = "nh clean all -q";
         };
         sessionVariables = {
@@ -34,56 +85,7 @@
           "/Users/motheki/.bun/bin"
           "/Users/motheki/.cargo/bin"
         ];
-        packages = with pkgs; [
-          # Apps
-          daisydisk
-          webtorrent_desktop
-
-          # Utilities
-          rm-improved
-          hyperfine
-          rainfrog
-          jless
-          comma
-          nix-melt
-          nix-tree
-          radicle-tui
-          act3
-          nix-diff
-          gftp
-          httpie
-          scc
-          nixpkgs-reviewFull
-          duf
-          mosh
-          inetutils
-          vulnix
-          dua
-          xcp
-          rustscan
-          grip-grab
-          sd
-          yq-go
-          skim
-          chafa
-          dogedns
-          ffmpeg_8
-          imagemagickBig
-          mdfried
-          openapi-tui
-
-          # Dependencies for mobile development
-          fastlane
-          watchman
-          pdf-cli
-          cocoapods-beta
-
-          # Fonts
-          nerd-fonts.commit-mono
-          nerd-fonts.monaspace
-          nerd-fonts.agave
-          nerd-fonts.jetbrains-mono
-        ];
+        packages = appPackages ++ utilityPackages ++ mobilePackages ++ fontPackages;
       };
     };
   };
