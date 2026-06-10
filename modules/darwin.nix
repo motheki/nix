@@ -15,6 +15,7 @@
 
       nix = {
         package = pkgs.nixVersions.latest;
+        nixPath = ["nixpkgs=flake:nixpkgs"];
         settings = {
           experimental-features = [
             "nix-command"
@@ -22,7 +23,6 @@
           ];
 
           extra-trusted-users = ["motheki"];
-          extra-substituters = ["https://motheki.cachix.org"];
           always-allow-substitutes = true;
         };
       };
@@ -67,7 +67,7 @@
         enable = true;
         enableRosetta = true;
         user = "motheki";
-        autoMigrate = true;
+        autoMigrate = false;
         mutableTaps = false;
         taps = {
           "homebrew/homebrew-core" = inputs.homebrew-core;
@@ -84,6 +84,7 @@
         ];
         greedyCasks = true;
         global = {
+          autoUpdate = true;
           brewfile = false;
         };
         caskArgs = {
@@ -96,13 +97,7 @@
           "codex-app"
           "thebrowsercompany-dia"
           "legcord"
-          "linear"
-          "utm"
           "zoom"
-          "betterdisplay"
-          "cleanshot"
-          "mos"
-          "zed"
           "iina"
           "codex"
           "obs"
@@ -135,7 +130,7 @@
       darwinFlake = "/Users/motheki/Repos/personal/nix";
       clean = {
         enable = true;
-        extraArgs = "--keep-since 4d --keep 3";
+        extraArgs = "--optimise  --max";
       };
     };
   };
