@@ -98,8 +98,10 @@
           "thebrowsercompany-dia"
           "legcord"
           "zoom"
+          "expo-orbit"
           "iina"
           "codex"
+          "halloy"
           "obs"
         ];
         onActivation = {

@@ -165,7 +165,7 @@ _: {
           macos-titlebar-style = "transparent";
           auto-update = "download";
           auto-update-channel = "tip";
-          #macos-icon = "paper";
+          #macos-icon = "glass";
           #macos-icon-frame = "beige";
         };
       };
