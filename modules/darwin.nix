@@ -31,26 +31,6 @@
         config.allowUnfree = true;
         overlays = [
           inputs.nur.overlays.default
-          (_final: prev: {
-            opencode = prev.opencode.overrideAttrs (old: {
-              postPatch =
-                (old.postPatch or "")
-                + ''
-                  substituteInPlace packages/opencode/script/build.ts \
-                    --replace-fail 'console.log(`Running smoke test: ''${binaryPath} --version`)' \
-                                   'if (process.platform === "darwin") await $`/usr/bin/codesign --force --sign - ''${binaryPath}`; console.log(`Running smoke test: ''${binaryPath} --version`)'
-                '';
-              postFixup =
-                (old.postFixup or "")
-                + ''
-                  for binary in "$out/bin/opencode" "$out/bin/.opencode-wrapped"; do
-                    if [ -e "$binary" ]; then
-                      /usr/bin/codesign --force --sign - "$binary"
-                    fi
-                  done
-                '';
-            });
-          })
         ];
       };
 
@@ -107,6 +87,10 @@
         onActivation = {
           autoUpdate = true;
           upgrade = true;
+          extraFlags = [
+            "--force-cleanup"
+            "--zap"
+          ];
           extraEnv = {
             HOMEBREW_NO_ANALYTICS = "1";
             HOMEBREW_NO_ENV_HINTS = "1";
