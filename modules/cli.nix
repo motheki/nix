@@ -4,7 +4,7 @@ _: {
   in {
     services = {
       pueue.enable = true;
-      colima.enable = true;
+      colima.enable = false;
     };
 
     programs = {
@@ -13,11 +13,11 @@ _: {
       bun.enable = true;
       cargo.enable = true;
       carapace.enable = true;
-      docker-cli.enable = true;
+      docker-cli.enable = false;
       fastfetch.enable = true;
       fd.enable = true;
       jq.enable = true;
-      lazydocker.enable = true;
+      lazydocker.enable = false;
       pay-respects.enable = true;
       ripgrep.enable = true;
       ripgrep-all.enable = true;
