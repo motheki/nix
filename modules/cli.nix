@@ -1,5 +1,5 @@
 _: {
-  den.aspects.motheki.homeManager = {pkgs, ...}: let
+  den.aspects.profiles.cli.homeManager = {pkgs, ...}: let
     javaPackage = pkgs.jdk17;
   in {
     services = {
@@ -8,6 +8,16 @@ _: {
     };
 
     programs = {
+      nh = {
+        enable = true;
+        flake = "/Users/motheki/Repos/personal/nix";
+        darwinFlake = "/Users/motheki/Repos/personal/nix";
+        clean = {
+          enable = true;
+          extraArgs = "--optimise  --max";
+        };
+      };
+
       aria2.enable = true;
       awscli.enable = true;
       bun.enable = true;
@@ -77,6 +87,7 @@ _: {
       direnv = {
         enable = true;
         nix-direnv.enable = true;
+        mise.enable = true;
         silent = true;
       };
 

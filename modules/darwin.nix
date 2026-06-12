@@ -60,7 +60,6 @@
         taps = builtins.attrNames config.nix-homebrew.taps;
         enableZshIntegration = true;
         brews = [
-          "pi-coding-agent"
         ];
         greedyCasks = true;
         global = {
@@ -73,15 +72,20 @@
         };
         casks = [
           "android-studio-preview@canary"
-          "adguard-vpn@nightly"
           "codex-app"
           "thebrowsercompany-dia"
           "legcord"
           "zoom"
-          "expo-orbit"
+          "betterdisplay"
+          "notion"
+          "notion-cli"
+          "notion-mail"
+          "notion-calendar"
+          "mos"
+          "linear"
+          "cleanshot"
           "iina"
           "codex"
-          "halloy"
           "obs"
         ];
         onActivation = {
@@ -105,18 +109,6 @@
       home-manager = {
         useGlobalPkgs = true;
         useUserPackages = true;
-      };
-    };
-  };
-
-  den.aspects.motheki.homeManager = {
-    programs.nh = {
-      enable = true;
-      flake = "/Users/motheki/Repos/personal/nix";
-      darwinFlake = "/Users/motheki/Repos/personal/nix";
-      clean = {
-        enable = true;
-        extraArgs = "--optimise  --max";
       };
     };
   };

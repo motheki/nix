@@ -8,6 +8,10 @@
       den.provides.define-user
       den.provides.primary-user
       (den.provides.user-shell "zsh")
+      den.aspects.profiles.apps
+      den.aspects.profiles.cli
+      den.aspects.profiles.nixvim
+      den.aspects.profiles.vcs
     ];
 
     homeManager = {pkgs, ...}: let

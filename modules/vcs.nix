@@ -1,5 +1,5 @@
 _: {
-  den.aspects.motheki.homeManager = {pkgs, ...}: {
+  den.aspects.profiles.vcs.homeManager = {pkgs, ...}: {
     services = {
       ssh-agent.enable = true;
       radicle.node = {

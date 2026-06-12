@@ -1,5 +1,5 @@
 _: {
-  den.aspects.motheki.homeManager = {pkgs, ...}: {
+  den.aspects.profiles.nixvim.homeManager = {pkgs, ...}: {
     programs.nixvim = {
       enable = true;
       version.enableNixpkgsReleaseCheck = false;
@@ -225,7 +225,7 @@ _: {
           enable = true;
         };
         opencode = {
-          enable = true;
+          enable = false;
         };
         lspkind = {
           enable = true;

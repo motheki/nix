@@ -1,5 +1,5 @@
 _: {
-  den.aspects.motheki.homeManager = {pkgs, ...}: {
+  den.aspects.profiles.apps.homeManager = {pkgs, ...}: {
     fonts.fontconfig.enable = true;
 
     services.ollama.enable = false;
@@ -171,13 +171,16 @@ _: {
       };
 
       opencode = {
-        enable = true;
+        enable = false;
         tui.theme = "system";
         settings = {
           autoupdate = true;
           autoshare = false;
           lsp = true;
         };
+      };
+      halloy = {
+        enable = true;
       };
 
       codex.enable = false;
