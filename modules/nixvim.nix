@@ -2,8 +2,7 @@ _: {
   den.aspects.profiles.nixvim.homeManager = {pkgs, ...}: {
     programs.nixvim = {
       enable = true;
-      version.enableNixpkgsReleaseCheck = false;
-      package = pkgs.neovim-unwrapped;
+      version.enableNixpkgsReleaseCheck = true;
       nixpkgs = {
         useGlobalPackages = true;
       };
@@ -60,7 +59,7 @@ _: {
             };
           };
           astro = {
-            enable = true;
+            enable = false;
           };
           bashls = {
             enable = true;
@@ -108,7 +107,7 @@ _: {
             enable = false;
           };
           statix = {
-            enable = true;
+            enable = false;
           };
           nil_ls = {
             enable = true;

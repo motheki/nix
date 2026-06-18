@@ -25,9 +25,10 @@
         rainfrog
         jless
         comma
+        bottom
         nix-melt
         nix-tree
-        radicle-tui
+        duckdb
         act3
         nix-diff
         gftp
@@ -45,19 +46,18 @@
         sd
         yq-go
         skim
+        #watchman
         chafa
+        aube
         dogedns
         ffmpeg_8
         imagemagickBig
         mdfried
-        bottom
         openapi-tui
       ];
       mobilePackages = with pkgs; [
         fastlane
-        watchman
         pdf-cli
-        cocoapods-beta
       ];
       fontPackages = with pkgs; [
         nerd-fonts.commit-mono

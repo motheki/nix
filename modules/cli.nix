@@ -2,6 +2,7 @@ _: {
   den.aspects.profiles.cli.homeManager = {pkgs, ...}: let
     javaPackage = pkgs.jdk17;
   in {
+    fonts.fontconfig.enable = true;
     services = {
       pueue.enable = true;
       colima.enable = false;
@@ -21,6 +22,9 @@ _: {
       aria2.enable = true;
       awscli.enable = true;
       bun.enable = true;
+      devenv.enable = false;
+      nix-index.enable = true;
+      tirith.enable = false;
       cargo.enable = true;
       carapace.enable = true;
       docker-cli.enable = false;
@@ -79,19 +83,16 @@ _: {
 
       npm = {
         enable = true;
-        package = pkgs.nodejs_latest;
+        #package = pkgs.nodejs-slim_latest;
       };
-
-      vscode.enable = false;
 
       direnv = {
         enable = true;
         nix-direnv.enable = true;
-        mise.enable = true;
+        mise.enable = false;
         silent = true;
       };
 
-      tirith.enable = false;
 
       vivid = {
         enable = true;
@@ -122,12 +123,11 @@ _: {
       };
 
       fish = {
-        enable = true;
-        generateCompletions = false;
+        enable = false;
+        generateCompletions = true;
         interactiveShellInit = "set -U fish_greeting";
       };
 
-      nix-index.enable = true;
 
       nix-your-shell = {
         enable = true;
@@ -147,7 +147,7 @@ _: {
           nushellPlugins.gstat
         ];
         settings = {
-          show_banner = false;
+          show_banner = true;
           edit_mode = "vi";
         };
       };

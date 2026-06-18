@@ -1,12 +1,11 @@
 _: {
   den.aspects.profiles.apps.homeManager = {pkgs, ...}: {
-    fonts.fontconfig.enable = true;
 
     services.ollama.enable = false;
 
     programs = {
       btop = {
-        enable = false;
+        enable = true;
         settings = {
           color_theme = "rose-pine-dawn";
           theme_background = false;

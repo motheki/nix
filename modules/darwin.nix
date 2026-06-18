@@ -41,8 +41,6 @@
         variables.NH_DARWIN_FLAKE = "/Users/motheki/Repos/personal/nix";
       };
 
-      security.pam.services.sudo_local.touchIdAuth = true;
-
       nix-homebrew = {
         enable = true;
         enableRosetta = true;
@@ -60,6 +58,8 @@
         taps = builtins.attrNames config.nix-homebrew.taps;
         enableZshIntegration = true;
         brews = [
+          "cocoapods"
+          "watchman"
         ];
         greedyCasks = true;
         global = {
@@ -72,18 +72,9 @@
         };
         casks = [
           "android-studio-preview@canary"
+          "adguard-vpn@nightly"
           "codex-app"
-          "thebrowsercompany-dia"
-          "legcord"
           "zoom"
-          "betterdisplay"
-          "notion"
-          "notion-cli"
-          "notion-mail"
-          "notion-calendar"
-          "mos"
-          "linear"
-          "cleanshot"
           "iina"
           "codex"
           "obs"
