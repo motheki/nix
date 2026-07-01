@@ -32,7 +32,7 @@ _: {
       };
 
       gh-dash.enable = true;
-      lazygit.enable = true;
+      lazygit.enable = false;
 
       git = {
         enable = true;

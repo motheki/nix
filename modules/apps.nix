@@ -1,6 +1,5 @@
 _: {
   den.aspects.profiles.apps.homeManager = {pkgs, ...}: {
-
     services.ollama.enable = false;
 
     programs = {
@@ -142,7 +141,9 @@ _: {
         };
       };
 
-      discord.enable = false;
+      vesktop = {
+        enable = false;
+      };
 
       ghostty = {
         enable = true;
@@ -164,7 +165,7 @@ _: {
           macos-titlebar-style = "transparent";
           auto-update = "download";
           auto-update-channel = "tip";
-          #macos-icon = "glass";
+          #macos-icon = "paper";
           #macos-icon-frame = "beige";
         };
       };

@@ -35,6 +35,8 @@
       };
 
       system.stateVersion = 6;
+      documentation.doc.enable = false;
+      system.tools.darwin-uninstaller.enable = false;
 
       environment = {
         systemPackages = [pkgs.nh];
@@ -52,6 +54,7 @@
         taps = {
           "homebrew/homebrew-core" = inputs.homebrew-core;
           "homebrew/homebrew-cask" = inputs.homebrew-cask;
+          "wix/brew" = inputs.apple-simutil;
         };
       };
 
@@ -62,6 +65,9 @@
         brews = [
           "cocoapods"
           "watchman"
+          "pi-coding-agent"
+          "bun"
+          "wix/applesimutils"
         ];
         greedyCasks = true;
         global = {
@@ -77,8 +83,13 @@
           "adguard-vpn@nightly"
           "codex-app"
           "zoom"
+          "cleanshot"
+          "betterdisplay"
+          "thebrowsercompany-dia"
+          "mos"
           "iina"
           "codex"
+          "expo-orbit"
           "obs"
         ];
         onActivation = {

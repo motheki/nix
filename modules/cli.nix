@@ -5,7 +5,7 @@ _: {
     fonts.fontconfig.enable = true;
     services = {
       pueue.enable = true;
-      colima.enable = true;
+      colima.enable = false;
     };
 
     programs = {
@@ -21,10 +21,10 @@ _: {
 
       aria2.enable = true;
       awscli.enable = true;
-      bun.enable = true;
+      bun.enable = false;
       devenv.enable = true;
       nix-index.enable = true;
-      tirith.enable = true;
+      tirith.enable = false;
       cargo.enable = true;
       carapace.enable = true;
       docker-cli.enable = true;
@@ -96,10 +96,9 @@ _: {
         silent = true;
       };
 
-
       vivid = {
         enable = true;
-        activeTheme = "rose-pine-dawn";
+        activeTheme = "rose-pine-moon";
       };
 
       starship = {
@@ -137,7 +136,7 @@ _: {
         defaultKeymap = "viins";
         enableCompletion = true;
         autosuggestion.enable = true;
-        syntaxHighlighting.enable = true;
+        fastSyntaxHighlighting.enable = true;
       };
 
       fish = {
@@ -145,7 +144,6 @@ _: {
         generateCompletions = true;
         interactiveShellInit = "set -U fish_greeting";
       };
-
 
       nix-your-shell = {
         enable = true;
@@ -165,7 +163,7 @@ _: {
           nushellPlugins.gstat
         ];
         settings = {
-          show_banner = true;
+          show_banner = false;
           edit_mode = "vi";
         };
       };

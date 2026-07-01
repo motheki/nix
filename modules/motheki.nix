@@ -28,6 +28,7 @@
         bottom
         nix-melt
         jj-starship
+        herdr
         nix-tree
         radicle-tui
         duckdb
@@ -43,7 +44,9 @@
         vulnix
         dua
         xcp
+        orbstack
         rustscan
+        lazyjj
         grip-grab
         sd
         yq-go

@@ -229,9 +229,6 @@ _: {
         lspkind = {
           enable = true;
         };
-        hunk = {
-          enable = true;
-        };
         nix = {
           enable = true;
         };
