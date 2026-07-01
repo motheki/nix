@@ -18,6 +18,9 @@ _: {
           theme = "ansi";
         };
       };
+      radicle = {
+        enable = true;
+      };
 
       gh = {
         enable = true;

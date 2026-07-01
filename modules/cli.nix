@@ -5,7 +5,7 @@ _: {
     fonts.fontconfig.enable = true;
     services = {
       pueue.enable = true;
-      colima.enable = false;
+      colima.enable = true;
     };
 
     programs = {
@@ -22,16 +22,16 @@ _: {
       aria2.enable = true;
       awscli.enable = true;
       bun.enable = true;
-      devenv.enable = false;
+      devenv.enable = true;
       nix-index.enable = true;
-      tirith.enable = false;
+      tirith.enable = true;
       cargo.enable = true;
       carapace.enable = true;
-      docker-cli.enable = false;
+      docker-cli.enable = true;
       fastfetch.enable = true;
       fd.enable = true;
       jq.enable = true;
-      lazydocker.enable = false;
+      lazydocker.enable = true;
       pay-respects.enable = true;
       ripgrep.enable = true;
       ripgrep-all.enable = true;
@@ -83,13 +83,16 @@ _: {
 
       npm = {
         enable = true;
-        #package = pkgs.nodejs-slim_latest;
+      };
+
+      yarn = {
+        enable = true;
       };
 
       direnv = {
         enable = true;
         nix-direnv.enable = true;
-        mise.enable = false;
+        mise.enable = true;
         silent = true;
       };
 
@@ -102,6 +105,21 @@ _: {
       starship = {
         enable = true;
         enableTransience = true;
+        settings = {
+          git_branch = {
+            disabled = true;
+          };
+          git_status = {
+            disabled = true;
+          };
+          custom = {
+            jj = {
+              when = "jj-starship detect";
+              shell = ["jj-starship"];
+              format = "$output ";
+            };
+          };
+        };
       };
 
       tealdeer = {
@@ -123,7 +141,7 @@ _: {
       };
 
       fish = {
-        enable = false;
+        enable = true;
         generateCompletions = true;
         interactiveShellInit = "set -U fish_greeting";
       };

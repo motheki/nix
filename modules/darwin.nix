@@ -41,6 +41,8 @@
         variables.NH_DARWIN_FLAKE = "/Users/motheki/Repos/personal/nix";
       };
 
+      security.pam.services.sudo_local.touchIdAuth = true;
+
       nix-homebrew = {
         enable = true;
         enableRosetta = true;

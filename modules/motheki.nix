@@ -27,7 +27,9 @@
         comma
         bottom
         nix-melt
+        jj-starship
         nix-tree
+        radicle-tui
         duckdb
         act3
         nix-diff
@@ -47,6 +49,7 @@
         yq-go
         skim
         #watchman
+        pnpm
         chafa
         aube
         dogedns
