@@ -159,9 +159,9 @@ _: {
           window-width = 160;
           window-padding-x = 8;
           window-padding-y = 4;
-          window-inherit-working-directory = true;
-          tab-inherit-working-directory = true;
-          split-inherit-working-directory = true;
+          window-inherit-working-directory = false;
+          tab-inherit-working-directory = false;
+          split-inherit-working-directory = false;
           macos-titlebar-style = "transparent";
           auto-update = "download";
           auto-update-channel = "tip";
@@ -180,6 +180,10 @@ _: {
         };
       };
       halloy = {
+        enable = false;
+      };
+
+      discord = {
         enable = true;
       };
 
@@ -191,7 +195,7 @@ _: {
       };
 
       yt-dlp = {
-        enable = true;
+        enable = false;
         settings = {
           paths = "/Volumes/mothekis_drive/videos/youtube";
           ffmpeg-location = "/etc/profiles/per-user/motheki/bin/ffmpeg";

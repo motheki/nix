@@ -54,20 +54,27 @@
         taps = {
           "homebrew/homebrew-core" = inputs.homebrew-core;
           "homebrew/homebrew-cask" = inputs.homebrew-cask;
-          "wix/brew" = inputs.apple-simutil;
+          "wix/homebrew-brew" = inputs.apple-simutil;
+          "dmtrkovalenko/homebrew-fff" = inputs.fff-mcp;
         };
       };
 
       homebrew = {
         enable = true;
-        taps = builtins.attrNames config.nix-homebrew.taps;
+        taps = [
+          "homebrew/homebrew-core"
+          "homebrew/homebrew-cask"
+          "wix/brew"
+          "dmtrkovalenko/fff"
+        ];
         enableZshIntegration = true;
         brews = [
           "cocoapods"
           "watchman"
           "pi-coding-agent"
-          "bun"
-          "wix/applesimutils"
+          "wix/brew/applesimutils"
+          "dmtrkovalenko/fff/fff-mcp"
+          "block-goose-cli"
         ];
         greedyCasks = true;
         global = {
@@ -81,15 +88,19 @@
         casks = [
           "android-studio-preview@canary"
           "adguard-vpn@nightly"
+          "codex"
           "codex-app"
           "zoom"
           "cleanshot"
           "betterdisplay"
           "thebrowsercompany-dia"
+          "daisydisk"
           "mos"
           "iina"
-          "codex"
+          "block-goose"
           "expo-orbit"
+          "zen"
+          "helium-browser"
           "obs"
         ];
         onActivation = {

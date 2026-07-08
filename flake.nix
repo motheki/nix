@@ -6,54 +6,58 @@
       url = "github:nixos/nixpkgs";
     };
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     darwin = {
-      url = "github:nix-darwin/nix-darwin";
+      url = "github:nix-darwin/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     flake-parts = {
-      url = "github:hercules-ci/flake-parts";
+      url = "github:hercules-ci/flake-parts/main";
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
     den = {
-      url = "github:denful/den";
+      url = "github:denful/den/main";
     };
     import-tree = {
-      url = "github:denful/import-tree";
+      url = "github:denful/import-tree/main";
     };
     nur = {
-      url = "github:nix-community/NUR";
+      url = "github:nix-community/NUR/main";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
     };
     nixvim = {
-      url = "github:nix-community/nixvim";
+      url = "github:nix-community/nixvim/main";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
     };
     nix-homebrew = {
-      url = "github:zhaofengli/nix-homebrew";
+      url = "github:zhaofengli/nix-homebrew/main";
       inputs.brew-src = {
         url = "github:Homebrew/brew";
         flake = false;
       };
     };
     homebrew-core = {
-      url = "github:homebrew/homebrew-core";
+      url = "github:homebrew/homebrew-core/main";
       flake = false;
     };
     homebrew-cask = {
-      url = "github:homebrew/homebrew-cask";
+      url = "github:homebrew/homebrew-cask/main";
+      flake = false;
+    };
+    fff-mcp = {
+      url = "github:dmtrKovalenko/homebrew-fff/main";
       flake = false;
     };
     apple-simutil = {
-      url = "github:wix-incubator/homebrew-brew";
+      url = "github:wix/homebrew-brew/master";
       flake = false;
     };
     mac-app-util = {
-      url = "github:hraban/mac-app-util";
+      url = "github:hraban/mac-app-util/master";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.treefmt-nix.follows = "treefmt-nix";
       inputs.cl-nix-lite.inputs.nixpkgs.follows = "nixpkgs";
@@ -61,7 +65,7 @@
       inputs.cl-nix-lite.inputs.treefmt-nix.follows = "treefmt-nix";
     };
     treefmt-nix = {
-      url = "github:numtide/treefmt-nix";
+      url = "github:numtide/treefmt-nix/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

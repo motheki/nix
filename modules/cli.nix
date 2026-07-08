@@ -21,7 +21,7 @@ _: {
 
       aria2.enable = true;
       awscli.enable = true;
-      bun.enable = false;
+      bun.enable = true;
       devenv.enable = true;
       nix-index.enable = true;
       tirith.enable = false;
@@ -92,33 +92,17 @@ _: {
       direnv = {
         enable = true;
         nix-direnv.enable = true;
-        mise.enable = true;
+        mise.enable = false;
         silent = true;
       };
 
       vivid = {
         enable = true;
-        activeTheme = "rose-pine-moon";
+        activeTheme = "rose-pine-dawn";
       };
 
       starship = {
         enable = true;
-        enableTransience = true;
-        settings = {
-          git_branch = {
-            disabled = true;
-          };
-          git_status = {
-            disabled = true;
-          };
-          custom = {
-            jj = {
-              when = "jj-starship detect";
-              shell = ["jj-starship"];
-              format = "$output ";
-            };
-          };
-        };
       };
 
       tealdeer = {

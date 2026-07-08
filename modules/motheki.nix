@@ -16,7 +16,6 @@
 
     homeManager = {pkgs, ...}: let
       appPackages = with pkgs; [
-        daisydisk
         webtorrent_desktop
       ];
       utilityPackages = with pkgs; [
@@ -27,7 +26,6 @@
         comma
         bottom
         nix-melt
-        jj-starship
         herdr
         nix-tree
         radicle-tui
@@ -92,6 +90,7 @@
         sessionPath = [
           "$ANDROID_HOME/emulator"
           "$ANDROID_HOME/platform-tools"
+          "/Users/motheki/.bun/bin"
           "/Users/motheki/.bun/bin"
           "/Users/motheki/.cargo/bin"
         ];
