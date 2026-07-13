@@ -92,7 +92,7 @@ _: {
       direnv = {
         enable = true;
         nix-direnv.enable = true;
-        mise.enable = false;
+        mise.enable = true;
         silent = true;
       };
 

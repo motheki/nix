@@ -5,6 +5,7 @@ _: {
       radicle.node = {
         enable = true;
         lazy.enable = true;
+        package = pkgs.radicle-node-unstable;
       };
     };
 
@@ -20,6 +21,7 @@ _: {
       };
       radicle = {
         enable = true;
+        cli.package = pkgs.radicle-node-unstable;
       };
 
       gh = {
