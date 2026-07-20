@@ -6,11 +6,55 @@ _: {
       btop = {
         enable = true;
         settings = {
-          color_theme = "rose-pine-dawn";
+          color_theme = "ayu";
           theme_background = false;
           vim_keys = true;
         };
         themes = {
+          ayu = ''
+            theme[main_bg]="#0B0E14"
+            theme[main_fg]="#BFBDB6"
+            theme[title]="#BFBDB6"
+            theme[hi_fg]="#E6B450"
+            theme[selected_bg]="#E6B450"
+            theme[selected_fg]="#f8f8f2"
+            theme[inactive_fg]="#565B66"
+            theme[graph_text]="#BFBDB6"
+            theme[meter_bg]="#565B66"
+            theme[proc_misc]="#DFBFFF"
+            theme[cpu_box]="#DFBFFF"
+            theme[mem_box]="#95E6CB"
+            theme[net_box]="#F28779"
+            theme[proc_box]="#E6B673"
+            theme[div_line]="#565B66"
+            theme[temp_start]="#DFBFFF"
+            theme[temp_mid]="#D2A6FF"
+            theme[temp_end]="#A37ACC"
+            theme[cpu_start]="#DFBFFF"
+            theme[cpu_mid]="#D2A6FF"
+            theme[cpu_end]="#A37ACC"
+            theme[free_start]="#95E6CB"
+            theme[free_mid]="#95E6CB"
+            theme[free_end]="#4CBF99"
+            theme[cached_start]="#95E6CB"
+            theme[cached_mid]="#95E6CB"
+            theme[cached_end]="#4CBF99"
+            theme[available_start]="#95E6CB"
+            theme[available_mid]="#95E6CB"
+            theme[available_end]="#4CBF99"
+            theme[used_start]="#95E6CB"
+            theme[used_mid]="#95E6CB"
+            theme[used_end]="#4CBF99"
+            theme[download_start]="#F28779"
+            theme[download_mid]="#F07178"
+            theme[download_end]="#F07171"
+            theme[upload_start]="#73D0FF"
+            theme[upload_mid]="#59C2FF"
+            theme[upload_end]="#399EE6"
+            theme[process_start]="#FFCC66"
+            theme[process_mid]="#E6B450"
+            theme[process_end]="#FFAA33"
+          '';
           nord = ''
             theme[main_bg]="#2E3440"
             theme[main_fg]="#D8DEE9"
@@ -149,7 +193,7 @@ _: {
         enable = true;
         package = pkgs.ghostty-bin;
         settings = {
-          theme = "light: Rose Pine Dawn, dark: Rose Pine Moon";
+          theme = "light: Ayu Light, dark: Ayu";
           font-size = 16;
           font-family = "CommitMonoMotheki";
           cursor-style = "bar";
@@ -195,7 +239,7 @@ _: {
       };
 
       yt-dlp = {
-        enable = false;
+        enable = true;
         settings = {
           paths = "/Volumes/mothekis_drive/videos/youtube";
           ffmpeg-location = "/etc/profiles/per-user/motheki/bin/ffmpeg";

@@ -98,7 +98,7 @@ _: {
 
       vivid = {
         enable = true;
-        activeTheme = "rose-pine-dawn";
+        activeTheme = "ayu";
       };
 
       starship = {
@@ -143,7 +143,7 @@ _: {
         enable = true;
         plugins = with pkgs; [
           nushellPlugins.query
-          nushellPlugins.polars
+          #nushellPlugins.polars
           nushellPlugins.gstat
         ];
         settings = {
