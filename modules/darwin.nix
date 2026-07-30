@@ -71,7 +71,7 @@
         brews = [
           "cocoapods"
           "watchman"
-          "pi-coding-agent"
+          #"pi-coding-agent"
           "wix/brew/applesimutils"
           "dmtrkovalenko/fff/fff-mcp"
           "block-goose-cli"
@@ -87,7 +87,7 @@
         };
         casks = [
           "android-studio-preview@canary"
-          "adguard-vpn@nightly"
+          "crossover"
           "codex"
           "codex-app"
           "zoom"

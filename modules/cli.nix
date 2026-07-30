@@ -19,6 +19,23 @@ _: {
         };
       };
 
+      herdr = {
+        enable = true;
+        settings = {
+          theme = {
+            auto_switch = false;
+            #dark_name = "rose-pine-moon";
+            #light_name = "rose-pine-dawn";
+            name = "terminal";
+          };
+        };
+      };
+      pi-coding-agent = {
+        enable = true;
+        extraPackages = [
+          pkgs.nodejs
+        ];
+      };
       aria2.enable = true;
       awscli.enable = true;
       bun.enable = true;
@@ -98,7 +115,7 @@ _: {
 
       vivid = {
         enable = true;
-        activeTheme = "ayu";
+        activeTheme = "rose-pine-moon";
       };
 
       starship = {

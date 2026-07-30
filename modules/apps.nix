@@ -6,7 +6,7 @@ _: {
       btop = {
         enable = true;
         settings = {
-          color_theme = "ayu";
+          color_theme = "rose-pine-dawn";
           theme_background = false;
           vim_keys = true;
         };
@@ -193,7 +193,7 @@ _: {
         enable = true;
         package = pkgs.ghostty-bin;
         settings = {
-          theme = "light: Ayu Light, dark: Ayu";
+          theme = "light: Rose Pine Dawn, dark: Rose Pine Moon";
           font-size = 16;
           font-family = "CommitMonoMotheki";
           cursor-style = "bar";

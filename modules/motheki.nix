@@ -26,7 +26,6 @@
         comma
         bottom
         nix-melt
-        herdr
         nix-tree
         radicle-tui
         duckdb
@@ -52,6 +51,7 @@
         #watchman
         pnpm
         chafa
+        tuicr
         aube
         dogedns
         ffmpeg_8
