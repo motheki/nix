@@ -2,7 +2,7 @@ _: {
   den.aspects.profiles.nixvim.homeManager = {pkgs, ...}: {
     programs.nixvim = {
       enable = true;
-      enableMan = false;
+      enableMan = true;
       version.enableNixpkgsReleaseCheck = true;
       nixpkgs = {
         useGlobalPackages = true;
@@ -79,6 +79,9 @@ _: {
           };
           oxfmt = {
             enable = true;
+          };
+          biome = {
+            enable = false;
           };
           oxlint = {
             enable = true;

@@ -52,11 +52,11 @@
         pnpm
         chafa
         tuicr
-        aube
         dogedns
         ffmpeg_8
         imagemagickBig
         mdfried
+        glow
         openapi-tui
       ];
       mobilePackages = with pkgs; [

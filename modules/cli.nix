@@ -34,6 +34,7 @@ _: {
         enable = true;
         extraPackages = [
           pkgs.nodejs
+          pkgs.bun
         ];
       };
       aria2.enable = true;
@@ -115,7 +116,7 @@ _: {
 
       vivid = {
         enable = true;
-        activeTheme = "rose-pine-moon";
+        activeTheme = "rose-pine-dawn";
       };
 
       starship = {
@@ -128,7 +129,7 @@ _: {
       };
 
       bash = {
-        enable = true;
+        enable = false;
         enableVteIntegration = true;
       };
 
@@ -160,7 +161,7 @@ _: {
         enable = true;
         plugins = with pkgs; [
           nushellPlugins.query
-          #nushellPlugins.polars
+          nushellPlugins.polars
           nushellPlugins.gstat
         ];
         settings = {

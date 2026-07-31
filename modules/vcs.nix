@@ -116,15 +116,15 @@ _: {
 
       jjui.enable = true;
 
-      keychain = {
-        enable = true;
-        keys = ["trevoropiyo"];
-      };
-
       ssh = {
         enable = true;
         enableDefaultConfig = false;
-        settings = {};
+        settings."*" = {
+          IgnoreUnknown = "UseKeychain";
+          AddKeysToAgent = "yes";
+          IdentityFile = "~/.ssh/trevoropiyo";
+          UseKeychain = "yes";
+        };
       };
     };
   };

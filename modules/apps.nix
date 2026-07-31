@@ -215,7 +215,7 @@ _: {
       };
 
       opencode = {
-        enable = false;
+        enable = true;
         tui.theme = "system";
         settings = {
           autoupdate = true;

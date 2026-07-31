@@ -6,22 +6,21 @@
   den.aspects."mothekis-macbook-pro" = {
     includes = [den.provides.hostname];
 
-    darwin = {
-      config,
-      pkgs,
-      ...
-    }: {
+    darwin = {pkgs, ...}: {
       imports = [inputs.nix-homebrew.darwinModules.nix-homebrew];
 
       nix = {
         package = pkgs.nixVersions.latest;
         nixPath = ["nixpkgs=flake:nixpkgs"];
+        #linux-builder = {
+        #  enable = true;
+        #  systems = [ "aarch64-linux" "x86_64-linux" ];
+        #};
         settings = {
           experimental-features = [
             "nix-command"
             "flakes"
           ];
-
           extra-trusted-users = ["motheki"];
           always-allow-substitutes = true;
         };
@@ -34,7 +33,7 @@
         ];
       };
 
-      system.stateVersion = 6;
+      system.stateVersion = 7;
       documentation.doc.enable = false;
       system.tools.darwin-uninstaller.enable = false;
 
@@ -45,9 +44,18 @@
 
       security.pam.services.sudo_local.touchIdAuth = true;
 
+      programs.zsh = {
+        # Home Manager initializes completion after extending fpath.
+        enableGlobalCompInit = false;
+        # Starship supplies the prompt in the user configuration.
+        promptInit = "";
+      };
+
       nix-homebrew = {
         enable = true;
         enableRosetta = true;
+        # Own shellenv initialization so it is emitted only once.
+        enableZshIntegration = true;
         user = "motheki";
         autoMigrate = false;
         mutableTaps = false;
@@ -67,11 +75,11 @@
           "wix/brew"
           "dmtrkovalenko/fff"
         ];
-        enableZshIntegration = true;
+        # nix-homebrew provides the shell integration above.
+        enableZshIntegration = false;
         brews = [
           "cocoapods"
           "watchman"
-          #"pi-coding-agent"
           "wix/brew/applesimutils"
           "dmtrkovalenko/fff/fff-mcp"
           "block-goose-cli"
