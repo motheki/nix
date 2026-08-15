@@ -59,9 +59,6 @@ _: {
               ];
             };
           };
-          astro = {
-            enable = false;
-          };
           bashls = {
             enable = true;
           };
@@ -79,9 +76,6 @@ _: {
           };
           oxfmt = {
             enable = true;
-          };
-          biome = {
-            enable = false;
           };
           oxlint = {
             enable = true;
@@ -106,12 +100,6 @@ _: {
           };
           sqls = {
             enable = true;
-          };
-          tsgo = {
-            enable = false;
-          };
-          statix = {
-            enable = false;
           };
           nil_ls = {
             enable = true;
@@ -227,9 +215,6 @@ _: {
         gitblame = {
           enable = true;
         };
-        opencode = {
-          enable = false;
-        };
         lspkind = {
           enable = true;
         };
@@ -260,8 +245,6 @@ _: {
         fff = {
           enable = true;
           settings = {
-            layout = {
-            };
             key_bindings = {
               close = [
                 "<Esc>"
@@ -305,7 +288,7 @@ _: {
             enable = false;
           };
           settings = {
-            autoInstall = true;
+            autoInstall = false;
             highlight = {
               enable = true;
             };
@@ -319,17 +302,6 @@ _: {
         };
       };
       colorschemes = {
-        #nord = {
-        #  enable = true;
-        #  settings = {
-        #    borders = true;
-        #    disable_background = true;
-        #    italic = true;
-        #  };
-        #};
-        #ayu = {
-        #  enable = true;
-        #};
         rose-pine = {
           enable = true;
           settings = {

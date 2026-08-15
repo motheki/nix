@@ -9,6 +9,7 @@
       den.provides.primary-user
       (den.provides.user-shell "zsh")
       den.aspects.profiles.apps
+      den.aspects.profiles.llm-agents
       den.aspects.profiles.cli
       den.aspects.profiles.nixvim
       den.aspects.profiles.vcs
@@ -42,13 +43,11 @@
         dua
         xcp
         mos
-        goose-cli
         orbstack
         rustscan
         grip-grab
         sd
         yq-go
-        #watchman
         chafa
         tuicr
         dogedns
@@ -69,18 +68,11 @@
         nerd-fonts.jetbrains-mono
       ];
     in {
-      imports = [
-        inputs.nixvim.homeModules.nixvim
-        inputs.mac-app-util.homeManagerModules.default
-      ];
-
-      targets.darwin.mac-app-util.enable = false;
+      imports = [inputs.nixvim.homeModules.nixvim];
 
       home = {
         shellAliases = {
-          rebuild-full = "nix --extra-experimental-features 'nix-command flakes' run ~/Repos/personal/nix#darwin-switch -- -H mothekis-macbook-pro";
           rebuild = "nh darwin switch -H mothekis-macbook-pro";
-          clean-full = "nix --extra-experimental-features 'nix-command flakes' run ~/Repos/personal/nix#clean";
           clean = "nh clean all -q";
         };
         sessionVariables = {
@@ -89,9 +81,8 @@
         sessionPath = [
           "$ANDROID_HOME/emulator"
           "$ANDROID_HOME/platform-tools"
-          "/Users/motheki/.bun/bin"
-          "/Users/motheki/.bun/bin"
-          "/Users/motheki/.cargo/bin"
+          "$HOME/.bun/bin"
+          "$HOME/.cargo/bin"
         ];
         packages = appPackages ++ utilityPackages ++ mobilePackages ++ fontPackages;
       };

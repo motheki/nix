@@ -14,7 +14,7 @@
         nixPath = ["nixpkgs=flake:nixpkgs"];
         linux-builder = {
           enable = true;
-          systems = [ "aarch64-linux" "x86_64-linux" ];
+          systems = ["aarch64-linux" "x86_64-linux"];
         };
         settings = {
           experimental-features = [
@@ -23,15 +23,14 @@
           ];
           extra-trusted-users = ["motheki"];
           always-allow-substitutes = true;
+          extra-substituters = ["https://cache.numtide.com"];
+          extra-trusted-public-keys = [
+            "niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g="
+          ];
         };
       };
 
-      nixpkgs = {
-        config.allowUnfree = true;
-        overlays = [
-          inputs.nur.overlays.default
-        ];
-      };
+      nixpkgs.config.allowUnfree = true;
 
       system = {
         stateVersion = 7;
@@ -39,12 +38,6 @@
       };
       documentation.doc.enable = true;
       security.pam.services.sudo_local.touchIdAuth = true;
-
-      environment = {
-        systemPackages = [pkgs.nh];
-        variables.NH_DARWIN_FLAKE = "/Users/motheki/Repos/personal/nix";
-      };
-
 
       programs.zsh = {
         # Home Manager initializes completion after extending fpath.
@@ -87,7 +80,6 @@
           "watchman"
           "wix/brew/applesimutils"
           "dmtrkovalenko/fff/fff-mcp"
-          "block-goose-cli"
           "oleksandrchekhovskyi/hax/hax"
         ];
 
@@ -112,7 +104,7 @@
           "linear"
           "iina"
           "expo-orbit"
-          "obs"
+          #"obs"
         ];
         onActivation = {
           autoUpdate = true;

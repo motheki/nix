@@ -14,7 +14,6 @@ _: {
       bun.enable = true;
       devenv.enable = true;
       nix-index.enable = true;
-      tirith.enable = false;
       cargo.enable = true;
       carapace.enable = true;
       docker-cli.enable = true;
@@ -45,8 +44,6 @@ _: {
         settings = {
           theme = {
             auto_switch = false;
-            #dark_name = "rose-pine-moon";
-            #light_name = "rose-pine-dawn";
             name = "terminal";
           };
         };
