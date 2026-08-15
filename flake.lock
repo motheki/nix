@@ -172,6 +172,23 @@
         "type": "indirect"
       }
     },
+    "hax": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1786543718,
+        "narHash": "sha256-KMfzuXQGW8JwiTxW9cDvltpku/OdDtIFOFr6Eygi7UM=",
+        "owner": "OleksandrChekhovskyi",
+        "repo": "homebrew-hax",
+        "rev": "2e02743dd3aff9fd57b405dc415d44f96ab23431",
+        "type": "github"
+      },
+      "original": {
+        "owner": "OleksandrChekhovskyi",
+        "ref": "master",
+        "repo": "homebrew-hax",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -361,6 +378,7 @@
         "den": "den",
         "fff-mcp": "fff-mcp",
         "flake-parts": "flake-parts",
+        "hax": "hax",
         "home-manager": "home-manager",
         "homebrew-cask": "homebrew-cask",
         "homebrew-core": "homebrew-core",

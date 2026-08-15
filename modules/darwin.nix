@@ -64,6 +64,7 @@
           "homebrew/homebrew-cask" = inputs.homebrew-cask;
           "wix/homebrew-brew" = inputs.apple-simutil;
           "dmtrkovalenko/homebrew-fff" = inputs.fff-mcp;
+          "oleksandrchekhovskyi/homebrew-hax" = inputs.hax;
         };
       };
 
@@ -74,6 +75,7 @@
           "homebrew/homebrew-cask"
           "wix/brew"
           "dmtrkovalenko/fff"
+          "oleksandrchekhovskyi/hax"
         ];
         # nix-homebrew provides the shell integration above.
         enableZshIntegration = false;
@@ -83,6 +85,7 @@
           "wix/brew/applesimutils"
           "dmtrkovalenko/fff/fff-mcp"
           "block-goose-cli"
+          "oleksandrchekhovskyi/hax/hax"
         ];
         greedyCasks = true;
         global = {

@@ -108,8 +108,8 @@ _: {
             sign-on-push = true;
             track-default-bookmark-on-clone = true;
             abandon-unreachable-commits = true;
-            fetch = ["origin"];
-            push = ["origin"];
+            fetch = "origin";
+            push = "origin";
           };
         };
       };

@@ -52,6 +52,10 @@
       url = "github:dmtrKovalenko/homebrew-fff/main";
       flake = false;
     };
+    hax = {
+      url = "github:OleksandrChekhovskyi/homebrew-hax/master";
+      flake = false;
+    };
     apple-simutil = {
       url = "github:wix/homebrew-brew/master";
       flake = false;
