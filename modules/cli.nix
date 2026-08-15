@@ -5,10 +5,31 @@ _: {
     fonts.fontconfig.enable = true;
     services = {
       pueue.enable = true;
-      colima.enable = false;
     };
 
     programs = {
+      aria2.enable = true;
+      skim.enable = true;
+      awscli.enable = true;
+      bun.enable = true;
+      devenv.enable = true;
+      nix-index.enable = true;
+      tirith.enable = false;
+      cargo.enable = true;
+      carapace.enable = true;
+      docker-cli.enable = true;
+      fastfetch.enable = true;
+      fd.enable = true;
+      jq.enable = true;
+      lazydocker.enable = true;
+      pay-respects.enable = true;
+      ripgrep.enable = true;
+      ripgrep-all.enable = true;
+      television.enable = true;
+      tiny.enable = true;
+      uv.enable = true;
+      zoxide.enable = true;
+
       nh = {
         enable = true;
         flake = "/Users/motheki/Repos/personal/nix";
@@ -30,6 +51,7 @@ _: {
           };
         };
       };
+
       pi-coding-agent = {
         enable = true;
         extraPackages = [
@@ -37,26 +59,6 @@ _: {
           pkgs.bun
         ];
       };
-      aria2.enable = true;
-      awscli.enable = true;
-      bun.enable = true;
-      devenv.enable = true;
-      nix-index.enable = true;
-      tirith.enable = false;
-      cargo.enable = true;
-      carapace.enable = true;
-      docker-cli.enable = true;
-      fastfetch.enable = true;
-      fd.enable = true;
-      jq.enable = true;
-      lazydocker.enable = true;
-      pay-respects.enable = true;
-      ripgrep.enable = true;
-      ripgrep-all.enable = true;
-      television.enable = true;
-      tiny.enable = true;
-      uv.enable = true;
-      zoxide.enable = true;
 
       bat = {
         enable = true;
@@ -129,7 +131,7 @@ _: {
       };
 
       bash = {
-        enable = false;
+        enable = true;
         enableVteIntegration = true;
       };
 

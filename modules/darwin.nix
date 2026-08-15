@@ -12,10 +12,10 @@
       nix = {
         package = pkgs.nixVersions.latest;
         nixPath = ["nixpkgs=flake:nixpkgs"];
-        #linux-builder = {
-        #  enable = true;
-        #  systems = [ "aarch64-linux" "x86_64-linux" ];
-        #};
+        linux-builder = {
+          enable = true;
+          systems = [ "aarch64-linux" "x86_64-linux" ];
+        };
         settings = {
           experimental-features = [
             "nix-command"
@@ -33,16 +33,18 @@
         ];
       };
 
-      system.stateVersion = 7;
-      documentation.doc.enable = false;
-      system.tools.darwin-uninstaller.enable = false;
+      system = {
+        stateVersion = 7;
+        tools.darwin-uninstaller.enable = true;
+      };
+      documentation.doc.enable = true;
+      security.pam.services.sudo_local.touchIdAuth = true;
 
       environment = {
         systemPackages = [pkgs.nh];
         variables.NH_DARWIN_FLAKE = "/Users/motheki/Repos/personal/nix";
       };
 
-      security.pam.services.sudo_local.touchIdAuth = true;
 
       programs.zsh = {
         # Home Manager initializes completion after extending fpath.
@@ -77,6 +79,7 @@
           "dmtrkovalenko/fff"
           "oleksandrchekhovskyi/hax"
         ];
+
         # nix-homebrew provides the shell integration above.
         enableZshIntegration = false;
         brews = [
@@ -87,6 +90,7 @@
           "block-goose-cli"
           "oleksandrchekhovskyi/hax/hax"
         ];
+
         greedyCasks = true;
         global = {
           autoUpdate = true;
@@ -99,21 +103,15 @@
         casks = [
           "android-studio-preview@canary"
           "crossover"
-          "codex"
           "codex-app"
           "zoom"
           "steam"
           "cleanshot"
           "betterdisplay"
-          "thebrowsercompany-dia"
           "daisydisk"
           "linear"
-          "mos"
           "iina"
-          "block-goose"
           "expo-orbit"
-          "zen"
-          "helium-browser"
           "obs"
         ];
         onActivation = {

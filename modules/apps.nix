@@ -231,8 +231,6 @@ _: {
         enable = true;
       };
 
-      codex.enable = false;
-
       streamlink = {
         enable = false;
         settings.player = "~/.nix-profile/bin/iina";

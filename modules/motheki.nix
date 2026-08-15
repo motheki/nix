@@ -41,19 +41,18 @@
         vulnix
         dua
         xcp
+        mos
+        goose-cli
         orbstack
         rustscan
-        lazyjj
         grip-grab
         sd
         yq-go
-        skim
         #watchman
-        pnpm
         chafa
         tuicr
         dogedns
-        ffmpeg_8
+        ffmpeg_9-full
         imagemagickBig
         mdfried
         glow
