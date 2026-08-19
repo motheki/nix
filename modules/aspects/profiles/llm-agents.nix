@@ -1,7 +1,6 @@
 # AI coding tools are consumed directly from their source flake. No overlay is
 # needed because these packages do not need to become part of the shared pkgs.
-{ inputs, ... }:
-{
+{ inputs, ... }: {
   den.aspects.profiles.llm-agents.homeManager =
     { pkgs, ... }:
     let

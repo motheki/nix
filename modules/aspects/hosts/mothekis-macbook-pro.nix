@@ -1,9 +1,12 @@
 # Machine-specific nix-darwin configuration. Den associates this aspect with
 # the host of the same name declared in modules/hosts.nix.
-{ inputs, ... }:
-{
+{ inputs, ... }: {
   den.aspects.mothekis-macbook-pro.darwin =
-    { config, pkgs, ... }:
+    {
+      config,
+      pkgs,
+      ...
+    }:
     {
       imports = [ inputs.nix-homebrew.darwinModules.nix-homebrew ];
 

@@ -2,7 +2,11 @@
 # shell behavior are kept in their own profiles.
 _: {
   den.aspects.profiles.command-line.homeManager =
-    { config, pkgs, ... }:
+    {
+      config,
+      pkgs,
+      ...
+    }:
     {
       fonts.fontconfig.enable = true;
       services.pueue.enable = true;

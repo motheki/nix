@@ -1,6 +1,10 @@
 # Bootstrap the two module frameworks used by the repository. flake-file owns
 # flake.nix, while Den turns host and user aspects into standard flake outputs.
-{ inputs, lib, ... }:
+{
+  inputs,
+  lib,
+  ...
+}:
 {
   imports = [
     inputs.flake-file.flakeModules.dendritic

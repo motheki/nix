@@ -2,7 +2,11 @@
 # login shell; the other shells remain available for explicit use.
 _: {
   den.aspects.profiles.shell.homeManager =
-    { config, pkgs, ... }:
+    {
+      config,
+      pkgs,
+      ...
+    }:
     let
       homeDirectory = config.home.homeDirectory;
       androidHome = "${homeDirectory}/Library/Android/sdk";

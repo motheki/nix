@@ -1,5 +1,9 @@
 # Cross-cutting Den defaults shared by every declared host and user.
-{ den, lib, ... }:
+{
+  den,
+  lib,
+  ...
+}:
 {
   den.default = {
     includes = [
