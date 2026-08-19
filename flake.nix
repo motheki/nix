@@ -1,63 +1,67 @@
+# DO-NOT-EDIT. This file was auto-generated using github:vic/flake-file.
+# Use `nix run .#write-flake` to regenerate it.
 {
-  description = "Motheki's Nix Flake";
+  description = "Motheki's declarative macOS configuration";
+
+  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
 
   inputs = {
-    nixpkgs = {
-      url = "github:nixos/nixpkgs/master";
+    apple-simutil = {
+      url = "github:wix/homebrew-brew";
+      flake = false;
     };
-    home-manager = {
-      url = "github:nix-community/home-manager/master";
-      inputs.nixpkgs.follows = "nixpkgs";
+    brew-src = {
+      url = "github:Homebrew/brew";
+      flake = false;
     };
     darwin = {
-      url = "github:nix-darwin/nix-darwin/master";
+      url = "github:nix-darwin/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    flake-parts = {
-      url = "github:hercules-ci/flake-parts/main";
-      inputs.nixpkgs-lib.follows = "nixpkgs";
-    };
-    den = {
-      url = "github:denful/den/main";
-    };
-    llm-agents = {
-      url = "github:numtide/llm-agents.nix/main";
-    };
-    import-tree = {
-      url = "github:denful/import-tree/main";
-    };
-    nixvim = {
-      url = "github:nix-community/nixvim/main";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-parts.follows = "flake-parts";
-    };
-    nix-homebrew = {
-      url = "github:zhaofengli/nix-homebrew/main";
-      inputs.brew-src = {
-        url = "github:Homebrew/brew/main";
-        flake = false;
-      };
-    };
-    homebrew-core = {
-      url = "github:homebrew/homebrew-core/main";
-      flake = false;
-    };
-    homebrew-cask = {
-      url = "github:homebrew/homebrew-cask/main";
-      flake = false;
-    };
+    den.url = "github:denful/den";
     fff-mcp = {
-      url = "github:dmtrKovalenko/homebrew-fff/main";
+      url = "github:dmtrKovalenko/homebrew-fff";
       flake = false;
+    };
+    flake-file.url = "github:vic/flake-file";
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs-lib.follows = "nixpkgs-lib";
     };
     hax = {
-      url = "github:OleksandrChekhovskyi/homebrew-hax/master";
+      url = "github:OleksandrChekhovskyi/homebrew-hax";
       flake = false;
     };
-    apple-simutil = {
-      url = "github:wix/homebrew-brew/master";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    homebrew-cask = {
+      url = "github:Homebrew/homebrew-cask";
       flake = false;
+    };
+    homebrew-core = {
+      url = "github:Homebrew/homebrew-core";
+      flake = false;
+    };
+    import-tree.url = "github:denful/import-tree";
+    llm-agents.url = "github:numtide/llm-agents.nix";
+    nix-homebrew = {
+      url = "github:zhaofengli/nix-homebrew";
+      inputs.brew-src.follows = "brew-src";
+    };
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs-lib.follows = "nixpkgs";
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs = {
+        flake-parts.follows = "flake-parts";
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = inputs: inputs.flake-parts.lib.mkFlake {inherit inputs;} (inputs.import-tree ./parts);
 }

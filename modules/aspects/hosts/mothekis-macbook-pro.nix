@@ -1,58 +1,52 @@
+# Machine-specific nix-darwin configuration. Den associates this aspect with
+# the host of the same name declared in modules/hosts.nix.
+{ inputs, ... }:
 {
-  inputs,
-  den,
-  ...
-}: {
-  den.aspects."mothekis-macbook-pro" = {
-    includes = [den.provides.hostname];
-
-    darwin = {pkgs, ...}: {
-      imports = [inputs.nix-homebrew.darwinModules.nix-homebrew];
+  den.aspects.mothekis-macbook-pro.darwin =
+    { config, pkgs, ... }:
+    {
+      imports = [ inputs.nix-homebrew.darwinModules.nix-homebrew ];
 
       nix = {
         package = pkgs.nixVersions.latest;
-        nixPath = ["nixpkgs=flake:nixpkgs"];
         linux-builder = {
           enable = true;
-          systems = ["aarch64-linux" "x86_64-linux"];
+          systems = [
+            "aarch64-linux"
+            "x86_64-linux"
+          ];
         };
         settings = {
           experimental-features = [
             "nix-command"
             "flakes"
           ];
-          extra-trusted-users = ["motheki"];
+          extra-trusted-users = [ "motheki" ];
           always-allow-substitutes = true;
-          extra-substituters = ["https://cache.numtide.com"];
+          extra-substituters = [ "https://cache.numtide.com" ];
           extra-trusted-public-keys = [
             "niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g="
           ];
         };
       };
 
-      nixpkgs.config.allowUnfree = true;
-
-      system = {
-        stateVersion = 7;
-        tools.darwin-uninstaller.enable = true;
-      };
-      documentation.doc.enable = true;
+      system.tools.darwin-uninstaller.enable = true;
       security.pam.services.sudo_local.touchIdAuth = true;
 
+      # Home Manager owns completion and Starship owns the prompt. Keep the
+      # system Zsh module from initializing either one a second time.
       programs.zsh = {
-        # Home Manager initializes completion after extending fpath.
         enableGlobalCompInit = false;
-        # Starship supplies the prompt in the user configuration.
         promptInit = "";
       };
 
+      # nix-homebrew pins and owns Homebrew itself. nix-darwin, below, owns
+      # the declarative Brewfile of formulae and applications.
       nix-homebrew = {
         enable = true;
         enableRosetta = true;
-        # Own shellenv initialization so it is emitted only once.
         enableZshIntegration = true;
         user = "motheki";
-        autoMigrate = false;
         mutableTaps = false;
         taps = {
           "homebrew/homebrew-core" = inputs.homebrew-core;
@@ -61,19 +55,21 @@
           "dmtrkovalenko/homebrew-fff" = inputs.fff-mcp;
           "oleksandrchekhovskyi/homebrew-hax" = inputs.hax;
         };
+
+        # Trust only the third-party formulae that this configuration installs,
+        # rather than granting every present and future formula in each tap.
+        trust.formulae = [
+          "wix/brew/applesimutils"
+          "dmtrkovalenko/fff/fff-mcp"
+          "oleksandrchekhovskyi/hax/hax"
+        ];
       };
 
       homebrew = {
         enable = true;
-        taps = [
-          "homebrew/homebrew-core"
-          "homebrew/homebrew-cask"
-          "wix/brew"
-          "dmtrkovalenko/fff"
-          "oleksandrchekhovskyi/hax"
-        ];
+        taps = builtins.attrNames config.nix-homebrew.taps;
 
-        # nix-homebrew provides the shell integration above.
+        # nix-homebrew emits shellenv once for both native and Rosetta prefixes.
         enableZshIntegration = false;
         brews = [
           "cocoapods"
@@ -82,52 +78,45 @@
           "dmtrkovalenko/fff/fff-mcp"
           "oleksandrchekhovskyi/hax/hax"
         ];
-
+        casks = [
+          "android-studio-preview@canary"
+          "betterdisplay"
+          "cleanshot"
+          "codex-app"
+          "crossover"
+          "daisydisk"
+          "expo-orbit"
+          "iina"
+          "linear"
+          "steam"
+          "zoom"
+        ];
         greedyCasks = true;
-        global = {
-          autoUpdate = true;
-          brewfile = false;
-        };
         caskArgs = {
           appdir = "~/Applications";
           require_sha = false;
         };
-        casks = [
-          "android-studio-preview@canary"
-          "crossover"
-          "codex-app"
-          "zoom"
-          "steam"
-          "cleanshot"
-          "betterdisplay"
-          "daisydisk"
-          "linear"
-          "iina"
-          "expo-orbit"
-          #"obs"
-        ];
+        global = {
+          autoUpdate = true;
+          brewfile = false;
+        };
         onActivation = {
           autoUpdate = true;
           upgrade = true;
-          extraFlags = [
-            "--force-cleanup"
-            "--zap"
-          ];
+          cleanup = "zap";
           extraEnv = {
             HOMEBREW_NO_ANALYTICS = "1";
             HOMEBREW_NO_ENV_HINTS = "1";
-            HOMEBREW_DEVELOPER = "1";
             HOMEBREW_NO_ASK = "1";
-            # Remove once Homebrew recognizes macOS 27.
-            HOMEBREW_FAKE_MACOS = "26";
           };
         };
       };
 
+      # Reuse nix-darwin's package set in Home Manager for one consistent
+      # nixpkgs configuration and one package evaluation.
       home-manager = {
         useGlobalPkgs = true;
         useUserPackages = true;
       };
     };
-  };
 }

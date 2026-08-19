@@ -1,0 +1,7 @@
+# Local Nix evaluation/build artifacts
+/.direnv/
+/result
+/result-*
+
+# Coding-agent runtime artifacts are not configuration source.
+/.pi/
