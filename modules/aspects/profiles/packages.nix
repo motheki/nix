@@ -24,6 +24,7 @@ _: {
       imagemagickBig
       inetutils
       jless
+      linear
       mdfried
       mos
       mosh
@@ -38,6 +39,7 @@ _: {
       rustscan
       scc
       sd
+      skim
       tuicr
       vulnix
       xcp

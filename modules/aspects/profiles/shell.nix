@@ -28,7 +28,7 @@ _: {
 
       programs = {
         carapace.enable = true;
-        skim.enable = true;
+        skim.enable = false;
         starship.enable = true;
         vivid = {
           enable = true;

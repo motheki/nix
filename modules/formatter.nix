@@ -5,9 +5,7 @@
   perSystem.treefmt = {
     projectRootFile = "flake.nix";
     programs = {
-      nixfmt.enable = true;
       alejandra.enable = true;
-      deadnix.enable = true;
       statix.enable = true;
     };
   };

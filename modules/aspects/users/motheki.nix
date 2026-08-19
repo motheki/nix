@@ -4,13 +4,6 @@
   den.aspects.motheki.includes = [
     den.batteries.primary-user
     (den.batteries.user-shell "zsh")
-    (den.batteries.unfree [
-      "discord"
-      "faster.nvim"
-      "mos"
-      "orbstack"
-    ])
-
     den.aspects.profiles.applications
     den.aspects.profiles.command-line
     den.aspects.profiles.development

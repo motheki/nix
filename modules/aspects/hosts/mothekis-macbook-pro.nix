@@ -86,11 +86,9 @@
           "betterdisplay"
           "cleanshot"
           "codex-app"
-          "crossover"
           "daisydisk"
           "expo-orbit"
           "iina"
-          "linear"
           "steam"
           "zoom"
         ];

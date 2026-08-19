@@ -13,7 +13,13 @@
 
     # State versions are compatibility markers. Keep them fixed unless the
     # corresponding migration notes have been reviewed.
-    darwin.system.stateVersion = 7;
+    darwin = {
+      system.stateVersion = 7;
+
+      # Home Manager reuses each Darwin host's package set, so this allows
+      # unfree packages consistently for both system and user packages.
+      nixpkgs.config.allowUnfree = true;
+    };
     homeManager.home = {
       stateVersion = "26.11";
       enableNixpkgsReleaseCheck = true;

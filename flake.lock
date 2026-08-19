@@ -12,6 +12,7 @@
       },
       "original": {
         "owner": "wix",
+        "ref": "master",
         "repo": "homebrew-brew",
         "type": "github"
       }
@@ -28,6 +29,7 @@
       },
       "original": {
         "owner": "Homebrew",
+        "ref": "main",
         "repo": "brew",
         "type": "github"
       }
@@ -96,6 +98,7 @@
       },
       "original": {
         "owner": "denful",
+        "ref": "main",
         "repo": "den",
         "type": "github"
       }
@@ -112,6 +115,7 @@
       },
       "original": {
         "owner": "dmtrKovalenko",
+        "ref": "main",
         "repo": "homebrew-fff",
         "type": "github"
       }
@@ -147,6 +151,7 @@
       },
       "original": {
         "owner": "hercules-ci",
+        "ref": "main",
         "repo": "flake-parts",
         "type": "github"
       }
@@ -184,6 +189,7 @@
       },
       "original": {
         "owner": "OleksandrChekhovskyi",
+        "ref": "master",
         "repo": "homebrew-hax",
         "type": "github"
       }
@@ -204,6 +210,7 @@
       },
       "original": {
         "owner": "nix-community",
+        "ref": "master",
         "repo": "home-manager",
         "type": "github"
       }
@@ -211,15 +218,16 @@
     "homebrew-cask": {
       "flake": false,
       "locked": {
-        "lastModified": 1787109326,
-        "narHash": "sha256-McVXZ44NEiPPec4jT+uj+2TKOPFme8h9CYcMm7ZDCTk=",
+        "lastModified": 1787113285,
+        "narHash": "sha256-LoQp0wA9u4UyHtWX3uu/tAvxsIbloCqQlNOqRgtSQrc=",
         "owner": "Homebrew",
         "repo": "homebrew-cask",
-        "rev": "9fb54d6e73ddd5bed301fbab5647f332b4f95b6f",
+        "rev": "4898c5d32aadea888e23104cde3b5c38da54cd6f",
         "type": "github"
       },
       "original": {
         "owner": "Homebrew",
+        "ref": "main",
         "repo": "homebrew-cask",
         "type": "github"
       }
@@ -227,15 +235,16 @@
     "homebrew-core": {
       "flake": false,
       "locked": {
-        "lastModified": 1787111001,
-        "narHash": "sha256-EK97UECK6yMr6+MQV9Vupbbbd5E2erxUoxXufFh/GHg=",
+        "lastModified": 1787114019,
+        "narHash": "sha256-VgEYsrw9kctr1cmDDE9Fxg3XBeS2xoXMau8fc2+5pys=",
         "owner": "Homebrew",
         "repo": "homebrew-core",
-        "rev": "3d1d10285660f88c8cf7c9f3f5c8d4bb4e8ba3bf",
+        "rev": "4fcb116e8fe1002efebfeb07fea2e59fbb859846",
         "type": "github"
       },
       "original": {
         "owner": "Homebrew",
+        "ref": "main",
         "repo": "homebrew-core",
         "type": "github"
       }
@@ -251,6 +260,7 @@
       },
       "original": {
         "owner": "denful",
+        "ref": "main",
         "repo": "import-tree",
         "type": "github"
       }
@@ -264,15 +274,16 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1787102162,
-        "narHash": "sha256-Zegl5b0Y9J8z0kLp3uAivx4mlD4eva4QqK9ldFKnIGw=",
+        "lastModified": 1787114088,
+        "narHash": "sha256-LYHdEFpZ5Zx6VgKmbhG3SGEUUtV/zksg+YcZT3e9mHg=",
         "owner": "numtide",
         "repo": "llm-agents.nix",
-        "rev": "423bff68ca3b27856d3dc4a8752784dac8ac48c0",
+        "rev": "c4c6673c4c1ceb69d845fa665a714e1273d0acac",
         "type": "github"
       },
       "original": {
         "owner": "numtide",
+        "ref": "main",
         "repo": "llm-agents.nix",
         "type": "github"
       }
@@ -293,6 +304,7 @@
       },
       "original": {
         "owner": "zhaofengli",
+        "ref": "main",
         "repo": "nix-homebrew",
         "type": "github"
       }
@@ -315,16 +327,16 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1787052956,
-        "narHash": "sha256-fZt7Au28AduGpt7vRfIOcpsHKJ+9cEnuQ2NdWuh0KVc=",
+        "lastModified": 1787113699,
+        "narHash": "sha256-tVW3SpFP43nbfFcW0A15VtErQRNO0zOXm5pBiu77QHo=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "b47ad65d73ab65ded9ab408fe558866d71defee8",
+        "rev": "628d4144bed41072ec77e46e6d4c7050843647c6",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "nixpkgs-unstable",
+        "ref": "master",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -349,6 +361,7 @@
       },
       "original": {
         "owner": "nix-community",
+        "ref": "main",
         "repo": "nixvim",
         "type": "github"
       }
@@ -446,6 +459,7 @@
       },
       "original": {
         "owner": "numtide",
+        "ref": "main",
         "repo": "treefmt-nix",
         "type": "github"
       }
