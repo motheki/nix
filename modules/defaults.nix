@@ -3,8 +3,7 @@
   den,
   lib,
   ...
-}:
-{
+}: {
   den.default = {
     includes = [
       den.batteries.define-user
@@ -27,5 +26,5 @@
   };
 
   # Host users receive an integrated Home Manager configuration by default.
-  den.schema.user.classes = lib.mkDefault [ "homeManager" ];
+  den.schema.user.classes = lib.mkDefault ["homeManager"];
 }

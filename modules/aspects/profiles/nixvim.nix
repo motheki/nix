@@ -1,8 +1,8 @@
 # NixVim keeps the editor, language servers, and plugins in one feature module;
 # its upstream Home Manager module is imported only where these options are used.
-{ inputs, ... }: {
-  den.aspects.profiles.nixvim.homeManager = { ... }: {
-    imports = [ inputs.nixvim.homeModules.nixvim ];
+{inputs, ...}: {
+  den.aspects.profiles.nixvim.homeManager = {...}: {
+    imports = [inputs.nixvim.homeModules.nixvim];
 
     programs.nixvim = {
       enable = true;
@@ -160,36 +160,36 @@
           enable = true;
           mockDevIcons = true;
           modules = {
-            align = { };
-            bracketed = { };
-            bufremove = { };
-            clue = { };
-            colors = { };
-            comment = { };
-            completion = { };
-            cursorword = { };
-            diff = { };
-            doc = { };
-            files = { };
-            fuzzy = { };
-            git = { };
-            hipatterns = { };
-            icons = { };
-            indentscope = { };
-            keymap = { };
-            map = { };
-            operators = { };
-            pairs = { };
-            pick = { };
-            sessions = { };
-            snippets = { };
-            splitjoin = { };
-            statusline = { };
-            starter = { };
-            surround = { };
-            tabline = { };
-            trailspace = { };
-            visits = { };
+            align = {};
+            bracketed = {};
+            bufremove = {};
+            clue = {};
+            colors = {};
+            comment = {};
+            completion = {};
+            cursorword = {};
+            diff = {};
+            doc = {};
+            files = {};
+            fuzzy = {};
+            git = {};
+            hipatterns = {};
+            icons = {};
+            indentscope = {};
+            keymap = {};
+            map = {};
+            operators = {};
+            pairs = {};
+            pick = {};
+            sessions = {};
+            snippets = {};
+            splitjoin = {};
+            statusline = {};
+            starter = {};
+            surround = {};
+            tabline = {};
+            trailspace = {};
+            visits = {};
           };
         };
         lsp = {

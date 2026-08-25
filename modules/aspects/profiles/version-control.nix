@@ -1,11 +1,8 @@
 # Git, Jujutsu, SSH, and the supporting repository tools share one profile so
 # identity and signing policy remain consistent.
 _: {
-  den.aspects.profiles.version-control.homeManager = { pkgs, ... }: {
-    services = {
-      ssh-agent.enable = true;
-      radicle.node.enable = true;
-    };
+  den.aspects.profiles.version-control.homeManager = {pkgs, ...}: {
+    services.radicle.node.enable = true;
 
     programs = {
       delta = {

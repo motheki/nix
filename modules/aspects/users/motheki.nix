@@ -1,6 +1,6 @@
 # User identity and composition only. Feature implementation lives in the
 # profiles below so this file remains a readable inventory of the home setup.
-{ den, ... }: {
+{den, ...}: {
   den.aspects.motheki.includes = [
     den.batteries.primary-user
     (den.batteries.user-shell "zsh")

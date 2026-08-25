@@ -1,7 +1,7 @@
 # Desktop applications whose Home Manager modules provide useful declarative
 # settings. Homebrew-only applications remain in the host aspect.
 _: {
-  den.aspects.profiles.applications.homeManager = { pkgs, ... }: {
+  den.aspects.profiles.applications.homeManager = {pkgs, ...}: {
     programs = {
       ghostty = {
         enable = true;

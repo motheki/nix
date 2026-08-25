@@ -1,7 +1,7 @@
 # Packages without a dedicated Home Manager module. The groups document why a
 # package belongs in the user profile without creating overlay indirection.
 _: {
-  den.aspects.profiles.packages.homeManager = { pkgs, ... }: {
+  den.aspects.profiles.packages.homeManager = {pkgs, ...}: {
     home.packages = with pkgs; [
       # Desktop
       webtorrent_desktop
@@ -26,7 +26,6 @@ _: {
       jless
       linear
       mdfried
-      mos
       mosh
       nix-diff
       nix-melt
@@ -39,7 +38,6 @@ _: {
       rustscan
       scc
       sd
-      skim
       tuicr
       vulnix
       xcp

@@ -4,8 +4,7 @@
   inputs,
   lib,
   ...
-}:
-{
+}: {
   imports = [
     inputs.flake-file.flakeModules.dendritic
     inputs.den.flakeModules.dendritic
@@ -14,7 +13,7 @@
   flake-file = {
     description = "Motheki's declarative macOS configuration";
     inputs = {
-      flake-file.url = lib.mkDefault "github:vic/flake-file";
+      flake-file.url = lib.mkDefault "github:denful/flake-file";
       den.url = lib.mkDefault "github:denful/den";
     };
   };
