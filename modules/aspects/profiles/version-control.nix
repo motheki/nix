@@ -4,6 +4,7 @@ _: {
   den.aspects.profiles.version-control.homeManager = {pkgs, ...}: {
     services.radicle.node = {
       enable = true;
+      lazy.enable = true;
     };
 
     programs = {
