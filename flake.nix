@@ -6,10 +6,6 @@
   outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
 
   inputs = {
-    apple-simutil = {
-      url = "github:wix/homebrew-brew";
-      flake = false;
-    };
     brew-src = {
       url = "github:Homebrew/brew";
       flake = false;
@@ -27,10 +23,6 @@
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs-lib";
-    };
-    hax = {
-      url = "github:OleksandrChekhovskyi/homebrew-hax";
-      flake = false;
     };
     home-manager = {
       url = "github:nix-community/home-manager";

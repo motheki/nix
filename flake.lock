@@ -1,21 +1,5 @@
 {
   "nodes": {
-    "apple-simutil": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1750234060,
-        "narHash": "sha256-mtfyNgLgmXpOUbctd0nIcq3hmLs0KB7Nw5e5Y3IkRlI=",
-        "owner": "wix",
-        "repo": "homebrew-brew",
-        "rev": "8f636f84541e08e850f455d7cffdfbd7ba305d3f",
-        "type": "github"
-      },
-      "original": {
-        "owner": "wix",
-        "repo": "homebrew-brew",
-        "type": "github"
-      }
-    },
     "brew-src": {
       "flake": false,
       "locked": {
@@ -169,22 +153,6 @@
       "original": {
         "owner": "hercules-ci",
         "repo": "flake-parts",
-        "type": "github"
-      }
-    },
-    "hax": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1787401265,
-        "narHash": "sha256-vL2KZWRjgp/MC2daH4z12guruY6cEnHvmXfEbldgQno=",
-        "owner": "OleksandrChekhovskyi",
-        "repo": "homebrew-hax",
-        "rev": "813efedbe1fcf9c672ffe2d7f014841980aac1a4",
-        "type": "github"
-      },
-      "original": {
-        "owner": "OleksandrChekhovskyi",
-        "repo": "homebrew-hax",
         "type": "github"
       }
     },
@@ -355,14 +323,12 @@
     },
     "root": {
       "inputs": {
-        "apple-simutil": "apple-simutil",
         "brew-src": "brew-src",
         "darwin": "darwin",
         "den": "den",
         "fff-mcp": "fff-mcp",
         "flake-file": "flake-file",
         "flake-parts": "flake-parts",
-        "hax": "hax",
         "home-manager": "home-manager",
         "homebrew-cask": "homebrew-cask",
         "homebrew-core": "homebrew-core",

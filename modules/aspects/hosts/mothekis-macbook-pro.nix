@@ -3,13 +3,11 @@
 {inputs, ...}: {
   den.aspects.mothekis-macbook-pro.darwin = {
     config,
-    pkgs,
     ...
   }: {
     imports = [inputs.nix-homebrew.darwinModules.nix-homebrew];
 
     nix = {
-      package = pkgs.nixVersions.latest;
       linux-builder = {
         enable = false;
         systems = [
@@ -67,17 +65,13 @@
       taps = {
         "homebrew/homebrew-core" = inputs.homebrew-core;
         "homebrew/homebrew-cask" = inputs.homebrew-cask;
-        "wix/homebrew-brew" = inputs.apple-simutil;
         "dmtrkovalenko/homebrew-fff" = inputs.fff-mcp;
-        "oleksandrchekhovskyi/homebrew-hax" = inputs.hax;
       };
 
       # Trust only the third-party formulae that this configuration installs,
       # rather than granting every present and future formula in each tap.
       trust.formulae = [
-        "wix/brew/applesimutils"
         "dmtrkovalenko/fff/fff-mcp"
-        "oleksandrchekhovskyi/hax/hax"
       ];
     };
 
@@ -89,27 +83,17 @@
       enableZshIntegration = false;
       brews = [
         "cocoapods"
-        "watchman"
-        "wix/brew/applesimutils"
         "dmtrkovalenko/fff/fff-mcp"
-        "oleksandrchekhovskyi/hax/hax"
       ];
       casks = [
         "android-studio-preview@canary"
-        "betterdisplay"
-        "cleanshot"
-        "codex-app"
         "daisydisk"
-        "raycast"
-        "mos"
-        "expo-orbit"
-        "iina"
+        "macparakeet"
         "steam"
-        "zoom"
       ];
       greedyCasks = true;
       caskArgs = {
-        appdir = "~/Applications";
+        appdir = "/Applications";
         require_sha = false;
       };
       global = {

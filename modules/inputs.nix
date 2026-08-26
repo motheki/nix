@@ -53,16 +53,8 @@
       url = "github:Homebrew/homebrew-cask";
       flake = false;
     };
-    apple-simutil = {
-      url = "github:wix/homebrew-brew";
-      flake = false;
-    };
     fff-mcp = {
       url = "github:dmtrKovalenko/homebrew-fff";
-      flake = false;
-    };
-    hax = {
-      url = "github:OleksandrChekhovskyi/homebrew-hax";
       flake = false;
     };
   };

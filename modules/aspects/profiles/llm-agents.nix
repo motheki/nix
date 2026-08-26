@@ -6,14 +6,33 @@
   in {
     # Pi uses Node and Bun from the normal user profile configured by the
     # development profile, rather than a private wrapper or activation hack.
-    home.packages = [
-      packages.goose-cli
-      packages.pi
+    home.packages = with packages; [
+      #chatgpt
+      fx
+      tuicr
     ];
 
+    programs.codex = {
+      enable = true;
+      package = packages.codex;
+    };
+
+    programs.pi-coding-agent = {
+      enable = true;
+      package = packages.pi;
+    };
+
+    programs.herdr = {
+      enable = true;
+      package = packages.herdr;
+      settings.theme = {
+        auto_switch = false;
+        name = "terminal";
+      };
+    };
     programs.opencode = {
       enable = true;
-      package = packages.opencode;
+      package = packages.opencode2;
       tui.theme = "system";
       settings = {
         autoupdate = false;

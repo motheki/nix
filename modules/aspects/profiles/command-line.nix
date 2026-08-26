@@ -35,13 +35,6 @@ _: {
         };
       };
 
-      herdr = {
-        enable = true;
-        settings.theme = {
-          auto_switch = false;
-          name = "terminal";
-        };
-      };
 
       bat = {
         enable = true;

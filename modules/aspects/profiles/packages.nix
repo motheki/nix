@@ -2,6 +2,10 @@
 # package belongs in the user profile without creating overlay indirection.
 _: {
   den.aspects.profiles.packages.homeManager = {pkgs, ...}: {
+    targets.darwin.copyApps = {
+      enable = true;
+      directory = "/Users/motheki/Applications";
+    };
     home.packages = with pkgs; [
       # Desktop
       webtorrent_desktop
@@ -13,16 +17,15 @@ _: {
       comma
       dogedns
       dua
-      duckdb
       duf
       ffmpeg_9-full
       gftp
-      glow
       grip-grab
       httpie
       hyperfine
       imagemagickBig
       inetutils
+      iina
       jless
       linear
       mdfried
@@ -30,7 +33,6 @@ _: {
       nix-diff
       nix-melt
       nix-tree
-      nixpkgs-reviewFull
       openapi-tui
       radicle-tui
       rainfrog
@@ -38,8 +40,8 @@ _: {
       rustscan
       scc
       sd
-      tuicr
       vulnix
+      watchman
       xcp
       yq-go
 
@@ -54,6 +56,8 @@ _: {
       # Fonts used by terminal and editor profiles
       nerd-fonts.agave
       nerd-fonts.commit-mono
+      nerd-fonts.geist-mono
+      nerd-fonts.blex-mono
       nerd-fonts.jetbrains-mono
       nerd-fonts.monaspace
     ];
