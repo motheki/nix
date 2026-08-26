@@ -2,7 +2,9 @@
 # identity and signing policy remain consistent.
 _: {
   den.aspects.profiles.version-control.homeManager = {pkgs, ...}: {
-    services.radicle.node.enable = true;
+    services.radicle.node = {
+      enable = true;
+    };
 
     programs = {
       delta = {

@@ -13,6 +13,7 @@ _: {
       shellAliases = {
         rebuild = "nh darwin switch -H mothekis-macbook-pro";
         clean = "nh clean all -q";
+        be = "batgrep";
       };
       sessionVariables.ANDROID_HOME = androidHome;
       sessionPath = [
