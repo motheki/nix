@@ -2,7 +2,7 @@
 # its upstream Home Manager module is imported only where these options are used.
 {inputs, ...}: {
   den.aspects.profiles.nixvim.homeManager = {...}: {
-    imports = [inputs.nixvim.homeModules.nixvim];
+    imports = [inputs.omniflake.flakes."github:nix-community/nixvim".homeModules.nixvim];
 
     programs.nixvim = {
       enable = true;
@@ -291,7 +291,7 @@
             enable = false;
           };
           settings = {
-            autoInstall = false;
+            autoInstall = true;
             highlight = {
               enable = true;
             };
@@ -301,6 +301,9 @@
           enable = true;
         };
         which-key = {
+          enable = true;
+        };
+        jj = {
           enable = true;
         };
       };

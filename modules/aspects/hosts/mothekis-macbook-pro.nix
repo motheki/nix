@@ -1,8 +1,12 @@
 # Machine-specific nix-darwin configuration. Den associates this aspect with
 # the host of the same name declared in modules/hosts.nix.
-{inputs, ...}: {
+{inputs, ...}: let
+  nixHomebrew = inputs.omniflake.lib.load "nix-homebrew" {
+    inherit (inputs) brew-src;
+  };
+in {
   den.aspects.mothekis-macbook-pro.darwin = {config, ...}: {
-    imports = [inputs.nix-homebrew.darwinModules.nix-homebrew];
+    imports = [nixHomebrew.darwinModules.nix-homebrew];
 
     nix = {
       linux-builder = {
@@ -85,8 +89,16 @@
       casks = [
         "android-studio-preview@canary"
         "daisydisk"
-        "macparakeet"
+        "chatgpt"
         "steam"
+        "thebrowsercompany-dia"
+        "raycast"
+        "betterdisplay"
+        "cleanshot"
+        "linear"
+        "obs"
+        "mos"
+        "zen-browser"
       ];
       greedyCasks = true;
       caskArgs = {

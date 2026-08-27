@@ -4,13 +4,14 @@ _: {
   den.aspects.profiles.version-control.homeManager = {pkgs, ...}: {
     services.radicle.node = {
       enable = true;
-      #lazy.enable = true;
+      lazy.enable = false;
     };
 
     programs = {
       delta = {
         enable = true;
         enableGitIntegration = true;
+        enableJujutsuIntegration = true;
         options = {
           side-by-side = true;
           line-numbers = true;
@@ -78,7 +79,6 @@ _: {
             email = "trevoropiyo@trevoropiyo.com";
           };
           ui = {
-            pager = "delta";
             diff-formatter = ":git";
             editor = "nvim";
             default-command = "log";

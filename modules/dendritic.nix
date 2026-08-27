@@ -1,20 +1,17 @@
-# Bootstrap the two module frameworks used by the repository. flake-file owns
-# flake.nix, while Den turns host and user aspects into standard flake outputs.
-{
-  inputs,
-  lib,
-  ...
-}: {
+# Bootstrap the two module frameworks used by the repository through OmniFlake.
+# flake-file owns flake.nix, while Den turns host and user aspects into outputs.
+{inputs, ...}: let
+  flakes = inputs.omniflake.flakes;
+in {
   imports = [
-    inputs.flake-file.flakeModules.dendritic
-    inputs.den.flakeModules.dendritic
+    flakes."github:denful/flake-file".flakeModules.default
+    flakes."github:hercules-ci/flake-parts".flakeModules.modules
+    flakes."github:denful/den".flakeModule
   ];
 
   flake-file = {
     description = "Motheki's declarative macOS configuration";
-    inputs = {
-      flake-file.url = lib.mkDefault "github:denful/flake-file";
-      den.url = lib.mkDefault "github:denful/den";
-    };
+    formatter = pkgs: pkgs.alejandra;
   };
+  flake.modules = {};
 }

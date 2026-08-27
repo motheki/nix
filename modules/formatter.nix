@@ -1,6 +1,6 @@
 # `nix fmt` provides one reproducible formatting and static-analysis entrypoint.
 {inputs, ...}: {
-  imports = [inputs.treefmt-nix.flakeModule];
+  imports = [inputs.omniflake.flakes."github:numtide/treefmt-nix".flakeModule];
 
   perSystem.treefmt = {
     projectRootFile = "flake.nix";
@@ -8,6 +8,7 @@
       alejandra.enable = true;
       statix.enable = true;
       deadnix.enable = true;
+      mdformat.enable = true;
     };
   };
 }

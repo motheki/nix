@@ -13,7 +13,6 @@ _: {
       shellAliases = {
         rebuild = "nh darwin switch -H mothekis-macbook-pro";
         clean = "nh clean all -q";
-        be = "batgrep";
       };
       sessionVariables.ANDROID_HOME = androidHome;
       sessionPath = [
@@ -33,7 +32,7 @@ _: {
       starship.enable = true;
       vivid = {
         enable = true;
-        activeTheme = "rose-pine-moon";
+        activeTheme = "rose-pine-dawn";
       };
       zoxide.enable = true;
 

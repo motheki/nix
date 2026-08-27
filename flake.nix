@@ -3,30 +3,29 @@
 {
   description = "Motheki's declarative macOS configuration";
 
-  outputs = inputs: inputs.flake-parts.lib.mkFlake {inherit inputs;} (inputs.import-tree ./modules);
+  outputs = inputs: let
+    flakes = inputs.omniflake.flakes;
+    moduleInputs =
+      inputs
+      // {
+        darwin = flakes."github:nix-darwin/nix-darwin";
+        den = flakes."github:denful/den";
+        flake-parts = flakes."github:hercules-ci/flake-parts";
+        home-manager = flakes."github:nix-community/home-manager";
+      };
+  in
+    flakes."github:hercules-ci/flake-parts".lib.mkFlake {inputs = moduleInputs;} (
+      flakes."github:denful/import-tree" ./modules
+    );
 
   inputs = {
     brew-src = {
       url = "github:Homebrew/brew";
       flake = false;
     };
-    darwin = {
-      url = "github:nix-darwin/nix-darwin";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    den.url = "github:denful/den";
     fff-mcp = {
       url = "github:dmtrKovalenko/homebrew-fff";
       flake = false;
-    };
-    flake-file.url = "github:denful/flake-file";
-    flake-parts = {
-      url = "github:hercules-ci/flake-parts";
-      inputs.nixpkgs-lib.follows = "nixpkgs-lib";
-    };
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     homebrew-cask = {
       url = "github:Homebrew/homebrew-cask";
@@ -36,24 +35,14 @@
       url = "github:Homebrew/homebrew-core";
       flake = false;
     };
-    import-tree.url = "github:denful/import-tree";
-    llm-agents.url = "github:numtide/llm-agents.nix";
-    nix-homebrew = {
-      url = "github:zhaofengli/nix-homebrew";
-      inputs.brew-src.follows = "brew-src";
-    };
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-    nixpkgs-lib.follows = "nixpkgs";
-    nixvim = {
-      url = "github:nix-community/nixvim";
+    omniflake = {
+      url = "github:fzakaria/omniflake";
       inputs = {
-        flake-parts.follows = "flake-parts";
+        flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs";
+        flake-utils.inputs.systems.follows = "omniflake/systems";
         nixpkgs.follows = "nixpkgs";
       };
-    };
-    treefmt-nix = {
-      url = "github:numtide/treefmt-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 }

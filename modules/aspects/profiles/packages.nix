@@ -4,7 +4,7 @@ _: {
   den.aspects.profiles.packages.homeManager = {pkgs, ...}: {
     targets.darwin.copyApps = {
       enable = true;
-      directory = "/Users/motheki/Applications";
+      directory = "/Users/motheki/Applications/home-manager";
     };
     home.packages = with pkgs; [
       # Desktop
@@ -27,7 +27,6 @@ _: {
       inetutils
       iina
       jless
-      linear
       mdfried
       mosh
       nix-diff
