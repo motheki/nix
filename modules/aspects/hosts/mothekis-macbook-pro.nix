@@ -5,6 +5,27 @@
     inherit (inputs) brew-src;
   };
 in {
+  # These are source trees, not flakes. Keep their pins beside the Homebrew
+  # aspect that consumes them instead of routing them through omniflake.
+  flake-file.inputs = {
+    brew-src = {
+      url = "github:Homebrew/brew";
+      flake = false;
+    };
+    homebrew-core = {
+      url = "github:Homebrew/homebrew-core";
+      flake = false;
+    };
+    homebrew-cask = {
+      url = "github:Homebrew/homebrew-cask";
+      flake = false;
+    };
+    fff-mcp = {
+      url = "github:dmtrKovalenko/homebrew-fff";
+      flake = false;
+    };
+  };
+
   den.aspects.mothekis-macbook-pro.darwin = {config, ...}: {
     imports = [nixHomebrew.darwinModules.nix-homebrew];
 

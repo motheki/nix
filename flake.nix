@@ -14,9 +14,8 @@
         home-manager = flakes."github:nix-community/home-manager";
       };
   in
-    flakes."github:hercules-ci/flake-parts".lib.mkFlake {inputs = moduleInputs;} (
-      flakes."github:denful/import-tree" ./modules
-    );
+    flakes."github:hercules-ci/flake-parts".lib.mkFlake {inputs = moduleInputs;}
+    (flakes."github:denful/import-tree" ./modules);
 
   inputs = {
     brew-src = {

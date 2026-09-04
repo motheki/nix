@@ -1,5 +1,5 @@
-# Declarative flake inputs. Run `nix run .#write-flake` after editing this file;
-# flake-file will regenerate the small root flake without hand-maintained wiring.
+# Root flake orchestration. Feature dependencies live beside their Den aspects;
+# run `nix run .#write-flake` after changing a flake-file declaration.
 {
   flake-file = {
     # Den expects these names in the module input set. They are OmniFlake-backed
@@ -20,7 +20,7 @@
     '';
 
     inputs = {
-      # OmniFlake substitutes this revision into indexed flakes that expose a
+      # omniflake substitutes this revision into indexed flakes that expose a
       # conventional nixpkgs input.
       nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
       omniflake = {
@@ -30,25 +30,6 @@
           flake-utils.inputs.systems.follows = "omniflake/systems";
           nixpkgs.follows = "nixpkgs";
         };
-      };
-
-      # OmniFlake indexes flakes only. These repositories are source trees used
-      # by nix-homebrew and nix-darwin, so they remain direct non-flake inputs.
-      brew-src = {
-        url = "github:Homebrew/brew";
-        flake = false;
-      };
-      homebrew-core = {
-        url = "github:Homebrew/homebrew-core";
-        flake = false;
-      };
-      homebrew-cask = {
-        url = "github:Homebrew/homebrew-cask";
-        flake = false;
-      };
-      fff-mcp = {
-        url = "github:dmtrKovalenko/homebrew-fff";
-        flake = false;
       };
     };
   };

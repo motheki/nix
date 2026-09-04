@@ -1,5 +1,5 @@
-# Bootstrap the two module frameworks used by the repository through OmniFlake.
-# flake-file owns flake.nix, while Den turns host and user aspects into outputs.
+# Bootstrap the module frameworks used by the repository through omniflake.
+# flake-file owns flake.nix, while Den turns aspects into system outputs.
 {inputs, ...}: let
   flakes = inputs.omniflake.flakes;
 in {
