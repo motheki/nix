@@ -1,9 +1,9 @@
 # AI coding tools are consumed from their OmniFlake entry. No overlay is needed
 # because these packages do not need to become part of the shared pkgs.
 {inputs, ...}: {
-  den.aspects.profiles.llm-agents.homeManager = {pkgs, ...}: let
+  den.aspects.features.llm-tools.homeManager = {pkgs, ...}: let
     packages =
-      inputs.omniflake.flakes."github:numtide/llm-agents.nix".packages.${pkgs.stdenv.hostPlatform.system};
+      (import ../../_lib/optional-inputs.nix inputs).llm-agents.packages.${pkgs.stdenv.hostPlatform.system};
   in {
     # Pi uses Node and Bun from the normal user profile configured by the
     # development profile, rather than a private wrapper or activation hack.

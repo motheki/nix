@@ -1,0 +1,45 @@
+---
+name: Nix configuration
+
+"on":
+  pull_request:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: nix-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  darwin:
+    runs-on: macos-15
+    timeout-minutes: 90
+    steps:
+      # actions/checkout v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Require the actual host architecture
+        run: test "$(uname -m)" = arm64
+      # cachix/install-nix-action v31
+      - uses: cachix/install-nix-action@13d8dd58da0234aa297dedd986986ccb8e7f3e24
+        with:
+          # Nix settings and signing keys require single physical lines.
+          # yamllint disable rule:line-length
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+            max-jobs = 2
+            cores = 4
+            extra-substituters = https://cache.numtide.com https://nix-community.cachix.org
+            extra-trusted-public-keys = niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g= nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=
+          # yamllint enable rule:line-length
+      - name: Build formatting, generated-flake, policy and command checks
+        run: nix run --no-write-lock-file .#check
+      - name: Build the Darwin activation package (never activate)
+        run: nix run --no-write-lock-file .#build
+      - name: Show consumed dependency revisions
+        run: nix run --no-write-lock-file .#dependencies

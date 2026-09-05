@@ -1,13 +1,10 @@
-# Git, Jujutsu, SSH, and the supporting repository tools share one profile so
-# identity and signing policy remain consistent.
+# Shared VCS behavior and signing policy. Personal identities live in users/.
 _: {
-  den.aspects.profiles.version-control.homeManager = {pkgs, ...}: {
-    services.radicle.node = {
-      enable = true;
-      lazy.enable = false;
-    };
-
+  den.aspects.features.version-control.homeManager = {pkgs, ...}: {
     programs = {
+      # The upstream node service is systemd-only. Keep the CLI available,
+      # without pretending it starts a macOS background service.
+      radicle.enable = true;
       delta = {
         enable = true;
         enableGitIntegration = true;
@@ -47,11 +44,6 @@ _: {
           "node_modules/"
         ];
         settings = {
-          user = {
-            name = "trevoropiyo";
-            email = "trevoropiyo@trevoropiyo.com";
-            signingkey = "~/.ssh/trevoropiyo.pub";
-          };
           commit.gpgsign = true;
           format.signoff = true;
           gpg.format = "ssh";
@@ -74,10 +66,6 @@ _: {
       jujutsu = {
         enable = true;
         settings = {
-          user = {
-            name = "Trevor Opiyo";
-            email = "trevoropiyo@trevoropiyo.com";
-          };
           ui = {
             diff-formatter = ":git";
             editor = "nvim";
@@ -86,8 +74,6 @@ _: {
           signing = {
             behavior = "drop";
             backend = "ssh";
-            key = "~/.ssh/trevoropiyo.pub";
-            backends.ssh.allowed-signers = "~/.ssh/allowed_signers";
           };
           remotes.origin.auto-track-bookmarks = "*";
           fsmonitor = {
@@ -113,7 +99,6 @@ _: {
         settings."*" = {
           IgnoreUnknown = "UseKeychain";
           AddKeysToAgent = "yes";
-          IdentityFile = "~/.ssh/trevoropiyo";
           UseKeychain = "yes";
         };
       };

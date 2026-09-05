@@ -3,5 +3,10 @@
 /result
 /result-*
 
+# Local Python tooling artifacts
+__pycache__/
+*.pyc
+/.ruff_cache/
+
 # Coding-agent runtime artifacts are not configuration source.
 /.pi/

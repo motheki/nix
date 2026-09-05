@@ -1,11 +1,7 @@
 # General-purpose terminal programs. Development toolchains and interactive
 # shell behavior are kept in their own profiles.
 _: {
-  den.aspects.profiles.command-line.homeManager = {
-    config,
-    pkgs,
-    ...
-  }: {
+  den.aspects.features.command-line.homeManager = {pkgs, ...}: {
     fonts.fontconfig.enable = true;
     services.pueue.enable = true;
 
@@ -26,14 +22,7 @@ _: {
       television.enable = true;
       tiny.enable = true;
 
-      nh = {
-        enable = true;
-        flake = "${config.home.homeDirectory}/Repos/personal/nix";
-        clean = {
-          enable = true;
-          extraArgs = "--optimise --max";
-        };
-      };
+      nh.enable = true;
 
       bat = {
         enable = true;
