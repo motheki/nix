@@ -99,6 +99,22 @@ Switching an optional package to `omniflake.pinned` is a compatibility/cache
 experiment, not a universal optimization. Compare derivation paths, missing
 substitutes and closure sizes before changing the loading policy.
 
+## Operational scripts and Python tooling
+
+The public interface is the packaged `nix run .#<command>` outputs. Files under
+`scripts/` are internal implementations and should not be invoked directly during
+normal operation.
+
+| Component | Purpose and boundary | Dependency | Long-term status |
+| --- | --- | --- | --- |
+| `scripts/config.sh` | Dispatches builds, switches, updates, maintenance, diagnostics, diagrams and benchmarks. It is the imperative safety boundary: previews are the default, activation is explicit and cleanup policy is validated before use. | Bash plus the pinned runtime tools in `modules/commands.nix` | Retain. Split only if commands need independent dependencies or the shared dispatcher becomes difficult to test. |
+| `scripts/diagram.py` | Converts the evaluated Den aspect trace from JSON to deterministic Mermaid without changing configuration. | Python standard library only | Optional but inexpensive. Remove if diagrams are no longer used or Den provides an equivalent stable renderer. |
+| `tests/test_commands.py` | Runs the dispatcher against fake executables in temporary repositories and unit-tests the diagram renderer without touching the host. | Python standard library only | Retain as a safety suite while imperative commands exist. Do not replace it with shell-only assertions. |
+
+Python is repository tooling, not part of the configuration domain model or the
+activated system's application architecture. Avoid introducing a Python package
+or third-party test framework unless the tooling grows enough to require one.
+
 ## Diagrams and extension
 
 `nix run .#diagram > /tmp/aspects.mmd` renders actual Den resolution parent edges.

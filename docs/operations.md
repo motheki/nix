@@ -30,6 +30,20 @@ The test suite does not start launchd jobs or verify TCC interaction. Building a
 plist is not proof of successful activation. The CI workflow only builds; it
 never switches, cleans profiles, manages Homebrew or reads signing credentials.
 
+After an intentional switch or a risky configuration change, manually verify:
+
+- both user and system launchd jobs are loaded, then inspect their next exit status
+  and logs;
+- Home Manager applications were copied and remain launchable with the expected
+  App Management permissions;
+- any TCC prompts were granted only to the intended local application;
+- the previous system generation still exists and the recorded rollback path is
+  executable.
+
+These runtime checks are release/activation procedures, not candidates for hosted
+CI: automating them would require mutating the active Mac and granting privileged
+or graphical access.
+
 ## Updates
 
 Perform maintenance regularly rather than indefinitely deferring security fixes.

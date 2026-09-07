@@ -23,15 +23,22 @@ name = pathlib.Path(sys.argv[0]).name
 args = sys.argv[1:]
 with open(os.environ["CALL_LOG"], "a") as stream:
     stream.write(json.dumps([name, *args]) + "\\n")
+if os.environ.get("FAIL_COMMAND") == name:
+    sys.exit(7)
 if name == "nix":
     if any("maintenancePolicy" in a for a in args):
         print(os.environ["POLICY"])
     elif any("dependencyManifest" in a for a in args):
-        print(json.dumps({"revision": "new" if pathlib.Path(os.environ["UPDATED"]).exists() else "old"}))
+        revision = "new" if pathlib.Path(os.environ["UPDATED"]).exists() else "old"
+        print(json.dumps({"z-last": True, "revision": revision, "a-first": True}))
+    elif any("aspectTrace" in a for a in args):
+        print(json.dumps([{"name": "child", "parent": "root"}]))
     elif any("homebrew.brewfile" in a for a in args):
         print('cask "example"')
     elif args[:2] == ["flake", "update"]:
         pathlib.Path(os.environ["UPDATED"]).touch()
+if name == "launchctl":
+    sys.exit(1)
 if name == "sudo":
     sys.exit(subprocess.call(args))
 """
@@ -49,7 +56,7 @@ class Commands(unittest.TestCase):
         self.bin = root / "bin"
         self.bin.mkdir()
         self.log = root / "calls.jsonl"
-        for name in ("nix", "nh", "sudo", "brew"):
+        for name in ("nix", "nh", "sudo", "brew", "launchctl"):
             executable = self.bin / name
             executable.write_text(f"#!{sys.executable}\n" + FAKE)
             executable.chmod(0o755)
@@ -173,6 +180,48 @@ class Commands(unittest.TestCase):
         self.assertNotIn("update", call)
         self.assertNotIn("--zap", call)
 
+    def test_dependencies_are_sorted_and_read_only(self):
+        result = self.run_command("dependencies")
+        self.assertLess(
+            result.stdout.index('"a-first"'), result.stdout.index('"z-last"')
+        )
+        (call,) = self.calls("nix")
+        self.assertIn("dependencyManifest", " ".join(call))
+        self.assertFalse(self.calls("nh"))
+        self.assertFalse(self.calls("brew"))
+
+    def test_doctor_is_read_only_and_tolerates_unloaded_jobs(self):
+        result = self.run_command("doctor")
+        self.assertEqual(len(self.calls("launchctl")), 2)
+        self.assertIn("is not loaded", result.stdout)
+        self.assertFalse(self.calls("nh"))
+        self.assertFalse(self.calls("brew"))
+        self.assertFalse(self.calls("sudo"))
+
+    def test_diagram_connects_nix_trace_to_renderer(self):
+        result = self.run_command("diagram")
+        self.assertIn("flowchart TD", result.stdout)
+        self.assertIn(" --> ", result.stdout)
+        (call,) = self.calls("nix")
+        self.assertIn("aspectTrace", " ".join(call))
+
+    def test_benchmark_runs_serial_evaluations_without_mutation(self):
+        result = self.run_command("benchmark")
+        evaluations = [
+            call
+            for call in self.calls("nix")
+            if call[1:3] == ["eval", "--no-write-lock-file"]
+        ]
+        self.assertEqual(len(evaluations), 6)
+        self.assertEqual(
+            [call[call.index("eval-cache") + 1] for call in evaluations],
+            ["true"] * 3 + ["false"] * 3,
+        )
+        self.assertIn("eval-cache=true run=1", result.stdout)
+        self.assertFalse(self.calls("nh"))
+        self.assertFalse(self.calls("brew"))
+        self.assertFalse(self.calls("sudo"))
+
     def test_update_groups_are_disjoint(self):
         expected = {
             "update-core": [
@@ -204,6 +253,23 @@ class Commands(unittest.TestCase):
                 self.assertEqual(update[5:], inputs)
                 self.assertFalse(self.calls("nh"))
                 self.assertFalse(self.calls("brew"))
+
+    def test_missing_brew_fails_before_action(self):
+        self.env["NIX_CONFIG_BREW"] = str(self.repo / "missing-brew")
+        self.run_command("maintenance", "--brew", success=False)
+        self.assertFalse(self.calls("brew"))
+        self.assertFalse(self.calls("sudo"))
+
+    def test_underlying_command_failure_propagates(self):
+        self.env["FAIL_COMMAND"] = "nix"
+        result = self.run_command("build", success=False)
+        self.assertEqual(result.returncode, 7)
+        self.assertFalse(self.calls("nh"))
+
+    def test_unknown_and_default_commands_fail_closed(self):
+        self.run_command("unknown", success=False)
+        self.run_command(success=False)
+        self.assertFalse(self.calls())
 
     def test_invalid_args_and_host_fail_closed(self):
         self.run_command("maintenance", "--unknown", success=False)
@@ -240,16 +306,18 @@ class Diagram(unittest.TestCase):
         self.assertIn("&quot;", output)
 
     def test_invalid_input_fails(self):
-        result = subprocess.run(
-            [sys.executable, str(SCRIPTS / "diagram.py")],
-            input="not-json",
-            capture_output=True,
-            text=True,
-            check=False,
-            timeout=10,
-        )
-        self.assertNotEqual(result.returncode, 0)
-        self.assertIn("Invalid Den trace", result.stderr)
+        for value in ("not-json", "[{}]"):
+            with self.subTest(value=value):
+                result = subprocess.run(
+                    [sys.executable, str(SCRIPTS / "diagram.py")],
+                    input=value,
+                    capture_output=True,
+                    text=True,
+                    check=False,
+                    timeout=10,
+                )
+                self.assertNotEqual(result.returncode, 0)
+                self.assertIn("Invalid Den trace", result.stderr)
 
 
 if __name__ == "__main__":

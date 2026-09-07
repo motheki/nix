@@ -15,6 +15,19 @@
   systemArgs = c.launchd.daemons.nix-profile-cleanup.serviceConfig.ProgramArguments;
   expectedUserArgs = ["clean" "user" "--no-gc"] ++ policy.retentionArgs ++ policy.preserveRootsArgs;
   expectedSystemArgs = ["clean" "profile" policy.systemProfile] ++ policy.retentionArgs ++ policy.preserveRootsArgs;
+  commandNames = [
+    "check"
+    "build"
+    "switch"
+    "dependencies"
+    "update-core"
+    "update-tools"
+    "update-homebrew"
+    "maintenance"
+    "doctor"
+    "diagram"
+    "benchmark"
+  ];
   invariants = {
     safeHomebrew =
       !c.homebrew.onActivation.autoUpdate
@@ -56,7 +69,11 @@
       && inputs.nixpkgs.rev == inputs.nixvim.inputs.nixpkgs.rev;
   };
 in {
-  perSystem = {pkgs, ...}: {
+  perSystem = {
+    config,
+    pkgs,
+    ...
+  }: {
     checks = {
       host-policy = assert lib.assertMsg (lib.all (value: value) (builtins.attrValues invariants))
       "Host policy failed: ${builtins.toJSON invariants}";
@@ -78,6 +95,13 @@ in {
           python3 -m unittest discover -s ${../tests} -v
           touch "$out"
         '';
+      command-wrappers = pkgs.runCommand "configuration-command-wrapper-tests" {} ''
+        ${lib.concatMapStringsSep "\n" (name: ''
+            ${config.packages.${name}}/bin/${name} --help > /dev/null
+          '')
+          commandNames}
+        touch "$out"
+      '';
     };
   };
 }
