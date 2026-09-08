@@ -16,6 +16,7 @@ in {
         "build"
         "switch"
         "dependencies"
+        "update-all"
         "update-core"
         "update-tools"
         "update-homebrew"

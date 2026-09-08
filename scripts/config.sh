@@ -7,7 +7,7 @@ shift || true
 if [[ $# == 1 && $1 == --help ]]; then
   printf '%s\n' \
     'check | build [Nix flags] | switch [nh flags] | doctor | dependencies' \
-    'update-core | update-tools | update-homebrew | diagram | benchmark' \
+    'update-all | update-core | update-tools | update-homebrew | diagram | benchmark' \
     'maintenance [--apply] [--brew] [--optimise]' \
     'Maintenance previews unless --apply is supplied; updates never activate.' \
     'Repository: NIX_CONFIG_REPO, current checkout, then NH_DARWIN_FLAKE.'
@@ -56,16 +56,17 @@ dependencies)
   need_repo
   manifest | jq --sort-keys .
   ;;
-update-core | update-tools | update-homebrew)
+update-all | update-core | update-tools | update-homebrew)
   no_args "$@"
   need_repo
   temporary="$(mktemp -d)"
   trap 'rm -rf "$temporary"' EXIT
   manifest | jq --sort-keys . >"$temporary/before.json"
   case "$command_name" in
+  update-all) inputs=() ;;
   update-core) inputs=(nixpkgs darwin home-manager den flake-parts flake-file import-tree nixvim treefmt-nix) ;;
-  update-tools) inputs=(omniflake) ;;
-  update-homebrew) inputs=(brew-src homebrew-core homebrew-cask fff-mcp) ;;
+  update-tools) inputs=(llm-agents) ;;
+  update-homebrew) inputs=(nix-homebrew brew-src homebrew-core homebrew-cask fff-mcp) ;;
   esac
   nix flake update --flake "$repo" "${inputs[@]}"
   manifest | jq --sort-keys . >"$temporary/after.json"
@@ -154,6 +155,6 @@ benchmark)
   nix path-info -Sh /run/current-system
   ;;
 *)
-  fail 'Commands: check, build, switch, dependencies, update-core, update-tools, update-homebrew, maintenance, doctor, diagram, benchmark.'
+  fail 'Commands: check, build, switch, dependencies, update-all, update-core, update-tools, update-homebrew, maintenance, doctor, diagram, benchmark.'
   ;;
 esac

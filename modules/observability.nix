@@ -10,14 +10,12 @@
     narHash = input.narHash or null;
     lastModified = input.lastModified or null;
   };
-  optional = import ./_lib/optional-inputs.nix inputs;
 in {
   flake.lib = {
     maintenancePolicy = import ./_lib/maintenance.nix;
     dependencyManifest = {
-      policy = "explicit-core; optional-tools use OmniFlake default unification; nix-homebrew overrides brew-src";
+      policy = "all upstream sources are direct flake inputs; shared nixpkgs, flake-parts, treefmt-nix, and brew-src use follows";
       direct = lib.mapAttrs (_: describe) (builtins.removeAttrs inputs ["self"]);
-      optional = lib.mapAttrs (_: describe) optional;
     };
     aspectTrace =
       map (entry: {

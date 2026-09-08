@@ -87,8 +87,8 @@ These are intentionally not guessed or applied indiscriminately:
 - Remove Rosetta/Homebrew's Intel prefix only after identifying Intel-only tools.
 - Enable a Linux builder only for real Linux build workloads, and account for its
   memory budget alongside Android emulators and OrbStack.
-- Compare cache hits/derivation paths before opting llm-agents into upstream pinned
-  inputs; default unification and upstream pins make different tradeoffs.
+- Compare cache hits and derivation paths after llm-agents or its shared nixpkgs
+  input changes; direct input tracking improves freshness but can change substitutes.
 - Raise build concurrency only with a representative uncached workload while
   observing memory pressure, swap and interactive responsiveness. A cached rebuild
   does not meaningfully benchmark compiler parallelism.

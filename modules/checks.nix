@@ -15,11 +15,24 @@
   systemArgs = c.launchd.daemons.nix-profile-cleanup.serviceConfig.ProgramArguments;
   expectedUserArgs = ["clean" "user" "--no-gc"] ++ policy.retentionArgs ++ policy.preserveRootsArgs;
   expectedSystemArgs = ["clean" "profile" policy.systemProfile] ++ policy.retentionArgs ++ policy.preserveRootsArgs;
+  expectedUserToolPaths = [
+    "${h.home.homeDirectory}/Library/Android/sdk/emulator"
+    "${h.home.homeDirectory}/Library/Android/sdk/platform-tools"
+    "${h.home.homeDirectory}/.local/bin"
+    "${h.home.homeDirectory}/.npm/bin"
+    "${h.home.homeDirectory}/Library/pnpm/bin"
+    "${h.home.homeDirectory}/Library/pnpm"
+    "${h.home.homeDirectory}/.yarn/bin"
+    "${h.home.homeDirectory}/.bun/bin"
+    "${h.home.homeDirectory}/.cargo/bin"
+    "${h.home.homeDirectory}/go/bin"
+  ];
   commandNames = [
     "check"
     "build"
     "switch"
     "dependencies"
+    "update-all"
     "update-core"
     "update-tools"
     "update-homebrew"
@@ -51,22 +64,24 @@
     relativeApplications = h.targets.darwin.copyApps.directory == "Applications/home-manager";
     oneMiseActivation = !h.programs.mise.enableZshIntegration && h.programs.direnv.mise.enable;
     oneCompletionOwner = !c.programs.zsh.enableGlobalCompInit && h.programs.zsh.enableCompletion;
-    noMutableRuntimePaths = lib.all (path:
-      !(lib.elem path [
-        "${h.home.homeDirectory}/.bun/bin"
-        "${h.home.homeDirectory}/.cargo/bin"
-      ]))
-    h.home.sessionPath;
+    userToolPaths =
+      h.home.sessionVariables.PNPM_HOME
+      == "${h.home.homeDirectory}/Library/pnpm"
+      && lib.all (path: lib.elem path h.home.sessionPath) expectedUserToolPaths;
     fixedStateVersions = c.system.stateVersion == 7 && h.home.stateVersion == "26.11";
+    directPackageSources = inputs ? llm-agents && inputs ? nix-homebrew && !(inputs ? omniflake);
     oneFlakeParts =
       inputs.flake-parts.rev
-      == inputs.omniflake.inputs.flake-parts.rev
+      == inputs.llm-agents.inputs.flake-parts.rev
       && inputs.flake-parts.rev == inputs.nixvim.inputs.flake-parts.rev;
     oneNixpkgs =
       inputs.nixpkgs.rev
       == inputs.darwin.inputs.nixpkgs.rev
       && inputs.nixpkgs.rev == inputs.home-manager.inputs.nixpkgs.rev
+      && inputs.nixpkgs.rev == inputs.llm-agents.inputs.nixpkgs.rev
       && inputs.nixpkgs.rev == inputs.nixvim.inputs.nixpkgs.rev;
+    oneTreefmt = inputs.treefmt-nix.rev == inputs.llm-agents.inputs.treefmt-nix.rev;
+    oneBrewSource = inputs.brew-src.rev == inputs.nix-homebrew.inputs.brew-src.rev;
   };
 in {
   perSystem = {

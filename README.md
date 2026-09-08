@@ -18,7 +18,7 @@ nix run .#check                    # Build checks and fully evaluate the host
 nix run .#build                    # Build the host; no activation or result symlink
 nix run .#switch                   # Review the diff, confirm and activate
 nix run .#doctor                   # Warnings, configured jobs, caches and revisions
-nix run .#dependencies             # Direct and consumed OmniFlake revisions
+nix run .#dependencies             # Direct input revisions and hashes
 nix run .#diagram                  # Mermaid from Den's actual resolution trace
 nix run .#benchmark                # Serial evaluation timings; never activates
 ```
@@ -38,7 +38,7 @@ Prefer the explicit commands above. `build` forwards additional Nix flags, e.g.
 flake.nix                         generated; do not hand-edit
 flake.lock                        independently reviewable dependency pins
 modules/
-  inputs.nix                      foundational input and output declarations
+  inputs.nix                      all direct upstream input and output declarations
   den.nix                         flake-file and Den bootstrap
   hosts.nix                       host/user inventory
   defaults.nix                    shared defaults and fixed state versions
@@ -67,19 +67,25 @@ Use the same underscore convention for raw modules that need explicit imports.
 ## Dependency updates
 
 ```console
+nix run .#update-all               # Every direct flake/package source, including fx
+# Or use a deliberately narrower update:
 nix run .#update-core              # nixpkgs, Darwin, HM, Den, NixVim and tooling
-nix run .#update-tools             # OmniFlake index only
-nix run .#update-homebrew          # Homebrew source and taps only
-jj diff                           # Review the resulting lock changes
+nix run .#update-tools             # llm-agents packages (fx, Pi, Codex, etc.)
+nix run .#update-homebrew          # nix-homebrew, Homebrew source and taps
+jj diff                            # Review the resulting lock changes
 nix run .#check
 nix run .#build
 nix run .#switch                   # Explicit, separate activation
 ```
 
-Each updater prints the before/after consumed dependency manifest. It changes
-pins, not installed software. For a narrower core update use, for example,
-`nix flake update home-manager`. After changing an input declaration, regenerate
-with `nix run .#write-flake`; the generated-flake check prevents drift.
+All upstream URLs are floating declarations; `flake.lock` is the reproducibility
+boundary, not a hard-coded version policy. `update-all` (equivalent in scope to
+`nix flake update`) advances every lock entry, so a new fx release in llm-agents is
+picked up with the rest of the configuration. The narrower updaters print the same
+before/after dependency manifest and remain useful for isolated review. Updating
+pins does not change installed software until a later switch. After changing an
+input declaration, regenerate with `nix run .#write-flake`; the generated-flake
+check prevents drift.
 
 Do not raise `system.stateVersion` or `home.stateVersion` during routine upgrades.
 
@@ -113,7 +119,9 @@ nix develop .#systems             # Rust/Cargo, Go and Zig toolchains
 
 Nix/direnv owns project activation. Mise is available explicitly or through
 `use mise` in a project's `.envrc`; it no longer installs a second activation hook.
-Mutable `~/.bun/bin` and `~/.cargo/bin` no longer override declarative runtimes.
+User-level executable roots for npm, pnpm, Yarn, Bun, Cargo, Go, uv/pipx, and the
+Android SDK remain on `PATH` so globally installed tools can move faster than
+nixpkgs. Nix and project shells still own the package-manager and runtime versions.
 
 - [Architecture and capability selection](docs/architecture.md)
 - [Bootstrap, updates, maintenance and rollback](docs/operations.md)

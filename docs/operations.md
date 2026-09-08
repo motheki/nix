@@ -49,19 +49,24 @@ or graphical access.
 Perform maintenance regularly rather than indefinitely deferring security fixes.
 Weekly is a reasonable starting cadence for this development workstation.
 
-- `update-core` advances explicit foundational inputs.
-- `update-tools` advances only OmniFlake, which can change both optional consumers.
-- `update-homebrew` advances Homebrew source and taps, not installed applications.
+- `update-all` advances every direct input and is the normal full-system update.
+- `update-core` advances the foundational framework and nixpkgs inputs only.
+- `update-tools` advances llm-agents, which supplies fx and the other AI tools.
+- `update-homebrew` advances nix-homebrew, Homebrew source and taps, not installed applications.
 
-Each command prints before/after dependency provenance. Review `jj diff`, run
-`check` and `build`, then activate separately. A failed update/check leaves the
-candidate lock in the working copy for diagnosis; it does not silently restore
-files or switch the running system. Use Jujutsu history to recover only the
-intended change, preserving unrelated work.
+Each command prints before/after dependency provenance. The floating declarations
+contain no commit pins; the reviewed `flake.lock` intentionally does. Consequently,
+new upstream versions become available after `update-all`/`nix flake update`, not
+silently at evaluation time. Review `jj diff`, run `check` and `build`, then
+activate separately. A failed update/check leaves the candidate lock in the
+working copy for diagnosis; it does not silently restore files or switch the
+running system. Use Jujutsu history to recover only the intended change,
+preserving unrelated work.
 
 When modifying input declarations, run `nix run .#write-flake` before validation.
-The committed root file is generated. Do not manually edit it or run broad lock
-updates when only one explicit input needs changing.
+The committed root file is generated. Do not manually edit it. Prefer a narrow
+updater when only one dependency group needs changing; use `update-all` for the
+coherent routine update requested by this configuration.
 
 ## Cleanup policy
 

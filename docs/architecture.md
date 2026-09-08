@@ -84,20 +84,26 @@ Rosetta removal and application replacement require workload-specific evidence.
 
 ## Dependency policy
 
-Core APIs have direct inputs: nixpkgs, nix-darwin (`darwin`), Home Manager, Den,
-flake-parts, flake-file, import-tree, NixVim and treefmt-nix. Initial migration pins
-match the previously consumed revisions, except flake-parts consistently uses the
-already-locked foundation revision instead of a second indexed revision.
+Every upstream source is declared directly in `modules/inputs.nix` with a floating
+GitHub URL. This includes core APIs, llm-agents, nix-homebrew, Homebrew itself and
+all tap sources. No declaration hard-codes a commit or release tag. The generated
+`flake.nix` is therefore a complete dependency inventory, and `flake.lock` is the
+single reproducibility boundary reviewed in version control.
 
-OmniFlake remains for llm-agents and nix-homebrew. Both consumers and the manifest
-use `modules/_lib/optional-inputs.nix`. Default unification applies to llm-agents;
-nix-homebrew uses a narrow `brew-src` override. No blanket `unified` policy is used.
-An OmniFlake index update can still change multiple optional tools and transitive
-inputs. The manifest is evaluated on demand, not checked in as a stale duplicate.
+The llm-agents input supplies fx, Pi, Codex, Herdr, OpenCode and related packages.
+It follows this configuration's nixpkgs, flake-parts and treefmt-nix inputs, so one
+broad flake update advances the package source and its shared foundations together.
+This avoids the stale indirection that occurred when llm-agents was resolved from
+an OmniFlake index snapshot. nix-homebrew similarly follows the direct `brew-src`
+input. Policy checks verify these shared revisions and reject reintroducing the
+OmniFlake indirection.
 
-Switching an optional package to `omniflake.pinned` is a compatibility/cache
-experiment, not a universal optimization. Compare derivation paths, missing
-substitutes and closure sizes before changing the loading policy.
+`update-all` refreshes the entire lock graph. The narrower `update-core`,
+`update-tools` and `update-homebrew` commands are review conveniences, not separate
+dependency mechanisms. The manifest is evaluated on demand and reports the exact
+direct revisions and hashes; it is not checked in as a stale duplicate. New
+upstream releases still require a lock update and a reviewed switch—Nix never
+silently mutates an activated system.
 
 ## Operational scripts and Python tooling
 
@@ -132,5 +138,5 @@ replace Nix with the research dnx runtime merely to reduce abstraction count.
 - [Home Manager options](https://nix-community.github.io/home-manager/options/home-manager/index.html)
 - [Denful](https://denful.dev/) and [Den aspects](https://den.denful.dev/explanation/aspects/)
 - [nix-darwin manual](https://nix-darwin.github.io/nix-darwin/manual/)
-- [OmniFlake unification](https://omniflake.com/docs/unification) and [caveats](https://omniflake.com/docs/caveats)
+- [Nix flake lock files](https://nix.dev/manual/nix/latest/command-ref/new-cli/nix3-flake-update)
 - [flake-parts](https://flake.parts/)

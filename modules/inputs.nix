@@ -1,5 +1,5 @@
-# Foundational APIs have independently reviewable pins. OmniFlake is reserved
-# for optional tools; update commands never advance both groups implicitly.
+# Every upstream source is a direct, floating flake input. flake.lock provides
+# reproducibility; the update commands decide which reviewed pins to advance.
 {
   flake-file = {
     outputs = ''
@@ -36,13 +36,38 @@
         url = "github:numtide/treefmt-nix";
         inputs.nixpkgs.follows = "nixpkgs";
       };
-      omniflake = {
-        url = "github:fzakaria/omniflake";
+
+      # Keep externally packaged tools visible in this repository's lock graph.
+      # Following the shared inputs makes a nixpkgs/tool update coherent.
+      llm-agents = {
+        url = "github:numtide/llm-agents.nix";
         inputs = {
           flake-parts.follows = "flake-parts";
-          flake-utils.inputs.systems.follows = "omniflake/systems";
           nixpkgs.follows = "nixpkgs";
+          treefmt-nix.follows = "treefmt-nix";
         };
+      };
+
+      # Homebrew and all immutable taps are direct inputs for the same reason.
+      brew-src = {
+        url = "github:Homebrew/brew";
+        flake = false;
+      };
+      nix-homebrew = {
+        url = "github:zhaofengli/nix-homebrew";
+        inputs.brew-src.follows = "brew-src";
+      };
+      homebrew-core = {
+        url = "github:Homebrew/homebrew-core";
+        flake = false;
+      };
+      homebrew-cask = {
+        url = "github:Homebrew/homebrew-cask";
+        flake = false;
+      };
+      fff-mcp = {
+        url = "github:dmtrKovalenko/homebrew-fff";
+        flake = false;
       };
     };
   };

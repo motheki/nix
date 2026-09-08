@@ -1,28 +1,7 @@
-# Homebrew itself and tap sources are pinned; application updates are explicit.
-{inputs, ...}: let
-  nixHomebrew = (import ../../_lib/optional-inputs.nix inputs).nix-homebrew;
-in {
-  flake-file.inputs = {
-    brew-src = {
-      url = "github:Homebrew/brew";
-      flake = false;
-    };
-    homebrew-core = {
-      url = "github:Homebrew/homebrew-core";
-      flake = false;
-    };
-    homebrew-cask = {
-      url = "github:Homebrew/homebrew-cask";
-      flake = false;
-    };
-    fff-mcp = {
-      url = "github:dmtrKovalenko/homebrew-fff";
-      flake = false;
-    };
-  };
-
+# Homebrew itself and tap sources are lock-pinned; application updates are explicit.
+{inputs, ...}: {
   den.aspects.features.homebrew.darwin = {config, ...}: {
-    imports = [nixHomebrew.darwinModules.nix-homebrew];
+    imports = [inputs.nix-homebrew.darwinModules.nix-homebrew];
     nix-homebrew = {
       enable = true;
       enableZshIntegration = true;

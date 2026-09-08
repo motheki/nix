@@ -222,7 +222,16 @@ class Commands(unittest.TestCase):
         self.assertFalse(self.calls("brew"))
         self.assertFalse(self.calls("sudo"))
 
-    def test_update_groups_are_disjoint(self):
+    def test_update_all_has_no_input_filter(self):
+        self.run_command("update-all")
+        (update,) = [
+            row for row in self.calls("nix") if row[1:3] == ["flake", "update"]
+        ]
+        self.assertEqual(update[3:], ["--flake", str(self.repo)])
+        self.assertFalse(self.calls("nh"))
+        self.assertFalse(self.calls("brew"))
+
+    def test_narrow_update_groups_are_disjoint(self):
         expected = {
             "update-core": [
                 "nixpkgs",
@@ -235,8 +244,9 @@ class Commands(unittest.TestCase):
                 "nixvim",
                 "treefmt-nix",
             ],
-            "update-tools": ["omniflake"],
+            "update-tools": ["llm-agents"],
             "update-homebrew": [
+                "nix-homebrew",
                 "brew-src",
                 "homebrew-core",
                 "homebrew-cask",
@@ -273,7 +283,7 @@ class Commands(unittest.TestCase):
 
     def test_invalid_args_and_host_fail_closed(self):
         self.run_command("maintenance", "--unknown", success=False)
-        self.run_command("update-core", "omniflake", success=False)
+        self.run_command("update-core", "llm-agents", success=False)
         self.env["NIX_CONFIG_HOST"] = "bad;host"
         self.run_command("switch", success=False)
         self.assertFalse(self.calls())

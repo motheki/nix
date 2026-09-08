@@ -29,6 +29,7 @@
       };
       lsp = {
         inlayHints.enable = true;
+        codelens.enable = true;
         servers = {
           # Preserve server-specific root detection; a universal .git marker
           # otherwise attaches language servers at overly broad monorepo roots.

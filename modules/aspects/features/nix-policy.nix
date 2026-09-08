@@ -6,6 +6,7 @@
       # CA derivations and Linux cgroups are not needed by this Darwin host.
       experimental-features = ["nix-command" "flakes" "auto-allocate-uids"];
       always-allow-substitutes = true;
+      # The dedicated nix.optimise schedule owns optimisation.
       auto-optimise-store = false;
       # Nix's default cache.nixos.org remains enabled. Keep additional trust
       # limited to providers actually used by the selected packages.
