@@ -17,6 +17,7 @@
 
     homebrew = {
       enable = true;
+      brews = ["dmtrkovalenko/fff/fff-mcp"];
       taps = builtins.attrNames config.nix-homebrew.taps;
       # nix-homebrew emits shellenv; do not initialize it twice.
       enableZshIntegration = false;

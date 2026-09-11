@@ -27,20 +27,9 @@
     "${h.home.homeDirectory}/.cargo/bin"
     "${h.home.homeDirectory}/go/bin"
   ];
-  commandNames = [
-    "check"
-    "build"
-    "switch"
-    "dependencies"
-    "update-all"
-    "update-core"
-    "update-tools"
-    "update-homebrew"
-    "maintenance"
-    "doctor"
-    "diagram"
-    "benchmark"
-  ];
+  commandNames = builtins.attrNames config.flake.lib.commandSpecs;
+  fff = import ./_lib/fff.nix {inherit lib;};
+  fxMcp = builtins.fromJSON h.home.file.".fx/mcp.json".text;
   invariants = {
     safeHomebrew =
       !c.homebrew.onActivation.autoUpdate
@@ -63,6 +52,40 @@
     noUnsupportedRadicleDaemon = !h.services.radicle.node.enable && h.programs.radicle.enable;
     relativeApplications = h.targets.darwin.copyApps.directory == "Applications/home-manager";
     oneMiseActivation = !h.programs.mise.enableZshIntegration && h.programs.direnv.mise.enable;
+    automaticShell =
+      h.programs.direnv.enable
+      && h.programs.direnv.nix-direnv.enable
+      && lib.all (shell: h.programs.direnv."enable${shell}Integration") ["Zsh" "Bash" "Fish" "Nushell"];
+    fffInstalled = lib.any (brew: brew.name == "dmtrkovalenko/fff/fff-mcp") c.homebrew.brews;
+    fffSharedServer = h.programs.mcp.enable && h.programs.mcp.servers.fff.command == fff.server.command;
+    fffFx =
+      fxMcp.mcp.fff.command
+      == [fff.server.command] ++ fff.server.args
+      && fxMcp.mcp.fff.enabled
+      && fxMcp.mcp.fff.required
+      && !h.home.file.".fx/settings.json".enable
+      && (builtins.fromJSON h.home.file.".fx/settings.json".text).permission == fff.fxPermissions;
+    mutableAgentProfiles = let
+      clientProfiles = import ./_lib/client-profiles.nix {
+        inherit lib;
+        pkgs = c.nixpkgs.pkgs;
+        config = h;
+      };
+    in
+      lib.all (profile: lib.any (file: file.target == profile.path && !file.enable && !file.force) (builtins.attrValues h.home.file)) clientProfiles.profiles
+      && lib.elem "writeBoundary" h.home.activation.checkAgentProfiles.before
+      && lib.elem "writeBoundary" h.home.activation.mergeAgentProfiles.after
+      && lib.elem "linkGeneration" h.home.activation.mergeAgentProfiles.before
+      && lib.hasInfix "--check" h.home.activation.checkAgentProfiles.data
+      && lib.hasInfix "run " h.home.activation.mergeAgentProfiles.data;
+    fffCodex =
+      h.programs.codex.enableMcpIntegration
+      && h.programs.codex.settings.mcp_servers.fff.command == fff.server.command
+      && h.programs.codex.settings.mcp_servers.fff.enabled_tools == fff.tools
+      && lib.all (name: h.programs.codex.settings.mcp_servers.fff.tools.${name}.approval_mode == "approve") fff.tools;
+    fffOpenCode =
+      h.programs.opencode.enableMcpIntegration
+      && h.programs.opencode.settings.permission == fff.opencodePermissions;
     oneCompletionOwner = !c.programs.zsh.enableGlobalCompInit && h.programs.zsh.enableCompletion;
     userToolPaths =
       h.home.sessionVariables.PNPM_HOME
@@ -73,14 +96,19 @@
     oneFlakeParts =
       inputs.flake-parts.rev
       == inputs.llm-agents.inputs.flake-parts.rev
-      && inputs.flake-parts.rev == inputs.nixvim.inputs.flake-parts.rev;
+      && inputs.flake-parts.rev == inputs.nixvim.inputs.flake-parts.rev
+      && inputs.flake-parts.rev == inputs.devenv.inputs.flake-parts.rev;
     oneNixpkgs =
       inputs.nixpkgs.rev
       == inputs.darwin.inputs.nixpkgs.rev
       && inputs.nixpkgs.rev == inputs.home-manager.inputs.nixpkgs.rev
       && inputs.nixpkgs.rev == inputs.llm-agents.inputs.nixpkgs.rev
-      && inputs.nixpkgs.rev == inputs.nixvim.inputs.nixpkgs.rev;
-    oneTreefmt = inputs.treefmt-nix.rev == inputs.llm-agents.inputs.treefmt-nix.rev;
+      && inputs.nixpkgs.rev == inputs.nixvim.inputs.nixpkgs.rev
+      && inputs.nixpkgs.rev == inputs.devenv.inputs.nixpkgs.rev;
+    oneTreefmt =
+      inputs.treefmt-nix.rev
+      == inputs.llm-agents.inputs.treefmt-nix.rev
+      && inputs.treefmt-nix.rev == inputs.devenv.inputs.nixd.inputs.treefmt-nix.rev;
     oneBrewSource = inputs.brew-src.rev == inputs.nix-homebrew.inputs.brew-src.rev;
   };
 in {
@@ -100,16 +128,13 @@ in {
           test -n "$evaluatedHost"
           printf '%s\n' "$report" > "$out"
         '';
-      commands =
-        pkgs.runCommand "configuration-command-tests" {
-          nativeBuildInputs = with pkgs; [bash python3 jq shellcheck];
-          CONFIG_SCRIPTS = ../scripts;
-        } ''
-          export PYTHONDONTWRITEBYTECODE=1
-          shellcheck ${../scripts/config.sh}
-          python3 -m unittest discover -s ${../tests} -v
-          touch "$out"
-        '';
+      commands = import ../tests/commands.nix {inherit pkgs lib;};
+      development = import ../tests/development.nix {inherit pkgs lib config;};
+      fff-profiles = import ../tests/fff.nix {
+        inherit pkgs lib;
+        config = h;
+        inherit (inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}) fx codex;
+      };
       command-wrappers = pkgs.runCommand "configuration-command-wrapper-tests" {} ''
         ${lib.concatMapStringsSep "\n" (name: ''
             ${config.packages.${name}}/bin/${name} --help > /dev/null

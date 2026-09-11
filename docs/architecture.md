@@ -62,7 +62,7 @@ all reverse dependencies.
 For project-specific, reproducible environments, prefer a project-owned flake or
 devenv file with its own lock. The repository shells are convenient shared
 starting points. With nix-direnv, an explicitly approved project `.envrc` can use
-`use flake /absolute/path/to/this/repo#mobile`; do not mix it with mise for the same
+`use flake /absolute/path/to/this/repo#mobile --impure`; do not mix it with mise for the same
 language in the same project. Mise remains available through `mise exec` or a
 project's `use mise`, without competing prompt activation.
 
@@ -105,21 +105,55 @@ direct revisions and hashes; it is not checked in as a stale duplicate. New
 upstream releases still require a lock update and a reviewed switch—Nix never
 silently mutates an activated system.
 
-## Operational scripts and Python tooling
+## Mutable agent profiles
 
-The public interface is the packaged `nix run .#<command>` outputs. Files under
-`scripts/` are internal implementations and should not be invoked directly during
-normal operation.
+Native Home Manager generators remain the source of declared fx MCP/settings/AGENTS,
+Codex config/AGENTS and OpenCode opencode/tui/AGENTS content. Their corresponding
+`file.enable = false` settings disable immutable links, not the generators.
+`modules/_lib/client-profiles.nix` packages the merger with Nix
+`writeShellApplication`: activation validates all configs before `writeBoundary`,
+then applies through Home Manager's `run` after `writeBoundary` and before
+`linkGeneration`. There are no client wrappers, second homes or manual migration
+commands; changes apply only on an explicit switch, never shell entry or build.
 
-| Component | Purpose and boundary | Dependency | Long-term status |
-| --- | --- | --- | --- |
-| `scripts/config.sh` | Dispatches builds, switches, updates, maintenance, diagnostics, diagrams and benchmarks. It is the imperative safety boundary: previews are the default, activation is explicit and cleanup policy is validated before use. | Bash plus the pinned runtime tools in `modules/commands.nix` | Retain. Split only if commands need independent dependencies or the shared dispatcher becomes difficult to test. |
-| `scripts/diagram.py` | Converts the evaluated Den aspect trace from JSON to deterministic Mermaid without changing configuration. | Python standard library only | Optional but inexpensive. Remove if diagrams are no longer used or Den provides an equivalent stable renderer. |
-| `tests/test_commands.py` | Runs the dispatcher against fake executables in temporary repositories and unit-tests the diagram renderer without touching the host. | Python standard library only | Retain as a safety suite while imperative commands exist. Do not replace it with shell-only assertions. |
+The merger combines declared settings, replaces only declared MCP server identities
+and preserves other servers/preferences and user text around the marked context
+block. Exact FFF permissions are appended last, preserving other rules. Existing
+OpenCode `.jsonc` companions are merged too, so they cannot shadow FFF. Runtime
+inputs are never read into the Nix store; packaged `yq-go` and `pyjson5` handle
+TOML/JSONC. See [operations](operations.md#agent-profiles) for file safety and recovery.
 
-Python is repository tooling, not part of the configuration domain model or the
-activated system's application architecture. Avoid introducing a Python package
-or third-party test framework unless the tooling grows enough to require one.
+FFF uses `/opt/homebrew/bin/fff-mcp` in the client's workspace, without a fixed cwd
+or home/root scanning; global guidance prefers `find_files`, `grep` and `multi_grep`
+while retaining direct known-path reads and scoped fallbacks. Permissions are
+limited to these search tools, not blanket approval.
+[Pi's native FFF extension](https://github.com/dmtrKovalenko/fff/tree/main/packages/pi-fff)
+is separate and not installed here; [fx ACP hosts supply MCP](https://fx.sh/docs/capabilities/mcp.md)
+rather than inheriting the global profile.
+
+## Nix-native operational tooling
+
+The public interface remains `nix run .#<command>`. Command names, argument policy,
+update groups and runtime dependencies are data in `_lib/command-specs.nix`.
+`_lib/command-apps.nix` compiles them with `pkgs.writeShellApplication`, which adds
+strict Bash settings, pinned tools and automatic ShellCheck. Small amounts of
+shell remain necessary to execute CLI tools and handle runtime arguments; there
+is no standalone dispatcher or setup script.
+
+`_lib/command-diagram.nix` renders Den's actual trace to deterministic Mermaid
+using pure Nix. `tests/commands.nix` uses `lib.runTests` for data/renderer checks
+and an isolated Nix derivation for mocked CLI behavior, including negative safety
+cases. It cannot call real sudo, Nix cleanup or Homebrew. There is no standalone
+Python setup or test code; profile parsing uses packaged dependencies.
+
+`checks.host-policy` forces the complete host derivation and checks evaluated
+nix-darwin/Home Manager options, including shell integration and narrow FFF
+permissions. `checks.command-wrappers` builds each production application and
+runs only its help. `checks.fff-profiles` exercises the entire profile merger,
+including preservation, permissions, JSONC companions, backups, idempotence and
+unsafe-path/malformed-config rejection, rather than only fx settings; it also
+loads the fx result in the pinned CLI. Treefmt and flake-file contribute their own
+checks.
 
 ## Diagrams and extension
 
@@ -139,4 +173,6 @@ replace Nix with the research dnx runtime merely to reduce abstraction count.
 - [Denful](https://denful.dev/) and [Den aspects](https://den.denful.dev/explanation/aspects/)
 - [nix-darwin manual](https://nix-darwin.github.io/nix-darwin/manual/)
 - [Nix flake lock files](https://nix.dev/manual/nix/latest/command-ref/new-cli/nix3-flake-update)
-- [flake-parts](https://flake.parts/)
+- [flake-parts](https://flake.parts/) and [treefmt-nix module](https://flake.parts/options/treefmt-nix)
+- [devenv with flake-parts](https://devenv.sh/guides/using-with-flake-parts/)
+- [nix-direnv caching and file watching](https://github.com/nix-community/nix-direnv#readme)

@@ -11,8 +11,13 @@
       mdformat.enable = true;
       shellcheck.enable = true;
       shfmt.enable = true;
-      ruff-check.enable = true;
-      ruff-format.enable = true;
+    };
+    settings.formatter = {
+      shellcheck = {
+        includes = [".envrc"];
+        options = ["--shell=bash" "--external-sources"];
+      };
+      shfmt.includes = [".envrc"];
     };
   };
 }

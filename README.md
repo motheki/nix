@@ -12,8 +12,9 @@ undeclared applications. Maintenance previews by default.
 Run from this repository root:
 
 ```console
-nix develop                       # Reproducible repository tools
-nix fmt                           # Alejandra, statix, deadnix, Markdown, shell, Python
+direnv allow                      # Once, after reviewing .envrc; auto-load on cd
+nix develop --impure              # Manual entry to the same devenv shell
+nix fmt                           # Alejandra, statix, deadnix, Markdown and .envrc
 nix run .#check                    # Build checks and fully evaluate the host
 nix run .#build                    # Build the host; no activation or result symlink
 nix run .#switch                   # Review the diff, confirm and activate
@@ -22,6 +23,20 @@ nix run .#dependencies             # Direct input revisions and hashes
 nix run .#diagram                  # Mermaid from Den's actual resolution trace
 nix run .#benchmark                # Serial evaluation timings; never activates
 ```
+
+After the one-time `direnv allow`, entering this directory loads the cached
+**devenv** shell through nix-direnv; leaving unloads it. Imported Nix files and
+module directories are watched, including new/deleted modules. `.direnv/` and
+`.devenv/` remain local. Home Manager owns hooks for Zsh, Bash, Fish and Nushell;
+there is no global directory whitelist or standalone shell-setup script.
+
+`--impure` lets devenv discover the working directory without hard-coded paths.
+The `check` application supplies it for `nix flake check`; individual host-policy
+and command checks still evaluate purely. Shell entry never formats, updates
+inputs, switches the host or runs maintenance. On an explicit switch, agent profiles
+merge Nix-declared settings into private mutable files, preserving other runtime
+preferences with backups only for changed files. See [agent profile operations](docs/operations.md#agent-profiles)
+before the first activation.
 
 `NIX_CONFIG_REPO` explicitly selects a checkout. Otherwise the current repository
 root wins over the installed `NH_DARWIN_FLAKE` default. This matters when using
@@ -54,8 +69,9 @@ modules/
     users/                        identity, personal paths and profile selection
     profiles/                     capability composition only
     features/                     reusable Darwin/Home Manager implementation
-scripts/                          tested command dispatcher and diagram renderer
-tests/                            isolated command tests; no real maintenance
+.envrc                            nix-direnv auto-activation of the devenv shell
+AGENTS.md                         repository workflow and FFF search guidance
+tests/                            Nix unit/isolated CLI tests; no real maintenance
 .github/workflows/check.yml       ARM64 macOS checks and host build; no deployment
 docs/                             architecture, operations and performance notes
 ```
@@ -113,8 +129,8 @@ profiles. The workstation retains the existing language-server groups through
 it further. Extra fonts and redundant editor integrations are opt-in.
 
 ```console
-nix develop .#mobile              # JDK 17 + Gradle 9, outside the global profile
-nix develop .#systems             # Rust/Cargo, Go and Zig toolchains
+nix develop --impure .#mobile     # JDK 17 + Gradle 9, outside the global profile
+nix develop --impure .#systems    # Rust/Cargo, Go and Zig toolchains
 ```
 
 Nix/direnv owns project activation. Mise is available explicitly or through

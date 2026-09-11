@@ -13,9 +13,15 @@
    Jujutsu repository; do not use Git staging/commit/stash operations locally.
 1. Run `nix run .#check`, then `nix run .#build`. On the first build before the new
    daemon settings are active, use `nix run .#build -- --max-jobs 2 --cores 4`.
+1. Review [agent profiles](#agent-profiles) before activating: declared settings
+   merge into mutable files with private backups; unsafe paths or malformed configs
+   stop validation rather than being force-overwritten.
 1. Run `nix run .#switch` yourself and review nh's confirmation. The integrated
    activation installs missing declared Brew software, but does not upgrade
    existing entries or remove undeclared apps. Homebrew work is not transactional.
+1. Review `.envrc` and run `direnv allow` once. Subsequent directory changes load
+   and unload the cached devenv environment automatically. Start a fresh shell
+   after installing the Home Manager hooks. Manual entry is `nix develop --impure`.
 1. Grant the terminal **App Management** permission if requested for copying apps.
    Keep Home Manager's checks enabled. Prefer a local graphical session instead
    of granting broad remote Full Disk Access just to make activation succeed.
@@ -43,6 +49,46 @@ After an intentional switch or a risky configuration change, manually verify:
 These runtime checks are release/activation procedures, not candidates for hosted
 CI: automating them would require mutating the active Mac and granting privileged
 or graphical access.
+
+## Agent profiles
+
+An explicit switch merges the native Home Manager-generated fx MCP/settings/AGENTS,
+Codex config/AGENTS and OpenCode opencode/tui/AGENTS into their normal user locations.
+No wrappers, second homes or manual migration commands are needed. Shell entry,
+checks and builds do not apply these changes.
+
+All configs are validated before Home Manager's `writeBoundary`; writes run through
+`run` after that boundary and before `linkGeneration`. Nix-declared settings and
+MCP server identities take precedence, but other servers, preferences and user
+text around the marked context block survive. Exact FFF permission rules are
+appended last without removing unrelated rules. Existing OpenCode `.jsonc`
+companions are also merged so they cannot shadow the declared FFF configuration.
+Runtime preferences survive future switches except for fields declared by Nix.
+
+Changed files are staged as private regular files (`0600`). The current file is
+renamed to a sibling backup `.filename.before-nix.XXXXXX`, then the complete new
+file is installed without overwriting an intervening client save. A concurrent
+save stops activation and survives at the original path or in the backup. There
+is a brief interval without the original path; stop editing settings during a
+switch. Unchanged files are not rewritten or backed up on repeated activation. TOML/JSONC formatting and
+comments are normalized; backups retain the byte-exact originals. Existing user
+config inputs never enter the Nix store.
+
+Only verified user-owned old symlinks to
+`/nix/store/*-home-manager-files/<same-relative-path>` are converted. Foreign
+symlinks, directories and malformed configs are refused, not overwritten. Inspect
+and resolve a reported conflict deliberately before retrying a switch; do not
+bypass validation with force options.
+
+After a reviewed switch, restart clients or reload MCP and inspect `fx mcp list`,
+`fx permissions --json`, `codex mcp get fff --json` and `opencode mcp list`. Try file
+and content searches in the actual workspace. Tests cover the entire profile
+merger in isolation, not every live client environment; more specific project or
+agent policies may override global defaults and must not be bypassed.
+
+Nix rollback does not restore merged configs. If recovery is needed, explicitly
+restore the relevant sibling backup; a later switch still reapplies Nix-declared
+fields. Keep independent backups of credentials and other user data.
 
 ## Updates
 
@@ -147,9 +193,10 @@ If the candidate broke command lookup, use the recorded previous system's
 still exists before proceeding. Consult `darwin-rebuild --help` for selecting a
 specific older generation when more than one rollback is needed.
 
-Nix rollback does not restore Homebrew application versions, deleted files,
-application databases, Android SDKs, Xcode state or secrets. Restore those from
-appropriate backups/vendor tooling. Never raise state versions to fix an upgrade.
+Nix rollback does not restore merged agent configs, Homebrew application versions,
+deleted files, application databases, Android SDKs, Xcode state or secrets. Restore
+the relevant agent config backup explicitly, or use appropriate backups/vendor
+tooling for other data. Never raise state versions to fix an upgrade.
 
 ## Optional Linux builds
 

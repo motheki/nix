@@ -17,6 +17,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     den.url = "github:denful/den";
+    devenv = {
+      url = "github:cachix/devenv";
+      inputs = {
+        flake-parts.follows = "flake-parts";
+        nixd.inputs.treefmt-nix.follows = "treefmt-nix";
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
     fff-mcp = {
       url = "github:dmtrKovalenko/homebrew-fff";
       flake = false;
