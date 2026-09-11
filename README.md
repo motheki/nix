@@ -3,9 +3,10 @@
 Declarative configuration for an Apple M1 Pro MacBook Pro (8 cores, 16 GiB RAM),
 using nix-darwin, integrated Home Manager, Den and flake-parts.
 
-**Builds, activation, dependency updates and maintenance are separate operations.**
-A normal switch does not update inputs, upgrade existing Homebrew apps or uninstall
-undeclared applications. Maintenance previews by default.
+**Building, activation, dependency updates, Homebrew upgrades and cleanup are
+separate operations.** A normal switch does not update flake inputs, upgrade
+existing Homebrew packages or remove undeclared Homebrew applications. Maintenance
+is a preview unless `--apply` is passed.
 
 ## Commands
 
@@ -23,6 +24,9 @@ nix run .#dependencies             # Direct input revisions and hashes
 nix run .#diagram                  # Mermaid from Den's actual resolution trace
 nix run .#benchmark                # Serial evaluation timings; never activates
 ```
+
+There is currently no hosted CI workflow. Before review, run `nix fmt`,
+`nix run .#check` and `nix run .#build` locally; none of them activates the host.
 
 After the one-time `direnv allow`, entering this directory loads the cached
 **devenv** shell through nix-direnv; leaving unloads it. Imported Nix files and
@@ -72,8 +76,7 @@ modules/
 .envrc                            nix-direnv auto-activation of the devenv shell
 AGENTS.md                         repository workflow and FFF search guidance
 tests/                            Nix unit/isolated CLI tests; no real maintenance
-.github/workflows/check.yml       ARM64 macOS checks and host build; no deployment
-docs/                             architecture, operations and performance notes
+docs/                             architecture and operational runbooks
 ```
 
 Import-tree discovers `.nix` modules under `modules/`. Files under `_lib/` are
@@ -124,9 +127,9 @@ before applying cleanup or application updates.
 ## Optional capabilities
 
 Selection lives in `modules/aspects/users/motheki.nix` and the composition-only
-profiles. The workstation retains the existing language-server groups through
-`profiles.editor-full`; remove that include and select individual groups to slim
-it further. Extra fonts and redundant editor integrations are opt-in.
+profiles. The default user selection retains the existing language-server groups
+through `profiles.editor-full`; remove that include and select individual groups
+to slim it further. Extra fonts and redundant editor integrations are opt-in.
 
 ```console
 nix develop --impure .#mobile     # JDK 17 + Gradle 9, outside the global profile
@@ -141,7 +144,6 @@ nixpkgs. Nix and project shells still own the package-manager and runtime versio
 
 - [Architecture and capability selection](docs/architecture.md)
 - [Bootstrap, updates, maintenance and rollback](docs/operations.md)
-- [Performance evidence and measurement](docs/performance.md)
 
 Secrets, signing keys, application databases, SDK downloads and machine-specific
 credentials remain outside the repository and Nix store.

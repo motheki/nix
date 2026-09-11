@@ -33,8 +33,10 @@
    Check their log files and exit statuses after an actual scheduled run.
 
 The test suite does not start launchd jobs or verify TCC interaction. Building a
-plist is not proof of successful activation. The CI workflow only builds; it
-never switches, cleans profiles, manages Homebrew or reads signing credentials.
+plist is not proof of successful activation. No hosted CI workflow is currently
+configured, so run formatting, checks and the host build locally. None of those
+steps switches the host, cleans profiles, manages Homebrew or reads signing
+credentials.
 
 After an intentional switch or a risky configuration change, manually verify:
 

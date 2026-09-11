@@ -3,8 +3,8 @@
 ## Ownership
 
 - **flake-parts** owns standard outputs, checks, shells and operational packages.
-- **flake-file** generates `flake.nix` from typed declarations. There is no second
-  hand-maintained entry point.
+- **flake-file** generates `flake.nix` from declarations in `modules/inputs.nix`
+  and settings in `modules/den.nix`. There is no second hand-maintained entry point.
 - **Den** composes the host, user and feature aspects into nix-darwin/Home Manager.
 - **nix-darwin** owns the daemon, system defaults, system launchd jobs and Brewfile.
 - **Home Manager** owns user configuration and user launch agents.
