@@ -124,12 +124,21 @@ inputs are never read into the Nix store; packaged `yq-go` and `pyjson5` handle
 TOML/JSONC. See [operations](operations.md#agent-profiles) for file safety and recovery.
 
 FFF uses `/opt/homebrew/bin/fff-mcp` in the client's workspace, without a fixed cwd
-or home/root scanning; global guidance prefers `find_files`, `grep` and `multi_grep`
+or home/root scanning. fx launches that executable directly with no extra arguments
+and uses its default enabled, optional-server policy: an FFF startup failure must
+not prevent the agent from answering or using scoped fallback searches.
+Global guidance prefers `find_files`, `grep` and `multi_grep`
 while retaining direct known-path reads and scoped fallbacks. Permissions are
 limited to these search tools, not blanket approval.
-[Pi's native FFF extension](https://github.com/dmtrKovalenko/fff/tree/main/packages/pi-fff)
-is separate and not installed here; [fx ACP hosts supply MCP](https://fx.sh/docs/capabilities/mcp.md)
-rather than inheriting the global profile.
+
+Pi uses its native FFF extension with `~/.pi/agent/pi-fff.json` disabling home,
+filesystem-root and symlink traversal. Its global settings are declarative: Goal,
+Plan Mode, Lens and Codex Compaction remain alongside FFF, while the redundant MCP
+adapter and overlapping Subagents package are omitted in favor of native FFF and
+Herdr. Global skill discovery remains enabled; project- or invocation-specific
+skill selection is still available when a smaller prompt is needed. fx ACP hosts
+[supply MCP directly](https://fx.sh/docs/capabilities/mcp.md) rather than inheriting
+Pi's profile.
 
 ## Nix-native operational tooling
 

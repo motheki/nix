@@ -30,6 +30,15 @@
   commandNames = builtins.attrNames config.flake.lib.commandSpecs;
   fff = import ./_lib/fff.nix {inherit lib;};
   fxMcp = builtins.fromJSON h.home.file.".fx/mcp.json".text;
+  piFff = builtins.fromJSON h.home.file.".pi/agent/pi-fff.json".text;
+  piSettings = h.programs.pi-coding-agent.settings;
+  expectedPiPackages = [
+    "npm:@ff-labs/pi-fff"
+    "npm:@narumitw/pi-goal"
+    "npm:@narumitw/pi-plan-mode"
+    "npm:pi-lens"
+    "npm:@ogulcancelik/pi-codex-compaction"
+  ];
   invariants = {
     safeHomebrew =
       !c.homebrew.onActivation.autoUpdate
@@ -59,10 +68,11 @@
     fffInstalled = lib.any (brew: brew.name == "dmtrkovalenko/fff/fff-mcp") c.homebrew.brews;
     fffSharedServer = h.programs.mcp.enable && h.programs.mcp.servers.fff.command == fff.server.command;
     fffFx =
-      fxMcp.mcp.fff.command
-      == [fff.server.command] ++ fff.server.args
-      && fxMcp.mcp.fff.enabled
-      && fxMcp.mcp.fff.required
+      fxMcp.mcp.fff
+      == {
+        type = "stdio";
+        command = [fff.server.command];
+      }
       && !h.home.file.".fx/settings.json".enable
       && (builtins.fromJSON h.home.file.".fx/settings.json".text).permission == fff.fxPermissions;
     mutableAgentProfiles = let
@@ -86,12 +96,24 @@
     fffOpenCode =
       h.programs.opencode.enableMcpIntegration
       && h.programs.opencode.settings.permission == fff.opencodePermissions;
+    boundedPiFff =
+      piFff
+      == {
+        enableHomeDirScanning = false;
+        enableFsRootScanning = false;
+        followSymlinks = false;
+      };
+    selectivePiExtensions =
+      h.programs.pi-coding-agent.enable
+      && piSettings.packages == expectedPiPackages
+      && h.home.file."${h.home.homeDirectory}/.pi/agent/settings.json".force;
     oneCompletionOwner = !c.programs.zsh.enableGlobalCompInit && h.programs.zsh.enableCompletion;
     userToolPaths =
       h.home.sessionVariables.PNPM_HOME
       == "${h.home.homeDirectory}/Library/pnpm"
       && lib.all (path: lib.elem path h.home.sessionPath) expectedUserToolPaths;
     fixedStateVersions = c.system.stateVersion == 7 && h.home.stateVersion == "26.11";
+    flakeOnlyNixPath = c.nix.nixPath == ["nixpkgs=flake:nixpkgs"];
     directPackageSources = inputs ? llm-agents && inputs ? nix-homebrew && !(inputs ? omniflake);
     oneFlakeParts =
       inputs.flake-parts.rev
@@ -135,13 +157,24 @@ in {
         config = h;
         inherit (inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system}) fx codex;
       };
-      command-wrappers = pkgs.runCommand "configuration-command-wrapper-tests" {} ''
-        ${lib.concatMapStringsSep "\n" (name: ''
-            ${config.packages.${name}}/bin/${name} --help > /dev/null
-          '')
-          commandNames}
-        touch "$out"
-      '';
+      command-wrappers = assert lib.assertMsg (builtins.hasAttr "write-all" config.packages) "The write-all compatibility package is missing";
+      assert lib.assertMsg
+      (lib.all (name: !builtins.hasAttr name config.packages) [
+        "devenv-up"
+        "devenv-test"
+        "mobile-devenv-up"
+        "mobile-devenv-test"
+        "systems-devenv-up"
+        "systems-devenv-test"
+      ])
+      "Deprecated devenv compatibility packages leaked into the public package surface";
+        pkgs.runCommand "configuration-command-wrapper-tests" {} ''
+          ${lib.concatMapStringsSep "\n" (name: ''
+              ${config.packages.${name}}/bin/${name} --help > /dev/null
+            '')
+            commandNames}
+          touch "$out"
+        '';
     };
   };
 }

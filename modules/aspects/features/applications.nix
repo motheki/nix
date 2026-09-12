@@ -8,8 +8,8 @@
       "thebrowsercompany-dia"
       "raycast"
       "betterdisplay"
-      # zen-browser is an obsolete alias of this same cask in the pinned tap.
       "zen"
+      "paper-design"
       "orion"
       "cleanshot"
       "linear"
@@ -44,7 +44,6 @@
             auto-update = "off";
           };
         };
-
         discord.enable = true;
       };
     };

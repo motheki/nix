@@ -26,9 +26,9 @@
         text = builtins.toJSON {
           mcp.fff = {
             type = "stdio";
-            command = [fff.server.command] ++ fff.server.args;
-            enabled = true;
-            required = true;
+            # Use the Homebrew executable directly and fx's optional defaults:
+            # a search-server startup failure must not block the entire agent.
+            command = [fff.server.command];
           };
         };
       };
@@ -42,6 +42,14 @@
       };
       ".codex/config.toml".enable = false;
       ".codex/AGENTS.md".enable = false;
+      ".pi/agent/pi-fff.json".text = builtins.toJSON {
+        enableHomeDirScanning = false;
+        enableFsRootScanning = false;
+        followSymlinks = false;
+      };
+      # Adopt the existing mutable profile on the first switch; Pi settings are
+      # declarative after that, while auth, sessions, trust, and caches stay mutable.
+      "${config.home.homeDirectory}/.pi/agent/settings.json".force = true;
     };
     xdg.configFile = lib.genAttrs ["opencode/opencode.json" "opencode/tui.json" "opencode/AGENTS.md"] (_: {enable = false;});
     home.activation = {
@@ -76,6 +84,37 @@
       pi-coding-agent = {
         enable = true;
         package = packages.pi;
+        settings = {
+          lastChangelogVersion = lib.getVersion packages.pi;
+          theme = "ghostty-sync-4a78f491";
+          defaultProvider = "openai-codex";
+          defaultModel = "gpt-6-astra";
+          terminal.showTerminalProgress = true;
+          showCacheMissNotices = true;
+          collapseChangelog = true;
+          quietStartup = true;
+          enableInstallTelemetry = false;
+          defaultProjectTrust = "always";
+          defaultThinkingLevel = "high";
+          # Herdr owns subagent orchestration, and native FFF makes the MCP
+          # adapter redundant. Keep the remaining everyday extensions global.
+          packages = [
+            "npm:@ff-labs/pi-fff"
+            "npm:@narumitw/pi-goal"
+            "npm:@narumitw/pi-plan-mode"
+            "npm:pi-lens"
+            "npm:@ogulcancelik/pi-codex-compaction"
+          ];
+          enabledModels = [
+            "openai-codex/gpt-6-astra"
+            "openai-codex/gpt-5.6-sol"
+          ];
+          tuiMode = "fullscreen";
+          modelThinkingLevels = {
+            "openai-codex/gpt-6-astra" = "high";
+            "openai-codex/gpt-5.6-sol" = "xhigh";
+          };
+        };
       };
       herdr = {
         enable = true;

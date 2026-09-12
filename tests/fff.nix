@@ -67,7 +67,7 @@ in
     test ! -e "$home/.codex"
     test ! -e "$home/.config"
     mkdir -p "$home/.fx" "$home/.codex" "$home/.config/opencode"
-    printf '%s\n' '{"mcpServers":{"other":{"command":["keep-server"]},"fff":{"url":"obsolete"}},"custom":true}' > "$home/.fx/mcp.json"
+    printf '%s\n' '{"mcpServers":{"other":{"command":["keep-server"]},"fff":{"url":"obsolete","required":true,"enabled":false,"args":["--obsolete"]}},"custom":true}' > "$home/.fx/mcp.json"
     printf '%s\n' '{"model":"keep-me","workspaces":{"/repo":{"permission":{"*":"deny"}}},"permission":{"mcp_fff_grep":"deny","*":"ask","edit":"deny"}}' > "$home/.fx/settings.json"
     cat > "$home/.codex/config.toml" <<'TOML'
     # Original formatting and comments remain in the private backup.
@@ -101,7 +101,7 @@ in
         test "$(stat -c %a "$home/${profile.path}")" = 600
       '')
       merger.profiles}
-    jq -e '.custom and .mcp.other.command == ["keep-server"] and .mcp.fff.required and .mcp.fff.enabled and (.mcp.fff | has("url") | not) and (has("mcpServers") | not)' "$home/.fx/mcp.json"
+    jq -e '.custom and .mcp.other.command == ["keep-server"] and .mcp.fff == {"type":"stdio","command":["/opt/homebrew/bin/fff-mcp"]} and (has("mcpServers") | not)' "$home/.fx/mcp.json"
     jq -e '.model == "keep-me" and .workspaces["/repo"].permission["*"] == "deny" and .permission.edit == "deny" and .permission["*"] == "ask" and .permission.mcp_fff_grep == "allow"' "$home/.fx/settings.json"
     jq -e '.permission | keys_unsorted[-3:] == ["mcp_fff_find_files","mcp_fff_grep","mcp_fff_multi_grep"]' "$home/.fx/settings.json"
     yq -p toml -o json '.' "$home/.codex/config.toml" | jq -e '.model == "keep-me" and .projects["/repo"].trust_level == "trusted" and .mcp_servers.other.command == "keep-server" and .mcp_servers.fff.enabled and (.mcp_servers.fff | has("url") | not)'
@@ -116,6 +116,9 @@ in
     test "''${#backups[@]}" = 7
     for backup in "''${backups[@]}"; do test "$(stat -c %a "$backup")" = 600; done
     # Actual clients read these regular files, not just our model of their schema.
+    # Configuration-only: the sandbox never launches the host's Homebrew server.
+    HOME="$home" ${lib.getExe fx} mcp list > fx-mcp.txt
+    ${pkgs.gnugrep}/bin/grep -F 'fff source=profile scope=profile policy=optional transport=stdio' fx-mcp.txt
     HOME="$home" ${lib.getExe fx} permissions --json |
       jq -e '.rules | any(.[]; .permission == "mcp_fff_grep" and .action == "allow")'
     HOME="$home" CODEX_HOME="$home/.codex" ${lib.getExe codex} mcp get fff --json |

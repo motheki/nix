@@ -1,6 +1,9 @@
 # Shared daemon policy. Hardware concurrency belongs to the host aspect.
-{
+{lib, ...}: {
   den.aspects.features.nix-policy.darwin = {
+    # nix-darwin merges its legacy root-channel entry by default. This
+    # configuration is flake-only and has no root channels profile.
+    nix.nixPath = lib.mkForce ["nixpkgs=flake:nixpkgs"];
     nix.settings = {
       # auto-allocate-uids is needed by this installation's dynamic build users.
       # CA derivations and Linux cgroups are not needed by this Darwin host.
