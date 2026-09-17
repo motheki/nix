@@ -1,5 +1,5 @@
 # Every upstream source is a direct, floating flake input. flake.lock provides
-# reproducibility; the update commands decide which reviewed pins to advance.
+# reproducibility; `nix flake update` advances the reviewed pins.
 {
   flake-file = {
     outputs = ''

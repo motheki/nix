@@ -1,8 +1,8 @@
-# flake-file owns the generated entry point; Den owns host/user composition.
+# Dendritic wiring for flake-file and Den.
 {inputs, ...}: {
   imports = [
-    inputs.flake-file.flakeModules.default
-    inputs.den.flakeModule
+    (inputs.flake-file.flakeModules.dendritic or {})
+    (inputs.den.flakeModules.dendritic or {})
   ];
 
   flake-file = {

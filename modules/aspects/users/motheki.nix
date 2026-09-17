@@ -31,11 +31,8 @@
       };
       programs.ssh.settings."*".IdentityFile = sshIdentity;
       programs.nh.darwinFlake = repo;
-      home.shellAliases = {
-        rebuild = "nix run ${repo}#switch --";
-        # A preview by default, never the old retain-one-generation clean-all.
-        clean = "nix run ${repo}#maintenance --";
-      };
+      # home.shellAliases is shared by Bash, Zsh, Fish, and Nushell.
+      home.shellAliases.rebuild = "nix run ${repo}#mothekis-macbook-pro -- switch";
       programs.yt-dlp.settings.paths = "/Volumes/mothekis_drive/videos/youtube";
     };
     darwin.homebrew.brews = ["dmtrkovalenko/fff/fff-mcp"];

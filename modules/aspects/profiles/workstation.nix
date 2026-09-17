@@ -7,7 +7,6 @@
       development
       fonts
       llm-tools
-      maintenance
       media
       shell
       utilities
