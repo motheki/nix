@@ -5,17 +5,6 @@ _: {
       # The upstream node service is systemd-only. Keep the CLI available,
       # without pretending it starts a macOS background service.
       radicle.enable = true;
-      delta = {
-        enable = true;
-        enableGitIntegration = true;
-        enableJujutsuIntegration = true;
-        options = {
-          side-by-side = true;
-          line-numbers = true;
-          theme = "ansi";
-        };
-      };
-
       gh = {
         enable = true;
         settings = {
@@ -44,6 +33,12 @@ _: {
           "node_modules/"
         ];
         settings = {
+          core.pager = "hunk pager";
+          diff.tool = "hunk";
+          difftool = {
+            hunk.cmd = ''hunk difftool "$LOCAL" "$REMOTE" "$MERGED"'';
+            prompt = false;
+          };
           commit.gpgsign = true;
           format.signoff = true;
           gpg.format = "ssh";
@@ -67,6 +62,7 @@ _: {
         enable = true;
         settings = {
           ui = {
+            pager = ["hunk" "pager"];
             diff-formatter = ":git";
             editor = "nvim";
             default-command = "log";

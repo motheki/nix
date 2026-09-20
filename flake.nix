@@ -25,10 +25,6 @@
         nixpkgs.follows = "nixpkgs";
       };
     };
-    fff-mcp = {
-      url = "github:dmtrKovalenko/homebrew-fff";
-      flake = false;
-    };
     flake-file.url = "github:denful/flake-file";
     flake-parts = {
       url = "github:hercules-ci/flake-parts";

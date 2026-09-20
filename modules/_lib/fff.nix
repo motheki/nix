@@ -4,7 +4,7 @@
 in {
   inherit tools;
   server = {
-    command = "/opt/homebrew/bin/fff-mcp";
+    command = "/etc/profiles/per-user/motheki/bin/fff-mcp";
     args = ["--no-update-check"];
     enabled = true;
   };

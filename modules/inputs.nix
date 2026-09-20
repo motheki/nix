@@ -73,10 +73,6 @@
         url = "github:Homebrew/homebrew-cask";
         flake = false;
       };
-      fff-mcp = {
-        url = "github:dmtrKovalenko/homebrew-fff";
-        flake = false;
-      };
     };
   };
 }

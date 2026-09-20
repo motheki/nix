@@ -2,7 +2,7 @@
 {
   den.aspects.features.mobile-development = {
     darwin.homebrew = {
-      brews = ["cocoapods"];
+      brews = [];
       casks = ["android-studio-preview@canary"];
     };
     homeManager = {

@@ -35,6 +35,6 @@
       home.shellAliases.rebuild = "nix run ${repo}#mothekis-macbook-pro -- switch";
       programs.yt-dlp.settings.paths = "/Volumes/mothekis_drive/videos/youtube";
     };
-    darwin.homebrew.brews = ["dmtrkovalenko/fff/fff-mcp"];
+    darwin.homebrew.brews = [];
   };
 }

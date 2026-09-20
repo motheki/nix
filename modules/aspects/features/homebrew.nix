@@ -10,30 +10,27 @@
       taps = {
         "homebrew/homebrew-core" = inputs.homebrew-core;
         "homebrew/homebrew-cask" = inputs.homebrew-cask;
-        "dmtrkovalenko/homebrew-fff" = inputs.fff-mcp;
       };
-      trust.formulae = ["dmtrkovalenko/fff/fff-mcp"];
     };
 
     homebrew = {
       enable = true;
-      brews = ["dmtrkovalenko/fff/fff-mcp"];
       taps = builtins.attrNames config.nix-homebrew.taps;
       # nix-homebrew emits shellenv; do not initialize it twice.
       enableZshIntegration = false;
-      greedyCasks = false;
+      greedyCasks = true;
       caskArgs = {
         appdir = "/Applications";
         require_sha = false;
       };
       global = {
-        autoUpdate = false;
+        autoUpdate = true;
         brewfile = false;
       };
       onActivation = {
-        autoUpdate = false;
-        upgrade = false;
-        cleanup = "none";
+        autoUpdate = true;
+        upgrade = true;
+        cleanup = "zap";
         extraEnv = {
           HOMEBREW_NO_ANALYTICS = "1";
           HOMEBREW_NO_ASK = "1";

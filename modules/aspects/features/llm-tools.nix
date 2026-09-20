@@ -11,11 +11,14 @@
     fff = import ../../_lib/fff.nix {inherit lib;};
     profiles = import ../../_lib/client-profiles.nix {inherit config lib pkgs;};
   in {
+    imports = [../../_lib/hunk.nix];
+
     # Pi uses Node and Bun from the normal user profile configured by the
     # development profile, rather than a private wrapper or activation hack.
     home.packages = with packages; [
       fx
       tuicr
+      hax
     ];
 
     # Keep HM's native generators, not its symlink ownership of mutable profiles.
@@ -26,7 +29,7 @@
         text = builtins.toJSON {
           mcp.fff = {
             type = "stdio";
-            # Use the Homebrew executable directly and fx's optional defaults:
+            # Use the nixpkgs-installed executable and fx's optional defaults:
             # a search-server startup failure must not block the entire agent.
             command = [fff.server.command];
           };
@@ -64,6 +67,26 @@
     };
 
     programs = {
+      hunk = {
+        enable = true;
+        package = packages.hunk;
+        settings = {
+          mode = "auto";
+          theme = "rose-pine-moon";
+          vcs = "jj";
+          animations = true;
+          transparent_background = true;
+          line_numbers = true;
+          wrap_lines = true;
+          hunk_headers = true;
+          menu_bar = true;
+          agent_notes = true;
+          copy_decorations = false;
+          cursor_line = "row";
+          watch = false;
+          jj.watch = true;
+        };
+      };
       mcp = {
         enable = true;
         servers.fff = fff.server;

@@ -8,6 +8,7 @@
       comma
       dogedns
       dua
+      fff-mcp
       duf
       gftp
       grip-grab

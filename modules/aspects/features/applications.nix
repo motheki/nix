@@ -27,9 +27,9 @@
           enable = true;
           package = pkgs.ghostty-bin;
           settings = {
-            theme = "light: Ayu Light, dark: Ayu";
+            theme = "light: Rose Pine Dawn, dark: Rose Pine Moon";
             font-size = 16;
-            font-family = "CommitMono Nerd Font";
+            font-family = "CommitMonoMotheki";
             cursor-style = "bar";
             background-opacity = 0.85;
             background-blur = true;

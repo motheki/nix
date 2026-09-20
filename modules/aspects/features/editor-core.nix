@@ -15,6 +15,7 @@
         fd.enable = true;
         tree-sitter.enable = true;
         nodejs.enable = true;
+        television.enable = true;
       };
       luaLoader.enable = true;
       performance = {
@@ -106,6 +107,7 @@
         colorizer.enable = true;
         colorful-menu.enable = true;
         transparent.enable = true;
+        tv.enable = true;
         direnv.enable = true;
         faster.enable = true;
         gitblame.enable = true;
@@ -130,10 +132,18 @@
         trouble.enable = true;
         jj.enable = true;
       };
-      colorschemes.ayu = {
+      colorschemes.rose-pine = {
         enable = true;
         settings = {
+          dark_variant = "moon";
           dim_inactive_windows = true;
+          extend_background_behind_borders = true;
+          variant = "auto";
+          styles = {
+            bold = true;
+            italic = true;
+            transparency = true;
+          };
         };
       };
     };
