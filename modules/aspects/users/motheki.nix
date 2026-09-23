@@ -1,16 +1,10 @@
-# Identity, personal paths and capability selection; implementations are reusable.
+# Shared identity and signing configuration; host-qualified aspects pick workloads.
 {den, ...}: {
   den.aspects.motheki = {
     includes = [
-      den.batteries.primary-user
       (den.batteries.user-shell "zsh")
-      den.aspects.profiles.workstation
-      den.aspects.profiles.editor-full
-      den.aspects.profiles.mobile-developer
-      # Optional: den.aspects.features.fonts-extra / editor-extras.
     ];
-    homeManager = {config, ...}: let
-      repo = "${config.home.homeDirectory}/Repos/personal/nix";
+    homeManager = {pkgs, ...}: let
       email = "trevoropiyo@trevoropiyo.com";
       sshIdentity = "~/.ssh/trevoropiyo";
     in {
@@ -30,11 +24,9 @@
         };
       };
       programs.ssh.settings."*".IdentityFile = sshIdentity;
-      programs.nh.darwinFlake = repo;
-      # home.shellAliases is shared by Bash, Zsh, Fish, and Nushell.
-      home.shellAliases.rebuild = "nix run ${repo}#mothekis-macbook-pro -- switch";
-      programs.yt-dlp.settings.paths = "/Volumes/mothekis_drive/videos/youtube";
+      programs.ssh.package = pkgs.openssh_hpn;
+      programs.keychain.enable = true;
+      programs.keychain.keys = ["trevoropiyo"];
     };
-    darwin.homebrew.brews = [];
   };
 }

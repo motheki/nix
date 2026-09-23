@@ -25,8 +25,6 @@ in {
     home.packages = [cfg.package];
     xdg.configFile."hunk/config.toml" = {
       source = toml.generate "hunk-config.toml" cfg.settings;
-      # Adopt the existing unmanaged config file on the first switch.
-      force = true;
     };
   };
 }

@@ -3,12 +3,11 @@
   den.aspects.features.utilities.homeManager = {pkgs, ...}: {
     home.packages = with pkgs; [
       act3
-      bottom
       chafa
+      trash-cli
       comma
       dogedns
       dua
-      fff-mcp
       duf
       gftp
       grip-grab
@@ -19,10 +18,13 @@
       mdfried
       mosh
       nix-diff
+      webtorrent_desktop
+      orbstack
+      iina
       nix-melt
       nix-tree
       openapi-tui
-      radicle-tui
+      #radicle-tui
       rainfrog
       rm-improved
       rustscan

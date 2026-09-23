@@ -4,7 +4,7 @@ _: {
     programs = {
       # The upstream node service is systemd-only. Keep the CLI available,
       # without pretending it starts a macOS background service.
-      radicle.enable = true;
+      radicle.enable = false;
       gh = {
         enable = true;
         settings = {

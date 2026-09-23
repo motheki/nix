@@ -1,14 +1,16 @@
 # Shared local server identity. No fixed cwd: each client indexes its workspace.
-{lib}: let
+{
+  lib,
+  pkgs,
+}: let
   tools = ["find_files" "grep" "multi_grep"];
 in {
   inherit tools;
   server = {
-    command = "/etc/profiles/per-user/motheki/bin/fff-mcp";
+    command = lib.getExe pkgs.fff-mcp;
     args = ["--no-update-check"];
     enabled = true;
   };
-  fxPermissions = lib.genAttrs (map (name: "mcp_fff_${name}") tools) (_: "allow");
   opencodePermissions = lib.genAttrs (map (name: "fff_${name}") tools) (_: "allow");
   context = ''
     For file and text search within the current workspace, prefer the local FFF

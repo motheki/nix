@@ -10,12 +10,19 @@
       taps = {
         "homebrew/homebrew-core" = inputs.homebrew-core;
         "homebrew/homebrew-cask" = inputs.homebrew-cask;
+        "mobile-dev-inc/homebrew-tap" = inputs.maestro-tap;
       };
     };
 
     homebrew = {
       enable = true;
-      taps = builtins.attrNames config.nix-homebrew.taps;
+      # nix-homebrew keys use on-disk repo names; Brewfile taps use short names.
+      taps = builtins.map (
+        tap:
+          if tap == "mobile-dev-inc/homebrew-tap"
+          then "mobile-dev-inc/tap"
+          else tap
+      ) (builtins.attrNames config.nix-homebrew.taps);
       # nix-homebrew emits shellenv; do not initialize it twice.
       enableZshIntegration = false;
       greedyCasks = true;

@@ -9,10 +9,6 @@ _: {
     homeManager = {pkgs, ...}: {
       programs = {
         carapace.enable = true;
-        skim = {
-          enable = true;
-          enableZshIntegration = false;
-        };
         starship.enable = true;
         vivid = {
           enable = true;
@@ -68,6 +64,8 @@ _: {
           enable = true;
           plugins = with pkgs; [
             nushellPlugins.query
+            nushellPlugins.formats
+            #nushellPlugins.skim
             nushellPlugins.polars
             nushellPlugins.gstat
           ];

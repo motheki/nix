@@ -10,9 +10,11 @@ _: {
       fastfetch.enable = true;
       fd.enable = true;
       jq.enable = true;
+      bottom.enable = true;
       lazydocker.enable = true;
       nix-index.enable = true;
       pay-respects.enable = true;
+      fzf.enable = true;
       ripgrep.enable = true;
       ripgrep-all.enable = true;
       tealdeer = {
@@ -20,13 +22,18 @@ _: {
         settings.updates.auto_update = true;
       };
       television.enable = true;
+      skim = {
+        enable = true;
+        enableZshIntegration = false;
+      };
       tiny.enable = true;
+      tirith.enable = true;
 
       nh.enable = true;
 
       bat = {
         enable = true;
-        config.theme = "base16";
+        config.theme = "ansi";
         extraPackages = with pkgs.bat-extras; [
           batdiff
           batman

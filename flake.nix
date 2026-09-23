@@ -51,6 +51,11 @@
         treefmt-nix.follows = "treefmt-nix";
       };
     };
+    maestro-tap = {
+      url = "github:mobile-dev-inc/homebrew-tap";
+      flake = false;
+    };
+    nix-darwin.follows = "darwin";
     nix-homebrew = {
       url = "github:zhaofengli/nix-homebrew";
       inputs.brew-src.follows = "brew-src";

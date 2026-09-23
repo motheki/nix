@@ -3,17 +3,17 @@
   den.aspects.features.applications = {
     darwin.homebrew.casks = [
       "daisydisk"
-      "chatgpt"
       "steam"
       "thebrowsercompany-dia"
-      "raycast"
+      "appzapper"
       "betterdisplay"
-      "zen"
-      "paper-design"
-      "orion"
       "cleanshot"
+      "chatgpt"
+      "raycast"
+      "sentry-cli"
+      "macparakeet"
+      "paper-design"
       "linear"
-      "obs"
       "mos"
     ];
     homeManager = {pkgs, ...}: {
@@ -21,7 +21,6 @@
         enable = true;
         directory = "Applications/home-manager";
       };
-      home.packages = with pkgs; [webtorrent_desktop orbstack iina];
       programs = {
         ghostty = {
           enable = true;
@@ -33,18 +32,21 @@
             cursor-style = "bar";
             background-opacity = 0.85;
             background-blur = true;
-            window-height = 53;
-            window-width = 160;
+            window-height = 40;
+            window-width = 120;
             window-padding-x = 8;
             window-padding-y = 4;
-            window-inherit-working-directory = false;
-            tab-inherit-working-directory = false;
-            split-inherit-working-directory = false;
+            window-inherit-working-directory = true;
+            tab-inherit-working-directory = true;
+            split-inherit-working-directory = true;
             macos-titlebar-style = "transparent";
-            auto-update = "off";
+            auto-update-channel = "tip";
           };
         };
-        discord.enable = true;
+        vesktop = {
+          enable = true;
+          vencord.useSystem = true;
+        };
       };
     };
   };

@@ -7,9 +7,6 @@
     ];
     darwin = {
       nix.settings = {
-        # A conservative starting point for builds alongside IDEs/emulators.
-        max-jobs = 2;
-        cores = 4;
         # This administrative user already has sudo. Nix trust is root-equivalent.
         extra-trusted-users = ["motheki"];
       };

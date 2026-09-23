@@ -18,6 +18,13 @@
       # Home Manager reuses each Darwin host's package set, so this allows
       # unfree packages consistently for both system and user packages.
       nixpkgs.config.allowUnfree = true;
+
+      # Native HM collision handling, not a custom mutable-profile merger.
+      # An existing backup stops activation instead of being overwritten.
+      home-manager = {
+        backupFileExtension = "before-declarative";
+        overwriteBackup = false;
+      };
     };
     homeManager.home = {
       stateVersion = "26.11";
