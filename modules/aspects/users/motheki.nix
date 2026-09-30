@@ -4,7 +4,7 @@
     includes = [
       (den.batteries.user-shell "zsh")
     ];
-    homeManager = {pkgs, ...}: let
+    homeManager = {...}: let
       email = "trevoropiyo@trevoropiyo.com";
       sshIdentity = "~/.ssh/trevoropiyo";
     in {
@@ -24,8 +24,6 @@
         };
       };
       programs.ssh.settings."*".IdentityFile = sshIdentity;
-      programs.ssh.package = pkgs.openssh_hpn;
-      programs.keychain.enable = true;
       programs.keychain.keys = ["trevoropiyo"];
     };
   };
