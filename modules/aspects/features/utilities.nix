@@ -18,6 +18,7 @@
       mdfried
       mosh
       nix-diff
+      skim
       webtorrent_desktop
       orbstack
       iina

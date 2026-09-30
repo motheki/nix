@@ -12,7 +12,7 @@ _: {
         starship.enable = true;
         vivid = {
           enable = true;
-          activeTheme = "rose-pine-moon";
+          activeTheme = "rose-pine-dawn";
         };
         zoxide.enable = true;
 

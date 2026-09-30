@@ -22,7 +22,7 @@
         package = packages.hunk;
         settings = {
           mode = "auto";
-          theme = "rose-pine-moon";
+          theme = "rose-pine-dawn";
           vcs = "jj";
           animations = true;
           transparent_background = true;

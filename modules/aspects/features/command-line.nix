@@ -22,10 +22,10 @@ _: {
         settings.updates.auto_update = true;
       };
       television.enable = true;
-      skim = {
-        enable = true;
-        enableZshIntegration = false;
-      };
+      #skim = {
+      #  enable = true;
+      #  enableZshIntegration = false;
+      #};
       tiny.enable = true;
       tirith.enable = true;
 

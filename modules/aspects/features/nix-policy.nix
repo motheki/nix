@@ -1,28 +1,34 @@
 # Shared daemon policy. Hardware concurrency belongs to the host aspect.
 {lib, ...}: {
-  den.aspects.features.nix-policy.darwin = {
-    # nix-darwin merges its legacy root-channel entry by default. This
-    # configuration is flake-only and has no root channels profile.
-    nix.nixPath = lib.mkForce ["nixpkgs=flake:nixpkgs"];
-    nix.settings = {
-      # auto-allocate-uids is needed by this installation's dynamic build users.
-      # CA derivations and Linux cgroups are not needed by this Darwin host.
-      experimental-features = ["nix-command" "flakes" "auto-allocate-uids"];
-      always-allow-substitutes = true;
-      # The dedicated nix.optimise schedule owns optimisation.
-      auto-optimise-store = false;
-      # Nix's default cache.nixos.org remains enabled. Keep additional trust
-      # limited to providers actually used by the selected packages.
-      extra-substituters = [
-        "https://cache.numtide.com"
-        "https://nix-community.cachix.org"
-        "https://devenv.cachix.org"
-      ];
-      extra-trusted-public-keys = [
-        "niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g="
-        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-        "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
-      ];
+  den.aspects.features.nix-policy.darwin = {pkgs, ...}: {
+    nix = {
+      # nix-darwin defaults to nixVersions.stable, which can lag upstream releases.
+      # Updating the shared nixpkgs input advances both the CLI and the daemon.
+      package = pkgs.nixVersions.latest;
+
+      # nix-darwin merges its legacy root-channel entry by default. This
+      # configuration is flake-only and has no root channels profile.
+      nixPath = lib.mkForce ["nixpkgs=flake:nixpkgs"];
+      settings = {
+        # auto-allocate-uids is needed by this installation's dynamic build users.
+        # CA derivations and Linux cgroups are not needed by this Darwin host.
+        experimental-features = ["nix-command" "flakes" "auto-allocate-uids"];
+        always-allow-substitutes = true;
+        # The dedicated nix.optimise schedule owns optimisation.
+        auto-optimise-store = false;
+        # Nix's default cache.nixos.org remains enabled. Keep additional trust
+        # limited to providers actually used by the selected packages.
+        extra-substituters = [
+          "https://cache.numtide.com"
+          "https://nix-community.cachix.org"
+          "https://devenv.cachix.org"
+        ];
+        extra-trusted-public-keys = [
+          "niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g="
+          "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+          "devenv.cachix.org-1:w1cLUi8dv3hnoSPGAuibQv+f9TZLr6cv/Hm9XgU50cw="
+        ];
+      };
     };
     home-manager = {
       useGlobalPkgs = true;
