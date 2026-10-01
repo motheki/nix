@@ -7,6 +7,7 @@
       trash-cli
       comma
       dogedns
+      mole-cleaner
       dua
       duf
       gftp
@@ -18,7 +19,6 @@
       mdfried
       mosh
       nix-diff
-      skim
       webtorrent_desktop
       orbstack
       iina

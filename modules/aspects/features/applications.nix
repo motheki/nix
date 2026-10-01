@@ -2,19 +2,15 @@
 {
   den.aspects.features.applications = {
     darwin.homebrew.casks = [
-      "daisydisk"
       "steam"
       "thebrowsercompany-dia"
       "appzapper"
-      "betterdisplay"
-      "cleanshot"
+      "vorssaint"
       "chatgpt"
-      "raycast"
       "sentry-cli"
       "macparakeet"
       "paper-design"
       "linear"
-      "mos"
     ];
     homeManager = {pkgs, ...}: {
       targets.darwin.copyApps = {
@@ -41,6 +37,7 @@
             split-inherit-working-directory = true;
             macos-titlebar-style = "transparent";
             auto-update-channel = "tip";
+            macos-icon = "paper";
           };
         };
         vesktop = {

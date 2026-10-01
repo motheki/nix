@@ -12,7 +12,7 @@ _: {
         starship.enable = true;
         vivid = {
           enable = true;
-          activeTheme = "rose-pine-dawn";
+          activeTheme = "rose-pine-moon";
         };
         zoxide.enable = true;
 
@@ -65,7 +65,7 @@ _: {
           plugins = with pkgs; [
             nushellPlugins.query
             nushellPlugins.formats
-            #nushellPlugins.skim
+            nushellPlugins.skim
             nushellPlugins.polars
             nushellPlugins.gstat
           ];
