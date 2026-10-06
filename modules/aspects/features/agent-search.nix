@@ -14,8 +14,6 @@
         enable = true;
         servers.fff = fff.server;
       };
-      # fx's global MCP servers and tool rules are native writable profile state.
-      # The shared server package is available for `fx mcp add` without a wrapper.
       codex = {
         enableMcpIntegration = true;
         inherit (fff) context;
@@ -26,11 +24,6 @@
             enabled_tools = fff.tools;
             tools = lib.genAttrs fff.tools (_: {approval_mode = "approve";});
           };
-      };
-      opencode = {
-        enableMcpIntegration = true;
-        inherit (fff) context;
-        settings.permission = fff.opencodePermissions;
       };
     };
   };

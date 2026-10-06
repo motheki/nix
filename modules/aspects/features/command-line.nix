@@ -21,7 +21,9 @@ _: {
         enable = true;
         settings.updates.auto_update = true;
       };
-      television.enable = true;
+      television = {
+        enable = true;
+      };
       skim = {
         enable = true;
         enableZshIntegration = false;

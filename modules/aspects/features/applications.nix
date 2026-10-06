@@ -4,7 +4,6 @@
     darwin.homebrew.casks = [
       "steam"
       "thebrowsercompany-dia"
-      "appzapper"
       "vorssaint"
       "chatgpt"
       "sentry-cli"
@@ -37,7 +36,7 @@
             split-inherit-working-directory = true;
             macos-titlebar-style = "transparent";
             auto-update-channel = "tip";
-            macos-icon = "paper";
+            #macos-icon = "paper";
           };
         };
         vesktop = {

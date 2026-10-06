@@ -4,7 +4,7 @@
     includes = [
       (den.batteries.user-shell "zsh")
     ];
-    homeManager = { pkgs, ...}: let
+    homeManager = {pkgs, ...}: let
       email = "trevoropiyo@trevoropiyo.com";
       sshIdentity = "~/.ssh/trevoropiyo";
     in {

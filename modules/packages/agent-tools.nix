@@ -8,12 +8,11 @@
   den.aspects.agent-tools.packages = {pkgs, ...}: {
     inherit
       (inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system})
-      fx
-      opencode2
-      pi
       herdr
       hunk
       tuicr
+      claude-code
+      claude-desktop
       ;
     inherit (pkgs) fff-mcp;
   };
