@@ -132,17 +132,25 @@
         trouble.enable = true;
         jj.enable = true;
       };
-      colorschemes.rose-pine = {
+      #colorschemes.rose-pine = {
+      #  enable = true;
+      #  settings = {
+      #    dark_variant = "moon";
+      #    dim_inactive_windows = true;
+      #    extend_background_behind_borders = true;
+      #    variant = "auto";
+      #    styles = {
+      #      bold = true;
+      #      italic = true;
+      #      transparency = true;
+      #    };
+      #  };
+      #};
+      colorschemes.gruvbox-material-nvim = {
         enable = true;
         settings = {
-          dark_variant = "moon";
-          dim_inactive_windows = true;
-          extend_background_behind_borders = true;
-          variant = "auto";
-          styles = {
-            bold = true;
-            italic = true;
-            transparency = true;
+          background = {
+            transparent = true;
           };
         };
       };

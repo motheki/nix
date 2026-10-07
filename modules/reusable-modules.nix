@@ -5,7 +5,6 @@
       agent-search = den.aspects.features.agent-search.homeManager;
       coding-agents = den.aspects.features.coding-agents.homeManager;
       code-review = den.aspects.features.code-review.homeManager;
-      fx = ./_modules/home-manager/fx.nix;
       hunk = ./_modules/home-manager/hunk.nix;
       tuicr = ./_modules/home-manager/tuicr.nix;
     };

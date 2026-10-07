@@ -1,15 +1,23 @@
 # One capability spans native application ownership and the user's environment.
-{
+{inputs, ...}: {
+  flake-file.inputs.maestro-tap = {
+    url = "github:mobile-dev-inc/homebrew-tap";
+    flake = false;
+  };
+
   den.aspects.features.mobile-development = {
-    darwin.homebrew = {
-      brews = [
-        "cocoapods"
-        {
-          name = "mobile-dev-inc/tap/maestro";
-          trusted = true;
-        }
-      ];
-      casks = ["android-studio-preview@canary"];
+    darwin = {
+      nix-homebrew.taps."mobile-dev-inc/homebrew-tap" = inputs.maestro-tap;
+      homebrew = {
+        brews = [
+          "cocoapods"
+          {
+            name = "mobile-dev-inc/tap/maestro";
+            trusted = true;
+          }
+        ];
+        casks = ["android-studio-preview@canary"];
+      };
     };
     homeManager = {
       config,

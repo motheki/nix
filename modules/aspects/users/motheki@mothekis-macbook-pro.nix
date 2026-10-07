@@ -14,11 +14,11 @@
       ...
     }: {
       programs.nh.darwinFlake = "${config.home.homeDirectory}/Repos/personal/nix";
-      # Bootstrap current NH independently of the installed generation. Its native
-      # --update refreshes flake.lock before building Darwin and integrated HM.
-      # Pass the path explicitly so bootstrap also works without new session vars.
+      # Use the same pinned NH as the host and development shell. Updating is
+      # explicit so a normal rebuild reproduces the reviewed lock file.
       home.shellAliases = {
-        rebuild = "nix run --refresh github:nix-community/nh -- darwin switch --update --hostname ${host.name} ${lib.escapeShellArg config.programs.nh.darwinFlake}";
+        rebuild = "nh darwin switch --hostname ${host.name} ${lib.escapeShellArg config.programs.nh.darwinFlake}";
+        rebuild-update = "nh darwin switch --update --hostname ${host.name} ${lib.escapeShellArg config.programs.nh.darwinFlake}";
         bg = "batgrep";
       };
       programs.yt-dlp.settings.paths = "/Volumes/mothekis_drive/videos/youtube";

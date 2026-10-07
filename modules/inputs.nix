@@ -14,8 +14,6 @@
         url = "github:nix-darwin/nix-darwin";
         inputs.nixpkgs.follows = "nixpkgs";
       };
-      # devenv Machines names this input nix-darwin; share the same locked source.
-      nix-darwin.follows = "darwin";
       home-manager = {
         url = "github:nix-community/home-manager";
         inputs.nixpkgs.follows = "nixpkgs";
@@ -56,28 +54,6 @@
           nixpkgs.follows = "nixpkgs";
           treefmt-nix.follows = "treefmt-nix";
         };
-      };
-
-      # Homebrew and all immutable taps are direct inputs for the same reason.
-      brew-src = {
-        url = "github:Homebrew/brew";
-        flake = false;
-      };
-      nix-homebrew = {
-        url = "github:zhaofengli/nix-homebrew";
-        inputs.brew-src.follows = "brew-src";
-      };
-      homebrew-core = {
-        url = "github:Homebrew/homebrew-core";
-        flake = false;
-      };
-      homebrew-cask = {
-        url = "github:Homebrew/homebrew-cask";
-        flake = false;
-      };
-      maestro-tap = {
-        url = "github:mobile-dev-inc/homebrew-tap";
-        flake = false;
       };
     };
   };

@@ -1,9 +1,6 @@
-# Native modules manage configuration; fx owns its writable profile.
+# Home Manager owns CLI installation and configuration from llm-agents packages.
 {inputs, ...}: {
-  den.aspects.features.coding-agents.homeManager = {
-    pkgs,
-    ...
-  }: let
+  den.aspects.features.coding-agents.homeManager = {pkgs, ...}: let
     packages = inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system};
   in {
     programs = {

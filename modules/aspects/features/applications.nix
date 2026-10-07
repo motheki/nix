@@ -5,13 +5,15 @@
       "steam"
       "thebrowsercompany-dia"
       "vorssaint"
+      "claude"
       "chatgpt"
-      "sentry-cli"
-      "macparakeet"
-      "paper-design"
-      "linear"
     ];
     homeManager = {pkgs, ...}: {
+      home.packages = with pkgs; [
+        iina
+        orbstack
+        webtorrent_desktop
+      ];
       targets.darwin.copyApps = {
         enable = true;
         directory = "Applications/home-manager";
@@ -21,7 +23,7 @@
           enable = true;
           package = pkgs.ghostty-bin;
           settings = {
-            theme = "light: Rose Pine Dawn, dark: Rose Pine Moon";
+            theme = "light: Gruvbox Material Light, dark: Gruvbox Material Dark";
             font-size = 16;
             font-family = "CommitMonoMotheki";
             cursor-style = "bar";
@@ -36,7 +38,6 @@
             split-inherit-working-directory = true;
             macos-titlebar-style = "transparent";
             auto-update-channel = "tip";
-            #macos-icon = "paper";
           };
         };
         vesktop = {

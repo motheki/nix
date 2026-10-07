@@ -8,29 +8,31 @@
       email = "trevoropiyo@trevoropiyo.com";
       sshIdentity = "~/.ssh/trevoropiyo";
     in {
-      programs.git.settings.user = {
-        name = "trevoropiyo";
-        inherit email;
-        signingkey = "${sshIdentity}.pub";
-      };
-      programs.jujutsu.settings = {
-        user = {
-          name = "Trevor Opiyo";
+      programs = {
+        git.settings.user = {
+          name = "trevoropiyo";
           inherit email;
+          signingkey = "${sshIdentity}.pub";
         };
-        signing = {
-          key = "${sshIdentity}.pub";
-          backends.ssh.allowed-signers = "~/.ssh/allowed_signers";
+        jujutsu.settings = {
+          user = {
+            name = "Trevor Opiyo";
+            inherit email;
+          };
+          signing = {
+            key = "${sshIdentity}.pub";
+            backends.ssh.allowed-signers = "~/.ssh/allowed_signers";
+          };
         };
-      };
-      programs.ssh = {
-        enable = true;
-        package = pkgs. openssh_hpn;
-        settings."*".IdentityFile = sshIdentity;
-      };
-      programs.keychain = {
-        enable = true;
-        keys = ["trevoropiyo"];
+        ssh = {
+          enable = true;
+          package = pkgs.openssh_hpn;
+          settings."*".IdentityFile = sshIdentity;
+        };
+        keychain = {
+          enable = true;
+          keys = ["trevoropiyo"];
+        };
       };
     };
   };

@@ -1,4 +1,4 @@
-#Yeah. Interactive shell, prompt, completion, and session environment. Zsh is the
+# Interactive shell, prompt, completion, and session environment. Zsh is the
 # login shell; the other shells remain available for explicit use.
 _: {
   den.aspects.features.shell = {
@@ -12,7 +12,7 @@ _: {
         starship.enable = true;
         vivid = {
           enable = true;
-          activeTheme = "rose-pine-dawn";
+          activeTheme = "gruvbox-light";
         };
         zoxide.enable = true;
 

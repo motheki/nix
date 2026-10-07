@@ -19,13 +19,9 @@
       mdfried
       mosh
       nix-diff
-      webtorrent_desktop
-      orbstack
-      iina
       nix-melt
       nix-tree
       openapi-tui
-      #radicle-tui
       rainfrog
       rm-improved
       rustscan

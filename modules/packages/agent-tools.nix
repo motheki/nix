@@ -1,19 +1,19 @@
-# Publish selected upstream packages directly; no private wrappers or overlay.
+# CLI packages can also be built independently of the workstation configuration.
 {
-  inputs,
-  den,
-  ...
-}: {
-  den.schema.flake-system.includes = [den.aspects.agent-tools];
-  den.aspects.agent-tools.packages = {pkgs, ...}: {
-    inherit
-      (inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system})
-      herdr
-      hunk
-      tuicr
-      claude-code
-      claude-desktop
-      ;
-    inherit (pkgs) fff-mcp;
+  perSystem = {
+    inputs',
+    pkgs,
+    ...
+  }: {
+    packages = {
+      inherit
+        (inputs'.llm-agents.packages)
+        herdr
+        hunk
+        tuicr
+        claude-code
+        ;
+      inherit (pkgs) fff-mcp;
+    };
   };
 }
