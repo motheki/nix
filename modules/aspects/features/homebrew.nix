@@ -42,16 +42,13 @@
         appdir = "/Applications";
       };
       global = {
-        autoUpdate = false;
+        autoUpdate = true;
         brewfile = false;
       };
       onActivation = {
-        # nix-homebrew installs immutable taps. `nix flake update` advances them;
-        # activation installs/upgrades from those sources without `brew update`.
-        autoUpdate = false;
+        autoUpdate = true;
         upgrade = true;
-        # Remove undeclared packages while preserving application data.
-        cleanup = "uninstall";
+        cleanup = "zap";
         extraEnv = {
           HOMEBREW_NO_ANALYTICS = "1";
           HOMEBREW_NO_ASK = "1";

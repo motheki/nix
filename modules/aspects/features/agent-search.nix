@@ -8,12 +8,14 @@
   }: let
     fff = import ../../_lib/fff.nix {inherit lib pkgs;};
   in {
+    imports = [../../_modules/home-manager/fx.nix];
     home.packages = [pkgs.fff-mcp];
     programs = {
       mcp = {
         enable = true;
         servers.fff = fff.server;
       };
+      fx.enableMcpIntegration = true;
       codex = {
         enableMcpIntegration = true;
         inherit (fff) context;

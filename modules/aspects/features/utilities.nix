@@ -9,7 +9,9 @@
       dogedns
       mole-cleaner
       dua
+      sentry-cli
       duf
+      tailscale
       gftp
       grip-grab
       httpie
@@ -26,6 +28,9 @@
       rm-improved
       rustscan
       scc
+      iina
+      orbstack
+      webtorrent_desktop
       sd
       vulnix
       watchman

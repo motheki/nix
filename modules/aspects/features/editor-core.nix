@@ -106,7 +106,6 @@
         };
         colorizer.enable = true;
         colorful-menu.enable = true;
-        transparent.enable = true;
         tv.enable = true;
         direnv.enable = true;
         faster.enable = true;
@@ -125,33 +124,18 @@
           folding.enable = false;
           settings = {
             # Grammars are installed declaratively, not mutated at runtime.
-            autoInstall = false;
+            autoInstall = true;
             highlight.enable = true;
           };
         };
         trouble.enable = true;
         jj.enable = true;
       };
-      #colorschemes.rose-pine = {
-      #  enable = true;
-      #  settings = {
-      #    dark_variant = "moon";
-      #    dim_inactive_windows = true;
-      #    extend_background_behind_borders = true;
-      #    variant = "auto";
-      #    styles = {
-      #      bold = true;
-      #      italic = true;
-      #      transparency = true;
-      #    };
-      #  };
-      #};
-      colorschemes.gruvbox-material-nvim = {
+      colorschemes.nord = {
         enable = true;
         settings = {
-          background = {
-            transparent = true;
-          };
+          borders = true;
+          disable_background = true;
         };
       };
     };

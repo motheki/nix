@@ -12,7 +12,7 @@ _: {
         starship.enable = true;
         vivid = {
           enable = true;
-          activeTheme = "gruvbox-light";
+          activeTheme = "nord";
         };
         zoxide.enable = true;
 

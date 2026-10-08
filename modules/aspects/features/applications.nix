@@ -1,19 +1,16 @@
 # Desktop software has exactly one owner: Nix packages or Homebrew casks.
 {
   den.aspects.features.applications = {
-    darwin.homebrew.casks = [
-      "steam"
-      "thebrowsercompany-dia"
-      "vorssaint"
-      "claude"
-      "chatgpt"
-    ];
-    homeManager = {pkgs, ...}: {
-      home.packages = with pkgs; [
-        iina
-        orbstack
-        webtorrent_desktop
+    darwin.homebrew = {
+      casks = [
+        "steam"
+        "vorssaint"
+        "chatgpt"
+        "macparakeet"
+        "helium-browser"
       ];
+    };
+    homeManager = {pkgs, ...}: {
       targets.darwin.copyApps = {
         enable = true;
         directory = "Applications/home-manager";
@@ -23,7 +20,7 @@
           enable = true;
           package = pkgs.ghostty-bin;
           settings = {
-            theme = "light: Gruvbox Material Light, dark: Gruvbox Material Dark";
+            theme = "light: Nord Light, dark: Nord";
             font-size = 16;
             font-family = "CommitMonoMotheki";
             cursor-style = "bar";
@@ -39,10 +36,6 @@
             macos-titlebar-style = "transparent";
             auto-update-channel = "tip";
           };
-        };
-        vesktop = {
-          enable = true;
-          vencord.useSystem = true;
         };
       };
     };

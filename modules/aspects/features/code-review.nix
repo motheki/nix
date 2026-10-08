@@ -3,26 +3,14 @@
   den.aspects.features.code-review.homeManager = {pkgs, ...}: let
     packages = inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system};
   in {
-    imports = [../../_modules/home-manager/hunk.nix ../../_modules/home-manager/tuicr.nix];
+    imports = [../../_modules/home-manager/hunk.nix];
     programs = {
-      tuicr = {
-        enable = true;
-        package = packages.tuicr;
-        settings = {
-          # Match Ghostty's light/dark Rosé Pine pair. Set `theme` to either
-          # "rose-pine-moon" or "rose-pine-dawn" to pin one variant instead.
-          theme_dark = "rose-pine-moon";
-          theme_light = "rose-pine-dawn";
-          appearance = "system";
-          transparent_background = true;
-        };
-      };
       hunk = {
         enable = true;
         package = packages.hunk;
         settings = {
           mode = "auto";
-          theme = "rose-pine-dawn";
+          theme = "night-owl-light";
           vcs = "jj";
           animations = true;
           transparent_background = true;
