@@ -6,7 +6,6 @@
       den.batteries.primary-user
       den.aspects.profiles.workstation
       den.aspects.profiles.editor-full
-      den.aspects.profiles.mobile-developer
     ];
     homeManager = {host}: {
       config,
@@ -14,8 +13,8 @@
       ...
     }: {
       programs.nh.darwinFlake = "${config.home.homeDirectory}/Repos/personal/nix";
-      # Use the same pinned NH as the host and development shell. Updating is
-      # explicit so a normal rebuild reproduces the reviewed lock file.
+      # Use the pinned NH from the login environment. Updating is explicit so
+      # a normal rebuild reproduces the reviewed lock file.
       home.shellAliases = {
         rebuild = "nh darwin switch --hostname ${host.name} ${lib.escapeShellArg config.programs.nh.darwinFlake}";
         rebuild-update = "nh darwin switch --update --hostname ${host.name} ${lib.escapeShellArg config.programs.nh.darwinFlake}";

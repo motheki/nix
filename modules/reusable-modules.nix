@@ -10,7 +10,6 @@
     };
     devenvModules = {
       default = ./_modules/devenv/default.nix;
-      mobile = ./_modules/devenv/mobile.nix;
       systems = ./_modules/devenv/systems.nix;
     };
   };

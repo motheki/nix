@@ -6,6 +6,7 @@
       chafa
       trash-cli
       comma
+      tuios
       dogedns
       mole-cleaner
       dua
@@ -33,7 +34,6 @@
       webtorrent_desktop
       sd
       vulnix
-      watchman
       xcp
       yq-go
     ];

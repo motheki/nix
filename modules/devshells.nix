@@ -8,7 +8,6 @@
         imports = [./_modules/devenv/default.nix];
         packages = [config.treefmt.build.wrapper];
       };
-      mobile.imports = [./_modules/devenv/mobile.nix];
       systems.imports = [./_modules/devenv/systems.nix];
     };
   };

@@ -1,39 +1,68 @@
-# Everyday tools. Project shells own language versions, while user-level bin
-# directories expose globally installed tools that can move faster than nixpkgs.
-{
-  den.aspects.features.development.homeManager = {
-    config,
-    pkgs,
-    ...
-  }: let
-    homeDirectory = config.home.homeDirectory;
-    pnpmHome = "${homeDirectory}/Library/pnpm";
-  in {
-    home = {
-      packages = [pkgs.nodejs pkgs.pnpm];
-      sessionVariables.PNPM_HOME = pnpmHome;
-      sessionPath = [
-        # Shared by uv, pipx, and other XDG-aware installers.
-        "${homeDirectory}/.local/bin"
-        "${homeDirectory}/.npm/bin"
-        # pnpm 11 writes global executables below PNPM_HOME/bin. Keep the root
-        # for global shims created by pnpm 10 and earlier.
-        "${pnpmHome}/bin"
-        pnpmHome
-        "${homeDirectory}/.yarn/bin"
-        "${homeDirectory}/.bun/bin"
-        "${homeDirectory}/.cargo/bin"
-        "${homeDirectory}/go/bin"
+# Homebrew owns development runtimes; Home Manager owns their session configuration.
+{self, ...}: {
+  den.aspects.features.development = {
+    darwin.homebrew = {
+      brews = [
+        "awscli"
+        "bun"
+        "cocoapods"
+        "docker"
+        "fastlane"
+        "go"
+        "gopls"
+        "node@24"
+        "openjdk@21"
+        "pnpm"
+        "rust"
+        "rust-analyzer"
+        "uv"
+        "watchman"
+        "yarn"
+        "zig"
+        "zls"
       ];
+      casks = ["android-commandlinetools" "android-studio"];
     };
-    programs = {
-      awscli.enable = true;
-      bun.enable = true;
-      devenv.enable = true;
-      docker-cli.enable = true;
-      npm.enable = true;
-      uv.enable = true;
-      yarn.enable = true;
+    homeManager = {
+      config,
+      pkgs,
+      ...
+    }: let
+      homeDirectory = config.home.homeDirectory;
+      androidHome = "${homeDirectory}/Library/Android/sdk";
+      pnpmHome = "${homeDirectory}/Library/pnpm";
+    in {
+      home = {
+        packages = with pkgs; [
+          nixd
+          alejandra
+          statix
+          deadnix
+          self.formatter.${pkgs.stdenv.hostPlatform.system}
+        ];
+        sessionVariables = {
+          ANDROID_HOME = androidHome;
+          JAVA_HOME = "/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home";
+          PNPM_HOME = pnpmHome;
+        };
+        sessionPath = [
+          "/opt/homebrew/opt/node@24/bin"
+          "/opt/homebrew/opt/openjdk@21/bin"
+          "/opt/homebrew/bin"
+          "/opt/homebrew/sbin"
+          "${androidHome}/emulator"
+          "${androidHome}/platform-tools"
+          "${homeDirectory}/.local/bin"
+          "${homeDirectory}/.npm/bin"
+          "${pnpmHome}/bin"
+          pnpmHome
+          "${homeDirectory}/.yarn/bin"
+          "${homeDirectory}/.bun/bin"
+          "${homeDirectory}/.cargo/bin"
+          "${homeDirectory}/go/bin"
+        ];
+      };
+      programs.devenv.enable = true;
     };
   };
 }

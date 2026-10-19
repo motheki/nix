@@ -10,7 +10,7 @@
         package = packages.hunk;
         settings = {
           mode = "auto";
-          theme = "night-owl-light";
+          theme = "rose-pine-dawn";
           vcs = "jj";
           animations = true;
           transparent_background = true;

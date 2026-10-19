@@ -12,7 +12,7 @@ _: {
         starship.enable = true;
         vivid = {
           enable = true;
-          activeTheme = "nord";
+          activeTheme = "rose-pine-dawn";
         };
         zoxide.enable = true;
 
@@ -62,13 +62,12 @@ _: {
         };
         nushell = {
           enable = true;
-          plugins = with pkgs; [
-            nushellPlugins.query
-            nushellPlugins.formats
-            nushellPlugins.skim
-            nushellPlugins.polars
-            nushellPlugins.gstat
-          ];
+          #plugins = with pkgs; [
+          #  nushellPlugins.query
+          #  nushellPlugins.skim
+          #  nushellPlugins.polars
+          #  nushellPlugins.gstat
+          #];
           settings = {
             show_banner = false;
             edit_mode = "vi";

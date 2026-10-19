@@ -9,46 +9,46 @@
     '';
 
     inputs = {
-      nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+      nixpkgs.url = "github:NixOS/nixpkgs/master";
       darwin = {
-        url = "github:nix-darwin/nix-darwin";
+        url = "github:nix-darwin/nix-darwin/master";
         inputs.nixpkgs.follows = "nixpkgs";
       };
       home-manager = {
-        url = "github:nix-community/home-manager";
+        url = "github:nix-community/home-manager/master";
         inputs.nixpkgs.follows = "nixpkgs";
       };
-      den.url = "github:denful/den";
+      den.url = "github:denful/den/main";
       devenv = {
-        url = "github:cachix/devenv";
+        url = "github:cachix/devenv/main";
         inputs = {
           nixpkgs.follows = "nixpkgs";
           flake-parts.follows = "flake-parts";
           nixd.inputs.treefmt-nix.follows = "treefmt-nix";
         };
       };
-      flake-file.url = "github:denful/flake-file";
-      import-tree.url = "github:denful/import-tree";
+      flake-file.url = "github:denful/flake-file/main";
+      import-tree.url = "github:denful/import-tree/main";
       flake-parts = {
-        url = "github:hercules-ci/flake-parts";
+        url = "github:hercules-ci/flake-parts/main";
         inputs.nixpkgs-lib.follows = "nixpkgs";
       };
       nixvim = {
-        url = "github:nix-community/nixvim";
+        url = "github:nix-community/nixvim/main";
         inputs = {
           nixpkgs.follows = "nixpkgs";
           flake-parts.follows = "flake-parts";
         };
       };
       treefmt-nix = {
-        url = "github:numtide/treefmt-nix";
+        url = "github:numtide/treefmt-nix/main";
         inputs.nixpkgs.follows = "nixpkgs";
       };
 
       # Keep externally packaged tools visible in this repository's lock graph.
       # Following the shared inputs makes a nixpkgs/tool update coherent.
       llm-agents = {
-        url = "github:numtide/llm-agents.nix";
+        url = "github:numtide/llm-agents.nix/main";
         inputs = {
           flake-parts.follows = "flake-parts";
           nixpkgs.follows = "nixpkgs";

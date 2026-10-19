@@ -131,11 +131,12 @@
         trouble.enable = true;
         jj.enable = true;
       };
-      colorschemes.nord = {
+      colorschemes.rose-pine = {
         enable = true;
         settings = {
-          borders = true;
-          disable_background = true;
+          styles = {
+            transparency = true;
+          };
         };
       };
     };

@@ -19,6 +19,5 @@
       editor-data
       editor-scripting
     ];
-    mobile-developer.includes = [den.aspects.features.mobile-development];
   };
 }

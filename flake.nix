@@ -9,66 +9,62 @@
 
   inputs = {
     brew-src = {
-      url = "github:Homebrew/brew";
+      url = "github:Homebrew/brew/7.0.10";
       flake = false;
     };
     darwin = {
-      url = "github:nix-darwin/nix-darwin";
+      url = "github:nix-darwin/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    den.url = "github:denful/den";
+    den.url = "github:denful/den/main";
     devenv = {
-      url = "github:cachix/devenv";
+      url = "github:cachix/devenv/main";
       inputs = {
         flake-parts.follows = "flake-parts";
         nixd.inputs.treefmt-nix.follows = "treefmt-nix";
         nixpkgs.follows = "nixpkgs";
       };
     };
-    flake-file.url = "github:denful/flake-file";
+    flake-file.url = "github:denful/flake-file/main";
     flake-parts = {
-      url = "github:hercules-ci/flake-parts";
+      url = "github:hercules-ci/flake-parts/main";
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     homebrew-cask = {
-      url = "github:Homebrew/homebrew-cask";
+      url = "github:Homebrew/homebrew-cask/main";
       flake = false;
     };
     homebrew-core = {
-      url = "github:Homebrew/homebrew-core";
+      url = "github:Homebrew/homebrew-core/main";
       flake = false;
     };
-    import-tree.url = "github:denful/import-tree";
+    import-tree.url = "github:denful/import-tree/main";
     llm-agents = {
-      url = "github:numtide/llm-agents.nix";
+      url = "github:numtide/llm-agents.nix/main";
       inputs = {
         flake-parts.follows = "flake-parts";
         nixpkgs.follows = "nixpkgs";
         treefmt-nix.follows = "treefmt-nix";
       };
     };
-    maestro-tap = {
-      url = "github:mobile-dev-inc/homebrew-tap";
-      flake = false;
-    };
     nix-homebrew = {
-      url = "github:zhaofengli/nix-homebrew";
+      url = "github:zhaofengli/nix-homebrew/main";
       inputs.brew-src.follows = "brew-src";
     };
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/master";
     nixvim = {
-      url = "github:nix-community/nixvim";
+      url = "github:nix-community/nixvim/main";
       inputs = {
         flake-parts.follows = "flake-parts";
         nixpkgs.follows = "nixpkgs";
       };
     };
     treefmt-nix = {
-      url = "github:numtide/treefmt-nix";
+      url = "github:numtide/treefmt-nix/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
