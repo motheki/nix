@@ -25,12 +25,9 @@
         enable = true;
         directory = "Applications/home-manager";
       };
-      programs = {
-        discord = {
-          enable = true;
-          package = pkgs.vesktop;
-        };
-      };
+      # Vesktop owns its settings. programs.discord would also manage the
+      # unrelated Discord settings.json in macOS-protected application data.
+      home.packages = [pkgs.vesktop];
     };
   };
 }
