@@ -10,7 +10,6 @@
       dogedns
       mole-cleaner
       dua
-      sentry-cli
       duf
       tailscale
       gftp
@@ -34,7 +33,6 @@
       webtorrent_desktop
       sd
       vulnix
-      xcp
       yq-go
     ];
   };

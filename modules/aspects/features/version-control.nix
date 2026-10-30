@@ -79,11 +79,13 @@ _: {
           snapshot.auto-update-stale = true;
           git = {
             colocate = true;
-            sign-on-push = true;
             track-default-bookmark-on-clone = true;
             abandon-unreachable-commits = true;
             fetch = "origin";
             push = "origin";
+          };
+          revsets = {
+            git-sign-on-push = "~signed() & mine()";
           };
         };
       };

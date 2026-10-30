@@ -29,9 +29,13 @@ _: {
         enableZshIntegration = false;
       };
       tiny.enable = true;
-      tirith.enable = true;
 
-      nh.enable = true;
+      nh = {
+        enable = true;
+        clean = {
+          enable = true;
+        };
+      };
 
       bat = {
         enable = true;

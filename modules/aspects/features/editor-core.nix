@@ -113,7 +113,6 @@
         lspkind.enable = true;
         nix.enable = true;
         nix-develop.enable = true;
-        smear-cursor.enable = true;
         notify = {
           enable = true;
           settings.background_colour = "#000000";

@@ -33,7 +33,7 @@ _: {
           enableBashIntegration = true;
           enableFishIntegration = true;
           enableNushellIntegration = true;
-          mise.enable = true;
+          mise.enable = false;
           silent = true;
         };
 
