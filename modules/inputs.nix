@@ -19,14 +19,6 @@
         inputs.nixpkgs.follows = "nixpkgs";
       };
       den.url = "github:denful/den/main";
-      devenv = {
-        url = "github:cachix/devenv/main";
-        inputs = {
-          nixpkgs.follows = "nixpkgs";
-          flake-parts.follows = "flake-parts";
-          nixd.inputs.treefmt-nix.follows = "treefmt-nix";
-        };
-      };
       flake-file.url = "github:denful/flake-file/main";
       import-tree.url = "github:denful/import-tree/main";
       flake-parts = {

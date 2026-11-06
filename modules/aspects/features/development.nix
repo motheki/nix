@@ -62,7 +62,14 @@
           "${homeDirectory}/go/bin"
         ];
       };
-      programs.devenv.enable = true;
+      # Home Manager installs devenv and owns its native auto-activation hooks.
+      programs.devenv = {
+        enable = true;
+        enableBashIntegration = true;
+        enableZshIntegration = true;
+        enableFishIntegration = true;
+        enableNushellIntegration = true;
+      };
     };
   };
 }

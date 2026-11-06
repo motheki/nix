@@ -6,7 +6,7 @@ _: {
       enableGlobalCompInit = false;
       promptInit = "";
     };
-    homeManager = {pkgs, ...}: {
+    homeManager = _: {
       programs = {
         carapace.enable = true;
         starship.enable = true;
@@ -16,25 +16,14 @@ _: {
         };
         zoxide.enable = true;
 
-        # Nix/direnv owns activation. Use mise explicitly or through `use mise`
-        # in a project's .envrc, without a second runtime-selection prompt hook.
+        # Devenv owns project activation. Keep mise available for explicit use
+        # without a second runtime-selection prompt hook.
         mise = {
           enable = true;
           enableZshIntegration = false;
           enableBashIntegration = false;
           enableFishIntegration = false;
           enableNushellIntegration = false;
-        };
-
-        direnv = {
-          enable = true;
-          nix-direnv.enable = true;
-          enableZshIntegration = true;
-          enableBashIntegration = true;
-          enableFishIntegration = true;
-          enableNushellIntegration = true;
-          mise.enable = false;
-          silent = true;
         };
 
         bash = {

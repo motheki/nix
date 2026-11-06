@@ -107,7 +107,6 @@
         colorizer.enable = true;
         colorful-menu.enable = true;
         tv.enable = true;
-        direnv.enable = true;
         faster.enable = true;
         gitblame.enable = true;
         lspkind.enable = true;

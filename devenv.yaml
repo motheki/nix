@@ -1,0 +1,9 @@
+# Developer-shell inputs are pinned in devenv.lock, independently of flake.lock.
+inputs:
+  nixpkgs:
+    url: github:NixOS/nixpkgs/master
+  treefmt-nix:
+    url: github:numtide/treefmt-nix/main
+    inputs:
+      nixpkgs:
+        follows: nixpkgs
