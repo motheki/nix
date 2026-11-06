@@ -23,13 +23,10 @@
       nix-diff
       nix-melt
       nix-tree
-      openapi-tui
-      rainfrog
       rm-improved
       rustscan
       scc
       iina
-      orbstack
       webtorrent_desktop
       sd
       vulnix

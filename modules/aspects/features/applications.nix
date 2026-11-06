@@ -7,6 +7,7 @@
         "vorssaint"
         "chatgpt"
         "macparakeet"
+        "orbstack"
         "zen"
         "expo-orbit"
         "paper-design"
