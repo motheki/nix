@@ -1,11 +1,5 @@
-# DO-NOT-EDIT. This file was auto-generated using github:denful/flake-file.
-# Use `nix run .#write-flake` to regenerate it.
 {
   description = "Motheki's declarative macOS configuration";
-
-  outputs = inputs:
-    inputs.flake-parts.lib.mkFlake {inherit inputs;}
-    (inputs.import-tree ./modules);
 
   inputs = {
     brew-src = {
@@ -17,7 +11,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     den.url = "github:denful/den/main";
-    flake-file.url = "github:denful/flake-file/main";
+    devenv = {
+      url = "github:cachix/devenv";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
+      };
+    };
     flake-parts = {
       url = "github:hercules-ci/flake-parts/main";
       inputs.nixpkgs-lib.follows = "nixpkgs";
@@ -60,4 +60,46 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
+
+  outputs = inputs @ {flake-parts, ...}:
+    flake-parts.lib.mkFlake {inherit inputs;} {
+      imports = [
+        inputs.den.flakeModule
+        inputs.devenv.flakeModule
+        inputs.treefmt-nix.flakeModule
+        (inputs.import-tree ./modules)
+      ];
+      perSystem = _: {
+        devenv.modules = [
+          ({pkgs, ...}: {
+            packages = with pkgs; [
+              nixd
+              alejandra
+              statix
+              deadnix
+              jq
+              nh
+              hyperfine
+            ];
+          })
+        ];
+        devenv.shells.default = {
+          name = "nix-config";
+          apple.sdk = null;
+          env.NIX_CONFIG_SHELL = "nix-config";
+          treefmt = {
+            enable = true;
+            config = {
+              projectRootFile = "flake.nix";
+              programs = {
+                alejandra.enable = true;
+                deadnix.enable = true;
+                statix.enable = true;
+                mdformat.enable = true;
+              };
+            };
+          };
+        };
+      };
+    };
 }

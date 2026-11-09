@@ -10,16 +10,22 @@
     homeManager = {host}: {
       config,
       lib,
+      pkgs,
       ...
     }: {
       programs.nh.darwinFlake = "${config.home.homeDirectory}/Repos/personal/nix";
-      # Use the pinned NH from the login environment. Updating is explicit so
-      # a normal rebuild reproduces the reviewed lock file.
-      home.shellAliases = {
-        rebuild = "nh darwin switch --hostname ${host.name} ${lib.escapeShellArg config.programs.nh.darwinFlake}";
-        rebuild-update = "nh darwin switch --update --hostname ${host.name} ${lib.escapeShellArg config.programs.nh.darwinFlake}";
-        bg = "batgrep";
-      };
+      home.packages = [
+        (pkgs.writeShellApplication {
+          name = "rebuild";
+          runtimeInputs = [pkgs.nix config.programs.nh.package];
+          text = ''
+            cd ${lib.escapeShellArg config.programs.nh.darwinFlake}
+            nix flake update
+            nh darwin switch . -H ${lib.escapeShellArg host.name} --ask
+          '';
+        })
+      ];
+      home.shellAliases.bg = "batgrep";
       programs.yt-dlp.settings.paths = "/Volumes/mothekis_drive/videos/youtube";
     };
   };

@@ -1,47 +1,81 @@
 # Nix configuration
 
-The flake configures the macOS workstation and Home Manager. Home Manager's
-`programs.devenv` module installs devenv and enables its native activation hooks
-for Bash, Zsh, Fish, and Nushell.
+`flake.nix` is the source of truth for inputs, the macOS workstation and Home
+Manager configuration, formatting, and developer shells. Flake-parts composes
+these with the existing Den aspects in `modules/`; `flake.lock` pins all inputs.
+There is no generated flake or separate devenv configuration or lockfile.
 
 ## Developer environments
 
-From this repository, enter the tooling environment with:
+Enter the repository tooling environment:
 
 ```sh
-devenv shell
+nix develop --no-pure-eval
 ```
 
-Add the Rust, Go, and Zig toolchains with:
+Add the Rust, Go, and Zig toolchains (including language servers and the macOS
+SDK):
 
 ```sh
-devenv --profile systems shell
+nix develop --no-pure-eval .#systems
 ```
 
-These commands replace the former `nix develop` and `nix develop .#systems`
-shells. The reusable modules remain exported as `devenvModules.default` and
-`devenvModules.systems` for other projects.
+Both shells include nixd, Alejandra, Statix, deadnix, jq, nh, hyperfine, and the
+same treefmt wrapper used by `nix fmt`. The default shell does not add a compiler
+or SDK. Neither shell formats files automatically on entry.
 
-After applying the Home Manager configuration and starting a new terminal,
-run `devenv allow` in each trusted project to enable automatic activation on
-directory changes. Use `devenv revoke` to disable it. Existing projects need a
-`devenv.nix` entry point; `.envrc` files no longer activate environments.
-See the [devenv auto-activation documentation](https://devenv.sh/auto-activation/).
+The shells are defined directly in `perSystem.devenv.shells`, sharing one tooling
+package list. This is the
+[devenv flake-parts integration](https://devenv.sh/guides/using-with-flake-parts/),
+not the separate [numtide devshell integration](https://flake.parts/options/devshell.html).
+`--no-pure-eval` lets devenv discover the working directory without hard-coding
+an absolute path or generating a root file.
 
-Launch editors from the environment, for example `devenv shell nvim .`, so their
-language servers inherit the project's tools. Mise remains available for
-explicit commands, with automatic activation disabled.
+### Automatic activation
+
+Home Manager enables direnv and nix-direnv for Bash, Zsh, Fish, and Nushell.
+After applying the workstation configuration and starting a new terminal:
+
+```sh
+direnv allow
+```
+
+The repository's `.envrc` only loads the default flake shell. Launch editors
+from this environment, or explicitly with:
+
+```sh
+nix develop --no-pure-eval -c nvim .
+```
+
+The devenv CLI remains available for other projects, but its native activation
+hooks are disabled so direnv is the only directory-change hook. Existing
+standalone devenv projects need an `.envrc` with `use devenv` and `direnv allow`;
+`devenv allow` no longer controls activation. Mise remains available for explicit
+commands, with automatic activation disabled.
+
+The former `devenv shell` and `devenv --profile systems shell` commands are
+replaced by the two `nix develop` commands above. The standalone `devenvModules`
+exports have been removed; consumers can use this flake's `devShells` outputs.
 
 ## Maintenance
 
-`devenv.nix` composes the repository environment and its optional profiles.
-`devenv.yaml` declares inputs, and `devenv.lock` pins them. Run `devenv update`
-to update developer-environment dependencies; `nix flake update` separately
-updates the workstation's `flake.lock`.
+Edit inputs directly in `flake.nix`, then update the single lockfile with
+`nix flake update` (or `nix flake update <input>` for a targeted update).
+No regeneration command or `devenv update` is needed.
 
-`devenv shell treefmt` and `nix fmt` use the same formatter configuration.
-Run `devenv shell treefmt --fail-on-change` to check formatting and
-`nix flake check --no-build` to evaluate the flake.
+The Home Manager-managed `rebuild` command works from any directory. It changes
+to this repository, runs `nix flake update`, then runs
+`nh darwin switch . -H mothekis-macbook-pro --ask` to build and activate the
+workstation, including Home Manager. An update failure stops the command before
+activation; `--ask` prompts before applying the built configuration.
+The former `rebuild-update` alias has been removed.
 
-Edit flake inputs in `modules/inputs.nix`, then run `nix run .#write-flake`
-to regenerate `flake.nix`.
+```sh
+nix fmt
+nix develop --no-pure-eval -c treefmt --fail-on-change
+nix flake check --no-pure-eval --no-build
+```
+
+The last command evaluates the workstation, shell, package, and check outputs
+without building them. Use `nix flake check --no-pure-eval` to build and run the
+checks as well.

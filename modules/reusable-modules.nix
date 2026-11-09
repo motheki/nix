@@ -7,9 +7,5 @@
       code-review = den.aspects.features.code-review.homeManager;
       hunk = ./_modules/home-manager/hunk.nix;
     };
-    devenvModules = {
-      default = ./_modules/devenv/default.nix;
-      systems = ./_modules/devenv/systems.nix;
-    };
   };
 }

@@ -12,7 +12,6 @@ _: {
       jq.enable = true;
       bottom.enable = true;
       lazydocker.enable = true;
-      nix-index.enable = true;
       pay-respects.enable = true;
       fzf.enable = true;
       ripgrep.enable = true;
@@ -23,6 +22,10 @@ _: {
       };
       television = {
         enable = true;
+      };
+      nix-index = {
+        enable = true;
+        package = pkgs.nix-index-unwrapped;
       };
       skim = {
         enable = true;

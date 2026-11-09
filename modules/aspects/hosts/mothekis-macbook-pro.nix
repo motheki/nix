@@ -2,6 +2,8 @@
 {den, ...}: {
   den.aspects.mothekis-macbook-pro = {
     includes = [
+      # Accept users' Darwin settings explicitly, without Den's transition default.
+      den.batteries.user-aspects
       den.aspects.features.nix-policy
       den.aspects.features.homebrew
     ];

@@ -2,26 +2,19 @@
 {inputs, ...}: let
   brewVersion = "7.0.10";
 in {
-  flake-file.inputs = {
-    brew-src = {
-      url = "github:Homebrew/brew/${brewVersion}";
-      flake = false;
-    };
-    nix-homebrew = {
-      url = "github:zhaofengli/nix-homebrew/main";
-      inputs.brew-src.follows = "brew-src";
-    };
-    homebrew-core = {
-      url = "github:Homebrew/homebrew-core/main";
-      flake = false;
-    };
-    homebrew-cask = {
-      url = "github:Homebrew/homebrew-cask/main";
-      flake = false;
-    };
-  };
-
-  den.aspects.features.homebrew.darwin = {config, ...}: {
+  den.aspects.features.homebrew.darwin = {
+    config,
+    lib,
+    ...
+  }: let
+    cfg = config.nix-homebrew;
+    shellEnvironment = prefix:
+      lib.optionalString prefix.enable ''
+        export HOMEBREW_PREFIX=${lib.escapeShellArg prefix.prefix}
+        export HOMEBREW_CELLAR=${lib.escapeShellArg "${prefix.prefix}/Cellar"}
+        export HOMEBREW_REPOSITORY=${lib.escapeShellArg "${prefix.library}/.homebrew-is-managed-by-nix"}
+      '';
+  in {
     imports = [inputs.nix-homebrew.darwinModules.nix-homebrew];
     nix-homebrew = {
       enable = true;
@@ -31,7 +24,7 @@ in {
           name = "brew-${brewVersion}";
           version = brewVersion;
         };
-      enableZshIntegration = true;
+      enableZshIntegration = false;
       user = config.system.primaryUser;
       mutableTaps = false;
       taps = {
@@ -40,10 +33,32 @@ in {
       };
     };
 
+    # Equivalent to brew shellenv, without spawning brew for every new shell.
+    # CPUTYPE is a zsh builtin; retain the Intel prefix for Rosetta shells.
+    programs.zsh.interactiveShellInit = lib.mkIf cfg.enable ''
+      case "$CPUTYPE" in
+        arm64|aarch64)
+          ${shellEnvironment cfg.prefixes.${cfg.defaultArm64Prefix}}
+          ;;
+        x86_64)
+          ${shellEnvironment cfg.prefixes.${cfg.defaultIntelPrefix}}
+          ;;
+      esac
+      typeset -U path fpath
+      path=("$HOMEBREW_PREFIX/bin" "$HOMEBREW_PREFIX/sbin" "''${path[@]}")
+      fpath=("$HOMEBREW_PREFIX/share/zsh/site-functions" "''${fpath[@]}")
+      export PATH FPATH
+      # An empty MANPATH component preserves the system's default man directories.
+      [[ -z "''${MANPATH-}" ]] || export MANPATH=":''${MANPATH#:}"
+      if [[ ":''${INFOPATH-}:" != *":$HOMEBREW_PREFIX/share/info:"* ]]; then
+        export INFOPATH="$HOMEBREW_PREFIX/share/info:''${INFOPATH-}"
+      fi
+    '';
+
     homebrew = {
       enable = true;
       taps = builtins.attrNames config.nix-homebrew.taps;
-      # nix-homebrew emits shellenv; do not initialize it twice.
+      # The static zsh environment above owns initialization.
       enableZshIntegration = false;
       greedyCasks = true;
       caskArgs = {

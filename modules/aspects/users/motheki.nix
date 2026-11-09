@@ -4,9 +4,17 @@
     includes = [
       (den.batteries.user-shell "zsh")
     ];
-    homeManager = {pkgs, ...}: let
+    homeManager = {
+      config,
+      lib,
+      pkgs,
+      ...
+    }: let
       email = "trevoropiyo@trevoropiyo.com";
       sshIdentity = "~/.ssh/trevoropiyo";
+      keychain = config.programs.keychain;
+      keychainArgs = lib.escapeShellArgs (keychain.extraFlags ++ keychain.keys);
+      sshAdd = "${config.programs.ssh.package}/bin/ssh-add";
     in {
       programs = {
         git.settings.user = {
@@ -32,7 +40,30 @@
         keychain = {
           enable = true;
           keys = ["trevoropiyo"];
+          enableZshIntegration = false;
         };
+        # The stock integration invokes keychain unconditionally in every shell.
+        zsh.initContent = lib.mkIf keychain.enable ''
+          # Explicitly reload keys after locking/clearing an otherwise live agent.
+          ssh-unlock() {
+            local agent_env
+            agent_env="$(SHELL=zsh ${keychain.package}/bin/keychain --eval ${keychainArgs})" || return
+            eval "$agent_env"
+          }
+
+          # Prefer an inherited agent (including SSH forwarding), then the cache.
+          # Probe the agent, not just its socket/PID: both can survive a dead agent.
+          # Run keychain only on first use or when the agent needs recovery/unlocking.
+          () {
+            ${sshAdd} -l >/dev/null 2>&1 && return
+            local agent_file="$HOME/.keychain/$HOST-sh"
+            if [[ -r "$agent_file" ]]; then
+              source "$agent_file"
+              ${sshAdd} -l >/dev/null 2>&1 && return
+            fi
+            ssh-unlock
+          }
+        '';
       };
     };
   };

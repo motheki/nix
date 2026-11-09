@@ -16,7 +16,7 @@ _: {
         };
         zoxide.enable = true;
 
-        # Devenv owns project activation. Keep mise available for explicit use
+        # Direnv owns project activation. Keep mise available for explicit use
         # without a second runtime-selection prompt hook.
         mise = {
           enable = true;
@@ -34,6 +34,11 @@ _: {
           enable = true;
           defaultKeymap = "viins";
           enableCompletion = true;
+          # Apple and Nix zsh must not invalidate each other's completion dump.
+          # Keep compinit's normal permission checks and cache invalidation.
+          completionInit = ''
+            autoload -Uz compinit && compinit -d "''${ZDOTDIR:-$HOME}/.zcompdump-$ZSH_VERSION"
+          '';
           autocd = true;
           autosuggestion.enable = true;
           fastSyntaxHighlighting.enable = true;

@@ -62,13 +62,15 @@
           "${homeDirectory}/go/bin"
         ];
       };
-      # Home Manager installs devenv and owns its native auto-activation hooks.
+      # One activation mechanism for flake-based and standalone projects.
+      programs.direnv = {
+        enable = true;
+        nix-direnv.enable = true;
+        config.global.hide_env_diff = true;
+      };
+      # Keep the CLI available without competing directory-change hooks.
       programs.devenv = {
         enable = true;
-        enableBashIntegration = true;
-        enableZshIntegration = true;
-        enableFishIntegration = true;
-        enableNushellIntegration = true;
       };
     };
   };

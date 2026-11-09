@@ -13,6 +13,7 @@
       duf
       tailscale
       gftp
+      xcp
       grip-grab
       httpie
       hyperfine
